@@ -22,7 +22,7 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('tutor-webfront')
   })
 
-  it('should render title', () => {
+  it('should render Title', () => {
     const fixture = TestBed.createComponent(AppComponent)
     fixture.detectChanges()
     const compiled = fixture.nativeElement as HTMLElement
