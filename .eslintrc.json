@@ -1,0 +1,76 @@
+{
+  "root": true,
+  "ignorePatterns": ["projects/**/*"],
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "parserOptions": {
+        "project": ["tsconfig.json", "e2e/tsconfig.json"],
+        "createDefaultProgram": true
+      },
+      "extends": [
+        "plugin:@angular-eslint/recommended",
+        "plugin:@angular-eslint/template/process-inline-templates",
+        "plugin:prettier/recommended"
+      ],
+      "rules": {
+        "@angular-eslint/directive-selector": [
+          "error",
+          {
+            "type": "attribute",
+            "prefix": "app",
+            "style": "camelCase"
+          }
+        ],
+        "@angular-eslint/component-selector": [
+          "error",
+          {
+            "type": "element",
+            "prefix": "app",
+            "style": "kebab-case"
+          }
+        ],
+        "@typescript-eslint/no-explicit-any": "error",
+        "require-await": "error",
+        "prefer-const": "error",
+        "object-shorthand": "error",
+        "no-useless-return": "error",
+        "no-useless-constructor": "error",
+        "no-unneeded-ternary": "error",
+        "no-undefined": "error",
+        "no-else-return": "error",
+        "no-array-constructor": "error",
+        "no-alert": "error",
+        "max-statements": ["error", 20],
+        "max-params": ["error", 3],
+        "default-param-last": ["error"],
+        "default-case-last": "error",
+        "default-case": "error",
+        "class-methods-use-this": "error",
+        "camelcase": [
+          "error",
+          {
+            "properties": "always",
+            "ignoreImports": false,
+            "ignoreGlobals": false
+          }
+        ],
+        "no-unreachable-loop": "error",
+        "no-template-curly-in-string": "error",
+        "no-self-compare": "error",
+        "no-self-assign": "error",
+        "no-duplicate-case": "error",
+        "no-duplicate-imports": "error",
+        "no-constructor-return": "error",
+        "no-await-in-loop": "error",
+        "getter-return": "error",
+        "no-console": ["error",{"allow": ["warn","error"]}]
+      }
+    },
+    {
+      "files": ["*.html"],
+      "extends": ["plugin:@angular-eslint/template/recommended"],
+      "rules": {}
+    }
+  ]
+}
