@@ -1,0 +1,26 @@
+.testimonials {
+  background: var(--background-color);
+
+  .title-2 {
+    @extend %title-blue;
+    color: vaR(--color-white) !important;
+  }
+}
+
+.testimonial-grid {
+  display        : flex;
+  flex-wrap      : wrap;
+  justify-content: center;
+  gap            : rem(25);
+
+  .card {
+    min-width       : rem(400);
+    min-height      : rem(320);
+    background-color: var(--color-white);
+    @apply flex flex-col p-10 gap-y-3;
+
+    footer {
+      @apply mt-auto text-center max-w-max;
+    }
+  }
+}

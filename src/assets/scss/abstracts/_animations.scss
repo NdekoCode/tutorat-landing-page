@@ -1,0 +1,312 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeWidth {
+  0% {
+    opacity: 0;
+    height : 0;
+  }
+
+  100% {
+    opacity: 1;
+    height : 100%;
+  }
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity  : 0;
+    transform: scale(0.95) translateY(-30px);
+  }
+
+  100% {
+    opacity  : 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes fadeOpacity {
+  0% {
+    opacity  : 0;
+    transform: translateY(-10px);
+  }
+
+  100% {
+    opacity  : 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeDown {
+  0% {
+    opacity  : 0;
+    transform: scale(0.95) translateY(50px);
+  }
+
+  100% {
+    opacity  : 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes fadeLeft {
+  0% {
+    opacity  : 0;
+    transform: translateX(-30px);
+  }
+
+  100% {
+    opacity  : 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeRight {
+  0% {
+    opacity  : 0;
+    transform: translateX(30px);
+  }
+
+  100% {
+    opacity  : 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes toggleNav {
+  from {
+
+    opacity: 0;
+    top    : 100%;
+  }
+
+  to {
+
+    top    : 0;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeLeft {
+  from {
+
+    opacity: 0;
+    left   : rem(-100);
+  }
+
+  to {
+
+    opacity: 1;
+    left   : 0;
+  }
+}
+
+@keyframes toggleHide {
+  0% {
+    opacity: 1;
+    height : 100%;
+    display: block;
+  }
+
+  100% {
+    opacity: 0;
+    height : 0;
+    display: none;
+  }
+}
+
+
+@keyframes pulse {
+  0% {
+    transform : scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+  }
+
+  70% {
+    transform : scale(1);
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+  }
+
+  100% {
+    transform : scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+
+@keyframes Gradient {
+  0% {
+    background: transparent;
+
+  }
+
+  100% {
+    background-image: var(--primary-color-gradient);
+    color           : var(--color-white);
+  }
+
+}
+
+@keyframes fade-in-down {
+  0% {
+    opacity  : 0;
+    transform: translateY(-20px);
+  }
+
+  100% {
+    opacity  : 1;
+    transform: translateY(0);
+  }
+}
+
+
+@keyframes fade-in-left {
+  0% {
+    opacity  : 0;
+    transform: translateX(-20px);
+  }
+
+  100% {
+    opacity  : 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-in-right {
+  0% {
+    opacity  : 0;
+    transform: translateX(20px);
+  }
+
+  100% {
+    opacity  : 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-out-down {
+  0% {
+    opacity  : 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity  : 0;
+    transform: translateY(20px);
+  }
+}
+
+
+@keyframes fade-out-right {
+  0% {
+    opacity  : 1;
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity  : 0;
+    transform: translateX(20px);
+  }
+}
+
+.fadeUp {
+  @extend %fadeUp;
+}
+
+.fadeRight {
+  @extend %fadeRight;
+}
+
+.fadeLeft {
+  @extend %fadeLeft;
+}
+
+
+
+.fade-in-down {
+  animation: fade-in-down 2s ease infinite;
+}
+
+.fadeInLeft {
+
+  animation: fade-in-left var(--transition-1) ease forwards;
+}
+
+.fadeInRight {
+
+  animation: fade-in-right var(--transition-2) ease forwards;
+}
+
+.fade-in-left {
+  animation: fade-in-left 2s ease infinite;
+}
+
+
+
+.fade-out-down {
+  animation: fade-out-down 2s ease infinite;
+}
+
+.fade-out-right {
+  animation: fade-out-right 2s ease infinite;
+}
+
+
+
+.cell {
+  display   : inline-block;
+  width     : 49%;
+  text-align: center;
+}
+
+.circle {
+  display      : inline-block;
+  width        : 100px;
+  height       : 100px;
+  border-radius: 50%;
+  background   : whiteSmoke;
+  box-shadow   : 4px -40px 60px 5px rgb(26, 117, 206) inset;
+}
+
+.square {
+  display      : inline-block;
+  width        : 100px;
+  height       : 100px;
+  border-radius: 20px;
+  background   : whiteSmoke;
+  box-shadow   : 4px -40px 60px 5px rgb(26, 117, 206) inset;
+}
+
+.loader {
+  background: linear-gradient(to right, rgb(22, 113, 202) 50%, transparent 50%);
+  animation : spin 1s infinite linear;
+}
+
+.loader:before {
+  display      : block;
+  content      : '';
+  position     : relative;
+  top          : 50%;
+  left         : 50%;
+  transform    : translate(-50%, -50%);
+  width        : 90px;
+  height       : 90px;
+  background   : #222;
+  border-radius: 50%;
+}

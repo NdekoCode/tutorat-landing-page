@@ -1,0 +1,74 @@
+.block-badge {
+  min-width      : rem(200);
+  height         : rem(80);
+  color          : #4A556C;
+  display        : flex;
+  align-items    : center;
+  max-width      : max-content;
+  padding        : rem(20);
+  gap            : rem(10);
+  background     : var(--color-white);
+  backdrop-filter: blur(5px);
+  box-shadow     : 0px 16px 96px rgba(111, 124, 145, 0.16);
+  border-radius  : rem(5);
+}
+
+.block-content {
+
+  @media #{$lg-screen} {
+
+    .block__left,
+    .block__right {
+      flex-basis: 50%;
+      width     : 50%;
+    }
+
+  }
+}
+
+.card-grid {
+  display        : flex;
+  justify-content: center;
+  max-width      : rem(1040);
+  gap            : rem(30);
+  flex-wrap      : wrap;
+  padding-top    : rem(50);
+
+  .card {
+    aspect-ratio: 1/1;
+  }
+
+}
+
+.block-center {
+  @apply flex justify-center items-center;
+}
+
+.card {
+  min-width : rem(250);
+  min-height: rem(350);
+  max-width : rem(400);
+  height    : max-content;
+  width     : max-content;
+}
+
+.annonces-product {
+  .item-circle {
+    background   : url('/assets/images/people.png') no-repeat center center/ cover;
+    border-radius: 50%;
+  }
+}
+
+.blog {
+  background-color: var(--bg-gray-smooth);
+
+  .blog-card {
+    @apply border border-gray-300 rounded-md;
+
+    img {
+      display   : block;
+      width     : 100%;
+      object-fit: cover;
+    }
+  }
+}

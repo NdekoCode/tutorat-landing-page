@@ -1,0 +1,104 @@
+@import "./variables";
+
+@mixin positionner($x, $y) {
+  position : absolute;
+  left     : $x;
+  top      : $y;
+  transform: translate(-$x, -$y);
+}
+
+@mixin pseudoEl($d:"block", $pos:"absolute", $content:"") {
+  content : $content;
+  display : $d;
+  position: $pos;
+}
+
+@mixin linkEffect($visible: false) {
+
+  @extend %decorationNone;
+  @extend %posRelative;
+
+  &::after {
+    content: '';
+    display: block;
+    width  : 100%;
+    height : 2px;
+
+    @if $visible {
+      transform       : scale(1);
+      background-color: currentColor;
+    }
+
+    @else {
+
+      transform: scale(0);
+    }
+
+    transition: var(--transition-1);
+
+  }
+
+  @if($visible==false) {
+
+    &:hover::after,
+    &.active::after {
+      transform       : scale(1);
+      background-color: currentColor;
+    }
+  }
+}
+
+@mixin hoverLink($visible:true) {
+  text-decoration: none;
+
+  &::after {
+    content : '';
+    position: absolute;
+    display : block;
+    width   : 100%;
+    height  : rem(2);
+
+    @if($visible==false) {
+      transition: var(--transition-1);
+    }
+
+    @else {
+
+      transform       : scale(1);
+      background-color: currentColor;
+    }
+
+  }
+
+  @if(visible==false) {
+
+
+    &:hover::after {
+      transform       : scale(1);
+      background-color: var(--color-little-white);
+    }
+  }
+}
+
+@mixin makeSize($sizeDefault, $sizeDesk) {
+  font-size: $sizeDefault;
+  @extend %bold;
+  @extend %titleSpace;
+
+  @media #{$sm-screen} {
+    font-size: $sizeDesk;
+  }
+}
+
+
+@mixin pseudoStartElement() {
+
+  &::before,
+  &::after {
+    content : '';
+    position: absolute;
+    z-index : -1;
+    display : block;
+    @content
+  }
+}

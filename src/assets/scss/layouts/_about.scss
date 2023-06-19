@@ -1,0 +1,77 @@
+.about {
+  max-width: rem(1140);
+
+  @apply mx-auto;
+
+  .icon {
+    color: var(--blue-dark);
+  }
+
+  .title-2 {
+    @extend %title-blue;
+    @extend .big-title;
+  }
+
+  .icon,
+  .text-content,
+  .title {
+    @apply transition-colors duration-300;
+  }
+
+  .card {
+
+    background-color: var(--color-white);
+    background-image: none;
+    border-color    : rgba(#041434, 0.2) !important;
+    box-shadow      : 0 5px 35px rgba(#041434, 0.05) !important;
+    transition      : all 0.5s;
+
+    @apply cursor-context-menu p-12;
+    @extend .shadow-soft-xl;
+
+
+
+    .icon,
+    .text-content,
+    .title {
+      color: var(--icon-blue);
+    }
+
+    &:hover {
+      background: var(--primary-gradient);
+
+      .icon,
+      .text-content,
+      .title {
+        color: var(--color-white);
+        @apply transition-colors duration-300;
+      }
+
+    }
+  }
+}
+
+.card-grid {
+  .card {
+    @apply transition-colors duration-150;
+
+    &.card-item-1 {
+
+      border-radius: 100px 4px 4px 4px;
+    }
+
+    &.card-item-2 {
+      border-radius: 4px 100px 4px 4px;
+    }
+
+    &.card-item-4 {
+      border-radius: 4px 4px 100px 4px;
+
+    }
+
+    &.card-item-3 {
+      border-radius: 4px 4px 4px 100px;
+
+    }
+  }
+}

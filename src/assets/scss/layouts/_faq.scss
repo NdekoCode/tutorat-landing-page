@@ -1,0 +1,78 @@
+.faq__button {
+  @apply flex items-center justify-between w-full transition-colors;
+
+  &:hover,
+  &.active,
+  &:focus {
+    color: vaR(--primary-color);
+  }
+
+  ~.faq__text {
+    display: none;
+  }
+
+  .active-icon {
+    display: none;
+  }
+
+  .inactive-icon {
+    display: inline-block;
+  }
+
+  &:active,
+  &:focus {
+    .active-icon {
+      display: inline-block;
+    }
+
+    .inactive-icon {
+      display: none;
+    }
+
+    ~.faq__text {
+      display: block;
+      // @extend .fade;
+    }
+  }
+}
+
+.faq__item {
+  @apply w-full;
+}
+
+.faq__content {
+
+  @apply flex items-center justify-center w-full max-w-[1280px] mx-auto;
+}
+
+
+.faq__list {
+  @apply min-w-[250px];
+
+  @media #{$md-screen} {
+
+    @apply min-w-[500px];
+
+  }
+
+  @media #{$lg-screen} {
+
+    @apply min-w-[768px];
+
+  }
+
+  .faq__text {
+    @apply w-full;
+    @extend .fade;
+  }
+
+  .faq__item {
+    @apply max-w-[768px] border-b border-gray-300 py-3;
+
+    &:last-child {
+      @apply border-transparent;
+    }
+  }
+}
+
+.faq {}

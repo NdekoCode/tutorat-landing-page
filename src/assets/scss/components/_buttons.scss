@@ -1,0 +1,40 @@
+.btn {
+  text-align   : center;
+  padding      : rem(10) rem(16);
+  gap          : rem(10);
+  min-width    : rem(50);
+  min-height   : rem(45);
+  border-radius: rem(5);
+  @apply border-2 border-transparent transition-colors duration-150;
+
+  &.btn-action {
+    background-color: var(--background-color);
+    color           : var(--color-white);
+    font-weight     : 600;
+    padding         : rem(15) rem(45);
+    text-transform  : capitalize;
+
+    &:hover {
+      border-color    : var(--background-color);
+      background-color: transparent;
+      color           : var(--background-color);
+
+    }
+
+  }
+
+  .btn-icon {
+    display      : flex;
+    justify-items: center;
+    row-gap      : rem(5);
+
+    .icon {
+      margin-right: rem(5);
+    }
+  }
+
+
+  &.btn-small {
+    @apply py-3;
+  }
+}
