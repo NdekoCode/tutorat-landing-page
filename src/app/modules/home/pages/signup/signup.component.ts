@@ -4,4 +4,13 @@ import { Component } from '@angular/core'
   selector: 'app-signup',
   templateUrl: './signup.component.html'
 })
-export class SignupComponent {}
+export class SignupComponent {
+  userLogin = {
+    email: '',
+    password: ''
+  }
+  isChange: boolean = false
+  viewPassword() {
+    this.isChange = !this.isChange
+  }
+}

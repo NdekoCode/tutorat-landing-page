@@ -4,8 +4,21 @@
   }
 
 
-  .field-container {
+  .field-container,
+  .input-group {
     @apply mb-3 max-w-[400px];
+  }
+
+  .input-group {
+
+    .field-container {
+      @apply basis-1/2 mb-0 w-full;
+
+      input {
+        @apply min-w-full;
+      }
+
+    }
   }
 
   .block__right,

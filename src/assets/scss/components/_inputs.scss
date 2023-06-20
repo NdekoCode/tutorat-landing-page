@@ -8,6 +8,17 @@
 
 }
 
+.input-group {
+  @apply mb-3;
+
+  @media #{$lg-screen} {
+
+    @apply flex items-center gap-x-3 mb-1;
+  }
+
+
+}
+
 .input {
   @apply border border-[#DADADA] font-medium transition-all duration-300 rounded bg-[#F7F8F9] px-2 py-3;
 }
@@ -23,8 +34,19 @@
   }
 
   .icon {
-    @apply absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer;
+    @apply absolute top-1/2 -translate-y-1/2 cursor-pointer;
+
+    &.right-icon {
+      @apply right-3;
+    }
+
+    &.left-icon {
+
+      @apply left-3;
+
+    }
   }
+
 
   input {
 
