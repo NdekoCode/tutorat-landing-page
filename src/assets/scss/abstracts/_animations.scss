@@ -18,6 +18,10 @@
   }
 }
 
+.fade {
+  animation: fadeIn 0.5s ease forwards;
+}
+
 @keyframes fadeWidth {
   0% {
     opacity: 0;
