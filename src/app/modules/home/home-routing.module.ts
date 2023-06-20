@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
+import { ConfirmationComponent } from './pages/confirmation/confirmation.component'
 import { ForgetPasswordComponent } from './pages/forget-password/forget-password.component'
 import { LoginComponent } from './pages/login/login.component'
 import { NewPasswordComponent } from './pages/new-password/new-password.component'
@@ -26,6 +27,11 @@ const routes: Routes = [
   {
     path: 'verify-password',
     component: VerifyPasswordComponent
+  },
+
+  {
+    path: 'confirmation',
+    component: ConfirmationComponent
   }
 ]
 

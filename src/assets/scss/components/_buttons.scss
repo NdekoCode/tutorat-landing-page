@@ -1,9 +1,8 @@
 .btn {
-  text-align   : center;
-  gap          : rem(10);
-  min-width    : rem(50);
-  border-radius: rem(5);
-  @apply border px-2 py-3 transition-all duration-300 rounded opacity-95 border-transparent;
+  gap      : rem(10);
+  min-width: rem(50);
+  display  : block;
+  @apply border text-center px-2 py-3 transition-all duration-300 rounded opacity-95 border-transparent;
 
   &:hover {
     @apply opacity-100;

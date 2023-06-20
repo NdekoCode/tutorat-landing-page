@@ -5,13 +5,15 @@ import { ForgetPasswordComponent } from './pages/forget-password/forget-password
 import { NewPasswordComponent } from './pages/new-password/new-password.component'
 import { SignupComponent } from './pages/signup/signup.component'
 import { VerifyPasswordComponent } from './pages/verify-password/verify-password.component'
+import { ConfirmationComponent } from './pages/confirmation/confirmation.component'
 
 @NgModule({
   declarations: [
     SignupComponent,
     ForgetPasswordComponent,
     NewPasswordComponent,
-    VerifyPasswordComponent
+    VerifyPasswordComponent,
+    ConfirmationComponent
   ],
   imports: [CommonModule, HomeRoutingModule]
 })
