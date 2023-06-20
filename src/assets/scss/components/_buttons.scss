@@ -1,11 +1,13 @@
 .btn {
   text-align   : center;
-  padding      : rem(10) rem(16);
   gap          : rem(10);
   min-width    : rem(50);
-  min-height   : rem(45);
   border-radius: rem(5);
-  @apply border-2 border-transparent transition-colors duration-150;
+  @apply border px-2 py-3 transition-all duration-300 rounded opacity-95 border-transparent;
+
+  &:hover {
+    @apply opacity-100;
+  }
 
   &.btn-action {
     background-color: var(--background-color);
@@ -23,18 +25,32 @@
 
   }
 
-  .btn-icon {
-    display      : flex;
-    justify-items: center;
-    row-gap      : rem(5);
+  &.btn-icon {
+    @apply flex items-center justify-center;
+    row-gap: rem(5);
 
     .icon {
-      margin-right: rem(5);
+
+      @apply mr-1 inline-block w-8 p-1 h-8 text-white rounded-full transition-colors;
+
     }
+
   }
 
 
   &.btn-small {
     @apply py-3;
+  }
+
+  &.btn-dark {
+    @apply bg-[#151D34] text-white rounded;
+  }
+
+  &.btn-full {
+    @apply w-full;
+  }
+
+  &.btn-blue-light {
+    @apply bg-[#E0EFFE];
   }
 }

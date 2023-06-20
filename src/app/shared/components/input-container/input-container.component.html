@@ -1,4 +1,6 @@
 <div class="">
-  <label *ngIf="label" [for]="labelFor">{{ labelText }}</label>
+  <label *ngIf="label" [for]="labelFor" class="input-label">{{
+    labelText
+  }}</label>
   <ng-content></ng-content>
 </div>

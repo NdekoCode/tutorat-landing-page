@@ -1,0 +1,48 @@
+.auth-section {
+  .block-content {
+    @apply min-h-screen;
+  }
+
+
+  .field-container {
+    @apply mb-3 max-w-[400px];
+  }
+
+  .block__right,
+  .block__left {
+    @apply flex flex-col justify-center;
+  }
+
+
+  .block__left {
+    display: none;
+    @extend .bg-red-light;
+
+    @media #{$lg-screen} {
+
+      @apply flex flex-col justify-center;
+    }
+  }
+
+  .block__right,
+  .block__left .block__img {
+    @apply max-w-[450px] mx-auto;
+  }
+
+  .form-login {
+
+    .input-field,
+    .btn-full {
+      @apply min-w-[200px] w-full;
+    }
+
+  }
+
+  .btn {
+    @apply font-semibold;
+  }
+
+  .btn-icon.btn-blue-light {
+    @apply border-2 border-[#151D34] text-[#151D34] rounded;
+  }
+}

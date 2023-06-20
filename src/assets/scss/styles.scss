@@ -14,6 +14,7 @@
 @import './layouts/testimonials';
 @import './layouts/faq';
 @import './components/block';
+@import './components/inputs';
 @import './components/modal';
 @import './layouts/header';
 @import './layouts/footer';
@@ -22,6 +23,7 @@
 @import './components/buttons';
 @import './components/card';
 
+@import './pages/login';
 @import './pages/home';
 // @import './pages/about';
 // @import './pages/contact';
@@ -35,8 +37,28 @@
   body {
     color: var(--color-black);
   }
+
+  .rounded {
+    border-radius: 5px;
+  }
 }
 
+.bg-dark {
+  background-color: var(--primary-color);
+}
+
+.text-dark {
+  color: var(--primary-color);
+}
+
+.text-green {
+  color: var(--green-dark);
+}
+
+.bg-red-light {
+  background-color: var(--reg-light);
+
+}
 
 .block {
   @apply flex flex-col;
@@ -53,4 +75,6 @@
   width: 100%;
 }
 
-.navbar {}
+.back-link {
+  @apply flex items-center justify-center w-10 h-10 mb-5 border border-gray-200 rounded transition-all duration-300;
+}

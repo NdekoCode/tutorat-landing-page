@@ -7,7 +7,7 @@ import { Component } from '@angular/core'
 export class InputComponent {
   inputType: string = 'text'
   placeholder: string = ''
-  Inputname: string = ''
-  value: string = ''
+  InputName: string = ''
+  inputValue: string = ''
   id: string = ''
 }

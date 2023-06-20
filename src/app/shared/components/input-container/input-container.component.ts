@@ -5,7 +5,7 @@ import { Component } from '@angular/core'
   templateUrl: './input-container.component.html'
 })
 export class InputContainerComponent {
-  label: string = ''
+  label: boolean = true
   labelText: string = ''
   labelFor: string = ''
 }

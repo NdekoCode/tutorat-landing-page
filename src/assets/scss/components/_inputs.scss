@@ -1,0 +1,41 @@
+.input-field {
+  @apply outline-none ring-2 ring-transparent;
+  @extend .input;
+
+  &:focus {
+    @apply ring-blue-200;
+  }
+
+}
+
+.input {
+  @apply border border-[#DADADA] font-medium transition-all duration-300 rounded bg-[#F7F8F9] px-2 py-3;
+}
+
+.input-icon {
+  @extend .input;
+  @apply relative ring-2 ring-transparent;
+
+  &:active,
+  :focus {
+
+    @apply ring-blue-200;
+  }
+
+  .icon {
+    @apply absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer;
+  }
+
+  input {
+
+    @apply outline-none h-full w-full bg-transparent;
+
+    &:placeholder {
+      color: #8391A1;
+    }
+  }
+}
+
+.input-label {
+  @apply block mb-1 text-base text-[#5A5A5D];
+}
