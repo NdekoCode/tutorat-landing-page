@@ -1,9 +1,17 @@
 <section class="fade">
   <div class="auth-section signup-section section-content">
-    <div class="block block-content">
+    <div class="relative block block-content">
       <div class="block__left">
-        <div class="block__img">
-          <img src="/assets/images/signup-img.png" alt="Login" />
+        <div
+          class="lg:fixed lg:left-[3%] lg:top-[20%] -lg:transform-x-1/4 -lg:transform-y-1/2"
+        >
+          <div class="block__img">
+            <img
+              src="/assets/images/signup-img.png"
+              alt="Login"
+              class="fadeUp"
+            />
+          </div>
         </div>
       </div>
       <div class="block__right">
@@ -27,14 +35,20 @@
           <h2 class="text-3xl md:text-4xl max-w-[500px] font-bold mb-10">
             Bienvenue, Créer votre compte !
           </h2>
-          <form action="" class="form-login" method="POST">
+          <form
+            action=""
+            (ngSubmit)="saveRegisterForm()"
+            class="form-login"
+            method="POST"
+            [formGroup]="registerForm"
+          >
             <div class="input-group">
               <div class="field-container">
                 <label for="lastName" class="input-label">Nom</label>
                 <input
                   type="text"
                   id="lastName"
-                  name="lastName"
+                  formContolName="lastName"
                   placeholder="Entrer votre nom"
                   class="input-field"
                 />
