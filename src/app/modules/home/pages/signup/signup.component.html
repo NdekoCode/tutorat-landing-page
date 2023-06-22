@@ -58,7 +58,7 @@
                 <input
                   type="text"
                   id="firstName"
-                  name="firstName"
+                  formControlName="firstName"
                   placeholder="Entrer votre prenom"
                   class="input-field"
                 />
@@ -69,7 +69,7 @@
               <input
                 type="email"
                 id="email"
-                name="email"
+                formControlName="email"
                 placeholder="Entrer votre email"
                 class="input-field"
               />
@@ -83,7 +83,7 @@
                 <input
                   type="tel"
                   id="phoneNumber"
-                  name="phoneNumber"
+                  formControlName="phoneNumber"
                   placeholder="+243 991 487 950"
                   class="ml-10"
                 /><svg
@@ -127,7 +127,8 @@
                 <input
                   [type]="isChange ? 'text' : 'password'"
                   id="password"
-                  name="password"
+                  autocomplete="true"
+                  formControlName="password"
                   placeholder="Entrez votre mot de passe"
                 /><svg
                   class="icon right-icon"
@@ -162,8 +163,9 @@
               <div class="input-icon">
                 <input
                   [type]="isChange ? 'text' : 'password'"
-                  id="password"
-                  name="confpassword"
+                  id="confpassword"
+                  formControlName="confpassword"
+                  autocomplete="true"
                   placeholder="Confirmez votre mot de passe"
                 /><svg
                   class="icon right-icon"

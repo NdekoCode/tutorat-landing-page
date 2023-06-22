@@ -19,6 +19,10 @@
 
 }
 
+.color-input {
+  color: rgb(218 218 218 / var(--tw-border-opacity));
+}
+
 .input {
   @apply border border-[#DADADA] font-medium transition-all duration-300 rounded bg-[#F7F8F9] px-2 py-3;
 }
@@ -34,6 +38,8 @@
   }
 
   .icon {
+    color: #8391A1;
+
     @apply absolute top-1/2 -translate-y-1/2 cursor-pointer;
 
     &.right-icon {

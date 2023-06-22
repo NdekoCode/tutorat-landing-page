@@ -1,34 +1,30 @@
 import { Component, OnInit } from '@angular/core'
-import { FormControl, FormGroup } from '@angular/forms'
+import { FormBuilder, FormGroup, Validators } from '@angular/forms'
+import {
+  emailValidator,
+  passwordValidator,
+  phoneValidator
+} from 'src/app/core/utilities/forms'
 
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html'
 })
 export class SignupComponent implements OnInit {
+  constructor(private _fb: FormBuilder) {}
   public registerForm!: FormGroup
-  userLogin = {
-    email: '',
-    password: ''
-  }
   isChange: boolean = false
-  firstName = new FormControl()
-  lastName = new FormControl()
-  phoneNumber = new FormControl()
-  email = new FormControl()
-  password = new FormControl()
-  confpassword = new FormControl()
   viewPassword() {
     this.isChange = !this.isChange
   }
   ngOnInit(): void {
-    this.registerForm = new FormGroup({
-      firstName: this.firstName,
-      lastName: this.lastName,
-      phoneNumber: this.phoneNumber,
-      email: this.email,
-      password: this.password,
-      confpassword: this.confpassword
+    this.registerForm = this._fb.group({
+      firstName: ['', [Validators.required, Validators.minLength(2)]],
+      lastName: ['', [Validators.required, Validators.minLength(2)]],
+      ...phoneValidator,
+      ...emailValidator,
+      ...passwordValidator,
+      confpassword: ['', [Validators.required]]
     })
   }
   saveRegisterForm() {
