@@ -48,8 +48,8 @@
                 <input
                   type="text"
                   id="lastName"
-                  formContolName="lastName"
-                  placeholder="Entrer votre nom"
+                  formControlName="lastName"
+                  placeholder="Entrer votre Nom"
                   class="input-field"
                   [ngClass]="{
                     invalid:
@@ -57,23 +57,22 @@
                       !registerForm.get('lastName')?.valid
                   }"
                 />
-
                 <div
                   *ngIf="
                     registerForm.get('lastName')?.errors &&
                     registerForm.get('lastName')?.touched &&
                     registerForm.get('lastName')?.invalid
                   "
-                  class="absolute text-invalid -bottom-5"
+                  class="absolute text-invalid -bottom-4"
                 >
                   <p *ngIf="registerForm.get('lastName')?.errors?.['required']">
-                    <span class="font-medium">Oops!</span> lastName is required
+                    <span class="font-medium">Oops!</span> Firstname is required
                   </p>
                   <p
                     *ngIf="registerForm.get('lastName')?.errors?.['minlength']"
                   >
-                    <span class="font-medium">Oops!</span> The lastName must be
-                    at least 4 characters long.
+                    <span class="font-medium">Oops!</span> The first name must
+                    be at least 4 characters long.
                   </p>
                 </div>
               </div>
@@ -97,7 +96,7 @@
                     registerForm.get('firstName')?.touched &&
                     registerForm.get('firstName')?.invalid
                   "
-                  class="absolute text-invalid -bottom-5"
+                  class="absolute text-invalid -bottom-4"
                 >
                   <p
                     *ngIf="registerForm.get('firstName')?.errors?.['required']"

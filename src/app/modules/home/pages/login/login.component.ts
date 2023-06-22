@@ -23,4 +23,8 @@ export class LoginComponent implements OnInit {
       ...passwordValidator
     })
   }
+  saveLoginForm() {
+    // eslint-disable-next-line no-console
+    console.log(this.loginForm)
+  }
 }
