@@ -4,6 +4,11 @@
   display  : block;
   @apply border text-center px-2 py-3 transition-all duration-300 rounded opacity-95 border-transparent;
 
+  &:disabled,
+  &:disabled:hover {
+    @apply opacity-70 cursor-not-allowed;
+  }
+
   &:hover {
     @apply opacity-100;
   }

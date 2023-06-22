@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
+import { Router } from '@angular/router'
 import {
   emailValidator,
   passwordValidator,
@@ -11,7 +12,7 @@ import {
   templateUrl: './signup.component.html'
 })
 export class SignupComponent implements OnInit {
-  constructor(private _fb: FormBuilder) {}
+  constructor(private _fb: FormBuilder, private _router: Router) {}
   public registerForm!: FormGroup
   isChange: boolean = false
   viewPassword() {
@@ -30,5 +31,6 @@ export class SignupComponent implements OnInit {
   saveRegisterForm() {
     // eslint-disable-next-line no-console
     console.dir(this.registerForm)
+    this._router.navigate(['/login'])
   }
 }
