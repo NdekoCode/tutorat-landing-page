@@ -31,6 +31,14 @@
   @extend .input;
   @apply relative ring-2 ring-transparent;
 
+
+  &.invalid {
+    input::placeholder {
+      @apply placeholder-red-400;
+
+    }
+  }
+
   &:active,
   :focus {
 
@@ -56,7 +64,7 @@
 
   input {
 
-    @apply outline-none h-full w-full bg-transparent;
+    @apply outline-none h-full w-max bg-transparent;
 
     &:placeholder {
       color: #8391A1;
@@ -66,4 +74,16 @@
 
 .input-label {
   @apply block mb-1 text-base text-[#5A5A5D];
+}
+
+.invalid {
+  @apply bg-red-50 border-red-500 text-red-900 placeholder-red-400;
+
+  &.invalid:focus {
+    @apply ring-red-500 border-red-500;
+  }
+}
+
+.text-invalid {
+  @apply mt-1 text-xs text-red-600;
 }
