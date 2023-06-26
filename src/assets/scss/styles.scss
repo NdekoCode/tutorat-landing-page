@@ -79,3 +79,15 @@
 .back-link {
   @apply flex items-center justify-center w-10 h-10 mb-5 border border-gray-200 rounded transition-all duration-300;
 }
+
+.alert {
+  @apply flex w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-md;
+
+  &__body {
+    @apply flex items-start justify-between w-full px-2 py-2;
+  }
+
+  &__content {
+    @apply flex flex-col ml-2;
+  }
+}

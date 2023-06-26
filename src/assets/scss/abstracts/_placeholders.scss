@@ -114,6 +114,15 @@
   animation: fadeRight var(--transition-1) forwards;
 }
 
+.fade-trans {
+  animation: fadeTranslate var(--transition-3) forwards;
+}
+
+.fade-trans-reverse {
+  animation: fadeTranslateReverse var(--transition-3) forwards;
+
+}
+
 %gradientText {
 
   color                  : transparent;
