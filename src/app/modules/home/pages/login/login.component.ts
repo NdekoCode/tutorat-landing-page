@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http'
 import { Component, OnInit } from '@angular/core'
 import { FormBuilder, FormGroup } from '@angular/forms'
 import { emailValidator, passwordValidator } from 'src/app/core/utilities/forms'
@@ -13,7 +14,7 @@ export class LoginComponent implements OnInit {
   }
   isChange: boolean = false
   public loginForm!: FormGroup
-  constructor(private _fb: FormBuilder) {}
+  constructor(private _fb: FormBuilder, private _http: HttpClient) {}
   viewPassword() {
     this.isChange = !this.isChange
   }

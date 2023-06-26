@@ -30,6 +30,11 @@ const routes: Routes = [
   },
 
   {
+    path: 'verify-user',
+    component: ConfirmationComponent
+  },
+
+  {
     path: 'confirmation',
     component: ConfirmationComponent
   }
