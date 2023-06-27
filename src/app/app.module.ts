@@ -4,13 +4,13 @@ import { SharedModule } from './modules/shared/shared.module'
 
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
-import { HomeModule } from './modules/home/home.module'
+import { AuthModule } from './modules/auth/auth.module'
 import { InputContainerComponent } from './shared/components/input-container/input-container.component'
 import { InputComponent } from './shared/components/input/input.component'
 
 @NgModule({
   declarations: [AppComponent, InputComponent, InputContainerComponent],
-  imports: [BrowserModule, AppRoutingModule, SharedModule, HomeModule],
+  imports: [BrowserModule, AppRoutingModule, SharedModule, AuthModule],
   providers: [],
   bootstrap: [AppComponent]
 })

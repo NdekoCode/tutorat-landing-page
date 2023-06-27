@@ -10,6 +10,11 @@ import { VerifyComponent } from './pages/verify/verify.component'
 
 const routes: Routes = [
   {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full'
+  },
+  {
     path: 'login',
     component: LoginComponent
   },
@@ -49,4 +54,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class HomeRoutingModule {}
+export class AuthRoutingModule {}

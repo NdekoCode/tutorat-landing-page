@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common'
 import { NgModule } from '@angular/core'
 import { ReactiveFormsModule } from '@angular/forms'
 import { AlertComponent } from 'src/app/shared/components/alert/alert.component'
-import { HomeRoutingModule } from './home-routing.module'
+import { AuthRoutingModule } from './auth-routing.module'
 import { ConfirmationComponent } from './pages/confirmation/confirmation.component'
 import { ForgetPasswordComponent } from './pages/forget-password/forget-password.component'
 import { LoginComponent } from './pages/login/login.component'
@@ -23,6 +23,6 @@ import { VerifyComponent } from './pages/verify/verify.component'
     VerifyComponent
   ],
   exports: [AlertComponent],
-  imports: [CommonModule, ReactiveFormsModule, HomeRoutingModule]
+  imports: [CommonModule, ReactiveFormsModule, AuthRoutingModule]
 })
-export class HomeModule {}
+export class AuthModule {}

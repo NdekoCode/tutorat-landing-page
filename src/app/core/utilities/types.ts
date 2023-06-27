@@ -8,6 +8,7 @@ export type ErrorRequest = {
   message: string | string[]
   error: string
 }
+
 export type Alert = {
   isShown: boolean
   alertTitle: string
@@ -31,4 +32,8 @@ export interface IsignupCredentials {
 export interface IToken {
   accessToken: string
   refreshToken: string
+}
+export interface IAlertSuccess {
+  statusCode: number
+  message: string
 }
