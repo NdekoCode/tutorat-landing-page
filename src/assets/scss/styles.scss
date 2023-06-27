@@ -81,7 +81,7 @@
 }
 
 .alert {
-  @apply flex w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-md;
+  @apply flex w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg absolute bottom-60 right-5 transition-all;
 
   &__body {
     @apply flex items-start justify-between w-full px-2 py-2;
@@ -90,4 +90,32 @@
   &__content {
     @apply flex flex-col ml-2;
   }
+}
+
+.bar {
+  @apply w-2;
+}
+
+.bar-success,
+.bar-error,
+.bar-infos,
+.bar-warning {
+  @extend .bar;
+}
+
+
+.bar-error {
+  @apply bg-red-600;
+}
+
+.bar-success {
+  @apply bg-green-600;
+}
+
+.bar-warning {
+  @apply bg-yellow-600;
+}
+
+.bar-infos {
+  @apply bg-blue-600;
 }

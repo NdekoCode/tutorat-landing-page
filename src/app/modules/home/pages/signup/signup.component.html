@@ -277,21 +277,21 @@
               </div>
             </div>
             <div class="field-container">
-              <label for="confpassword" class="input-label"
+              <label for="confirmPassword" class="input-label"
                 >Confirmer mot de passe</label
               >
               <div
                 class="input-icon"
                 [ngClass]="{
                   invalid:
-                    registerForm.get('confpassword')?.touched &&
-                    registerForm.get('confpassword')?.invalid
+                    registerForm.get('confirmPassword')?.touched &&
+                    registerForm.get('confirmPassword')?.invalid
                 }"
               >
                 <input
                   [type]="isChange ? 'text' : 'password'"
-                  id="confpassword"
-                  formControlName="confpassword"
+                  id="confirmPassword"
+                  formControlName="confirmPassword"
                   autocomplete="true"
                   placeholder="Confirmez votre mot de passe"
                 /><svg
@@ -321,26 +321,47 @@
               </div>
               <div
                 *ngIf="
-                  registerForm.get('confpassword')?.errors &&
-                  registerForm.get('confpassword')?.invalid &&
-                  registerForm.get('confpassword')?.touched
+                  registerForm.get('confirmPassword')?.errors &&
+                  registerForm.get('confirmPassword')?.invalid &&
+                  registerForm.get('confirmPassword')?.touched
                 "
                 class="text-invalid"
               >
                 <p
-                  *ngIf="registerForm.get('confpassword')?.errors?.['required']"
+                  *ngIf="registerForm.get('confirmPassword')?.errors?.['required']"
                 >
-                  <span class="font-medium">Oops!</span> Confpassword is
+                  <span class="font-medium">Oops!</span> confirmPassword is
                   required
                 </p>
               </div>
             </div>
             <div class="mt-3 field-container">
               <button
+                class="flex items-center justify-center btn gap-x-1 btn-form btn-dark btn-full"
                 [disabled]="registerForm.invalid"
-                class="btn btn-form btn-dark btn-full"
               >
-                S’inscrire
+                <svg
+                  *ngIf="isLoading"
+                  class="w-5 h-5 mr-3 -ml-1 text-indigo-500 animate-spin"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    class="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    stroke-width="4"
+                  ></circle>
+                  <path
+                    class="opacity-75"
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                  ></path>
+                </svg>
+                {{ isLoading ? 'Loading...' : 'S’inscrire' }}
               </button>
             </div>
             <div class="flex items-center justify-between mt-3 field-container">
@@ -418,3 +439,11 @@
     </div>
   </div>
 </section>
+
+<app-alert
+  *ngIf="submitForm"
+  [alertTitle]="alert.alertTitle"
+  [isShown]="alert.isShown"
+  [alertType]="alert.alertType"
+  [alertMessage]="alert.alertMessage"
+/>

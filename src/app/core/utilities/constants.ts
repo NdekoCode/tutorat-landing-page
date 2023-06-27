@@ -1,0 +1,4 @@
+export const GLOBAR_CONSTANTS = {
+  ALERT_TIMEOUT: 6500,
+  AUTH_TIMEOUT: 6500
+}

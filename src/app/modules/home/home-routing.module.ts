@@ -6,6 +6,7 @@ import { LoginComponent } from './pages/login/login.component'
 import { NewPasswordComponent } from './pages/new-password/new-password.component'
 import { SignupComponent } from './pages/signup/signup.component'
 import { VerifyPasswordComponent } from './pages/verify-password/verify-password.component'
+import { VerifyComponent } from './pages/verify/verify.component'
 
 const routes: Routes = [
   {
@@ -19,6 +20,10 @@ const routes: Routes = [
   {
     path: 'forget-password',
     component: ForgetPasswordComponent
+  },
+  {
+    path: 'verify',
+    component: VerifyComponent
   },
   {
     path: 'new-password',

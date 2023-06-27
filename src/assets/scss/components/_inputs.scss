@@ -87,3 +87,52 @@
 .text-invalid {
   @apply mt-1 text-xs text-red-600;
 }
+
+.error-color {
+  @apply text-red-500;
+}
+
+.success-color {
+  @apply text-green-500;
+}
+
+.infos-color {
+  @apply text-blue-500;
+}
+
+.warning-color {
+  @apply text-yellow-500;
+}
+
+
+.bg-error {
+  @apply bg-red-500 transition-colors duration-300;
+
+  &:hover {
+    @apply bg-red-600
+  }
+}
+
+.bg-success {
+  @apply bg-green-500 transition-colors duration-300;
+
+  &:hover {
+    @apply bg-green-600
+  }
+}
+
+.bg-infos {
+  @apply bg-blue-500 transition-colors duration-300;
+
+  &:hover {
+    @apply bg-blue-600
+  }
+}
+
+.bg-warning {
+  @apply bg-yellow-500 transition-colors duration-300;
+
+  &:hover {
+    @apply bg-yellow-600
+  }
+}

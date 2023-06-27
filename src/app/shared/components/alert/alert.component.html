@@ -1,10 +1,10 @@
 <div
-  class="mb-4 fadeUp"
+  class="mb-4"
   [ngClass]="isShown ? 'fade-trans' : 'fade-trans-reverse'"
   *ngIf="isShown"
 >
   <div class="alert">
-    <div class="w-2" [class]="alertColor"></div>
+    <div [class]="alertColor"></div>
     <div class="alert__body">
       <div class="alert__content">
         <label class="text-gray-800">{{ alertTitle }}</label>
