@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router'
 import { ConfirmationComponent } from './pages/confirmation/confirmation.component'
 import { ForgetPasswordComponent } from './pages/forget-password/forget-password.component'
 import { LoginComponent } from './pages/login/login.component'
+import { LogoutComponent } from './pages/logout/logout.component'
 import { NewPasswordComponent } from './pages/new-password/new-password.component'
 import { SignupComponent } from './pages/signup/signup.component'
 import { VerifyPasswordComponent } from './pages/verify-password/verify-password.component'
@@ -47,6 +48,10 @@ const routes: Routes = [
   {
     path: 'confirmation',
     component: ConfirmationComponent
+  },
+  {
+    path: 'logout',
+    component: LogoutComponent
   }
 ]
 
