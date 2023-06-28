@@ -25,4 +25,10 @@ export class TokenService {
     const token = this.getToken()
     return token.accessToken.length >= 150 && token.refreshToken.length >= 150
   }
+  clearToken(key: string = 'userToken'): void {
+    if (key.trim().length > 0) {
+      this.tokenKey = key
+    }
+    window.localStorage.removeItem(this.tokenKey)
+  }
 }

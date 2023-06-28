@@ -29,4 +29,7 @@ export class AuthService {
   isLogged(): boolean {
     return this.token.tokenExists()
   }
+  logout(): void {
+    this.token.clearToken()
+  }
 }
