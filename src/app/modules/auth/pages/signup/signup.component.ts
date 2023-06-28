@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { Router } from '@angular/router'
-import { GLOBAR_CONSTANTS } from 'src/app/core/utilities/constants'
+import { GLOBAL_CONSTANTS } from 'src/app/core/utilities/constants'
 import {
   emailValidator,
   passwordValidator,
@@ -65,7 +65,7 @@ export class SignupComponent implements OnInit, OnDestroy {
             this.timer = window.setTimeout(() => {
               this._router.navigate(['/login'])
               window.clearTimeout(this.timer)
-            }, GLOBAR_CONSTANTS.AUTH_TIMEOUT)
+            }, GLOBAL_CONSTANTS.AUTH_TIMEOUT)
             this.isLoading = false
           },
           error: (httpErrorResponse) => {

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
 import { ErrorComponent } from './components/error/error.component'
+import { AuthGuard } from './core/guards/auth.guard'
 
 const routes: Routes = [
   {
@@ -12,7 +13,8 @@ const routes: Routes = [
   {
     path: 'myspace',
     loadChildren: () =>
-      import('./modules/myspace/myspace.module').then((m) => m.MySpaceModule)
+      import('./modules/myspace/myspace.module').then((m) => m.MySpaceModule),
+    canActivate: [AuthGuard]
   },
   {
     path: '**',

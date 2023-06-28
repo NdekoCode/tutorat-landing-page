@@ -1,4 +1,5 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core'
+import { GLOBAL_CONSTANTS } from 'src/app/core/utilities/constants'
 import { AlertColorMap, AlertType } from 'src/app/core/utilities/types'
 
 @Component({
@@ -24,7 +25,7 @@ export class AlertComponent implements OnInit, OnDestroy {
     this.timer = window.setTimeout(() => {
       this.isShown = false
       window.clearTimeout(this.timer)
-    }, 7500)
+    }, GLOBAL_CONSTANTS.ALERT_TIMEOUT)
   }
   closeAlert() {
     this.isShown = !this.isShown
