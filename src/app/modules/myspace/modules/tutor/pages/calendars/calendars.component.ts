@@ -2,7 +2,6 @@ import { Component } from '@angular/core'
 
 @Component({
   selector: 'app-calendars',
-  templateUrl: './calendars.component.html',
-  styleUrls: ['./calendars.component.scss']
+  templateUrl: './calendars.component.html'
 })
 export class CalendarsComponent {}
