@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common'
 import { NgModule } from '@angular/core'
-import { MyspaceLayoutComponent } from './components/myspace-layout/myspace-layout.component'
+import { MyspaceLayoutComponent } from './myspace-layout.component'
 import { MySpaceRoutingModule } from './myspace-routing.module'
 import { CalendarsComponent } from './pages/calendars/calendars.component'
 import { MessagesComponent } from './pages/messages/messages.component'

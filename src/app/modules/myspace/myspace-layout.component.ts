@@ -2,7 +2,6 @@ import { Component } from '@angular/core'
 
 @Component({
   selector: 'app-myspace-layout',
-  templateUrl: './myspace-layout.component.html',
-  styleUrls: ['./myspace-layout.component.scss']
+  templateUrl: './myspace-layout.component.html'
 })
 export class MyspaceLayoutComponent {}
