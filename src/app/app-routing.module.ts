@@ -8,6 +8,16 @@ const routes: Routes = [
     loadChildren: () =>
       import('./modules/auth/auth.module').then((m) => m.AuthModule),
     pathMatch: 'full'
+  },
+  {
+    path: 'myspace',
+    loadChildren: () =>
+      import('./modules/myspace/myspace.module').then((m) => m.MySpaceModule)
+  },
+  {
+    path: '**',
+    redirectTo: '',
+    pathMatch: 'full'
   }
 ]
 
