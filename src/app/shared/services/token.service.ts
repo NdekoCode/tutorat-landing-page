@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core'
+import { hasProperties, isEmptyObject } from 'src/app/core/utilities/helpers'
 import { IToken } from 'src/app/core/utilities/types'
 
 @Injectable({
@@ -22,8 +23,15 @@ export class TokenService {
     return this.token
   }
   tokenExists(): boolean {
-    const token = this.getToken()
-    return token.accessToken.length >= 150 && token.refreshToken.length >= 150
+    this.token = this.getToken()
+    const condition =
+      !isEmptyObject(this.token) &&
+      hasProperties(this.token, ['accessToken', 'refreshToken'])
+    return (
+      condition &&
+      this.token.accessToken.length >= 150 &&
+      this.token.refreshToken.length >= 150
+    )
   }
   clearToken(key: string = 'userToken'): void {
     if (key.trim().length > 0) {
