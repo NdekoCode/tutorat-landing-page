@@ -4,7 +4,7 @@ import { UOverviewComponent } from './pages/u-overview/u-overview.component'
 
 const routes: Routes = [
   {
-    path: '/:id',
+    path: ':id',
     component: UOverviewComponent
   }
 ]

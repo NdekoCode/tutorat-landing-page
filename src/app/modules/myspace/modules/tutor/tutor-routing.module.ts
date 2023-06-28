@@ -6,7 +6,7 @@ import { OverviewComponent } from './pages/overview/overview.component'
 
 const routes: Routes = [
   {
-    path: '/:id',
+    path: ':id',
     component: OverviewComponent
   },
   {
