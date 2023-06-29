@@ -21,4 +21,12 @@ describe('SignupComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy()
   })
+  xit('SHould create a new user', () => {
+    // Create user
+    // add book
+    // add another book
+    // get book list
+    // check contain both books in same order
+    throw new Error('Not run')
+  })
 })
