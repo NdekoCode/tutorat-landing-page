@@ -54,7 +54,8 @@
                   loginForm.get('email')?.invalid &&
                   loginForm.get('email')?.touched
                 "
-                class="text-invalid email-errors"
+                class="text-invalid"
+                id="email-errors"
               >
                 <p *ngIf="loginForm.get('email')?.errors?.['required']">
                   <span class="font-medium">Oops!</span> Email is required
@@ -114,7 +115,8 @@
                   loginForm.get('password')?.invalid &&
                   loginForm.get('password')?.touched
                 "
-                class="text-invalid password-errors"
+                class="text-invalid"
+                id="password-errors"
               >
                 <p *ngIf="loginForm.get('password')?.errors?.['required']">
                   <span class="font-medium">Oops!</span> Password is required
