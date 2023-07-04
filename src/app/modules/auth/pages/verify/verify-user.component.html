@@ -1,0 +1,25 @@
+<app-centered-skeleton *ngIf="isSend" />
+<app-alert-screen
+  *ngIf="isSend"
+  [validVerification]="verifiedUser"
+  [alertTitle]="alert.alertTitle"
+  [isShown]="alert.isShown"
+  [alertType]="alert.alertType"
+  [alertMessage]="alert.alertMessage"
+>
+  <a
+    routerLink="/myspace"
+    *ngIf="verifiedUser; else notVerify"
+    class="px-5 py-2 mb-2 text-sm font-medium tracking-wider text-white rounded-full shadow-sm md:mb-0 hover:shadow-lg"
+    [class]="alertBgColor"
+    >Go to HomePage</a
+  >
+  <ng-template #notVerify>
+    <button
+      class="px-5 py-2 mb-2 text-sm font-medium tracking-wider text-white rounded-full shadow-sm md:mb-0 hover:shadow-lg"
+      [class]="alertBgColor"
+    >
+      Resend the email link
+    </button>
+  </ng-template>
+</app-alert-screen>

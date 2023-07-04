@@ -54,7 +54,8 @@
         <ng-template #notValidVerification>
           <svg
             fill="currentColor"
-            class="flex items-center w-16 h-16 mx-auto mt-3 text-red-500"
+            class="flex items-center w-16 h-16 mx-auto mt-3"
+            [class]="alertColor"
             clip-rule="evenodd"
             viewBox="0 0 512 512"
             xmlns="http://www.w3.org/2000/svg"
@@ -66,26 +67,15 @@
           </svg>
         </ng-template>
         <h2 class="py-4 text-xl font-bold">
-          Your account was verified successfully
+          {{ alertTitle }}
         </h2>
         <p class="px-8 text-sm text-gray-500">
-          Do you really want to delete your account? This process cannot be
-          undone
+          {{ alertMessage }}
         </p>
       </div>
       <!--footer-->
       <div class="p-3 mt-2 space-x-4 text-center md:block">
-        <button
-          class="px-5 py-2 mb-2 text-sm font-medium tracking-wider text-gray-600 bg-white border rounded-full shadow-sm md:mb-0 hover:shadow-lg hover:bg-gray-100"
-        >
-          Go
-        </button>
-        <button
-          class="px-5 py-2 mb-2 text-sm font-medium tracking-wider text-white rounded-full shadow-sm md:mb-0 hover:shadow-lg"
-          [class]="alertBgColor"
-        >
-          Go to LoginPage
-        </button>
+        <ng-content></ng-content>
       </div>
     </div>
   </div>

@@ -2,10 +2,16 @@ import { Component, Input, OnInit } from '@angular/core'
 import { AlertColorMap, AlertType } from 'src/app/core/utilities/types'
 
 @Component({
-  selector: 'app-verify',
-  templateUrl: './verify.component.html'
+  selector: 'app-alert-screen',
+  templateUrl: './alert-screen.component.html',
+  styleUrls: ['./alert-screen.component.scss']
 })
-export class VerifyComponent implements OnInit {
+export class AlertScreenComponent implements OnInit {
+  @Input() alertType: AlertType = 'error'
+  @Input() isShown: boolean = false
+  @Input() alertTitle: string = ''
+  @Input() alertMessage: string = ''
+  alertColor: string = ''
   alertColorMap: AlertColorMap = {
     error: 'error-color',
     success: 'success-color',
@@ -19,13 +25,9 @@ export class VerifyComponent implements OnInit {
     warning: 'bg-warning',
     infos: 'bg-infos'
   }
-  alertType: AlertType = 'error'
+
   @Input() validVerification: boolean = true
-  @Input() isShown: boolean = true
-  alertColor: string = ''
   alertBgColor: string = ''
-  @Input() alertTitle: string = ''
-  @Input() alertMessage: string = ''
   ngOnInit() {
     this.alertType = this.validVerification ? 'success' : 'error'
     this.alertColor = this.alertColorMap[this.alertType]
