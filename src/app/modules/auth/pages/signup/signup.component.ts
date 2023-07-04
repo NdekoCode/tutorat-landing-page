@@ -16,9 +16,9 @@ import { AuthService } from 'src/app/shared/services/auth.service'
 })
 export class SignupComponent implements OnInit, OnDestroy {
   constructor(
-    private _fb: FormBuilder,
-    private _router: Router,
-    private _authService: AuthService
+    public fb: FormBuilder,
+    public router: Router,
+    public authService: AuthService
   ) {}
   alert: Alert = {
     isShown: false,
@@ -35,7 +35,7 @@ export class SignupComponent implements OnInit, OnDestroy {
     this.isChange = !this.isChange
   }
   ngOnInit(): void {
-    this.registerForm = this._fb.group({
+    this.registerForm = this.fb.group({
       lastName: ['', [Validators.required, Validators.minLength(2)]],
       firstName: ['', [Validators.required, Validators.minLength(2)]],
       ...phoneValidator,
@@ -48,7 +48,7 @@ export class SignupComponent implements OnInit, OnDestroy {
     this.submitForm = false
     this.isLoading = true
     if (this.registerForm.valid) {
-      this._authService
+      this.authService
         .signup(this.registerForm.value)
 
         .subscribe({
@@ -63,7 +63,7 @@ export class SignupComponent implements OnInit, OnDestroy {
                 this.registerForm.value.email
             }
             this.timer = window.setTimeout(() => {
-              this._router.navigate(['/login'])
+              this.router.navigate(['/login'])
               window.clearTimeout(this.timer)
             }, GLOBAL_CONSTANTS.AUTH_TIMEOUT)
             this.isLoading = false
