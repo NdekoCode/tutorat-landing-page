@@ -43,3 +43,37 @@ export interface IAlertSuccess {
   statusCode: number
   message: string
 }
+export interface Tutor {
+  photo: string
+  ville: string
+  pays: string
+  address: string
+  codePostal: string
+  anneeExperience: number
+  niveauEtudes: string
+  domaineEtudes: string
+  periodeTemps: string
+  actuellementInscrit: boolean
+  depuisMois: string
+  depuisAnnee: string
+  timezone: string
+  jours: {
+    lundi: {
+      active: boolean
+      debut: string
+      fin: string
+    }
+    mardi: {
+      active: boolean
+      debut: string
+      fin: string
+    }
+    // Ajoutez les autres jours de la semaine de la même manière
+  }
+  // Ajoutez les propriétés pour les autres étapes du formulaire
+}
+export interface JoursSemaine {
+  lundi: boolean
+  mardi: boolean
+  // Ajoutez les autres jours de la semaine
+}

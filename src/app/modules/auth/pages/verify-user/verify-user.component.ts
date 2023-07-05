@@ -3,46 +3,41 @@ import { ActivatedRoute } from '@angular/router'
 import { VerifyService } from 'src/app/shared/services/verify.service'
 
 import { isExists } from 'src/app/core/utilities/helpers'
-import { Alert, AlertColorMap, AlertType } from 'src/app/core/utilities/types'
+import { AlertService } from 'src/app/shared/services/alert.service'
 @Component({
   selector: 'app-verify',
   templateUrl: './verify-user.component.html'
 })
 export class VerifyUserComponent implements OnInit {
-  alertType: AlertType = 'error'
-  alert: Alert = {
-    isShown: false,
-    alertType: 'error',
-    alertTitle: '',
-    alertMessage: ''
-  }
   validVerification: boolean = true
-  alertColor: string = ''
-  alertBgColor: string = ''
   token!: string
   constructor(
     private route: ActivatedRoute,
-    private verifyService: VerifyService
+    private verifyService: VerifyService,
+    private alertService: AlertService
   ) {}
   isSend: boolean = false
   verifiedUser: boolean = false
-  alertColorMap: AlertColorMap = {
-    error: 'error-color',
-    success: 'success-color',
-    warning: 'warning-color',
-    infos: 'infos-color'
-  }
 
-  alertBgMap: AlertColorMap = {
-    error: 'bg-error',
-    success: 'bg-success',
-    warning: 'bg-warning',
-    infos: 'bg-infos'
+  get alert() {
+    return this.alertService.alert
+  }
+  get alertBgColor() {
+    return this.alertService.alertBgColor
+  }
+  get alertColorMap() {
+    return this.alertService.alertColorMap
+  }
+  get alertColor() {
+    return this.alertService.alertColor
+  }
+  get alertBgMap() {
+    return this.alertService.alertBgMap
   }
   ngOnInit() {
     this.isSend = true
     this.verifiedUser = false
-    this.alertType = this.validVerification ? 'success' : 'error'
+    this.alertService.alertType = this.validVerification ? 'success' : 'error'
 
     this.route.queryParams.subscribe((params) => {
       this.token = this.route.snapshot.paramMap.get('token') || params['token']
@@ -50,50 +45,43 @@ export class VerifyUserComponent implements OnInit {
         this.verifyService.verifyUser(this.token).subscribe({
           next: (response) => {
             this.verifiedUser = true
+            this.alertService.addAlert(
+              'La Verification a reussis',
+              response?.message,
+              'success'
+            )
 
-            this.alert = {
-              isShown: true,
-              alertTitle: 'La Verification a reussis',
-              alertType: 'success',
-              alertMessage: response?.message
-            }
-            this.alertType = this.validVerification ? 'success' : 'error'
-            this.alertColor = this.alertColorMap[this.alertType]
-            this.alertBgColor = this.alertBgMap[this.alertType]
+            this.alertService.alertType = this.validVerification
+              ? 'success'
+              : 'error'
+            this.alertService.initializeAlertColors()
           },
           error: (error) => {
             this.validVerification = false
             if (error.statusCode === 401) {
               this.verifiedUser = false
-              this.alert = {
-                isShown: true,
-                alertTitle:
-                  "Erreur survenus lors du verification de l'utilisateur",
-                alertType: 'error',
-                alertMessage: error.error.message
-              }
+              this.alertService.addAlert(
+                "Erreur survenus lors du verification de l'utilisateur",
+                error.error.message
+              )
             } else {
-              this.alert = {
-                isShown: true,
-                alertTitle: 'La Verification a échouer',
-                alertType: 'error',
-                alertMessage: error.error.message
-              }
+              this.alertService.addAlert(
+                'La Verification a échouer',
+                error.error.message
+              )
             }
 
-            this.alertType = this.validVerification ? 'success' : 'error'
-            this.alertColor = this.alertColorMap[this.alertType]
-            this.alertBgColor = this.alertBgMap[this.alertType]
+            this.alertService.alertType = this.validVerification
+              ? 'success'
+              : 'error'
+            this.alertService.initializeAlertColors()
           }
         })
       } else {
-        this.alert = {
-          isShown: true,
-          alertTitle: "Erreur survenus lors du verification de l'utilisateur",
-          alertType: 'error',
-          alertMessage:
-            'Le token que vous avez recuperer dans la requete est vide'
-        }
+        this.alertService.addAlert(
+          "Erreur survenus lors du verification de l'utilisateur",
+          'Le token que vous avez recuperer dans la requete est vide'
+        )
       }
     })
   }

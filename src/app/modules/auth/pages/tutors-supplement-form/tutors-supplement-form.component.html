@@ -1,0 +1,213 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-8">
+      <form [formGroup]="tutorSupplementForm" (ngSubmit)="saveTutorForm()">
+        <!-- Etape 1: Informations personnelles -->
+        <div *ngIf="currentStep === 1">
+          <h2>Informations personnelles</h2>
+          <label for="photo">Photo de profil :</label>
+          <input type="text" id="photo" formControlName="photo" />
+
+          <label for="ville">Ville :</label>
+          <input type="text" id="ville" formControlName="ville" />
+
+          <label for="pays">Pays :</label>
+          <input type="text" id="pays" formControlName="pays" />
+
+          <label for="address">Adresse :</label>
+          <input type="text" id="address" formControlName="address" />
+
+          <label for="codePostal">Code postal :</label>
+          <input type="text" id="codePostal" formControlName="codePostal" />
+
+          <button type="button" class="btn btn-primary" (click)="nextStep()">
+            Suivant
+          </button>
+        </div>
+
+        <!-- Etape 2: Informations professionnelles -->
+        <div *ngIf="currentStep === 2">
+          <h2>Informations professionnelles</h2>
+          <label for="anneeExperience">Année d'expérience :</label>
+          <input
+            type="text"
+            id="anneeExperience"
+            formControlName="anneeExperience"
+          />
+
+          <label for="niveauEtudes">Niveau d'études :</label>
+          <input type="text" id="niveauEtudes" formControlName="niveauEtudes" />
+
+          <label for="domaineEtudes">Domaine d'études :</label>
+          <input
+            type="text"
+            id="domaineEtudes"
+            formControlName="domaineEtudes"
+          />
+
+          <label for="periodeTemps">Période de temps :</label>
+          <input type="text" id="periodeTemps" formControlName="periodeTemps" />
+
+          <label for="actuellementInscrit">Actuellement inscrit :</label>
+          <input
+            type="checkbox"
+            id="actuellementInscrit"
+            formControlName="actuellementInscrit"
+          />
+
+          <label for="depuisMois">Mois de début d'inscription :</label>
+          <input type="text" id="depuisMois" formControlName="depuisMois" />
+
+          <label for="depuisAnnee">Année de début d'inscription :</label>
+          <input type="text" id="depuisAnnee" formControlName="depuisAnnee" />
+
+          <button
+            type="button"
+            class="btn btn-primary"
+            (click)="previousStep()"
+          >
+            Précédent
+          </button>
+          <button type="button" class="btn btn-primary" (click)="nextStep()">
+            Suivant
+          </button>
+        </div>
+
+        <!-- Etape 3: Disponibilité -->
+        <div *ngIf="currentStep === 3">
+          <h2>Disponibilité</h2>
+          <label for="timezone">Timezone :</label>
+          <input type="text" id="timezone" formControlName="timezone" />
+
+          <div formGroupName="jours">
+            <label for="lundi">Lundi :</label>
+            <input type="checkbox" id="lundi" formControlName="lundi.active" />
+            <input type="text" id="lundiDebut" formControlName="lundi.debut" />
+            <input type="text" id="lundiFin" formControlName="lundi.fin" />
+
+            <!-- Ajoutez les autres jours de la semaine de la même manière -->
+            <label for="mardi">Mardi :</label>
+            <input type="checkbox" id="mardi" formControlName="mardi.active" />
+            <input type="text" id="mardiDebut" formControlName="mardi.debut" />
+            <input type="text" id="mardiFin" formControlName="mardi.fin" />
+
+            <!-- ... -->
+          </div>
+
+          <button
+            type="button"
+            class="btn btn-primary"
+            (click)="previousStep()"
+          >
+            Précédent
+          </button>
+          <button type="button" class="btn btn-primary" (click)="nextStep()">
+            Suivant
+          </button>
+        </div>
+
+        <!-- Etape 4: Préférences de tutorat -->
+        <div *ngIf="currentStep === 4">
+          <h2>Préférences de tutorat</h2>
+          <label for="sujet">Sujet :</label>
+          <input type="text" id="sujet" formControlName="sujet" />
+
+          <label for="niveauScolaire">Niveau scolaire :</label>
+          <input
+            type="text"
+            id="niveauScolaire"
+            formControlName="niveauScolaire"
+          />
+
+          <label for="typeTutorat">Type de tutorat :</label>
+          <input type="text" id="typeTutorat" formControlName="typeTutorat" />
+
+          <label for="typeEleve">Type d'élève :</label>
+          <input type="text" id="typeEleve" formControlName="typeEleve" />
+
+          <button
+            type="button"
+            class="btn btn-primary"
+            (click)="previousStep()"
+          >
+            Précédent
+          </button>
+          <button type="button" class="btn btn-primary" (click)="nextStep()">
+            Suivant
+          </button>
+        </div>
+
+        <!-- Etape 5: Compétences en communication -->
+        <div *ngIf="currentStep === 5">
+          <h2>Compétences en communication</h2>
+          <label for="communicationEcrite"
+            >Compétences en communication écrite :</label
+          >
+          <input
+            type="text"
+            id="communicationEcrite"
+            formControlName="communicationEcrite"
+          />
+
+          <label for="communicationOrale"
+            >Compétences en communication orale :</label
+          >
+          <input
+            type="text"
+            id="communicationOrale"
+            formControlName="communicationOrale"
+          />
+
+          <label for="resolutionProblemes"
+            >Compétences en résolution de problèmes :</label
+          >
+          <input
+            type="text"
+            id="resolutionProblemes"
+            formControlName="resolutionProblemes"
+          />
+
+          <label for="priseDecision">Compétences en prise de décision :</label>
+          <input
+            type="text"
+            id="priseDecision"
+            formControlName="priseDecision"
+          />
+
+          <button
+            type="button"
+            class="btn btn-primary"
+            (click)="previousStep()"
+          >
+            Précédent
+          </button>
+          <button type="button" class="btn btn-primary" (click)="nextStep()">
+            Suivant
+          </button>
+        </div>
+
+        <!-- Etape 6: Antécédents judiciaires -->
+        <div *ngIf="currentStep === 6">
+          <h2>Antécédents judiciaires</h2>
+          <label for="verificationAntecedents"
+            >Vérification des antécédents judiciaires :</label
+          >
+          <input
+            type="text"
+            id="verificationAntecedents"
+            formControlName="verificationAntecedents"
+          />
+
+          <button
+            type="button"
+            class="btn btn-primary"
+            (click)="previousStep()"
+          >
+            Précédent
+          </button>
+          <button type="submit" class="btn btn-primary">Soumettre</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

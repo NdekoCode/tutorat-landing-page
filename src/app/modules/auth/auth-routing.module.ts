@@ -7,6 +7,7 @@ import { LogoutComponent } from './pages/logout/logout.component'
 import { OTPVerificationComponent } from './pages/otp-verification/otp-verification.component'
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component'
 import { SignupComponent } from './pages/signup/signup.component'
+import { TutorsSupplementFormComponent } from './pages/tutors-supplement-form/tutors-supplement-form.component'
 import { VerifyUserComponent } from './pages/verify-user/verify-user.component'
 
 const routes: Routes = [
@@ -38,6 +39,10 @@ const routes: Routes = [
   {
     path: 'verify-password',
     component: OTPVerificationComponent
+  },
+  {
+    path: 'tutors-form',
+    component: TutorsSupplementFormComponent
   },
 
   {

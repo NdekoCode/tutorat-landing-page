@@ -11,6 +11,7 @@ import { OTPVerificationComponent } from './pages/otp-verification/otp-verificat
 import { ForgetPasswordComponent } from './pages/forget-password/forget-password.component'
 import { SignupComponent } from './pages/signup/signup.component'
 import { VerifyUserComponent } from './pages/verify-user/verify-user.component'
+import { TutorsSupplementFormComponent } from './pages/tutors-supplement-form/tutors-supplement-form.component'
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { VerifyUserComponent } from './pages/verify-user/verify-user.component'
     OTPVerificationComponent,
     ConfirmationComponent,
     VerifyUserComponent,
-    LogoutComponent
+    LogoutComponent,
+    TutorsSupplementFormComponent
   ],
   exports: [],
   imports: [CommonModule, ReactiveFormsModule, AuthRoutingModule, SharedModule]

@@ -27,7 +27,7 @@ export class AlertService {
     warning: 'bg-warning',
     infos: 'bg-infos'
   }
-  constructor() {}
+
   addAlert(
     alertTitle: string,
     alertMessage: string,
