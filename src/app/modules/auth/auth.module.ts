@@ -4,12 +4,12 @@ import { ReactiveFormsModule } from '@angular/forms'
 import { SharedModule } from '../shared/shared.module'
 import { AuthRoutingModule } from './auth-routing.module'
 import { ConfirmationComponent } from './pages/confirmation/confirmation.component'
-import { ForgetPasswordComponent } from './pages/forget-password/forget-password.component'
 import { LoginComponent } from './pages/login/login.component'
 import { LogoutComponent } from './pages/logout/logout.component'
-import { NewPasswordComponent } from './pages/new-password/new-password.component'
+import { ResetPasswordComponent } from './pages/reset-password/reset-password.component'
+import { OTPVerificationComponent } from './pages/otp-verification/otp-verification.component'
+import { ForgetPasswordComponent } from './pages/forget-password/forget-password.component'
 import { SignupComponent } from './pages/signup/signup.component'
-import { VerifyPasswordComponent } from './pages/verify-password/verify-password.component'
 import { VerifyUserComponent } from './pages/verify-user/verify-user.component'
 
 @NgModule({
@@ -17,8 +17,8 @@ import { VerifyUserComponent } from './pages/verify-user/verify-user.component'
     SignupComponent,
     LoginComponent,
     ForgetPasswordComponent,
-    NewPasswordComponent,
-    VerifyPasswordComponent,
+    ResetPasswordComponent,
+    OTPVerificationComponent,
     ConfirmationComponent,
     VerifyUserComponent,
     LogoutComponent

@@ -16,4 +16,11 @@ export class VerifyService {
       this.apiConfig.url + `/auth/verify-email?token=${token}`
     )
   }
+
+  verifyResetPasswordToken(token: string): Observable<{ message: string }> {
+    return this.httpClient.post<{ message: string }>(
+      this.apiConfig.url + `/auth/validate-reset-password-token?token=${token}`,
+      {}
+    )
+  }
 }

@@ -3,9 +3,11 @@ import { Injectable } from '@angular/core'
 import { Observable } from 'rxjs'
 import {
   IAlertSuccess,
+  IPasswordCredentials,
   IToken,
   IloginCredentials,
-  IsignupCredentials
+  IsignupCredentials,
+  ResponseDefault
 } from 'src/app/core/utilities/types'
 import { ApiConfigService } from './api-config.service'
 import { TokenService } from './token.service'
@@ -43,10 +45,19 @@ export class AuthService {
   logout(): void {
     this.token.clearToken()
   }
-  sendResetPasswordToken(email: string): Observable<string | number | object> {
-    return this.httpClient.post<string | number | object>(
+  sendResetPasswordToken(email: string): Observable<ResponseDefault> {
+    return this.httpClient.post<ResponseDefault>(
       this.apiConfig.url + '/auth/send-reset-password-token',
       email
+    )
+  }
+  resetPassword(
+    token: string,
+    credential: IPasswordCredentials
+  ): Observable<ResponseDefault> {
+    return this.httpClient.patch<ResponseDefault>(
+      `${this.apiConfig.url}/auth/reset-password?token=${token}`,
+      credential
     )
   }
 }

@@ -6,7 +6,6 @@ import { IToken } from 'src/app/core/utilities/types'
   providedIn: 'root'
 })
 export class TokenService {
-  constructor() {}
   token!: IToken
   tokenKey: string = 'userToken'
   saveToken(value: IToken, key: string = 'userToken'): void {

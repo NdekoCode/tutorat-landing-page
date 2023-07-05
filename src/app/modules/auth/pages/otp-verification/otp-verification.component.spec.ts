@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing'
 
-import { VerifyPasswordComponent } from './verify-password.component'
+import { VerifyPasswordComponent } from './otp-verification.component'
 
 describe('VerifyPasswordComponent', () => {
   let component: VerifyPasswordComponent

@@ -1,4 +1,5 @@
 export type AlertType = 'error' | 'success' | 'infos' | 'warning'
+export type ResponseDefault = string | number | object
 export type AlertColorMap = {
   [key in AlertType]: string
 }
@@ -26,6 +27,11 @@ export interface IsignupCredentials {
   confirmPassword: string
   phoneNumber: string
   email: string
+  password: string
+}
+
+export interface IPasswordCredentials {
+  confirmPassword: string
   password: string
 }
 
