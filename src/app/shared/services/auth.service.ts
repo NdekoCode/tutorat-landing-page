@@ -28,8 +28,10 @@ export class AuthService {
     )
   }
 
-  signup(credentials: IsignupCredentials): Observable<IToken> {
-    return this.httpClient.post<IToken>(
+  signup(
+    credentials: IsignupCredentials
+  ): Observable<object | number | string | null> {
+    return this.httpClient.post<object | number | string | null>(
       this.apiConfig.url + '/auth/signup',
       credentials
     )
@@ -40,5 +42,11 @@ export class AuthService {
   }
   logout(): void {
     this.token.clearToken()
+  }
+  sendResetPasswordToken(email: string): Observable<string | number | object> {
+    return this.httpClient.post<string | number | object>(
+      this.apiConfig.url + '/auth/send-reset-password-token',
+      email
+    )
   }
 }

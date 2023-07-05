@@ -46,7 +46,7 @@ describe('SignupComponent', () => {
   })
   it('should show the alert message after successful signup', () => {
     // Mock the signup method of AuthService to return a successful response
-    spyOn(component.authService, 'signup').and.returnValue(of({}))
+    jest.spyOn(component.authService, 'signup').mockReturnValue(of({}))
 
     component.saveRegisterForm()
 
@@ -59,9 +59,9 @@ describe('SignupComponent', () => {
   it('should show the alert message if there is an error during signup', () => {
     // Mock the signup method of AuthService to return an error response
     const errorResponse = { error: { statusCode: 409, message: 'Conflict' } }
-    spyOn(component.authService, 'signup').and.returnValue(
-      throwError(errorResponse)
-    )
+    jest
+      .spyOn(component.authService, 'signup')
+      .mockReturnValue(throwError(errorResponse))
 
     component.saveRegisterForm()
 
@@ -72,8 +72,8 @@ describe('SignupComponent', () => {
   })
   it('should navigate to login page after successful signup', () => {
     // Mock the signup method of AuthService to return a successful response
-    spyOn(component.authService, 'signup').and.returnValue(of({}))
-    spyOn(component.router, 'navigate')
+    jest.spyOn(component.authService, 'signup').mockReturnValue(of({}))
+    jest.spyOn(component.router, 'navigate')
 
     component.saveRegisterForm()
 
