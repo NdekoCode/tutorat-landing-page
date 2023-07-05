@@ -81,7 +81,7 @@
 }
 
 .alert {
-  @apply flex w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg absolute bottom-60 right-5 transition-all;
+  @apply flex w-full max-w-md mx-auto overflow-hidden bg-white rounded-lg shadow-lg transition-all;
 
   &__body {
     @apply flex items-start justify-between w-full px-2 py-2;
