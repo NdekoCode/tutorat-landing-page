@@ -1,14 +1,14 @@
 import { Component, OnDestroy, OnInit } from '@angular/core'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { Router } from '@angular/router'
-import { GLOBAL_CONSTANTS } from 'src/app/core/utilities/constants'
+import { ALERT_AUTH, GLOBAL_CONSTANTS } from 'src/app/core/utilities/constants'
 import {
   emailValidator,
   passwordValidator,
   phoneValidator
 } from 'src/app/core/utilities/forms'
 import { Alert, Timer } from 'src/app/core/utilities/types'
-import { AuthService } from 'src/app/shared/services/auth.service'
+import { AuthService } from 'src/app/shared/services/auth/auth.service'
 
 @Component({
   selector: 'app-signup',
@@ -56,10 +56,10 @@ export class SignupComponent implements OnInit, OnDestroy {
             this.submitForm = true
             this.alert = {
               isShown: true,
-              alertTitle: 'Inscription faite avec succés',
+              alertTitle: ALERT_AUTH.signup.success.alertTitle,
               alertType: 'success',
               alertMessage:
-                "Un email de verification vous a été envoyer à l'adresse " +
+                ALERT_AUTH.signup.success.alertMessage +
                 this.registerForm.value.email
             }
             this.timer = window.setTimeout(() => {
@@ -74,7 +74,7 @@ export class SignupComponent implements OnInit, OnDestroy {
             if (httpErrorResponse.error.statusCode === 409) {
               this.alert = {
                 isShown: true,
-                alertTitle: 'Votre inscription est revoquer',
+                alertTitle: ALERT_AUTH.signup.error.alertTitle,
                 alertType: 'error',
                 alertMessage: httpErrorResponse.error.message
               }
@@ -82,7 +82,7 @@ export class SignupComponent implements OnInit, OnDestroy {
               this.alert = {
                 ...this.alert,
                 isShown: true,
-                alertTitle: 'Votre inscription est revoquer',
+                alertTitle: ALERT_AUTH.signup.error.alertTitle,
                 alertMessage: httpErrorResponse.error.message
               }
             }

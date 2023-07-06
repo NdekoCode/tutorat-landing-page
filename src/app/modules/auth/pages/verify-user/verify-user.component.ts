@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
-import { VerifyService } from 'src/app/shared/services/verify.service'
+import { VerifyService } from 'src/app/shared/services/auth/verify.service'
 
 import { isExists } from 'src/app/core/utilities/helpers'
-import { AlertService } from 'src/app/shared/services/alert.service'
+import { AlertService } from 'src/app/shared/services/alert/alert.service'
 @Component({
   selector: 'app-verify',
   templateUrl: './verify-user.component.html'

@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms'
 import { Router } from '@angular/router'
 import { emailValidator } from 'src/app/core/utilities/forms'
 import { Alert, Timer } from 'src/app/core/utilities/types'
-import { AuthService } from 'src/app/shared/services/auth.service'
+import { AuthService } from 'src/app/shared/services/auth/auth.service'
 
 @Component({
   selector: 'app-forget-password',

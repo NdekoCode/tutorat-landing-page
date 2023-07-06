@@ -7,7 +7,7 @@ import {
   UrlTree
 } from '@angular/router'
 import { Observable } from 'rxjs'
-import { AuthService } from 'src/app/shared/services/auth.service'
+import { AuthService } from 'src/app/shared/services/auth/auth.service'
 
 @Injectable({
   providedIn: 'root'
@@ -22,9 +22,6 @@ export class AuthGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    if (this.auth.isLogged()) {
-      return true
-    }
-    return this.router.navigate(['/login'])
+    return this.auth.isLogged() || this.router.createUrlTree(['/login'])
   }
 }

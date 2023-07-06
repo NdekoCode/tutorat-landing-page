@@ -1,5 +1,9 @@
 export type AlertType = 'error' | 'success' | 'infos' | 'warning'
-export type ResponseDefault = string | number | object
+export type UtilityType =
+  | string
+  | number
+  | object
+  | (string | number | object)[]
 export type AlertColorMap = {
   [key in AlertType]: string
 }
@@ -16,12 +20,12 @@ export type Alert = {
   alertMessage: string
   alertType: AlertType
 }
-export interface IloginCredentials {
+export type LoginCredentials = {
   email: string
   password: string
 }
 
-export interface IsignupCredentials {
+export type SignupCredentials = {
   firstName: string
   lastName: string
   confirmPassword: string
@@ -30,20 +34,20 @@ export interface IsignupCredentials {
   password: string
 }
 
-export interface IPasswordCredentials {
+export type PasswordCredentials = {
   confirmPassword: string
   password: string
 }
 
-export interface IToken {
+export type Token = {
   accessToken: string
   refreshToken: string
 }
-export interface IAlertSuccess {
+export type AlertSuccess = {
   statusCode: number
   message: string
 }
-export interface Tutor {
+export type Tutor = {
   photo: string
   ville: string
   pays: string
@@ -72,7 +76,7 @@ export interface Tutor {
   }
   // Ajoutez les propriétés pour les autres étapes du formulaire
 }
-export interface JoursSemaine {
+export type JoursSemaine = {
   lundi: boolean
   mardi: boolean
   // Ajoutez les autres jours de la semaine

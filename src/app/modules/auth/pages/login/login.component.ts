@@ -1,10 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core'
 import { FormBuilder, FormGroup } from '@angular/forms'
 import { Router } from '@angular/router'
-import { GLOBAL_CONSTANTS } from 'src/app/core/utilities/constants'
+import { ALERT_AUTH, GLOBAL_CONSTANTS } from 'src/app/core/utilities/constants'
 import { emailValidator, passwordValidator } from 'src/app/core/utilities/forms'
-import { Alert, IToken, Timer } from 'src/app/core/utilities/types'
-import { AuthService } from 'src/app/shared/services/auth.service'
+import { Alert, Timer, Token } from 'src/app/core/utilities/types'
+import { AuthService } from 'src/app/shared/services/auth/auth.service'
 
 @Component({
   selector: 'app-login',
@@ -20,10 +20,6 @@ export class LoginComponent implements OnInit, OnDestroy {
   timer: Timer
   submitForm: boolean = false
   isLoading: boolean = false
-  userLogin = {
-    email: '',
-    password: ''
-  }
   isChange: boolean = false
   public loginForm!: FormGroup
   constructor(
@@ -47,26 +43,25 @@ export class LoginComponent implements OnInit, OnDestroy {
       this.authService.login(this.loginForm.value).subscribe({
         next: (response) => {
           this.submitForm = true
-          this.authService.token.saveToken(response as IToken)
+          this.authService.token.saveToken(response as Token)
           this.isLoading = false
           this.alert = {
             isShown: true,
-            alertTitle: 'Connexion reussis',
+            alertTitle: ALERT_AUTH.login.success.alertTitle,
             alertType: 'success',
-            alertMessage:
-              'Vous vous etes connecter avec succés, Ravis de vous revoir'
+            alertMessage: ALERT_AUTH.login.success.alertMessage
           }
           setTimeout(() => {
             this._router.navigate(['myspace'])
             clearTimeout(this.timer)
-          }, GLOBAL_CONSTANTS.AUTH_TIMOUT_LOGIN)
+          }, GLOBAL_CONSTANTS.AUTH_TIMEOUT_LOGIN)
         },
         error: (err) => {
           this.submitForm = true
           this.isLoading = false
           this.alert = {
             isShown: true,
-            alertTitle: 'Erreur survenus lors de la connexion',
+            alertTitle: ALERT_AUTH.login.error.alertTitle,
             alertType: 'error',
             alertMessage: err.error.message
           }

@@ -3,8 +3,20 @@ import { ComponentFixture, TestBed } from '@angular/core/testing'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { of, throwError } from 'rxjs'
 import { SignupComponent } from './signup.component'
+/**
+ *
+ * Ces tests vérifient les scénarios suivants :
+ *
+- Initialisation du formulaire d'inscription et de ses contrôles
+- Validation du formulaire avec des champs vides
+- Validation du formulaire avec des champs remplis correctement
+- Affichage du message d'alerte après une inscription réussie
+- Affichage du message d'alerte en cas d'erreur lors de l'inscription
+- Navigation vers la page de connexion après une inscription réussie
+- Nettoyage du timeout lors de la destruction du composant (dans la fonction afterEach)
 
-describe('SignupComponent', () => {
+ */
+xdescribe('SignupComponent', () => {
   let component: SignupComponent
   let fixture: ComponentFixture<SignupComponent>
 

@@ -8,9 +8,9 @@ import {
 } from 'src/app/core/utilities/forms'
 import { isExists } from 'src/app/core/utilities/helpers'
 import { Timer } from 'src/app/core/utilities/types'
-import { AlertService } from 'src/app/shared/services/alert.service'
-import { AuthService } from 'src/app/shared/services/auth.service'
-import { VerifyService } from 'src/app/shared/services/verify.service'
+import { AlertService } from 'src/app/shared/services/alert/alert.service'
+import { AuthService } from 'src/app/shared/services/auth/auth.service'
+import { VerifyService } from 'src/app/shared/services/auth/verify.service'
 @Component({
   selector: 'app-reset-password',
   templateUrl: './reset-password.component.html'
@@ -128,7 +128,7 @@ export class ResetPasswordComponent implements OnInit, OnDestroy {
             )
             setTimeout(() => {
               clearTimeout(this.timer)
-            }, GLOBAL_CONSTANTS.AUTH_TIMOUT_LOGIN)
+            }, GLOBAL_CONSTANTS.AUTH_TIMEOUT_LOGIN)
           },
           error: (err) => {
             this.submitForm = true
