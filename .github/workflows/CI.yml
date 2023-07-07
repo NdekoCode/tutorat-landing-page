@@ -12,7 +12,8 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x, 16.x, 18.x]
+        node-version: [16.x, 18.x]
+    name: Node ${{ matrix.node }} sample
 
     steps:
       - name: Checkout repository
@@ -31,3 +32,12 @@ jobs:
 
       - name: Execute tests with coverage
         run: pnpm test:cov
+
+      - uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: ./coverage/lcov-report/clover.xml
+          flags: unittests
+          name: codecov-umbrella
+          fail_ci_if_error: true
+          verbose: true
