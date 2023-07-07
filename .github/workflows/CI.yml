@@ -30,4 +30,4 @@ jobs:
         run: pnpm lint
 
       - name: Execute tests with coverage
-        run: pnpm test:ci
+        run: pnpm test:cov
