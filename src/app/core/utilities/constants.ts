@@ -30,12 +30,12 @@ export const ALERT_AUTH = Object.freeze({
   },
   login: {
     error: {
-      alertTitle: 'Connexion reussis',
-      alertMessage: 'Vous vous etes connecter avec succés, Ravis de vous revoir'
+      alertTitle: 'Erreur survenus lors de la connexion',
+      alertMessage: ''
     },
     success: {
-      alertTitle: 'Erreur survenus lors de la connexion',
-      alertMessage: "Un email de verification vous a été envoyer à l'adresse "
+      alertTitle: 'Connexion reussis',
+      alertMessage: 'Bravo, vous etes connecter avec succés !'
     }
   }
 })

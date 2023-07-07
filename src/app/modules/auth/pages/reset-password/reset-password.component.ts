@@ -77,7 +77,7 @@ export class ResetPasswordComponent implements OnInit, OnDestroy {
         this.verifyService.verifyResetPasswordToken(this.token).subscribe({
           next: (response) => {
             this.verifiedUser = true
-            this.hideAlertVerify = false
+            this.hideAlertVerify = true
           },
           error: (error) => {
             this.validVerification = false
