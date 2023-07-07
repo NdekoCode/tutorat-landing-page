@@ -1,0 +1,8 @@
+.form-description {
+  @extend .text-blue-gray;
+}
+
+.form-container {
+  border-radius: rem(35);
+  padding      : rem(30);
+}

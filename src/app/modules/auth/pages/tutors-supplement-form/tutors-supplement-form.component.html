@@ -1,324 +1,387 @@
-<div class="container mx-auto">
-  <div class="flex justify-center">
-    <div class="w-full md:w-8/12">
-      <form
-        [formGroup]="tutorSupplementForm"
-        (ngSubmit)="saveTutorForm()"
-        class="p-4"
-      >
-        <!-- Etape 1: Informations personnelles -->
-        <div *ngIf="currentStep === 1">
-          <h2 class="text-2xl font-bold mb-4">Informations personnelles</h2>
-          <div class="tw-radial-progress text-primary" style="--value: 70">
-            70%
+<div class="bg-red-light">
+  <div class="container mx-auto">
+    <div class="flex justify-center">
+      <div class="w-full md:w-8/12">
+        <form
+          [formGroup]="tutorSupplementForm"
+          (ngSubmit)="saveTutorForm()"
+          class="p-4"
+        >
+          <h2 class="text-4xl font-bold mb-4">
+            Obtenir des informations supplémentaires
+          </h2>
+          <p class="form-description">
+            Veuillez remplir le formulaire ci-dessous pour créer votre profil de
+            tuteur. N’hésitez pas à ajouter autant de détails que nécessaire.
+          </p>
+          <div class="form-container bg-glace mt-10">
+            <div class="step py-5 flex justify-center items-center">
+              <div class="step-line"></div>
+            </div>
+            <!-- Etape 1: Informations personnelles -->
+            <div *ngIf="currentStep === 1">
+              <h3 class="text-2xl font-bold mb-4">Informations personnelles</h3>
+              <p class="form-description">
+                Nous sommes ravis de vous accueillir en tant que tuteur!
+                Veuillez remplir le formulaire ci-dessous avec vos informations
+                personnelles. Nous sommes impatients d’en savoir plus sur vous !
+              </p>
+              <div class="">
+                <label
+                  for="photo"
+                  class="flex flex-col items-center justify-center"
+                >
+                  <input
+                    type="file"
+                    class="tw-file-input hidden form-control tw-file-input-bordered w-full max-w-xs"
+                    id="photo"
+                    formControlName="photo"
+                  />
+                  <img
+                    src="/assets/images/avatar.png"
+                    alt="Avatar"
+                    class="cursor-pointer opacity-75 hover:opacity-100 transition-opacity duration-150"
+                  />
+                  <p
+                    class="border rounded text-gray border-gray-300 gap-x-1 py-2 px-3 mt-3 flex cursor-pointer items-center"
+                  >
+                    <svg
+                      class="h-5 w-5"
+                      width="25"
+                      height="25"
+                      viewBox="0 0 25 25"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M5.01953 7.83984H6.01953C6.54996 7.83984 7.05867 7.62913 7.43374 7.25406C7.80882 6.87898 8.01953 6.37028 8.01953 5.83984C8.01953 5.57463 8.12489 5.32027 8.31242 5.13274C8.49996 4.9452 8.75431 4.83984 9.01953 4.83984H15.0195C15.2847 4.83984 15.5391 4.9452 15.7266 5.13274C15.9142 5.32027 16.0195 5.57463 16.0195 5.83984C16.0195 6.37028 16.2302 6.87898 16.6053 7.25406C16.9804 7.62913 17.4891 7.83984 18.0195 7.83984H19.0195C19.55 7.83984 20.0587 8.05056 20.4337 8.42563C20.8088 8.8007 21.0195 9.30941 21.0195 9.83984V18.8398C21.0195 19.3703 20.8088 19.879 20.4337 20.2541C20.0587 20.6291 19.55 20.8398 19.0195 20.8398H5.01953C4.4891 20.8398 3.98039 20.6291 3.60532 20.2541C3.23024 19.879 3.01953 19.3703 3.01953 18.8398V9.83984C3.01953 9.30941 3.23024 8.8007 3.60532 8.42563C3.98039 8.05056 4.4891 7.83984 5.01953 7.83984Z"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M12.0195 16.8398C13.6764 16.8398 15.0195 15.4967 15.0195 13.8398C15.0195 12.183 13.6764 10.8398 12.0195 10.8398C10.3627 10.8398 9.01953 12.183 9.01953 13.8398C9.01953 15.4967 10.3627 16.8398 12.0195 16.8398Z"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <span>Uploader une photo</span>
+                  </p>
+                </label>
+              </div>
+              <div>
+                <label for="ville">Ville :</label>
+                <input
+                  type="text"
+                  id="ville"
+                  formControlName="ville"
+                  class="input-field"
+                />
+              </div>
+              <div>
+                <label for="pays">Pays :</label>
+                <input
+                  type="text"
+                  id="pays"
+                  formControlName="pays"
+                  class="input-field"
+                />
+              </div>
+              <div>
+                <label for="address">Adresse :</label>
+                <input
+                  type="text"
+                  id="address"
+                  formControlName="address"
+                  class="form-control"
+                />
+              </div>
+              <div>
+                <label for="codePostal">Code postal :</label>
+                <input
+                  type="text"
+                  id="codePostal"
+                  formControlName="codePostal"
+                  class="input-field"
+                />
+              </div>
+            </div>
+
+            <!-- Etape 2: Informations professionnelles -->
+            <div *ngIf="currentStep === 2">
+              <h2 class="text-2xl font-bold mb-4">
+                Informations professionnelles
+              </h2>
+              <p class="form-description">
+                Nous sommes convaincus que vous avez beaucoup à offrir en tant
+                que tuteur! Veuillez remplir le formulaire ci-dessous avec vos
+                informations professionnelles pour nous aider à mieux comprendre
+                votre expérience et vos compétences.
+              </p>
+              <label for="anneeExperience">Année d'expérience :</label>
+              <input
+                type="text"
+                id="anneeExperience"
+                formControlName="anneeExperience"
+                class="input-field"
+              />
+
+              <label for="niveauEtudes">Niveau d'études :</label>
+              <input
+                type="text"
+                id="niveauEtudes"
+                formControlName="niveauEtudes"
+                class="input-field"
+              />
+
+              <label for="domaineEtudes">Domaine d'études :</label>
+              <input
+                type="text"
+                id="domaineEtudes"
+                formControlName="domaineEtudes"
+                class="input-field"
+              />
+
+              <label for="periodeTemps">Période de temps :</label>
+              <input
+                type="text"
+                id="periodeTemps"
+                formControlName="periodeTemps"
+                class="input-field"
+              />
+
+              <label for="actuellementInscrit">Actuellement inscrit :</label>
+              <input
+                type="checkbox"
+                id="actuellementInscrit"
+                formControlName="actuellementInscrit"
+                class="checkbox-field"
+              />
+
+              <label for="depuisMois">Mois de début d'inscription :</label>
+              <input
+                type="text"
+                id="depuisMois"
+                formControlName="depuisMois"
+                class="input-field"
+              />
+
+              <label for="depuisAnnee">Année de début d'inscription :</label>
+              <input
+                type="text"
+                id="depuisAnnee"
+                formControlName="depuisAnnee"
+                class="input-field"
+              />
+            </div>
+
+            <!-- Etape 3: Disponibilité -->
+            <div *ngIf="currentStep === 3">
+              <h2 class="text-2xl font-bold mb-4">Disponibilité</h2>
+              <p class="form-description">
+                Nous savons que votre temps est précieux et nous voulons nous
+                assurer que vous êtes disponible pour les étudiants qui ont
+                besoin de votre aide. Veuillez remplir le formulaire ci-dessous
+                avec vos disponibilités pour nous aider à mieux planifier les
+                sessions de tutorat.
+              </p>
+              <label for="timezone">Timezone :</label>
+              <input
+                type="text"
+                id="timezone"
+                formControlName="timezone"
+                class="input-field"
+              />
+
+              <div formGroupName="jours">
+                <label for="lundi">Lundi :</label>
+                <input
+                  type="checkbox"
+                  id="lundi"
+                  formControlName="lundi.active"
+                  class="checkbox-field"
+                />
+                <input
+                  type="text"
+                  id="lundiDebut"
+                  formControlName="lundi.debut"
+                  class="input-field"
+                />
+                <input
+                  type="text"
+                  id="lundiFin"
+                  formControlName="lundi.fin"
+                  class="input-field"
+                />
+
+                <!-- Ajoutez les autres jours de la semaine de la même manière -->
+                <label for="mardi">Mardi :</label>
+                <input
+                  type="checkbox"
+                  id="mardi"
+                  formControlName="mardi.active"
+                  class="checkbox-field"
+                />
+                <input
+                  type="text"
+                  id="mardiDebut"
+                  formControlName="mardi.debut"
+                  class="input-field"
+                />
+                <input
+                  type="text"
+                  id="mardiFin"
+                  formControlName="mardi.fin"
+                  class="input-field"
+                />
+
+                <!-- ... -->
+              </div>
+            </div>
+
+            <!-- Etape 4: Préférences de tutorat -->
+            <div *ngIf="currentStep === 4">
+              <h2 class="text-2xl font-bold mb-4">Préférences de tutorat</h2>
+              <label for="sujet">Sujet :</label>
+              <input
+                type="text"
+                id="sujet"
+                formControlName="sujet"
+                class="input-field"
+              />
+
+              <label for="niveauScolaire">Niveau scolaire :</label>
+              <input
+                type="text"
+                id="niveauScolaire"
+                formControlName="niveauScolaire"
+                class="input-field"
+              />
+
+              <label for="typeTutorat">Type de tutorat :</label>
+              <input
+                type="text"
+                id="typeTutorat"
+                formControlName="typeTutorat"
+                class="input-field"
+              />
+
+              <label for="typeEleve">Type d'élève :</label>
+              <input
+                type="text"
+                id="typeEleve"
+                formControlName="typeEleve"
+                class="input-field"
+              />
+            </div>
+
+            <!-- Etape 5: Compétences en communication -->
+            <div *ngIf="currentStep === 5">
+              <h2 class="text-2xl font-bold mb-4">
+                Compétences en communication
+              </h2>
+              <label for="communicationEcrite"
+                >Compétences en communication écrite :</label
+              >
+              <input
+                type="text"
+                id="communicationEcrite"
+                formControlName="communicationEcrite"
+                class="input-field"
+              />
+
+              <label for="communicationOrale"
+                >Compétences en communication orale :</label
+              >
+              <input
+                type="text"
+                id="communicationOrale"
+                formControlName="communicationOrale"
+                class="input-field"
+              />
+
+              <label for="resolutionProblemes"
+                >Compétences en résolution de problèmes :</label
+              >
+              <input
+                type="text"
+                id="resolutionProblemes"
+                formControlName="resolutionProblemes"
+                class="input-field"
+              />
+
+              <label for="priseDecision"
+                >Compétences en prise de décision :</label
+              >
+              <input
+                type="text"
+                id="priseDecision"
+                formControlName="priseDecision"
+                class="input-field"
+              />
+            </div>
+
+            <!-- Etape 6: Antécédents judiciaires -->
+            <div *ngIf="currentStep === 6">
+              <h2 class="text-2xl font-bold mb-4">Antécédents judiciaires</h2>
+              <label for="verificationAntecedents"
+                >Vérification des antécédents judiciaires :</label
+              >
+              <input
+                type="text"
+                id="verificationAntecedents"
+                formControlName="verificationAntecedents"
+                class="input-field"
+              />
+              <div class="btn-container">
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  (click)="previousStep()"
+                >
+                  Précédent
+                </button>
+                <button type="submit" class="btn btn-primary">Soumettre</button>
+              </div>
+            </div>
           </div>
-          <label for="photo">Photo de profil :</label>
-          <input
-            type="file"
-            class="tw-file-input form-control tw-file-input-bordered w-full max-w-xs"
-            id="photo"
-            formControlName="photo"
-          />
-
-          <label for="ville">Ville :</label>
-          <input
-            type="text"
-            id="ville"
-            formControlName="ville"
-            class="input-field"
-          />
-
-          <label for="pays">Pays :</label>
-          <input
-            type="text"
-            id="pays"
-            formControlName="pays"
-            class="input-field"
-          />
-
-          <label for="address">Adresse :</label>
-          <input
-            type="text"
-            id="address"
-            formControlName="address"
-            class="input-field"
-          />
-
-          <label for="codePostal">Code postal :</label>
-          <input
-            type="text"
-            id="codePostal"
-            formControlName="codePostal"
-            class="input-field"
-          />
-
-          <button type="button" class="btn btn-primary" (click)="nextStep()">
-            Suivant
-          </button>
-        </div>
-
-        <!-- Etape 2: Informations professionnelles -->
-        <div *ngIf="currentStep === 2">
-          <h2 class="text-2xl font-bold mb-4">Informations professionnelles</h2>
-          <label for="anneeExperience">Année d'expérience :</label>
-          <input
-            type="text"
-            id="anneeExperience"
-            formControlName="anneeExperience"
-            class="input-field"
-          />
-
-          <label for="niveauEtudes">Niveau d'études :</label>
-          <input
-            type="text"
-            id="niveauEtudes"
-            formControlName="niveauEtudes"
-            class="input-field"
-          />
-
-          <label for="domaineEtudes">Domaine d'études :</label>
-          <input
-            type="text"
-            id="domaineEtudes"
-            formControlName="domaineEtudes"
-            class="input-field"
-          />
-
-          <label for="periodeTemps">Période de temps :</label>
-          <input
-            type="text"
-            id="periodeTemps"
-            formControlName="periodeTemps"
-            class="input-field"
-          />
-
-          <label for="actuellementInscrit">Actuellement inscrit :</label>
-          <input
-            type="checkbox"
-            id="actuellementInscrit"
-            formControlName="actuellementInscrit"
-            class="checkbox-field"
-          />
-
-          <label for="depuisMois">Mois de début d'inscription :</label>
-          <input
-            type="text"
-            id="depuisMois"
-            formControlName="depuisMois"
-            class="input-field"
-          />
-
-          <label for="depuisAnnee">Année de début d'inscription :</label>
-          <input
-            type="text"
-            id="depuisAnnee"
-            formControlName="depuisAnnee"
-            class="input-field"
-          />
-
-          <button
-            type="button"
-            class="btn btn-primary"
-            (click)="previousStep()"
-          >
-            Précédent
-          </button>
-          <button type="button" class="btn btn-primary" (click)="nextStep()">
-            Suivant
-          </button>
-        </div>
-
-        <!-- Etape 3: Disponibilité -->
-        <div *ngIf="currentStep === 3">
-          <h2 class="text-2xl font-bold mb-4">Disponibilité</h2>
-          <label for="timezone">Timezone :</label>
-          <input
-            type="text"
-            id="timezone"
-            formControlName="timezone"
-            class="input-field"
-          />
-
-          <div formGroupName="jours">
-            <label for="lundi">Lundi :</label>
-            <input
-              type="checkbox"
-              id="lundi"
-              formControlName="lundi.active"
-              class="checkbox-field"
-            />
-            <input
-              type="text"
-              id="lundiDebut"
-              formControlName="lundi.debut"
-              class="input-field"
-            />
-            <input
-              type="text"
-              id="lundiFin"
-              formControlName="lundi.fin"
-              class="input-field"
-            />
-
-            <!-- Ajoutez les autres jours de la semaine de la même manière -->
-            <label for="mardi">Mardi :</label>
-            <input
-              type="checkbox"
-              id="mardi"
-              formControlName="mardi.active"
-              class="checkbox-field"
-            />
-            <input
-              type="text"
-              id="mardiDebut"
-              formControlName="mardi.debut"
-              class="input-field"
-            />
-            <input
-              type="text"
-              id="mardiFin"
-              formControlName="mardi.fin"
-              class="input-field"
-            />
-
-            <!-- ... -->
+          <div class="form-footer">
+            <div class="btn-container mt-10">
+              <button
+                type="button"
+                class="btn btn-primary"
+                (click)="previousStep()"
+              >
+                Précédent
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                (click)="nextStep()"
+              >
+                Suivant
+              </button>
+            </div>
           </div>
-
-          <button
-            type="button"
-            class="btn btn-primary"
-            (click)="previousStep()"
-          >
-            Précédent
-          </button>
-          <button type="button" class="btn btn-primary" (click)="nextStep()">
-            Suivant
-          </button>
-        </div>
-
-        <!-- Etape 4: Préférences de tutorat -->
-        <div *ngIf="currentStep === 4">
-          <h2 class="text-2xl font-bold mb-4">Préférences de tutorat</h2>
-          <label for="sujet">Sujet :</label>
-          <input
-            type="text"
-            id="sujet"
-            formControlName="sujet"
-            class="input-field"
-          />
-
-          <label for="niveauScolaire">Niveau scolaire :</label>
-          <input
-            type="text"
-            id="niveauScolaire"
-            formControlName="niveauScolaire"
-            class="input-field"
-          />
-
-          <label for="typeTutorat">Type de tutorat :</label>
-          <input
-            type="text"
-            id="typeTutorat"
-            formControlName="typeTutorat"
-            class="input-field"
-          />
-
-          <label for="typeEleve">Type d'élève :</label>
-          <input
-            type="text"
-            id="typeEleve"
-            formControlName="typeEleve"
-            class="input-field"
-          />
-
-          <button
-            type="button"
-            class="btn btn-primary"
-            (click)="previousStep()"
-          >
-            Précédent
-          </button>
-          <button type="button" class="btn btn-primary" (click)="nextStep()">
-            Suivant
-          </button>
-        </div>
-
-        <!-- Etape 5: Compétences en communication -->
-        <div *ngIf="currentStep === 5">
-          <h2 class="text-2xl font-bold mb-4">Compétences en communication</h2>
-          <label for="communicationEcrite"
-            >Compétences en communication écrite :</label
-          >
-          <input
-            type="text"
-            id="communicationEcrite"
-            formControlName="communicationEcrite"
-            class="input-field"
-          />
-
-          <label for="communicationOrale"
-            >Compétences en communication orale :</label
-          >
-          <input
-            type="text"
-            id="communicationOrale"
-            formControlName="communicationOrale"
-            class="input-field"
-          />
-
-          <label for="resolutionProblemes"
-            >Compétences en résolution de problèmes :</label
-          >
-          <input
-            type="text"
-            id="resolutionProblemes"
-            formControlName="resolutionProblemes"
-            class="input-field"
-          />
-
-          <label for="priseDecision">Compétences en prise de décision :</label>
-          <input
-            type="text"
-            id="priseDecision"
-            formControlName="priseDecision"
-            class="input-field"
-          />
-
-          <button
-            type="button"
-            class="btn btn-primary"
-            (click)="previousStep()"
-          >
-            Précédent
-          </button>
-          <button type="button" class="btn btn-primary" (click)="nextStep()">
-            Suivant
-          </button>
-        </div>
-
-        <!-- Etape 6: Antécédents judiciaires -->
-        <div *ngIf="currentStep === 6">
-          <h2 class="text-2xl font-bold mb-4">Antécédents judiciaires</h2>
-          <label for="verificationAntecedents"
-            >Vérification des antécédents judiciaires :</label
-          >
-          <input
-            type="text"
-            id="verificationAntecedents"
-            formControlName="verificationAntecedents"
-            class="input-field"
-          />
-
-          <button
-            type="button"
-            class="btn btn-primary"
-            (click)="previousStep()"
-          >
-            Précédent
-          </button>
-          <button type="submit" class="btn btn-primary">Soumettre</button>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
   </div>
 </div>
+<footer class="border-t border-gray-300">
+  <div class="container py-5">
+    <div class="flex justify-center">
+      <div class="w-full md:w-8/12">
+        <div class="flex flex-col gap-y-5">
+          <a href="#" class="inline-block"
+            ><img src="/assets/images/icons/Logo.png" alt="Logo" class="w-60"
+          /></a>
+          <p>Copyright © 2023 zabibu | All Rights Reserved</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

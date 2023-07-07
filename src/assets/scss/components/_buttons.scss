@@ -14,6 +14,11 @@
     background-color: none;
   }
 
+  &.btn-primary {
+    background: var(--yellow-dark);
+    color     : var(--color-white);
+  }
+
   &.btn-action {
     background-color: var(--background-color);
     color           : var(--color-white);
@@ -58,4 +63,8 @@
   &.btn-blue-light {
     @apply bg-[#E0EFFE];
   }
+}
+
+.btn-container {
+  @apply flex items-center gap-3;
 }
