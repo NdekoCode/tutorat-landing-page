@@ -1,23 +1,31 @@
+import {
+  HttpClientTestingModule,
+  HttpTestingController
+} from '@angular/common/http/testing'
+import { TestBed } from '@angular/core/testing'
+import { environment } from 'src/environments/environment'
+import { ApiConfigService } from '../api-config/api-config.service'
+import { VerifyService } from './verify.service'
+
 xdescribe('VerifyService', () => {
-  // let service: VerifyService
+  let service: VerifyService
 
-  // let httpMock: HttpTestingController
-  // const apiConfigSpy = jest.spyOn(ApiConfigService.prototype, 'url', 'get')
-  // apiConfigSpy.mockReturnValue(environment.BASE_URL)
-
-  // beforeEach(() => {
-  // TestBed.configureTestingModule({
-  // imports: [HttpClientTestingModule]
-  // providers: [VerifyService, { useValue: { url: environment.BASE_URL } }]
-  // })
-  // service = TestBed.inject(VerifyService)
-  // httpMock = TestBed.inject(HttpTestingController)
-  // })
+  let httpMock: HttpTestingController
+  const apiConfigSpy = jest.spyOn(ApiConfigService.prototype, 'url', 'get')
+  apiConfigSpy.mockReturnValue(environment.BASE_URL)
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule],
+      providers: [VerifyService, { useValue: { url: environment.BASE_URL } }]
+    })
+    service = TestBed.inject(VerifyService)
+    httpMock = TestBed.inject(HttpTestingController)
+  })
 
   xit('should be created', () => {
     // expect(service).toBeTruthy()
   })
-  /*
+
   xit('should send a GET request to verify user email', () => {
     const token = 'testToken'
     const expectedResponse = { message: 'Email verified successfully' }
@@ -51,5 +59,5 @@ xdescribe('VerifyService', () => {
   })
   afterEach(() => {
     httpMock.verify()
-  }) */
+  })
 })
