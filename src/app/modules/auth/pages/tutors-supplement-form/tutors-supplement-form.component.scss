@@ -1,0 +1,11 @@
+.input-group {
+  @apply w-full;
+
+  .field-container {
+    @apply w-1/2 mb-3;
+  }
+}
+
+.form-tutor {
+  background: url('/assets/images/icons/bar-decorator.png') no-repeat center center / contain;
+}

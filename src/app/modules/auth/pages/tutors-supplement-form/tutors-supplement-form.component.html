@@ -1,5 +1,5 @@
 <div class="bg-red-light">
-  <div class="container mx-auto">
+  <div class="container form-tutor mx-auto">
     <div class="flex justify-center">
       <div class="w-full md:w-8/12">
         <form
@@ -7,14 +7,17 @@
           (ngSubmit)="saveTutorForm()"
           class="p-4"
         >
-          <h2 class="text-4xl font-bold mb-4">
-            Obtenir des informations supplémentaires
-          </h2>
-          <p class="form-description">
-            Veuillez remplir le formulaire ci-dessous pour créer votre profil de
-            tuteur. N’hésitez pas à ajouter autant de détails que nécessaire.
-          </p>
-          <div class="form-container bg-glace mt-10">
+          <div class="form-header">
+            <h2 class="text-4xl font-bold mb-4">
+              Obtenir des informations supplémentaires
+            </h2>
+            <p class="form-description">
+              Veuillez remplir le formulaire ci-dessous pour créer votre profil
+              de tuteur. N’hésitez pas à ajouter autant de détails que
+              nécessaire.
+            </p>
+          </div>
+          <div class="form-container shadow-md bg-glace mt-10">
             <div class="step py-5 flex justify-center items-center">
               <div class="step-line"></div>
             </div>
@@ -26,10 +29,10 @@
                 Veuillez remplir le formulaire ci-dessous avec vos informations
                 personnelles. Nous sommes impatients d’en savoir plus sur vous !
               </p>
-              <div class="">
+              <div class="flex justify-center mb-5">
                 <label
                   for="photo"
-                  class="flex flex-col items-center justify-center"
+                  class="w-max flex flex-col items-center justify-center"
                 >
                   <input
                     type="file"
@@ -72,41 +75,207 @@
                   </p>
                 </label>
               </div>
-              <div>
-                <label for="ville">Ville :</label>
-                <input
-                  type="text"
-                  id="ville"
-                  formControlName="ville"
-                  class="input-field"
-                />
+
+              <div class="input-group">
+                <div class="field-container relative">
+                  <label for="ville" class="input-label">Ville :</label>
+                  <div
+                    class="input-icon"
+                    [ngClass]="{
+                      invalid:
+                        tutorSupplementForm.get('city')?.touched &&
+                        tutorSupplementForm.get('city')?.invalid
+                    }"
+                  >
+                    <input
+                      type="text"
+                      id="city"
+                      autocomplete="true"
+                      type="text"
+                      id="ville"
+                      formControlName="ville"
+                      placeholder="Entrez le nom de votre ville"
+                    />
+                    <svg
+                      width="25"
+                      height="19"
+                      class="icon right-icon"
+                      viewBox="0 0 25 19"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M19.3359 11.3636H17.3359V9.84847H19.3359M19.3359 14.3939H17.3359V12.8788H19.3359M13.3359 5.30302H11.3359V3.78786H13.3359M13.3359 8.33332H11.3359V6.81817H13.3359M13.3359 11.3636H11.3359V9.84847H13.3359M13.3359 14.3939H11.3359V12.8788H13.3359M7.33594 8.33332H5.33594V6.81817H7.33594M7.33594 11.3636H5.33594V9.84847H7.33594M7.33594 14.3939H5.33594V12.8788H7.33594M15.3359 8.33332V3.78786L12.3359 1.51514L9.33594 3.78786V5.30302H3.33594V15.9091H21.3359V8.33332H15.3359Z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </div>
+                  <div
+                    *ngIf="
+                      tutorSupplementForm.get('city')?.errors &&
+                      tutorSupplementForm.get('city')?.invalid &&
+                      tutorSupplementForm.get('city')?.touched
+                    "
+                    class="absolute text-invalid -bottom-4"
+                    id="city-errors"
+                  >
+                    <p
+                      *ngIf="tutorSupplementForm.get('city')?.errors?.['required']"
+                    >
+                      <span class="font-medium">Oops!</span> City is required
+                    </p>
+                  </div>
+                </div>
+                <div class="field-container relative">
+                  <label for="country" class="input-label">Pays :</label>
+                  <div
+                    class="input-icon"
+                    [ngClass]="{
+                      invalid:
+                        tutorSupplementForm.get('country')?.touched &&
+                        tutorSupplementForm.get('country')?.invalid
+                    }"
+                  >
+                    <input
+                      type="text"
+                      id="country"
+                      autocomplete="true"
+                      type="text"
+                      id="country"
+                      formControlName="country"
+                      placeholder="Entrez le nom de votre pays"
+                    />
+                    <svg
+                      width="15"
+                      height="18"
+                      viewBox="0 0 15 18"
+                      fill="none"
+                      class="icon right-icon"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4.22294 13.4466H14.3839V4.39479H4.22294V13.4466ZM9.38594 5.29577L13.0493 8.62692H12.1263V12.6237H9.98094V9.80243H8.62594V12.6237H6.59394V8.62692H5.64727L9.38594 5.29577ZM3.09394 2.16142V0.0908203H0.835938V17.0908H3.09394V3.21962H14.8359V2.16142H3.09394Z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </div>
+                  <div
+                    *ngIf="
+                      tutorSupplementForm.get('country')?.errors &&
+                      tutorSupplementForm.get('country')?.invalid &&
+                      tutorSupplementForm.get('country')?.touched
+                    "
+                    class="absolute text-invalid -bottom-4"
+                    id="country-errors"
+                  >
+                    <p
+                      *ngIf="tutorSupplementForm.get('country')?.errors?.['required']"
+                    >
+                      <span class="font-medium">Oops!</span> Country is required
+                    </p>
+                  </div>
+                </div>
               </div>
-              <div>
-                <label for="pays">Pays :</label>
-                <input
-                  type="text"
-                  id="pays"
-                  formControlName="pays"
-                  class="input-field"
-                />
-              </div>
-              <div>
-                <label for="address">Adresse :</label>
-                <input
-                  type="text"
-                  id="address"
-                  formControlName="address"
-                  class="form-control"
-                />
-              </div>
-              <div>
-                <label for="codePostal">Code postal :</label>
-                <input
-                  type="text"
-                  id="codePostal"
-                  formControlName="codePostal"
-                  class="input-field"
-                />
+
+              <div class="input-group">
+                <div class="field-container relative">
+                  <label for="address" class="input-label">Address :</label>
+                  <div
+                    class="input-icon"
+                    [ngClass]="{
+                      invalid:
+                        tutorSupplementForm.get('address')?.touched &&
+                        tutorSupplementForm.get('address')?.invalid
+                    }"
+                  >
+                    <input
+                      type="text"
+                      id="address"
+                      type="text"
+                      id="address"
+                      formControlName="address"
+                      placeholder="Entrer votre address"
+                    />
+                    <svg
+                      width="29"
+                      class="icon right-icon"
+                      height="20"
+                      viewBox="0 0 29 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M28.0545 4.85209L24.7295 2.92659C24.5036 2.81757 24.2579 2.73359 24.0001 2.67722C23.7434 2.61476 23.4761 2.58004 23.2063 2.5741H13.6359L14.7573 7.83505H23.2063C23.4359 7.83505 23.7229 7.79611 23.9987 7.73193C24.2745 7.66775 24.5405 7.57936 24.7281 7.48361L28.0531 5.55601C28.2421 5.46026 28.3359 5.33294 28.3359 5.20458C28.3359 5.07621 28.2421 4.94889 28.0545 4.85209ZM12.2359 0.469727H10.8359C10.6503 0.469727 10.4722 0.525154 10.341 0.623816C10.2097 0.722478 10.1359 0.856292 10.1359 0.995821V4.67848H5.46554C5.23314 4.67848 4.94754 4.71741 4.67174 4.78265C4.39454 4.84578 4.12994 4.93311 3.94234 5.03096L0.617337 6.95647C0.428337 7.05222 0.335938 7.18058 0.335938 7.30895C0.335938 7.43627 0.428337 7.56358 0.617337 7.66144L3.94234 9.58904C4.12994 9.68479 4.39454 9.77318 4.67174 9.83631C4.94754 9.90049 5.23314 9.93942 5.46554 9.93942H10.1359V18.883C10.1359 19.0226 10.2097 19.1564 10.341 19.255C10.4722 19.3537 10.6503 19.4091 10.8359 19.4091H12.2359C12.4216 19.4091 12.5996 19.3537 12.7309 19.255C12.8622 19.1564 12.9359 19.0226 12.9359 18.883V0.995821C12.9359 0.856292 12.8622 0.722478 12.7309 0.623816C12.5996 0.525154 12.4216 0.469727 12.2359 0.469727Z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </div>
+                  <div
+                    *ngIf="
+                      tutorSupplementForm.get('address')?.errors &&
+                      tutorSupplementForm.get('address')?.invalid &&
+                      tutorSupplementForm.get('address')?.touched
+                    "
+                    class="absolute text-invalid -bottom-4"
+                    id="address-errors"
+                  >
+                    <p
+                      *ngIf="tutorSupplementForm.get('address')?.errors?.['required']"
+                    >
+                      <span class="font-medium">Oops!</span> Address is required
+                    </p>
+                  </div>
+                </div>
+                <div class="field-container relative">
+                  <label for="postalCode" class="input-label"
+                    >Code postal :</label
+                  >
+                  <div
+                    class="input-icon"
+                    [ngClass]="{
+                      invalid:
+                        tutorSupplementForm.get('postalCode')?.touched &&
+                        tutorSupplementForm.get('postalCode')?.invalid
+                    }"
+                  >
+                    <input
+                      type="text"
+                      id="postalCode"
+                      autocomplete="true"
+                      type="text"
+                      id="postalCode"
+                      formControlName="postalCode"
+                      placeholder="Entrez votre code postal"
+                    /><svg
+                      class="icon right-icon"
+                      width="15"
+                      height="20"
+                      viewBox="0 0 15 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M7.29668 0.90918C3.32036 0.90918 0.0966797 3.32954 0.0966797 6.315C0.0966797 9.30082 7.29668 19.0914 7.29668 19.0914C7.29668 19.0914 14.4967 9.30082 14.4967 6.315C14.4967 3.32954 11.273 0.90918 7.29668 0.90918ZM7.27316 7.93173C6.0458 7.93173 5.05124 7.18445 5.05124 6.26336C5.05124 5.34154 6.0458 4.59463 7.27316 4.59463C8.50148 4.59463 9.49604 5.34154 9.49604 6.26336C9.49604 7.18445 8.50148 7.93173 7.27316 7.93173Z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </div>
+                  <div
+                    *ngIf="
+                      tutorSupplementForm.get('country')?.errors &&
+                      tutorSupplementForm.get('country')?.invalid &&
+                      tutorSupplementForm.get('country')?.touched
+                    "
+                    class="absolute text-invalid -bottom-4"
+                    id="country-errors"
+                  >
+                    <p
+                      *ngIf="tutorSupplementForm.get('country')?.errors?.['required']"
+                    >
+                      <span class="font-medium">Oops!</span> Country is required
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -205,15 +374,15 @@
                   class="checkbox-field"
                 />
                 <input
-                  type="text"
+                  type="day"
                   id="lundiDebut"
-                  formControlName="lundi.debut"
+                  formControlName="lundi.start"
                   class="input-field"
                 />
                 <input
                   type="text"
                   id="lundiFin"
-                  formControlName="lundi.fin"
+                  formControlName="lundi.end"
                   class="input-field"
                 />
 
@@ -228,13 +397,13 @@
                 <input
                   type="text"
                   id="mardiDebut"
-                  formControlName="mardi.debut"
+                  formControlName="mardi.start"
                   class="input-field"
                 />
                 <input
                   type="text"
                   id="mardiFin"
-                  formControlName="mardi.fin"
+                  formControlName="mardi.end"
                   class="input-field"
                 />
 

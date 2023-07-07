@@ -16,80 +16,81 @@ export class TutorsSupplementFormComponent implements OnInit {
     this.tutorSupplementForm = this.formBuilder.group({
       // Step 1: Informations personnelles
       photo: ['', Validators.required], // Champ pour la photo de profil
-      ville: ['', Validators.required], // Champ pour la ville
-      pays: ['', Validators.required], // Champ pour le pays
+      city: ['', Validators.required], // Champ pour la ville
+      country: ['', Validators.required], // Champ pour le pays
       address: ['', Validators.required], // Champ pour l'adresse
-      codePostal: ['', Validators.required], // Champ pour le code postal
+      postalCode: ['', Validators.required], // Champ pour le code postal
 
       // Step 2: Informations professionnelles
-      anneeExperience: ['', Validators.required], // Champ pour l'année d'expérience
-      niveauEtudes: ['', Validators.required], // Champ pour le niveau d'études
-      domaineEtudes: ['', Validators.required], // Champ pour le domaine d'études
-      periodeTemps: [''], // Champ pour la période de temps
-      actuellementInscrit: [false], // Champ pour indiquer si l'utilisateur est actuellement inscrit
-      depuisMois: [''], // Champ pour le mois de début d'inscription
-      depuisAnnee: [''], // Champ pour l'année de début d'inscription
+      experienceYear: ['', Validators.required], // Champ pour l'année d'expérience
+      educationLevel: ['', Validators.required], // Champ pour le niveau d'études
+      educationDomain: ['', Validators.required], // Champ pour le domaine d'études
+      timePeriod: [''], // Champ pour la période de temps
+      currentlyEnrolled: [false], // Champ pour indiquer si l'utilisateur est actuellement inscrit
+      sinceMonth: [''], // Champ pour le mois de début d'inscription
+      sinceYear: [''], // Champ pour l'année de début d'inscription
 
       // Step 3: Disponibilité
       timezone: ['', Validators.required], // Champ pour la timezone
-      jours: this.formBuilder.group({
-        lundi: this.formBuilder.group({
+      days: this.formBuilder.group({
+        monday: this.formBuilder.group({
           active: [false], // Checkbox pour activer ou désactiver le jour
-          debut: [''], // Champ pour l'heure de début de disponibilité
-          fin: [''] // Champ pour l'heure de fin de disponibilité
+          start: [''], // Champ pour l'heure de début de disponibilité
+          end: [''] // Champ pour l'heure de fin de disponibilité
         }),
-        mardi: this.formBuilder.group({
+        tuesday: this.formBuilder.group({
           active: [false],
-          debut: [''],
-          fin: ['']
+          start: [''],
+          end: ['']
         }),
         // Ajoutez les autres jours de la semaine de la même manière
-        mercredi: this.formBuilder.group({
+        wednesday: this.formBuilder.group({
           active: [false],
-          debut: [''],
-          fin: ['']
+          start: [''],
+          end: ['']
         }),
-        jeudi: this.formBuilder.group({
+        thursday: this.formBuilder.group({
           active: [false],
-          debut: [''],
-          fin: ['']
+          start: [''],
+          end: ['']
         }),
-        vendredi: this.formBuilder.group({
+        friday: this.formBuilder.group({
           active: [false],
-          debut: [''],
-          fin: ['']
+          start: [''],
+          end: ['']
         }),
-        samedi: this.formBuilder.group({
+        saturday: this.formBuilder.group({
           active: [false],
-          debut: [''],
-          fin: ['']
+          start: [''],
+          end: ['']
         }),
-        dimanche: this.formBuilder.group({
+        sunday: this.formBuilder.group({
           active: [false],
-          debut: [''],
-          fin: ['']
+          start: [''],
+          end: ['']
         })
       }),
 
       // Step 4: Préférences de tutorat
       // Ajoutez les champs pour les préférences de tutorat
-      sujet: ['', Validators.required], // Champ pour le sujet de tutorat
-      niveauScolaire: ['', Validators.required], // Champ pour le niveau scolaire
-      typeTutorat: ['', Validators.required], // Champ pour le type de tutorat (en ligne ou en présentiel)
-      typeEleve: ['', Validators.required], // Champ pour le type d'élève (âge
+      subject: ['', Validators.required], // Champ pour le sujet de tutorat
+      schoolLevel: ['', Validators.required], // Champ pour le niveau scolaire
+      tutoringType: ['', Validators.required], // Champ pour le type de tutorat (en ligne ou en présentiel)
+      studentType: ['', Validators.required], // Champ pour le type d'élève (âge
       // ...
 
       // Step 4: Préférences de tutorat
       // Step 5: Compétences en communication
-      communicationEcrite: ['', Validators.required], // Champ pour les compétences en communication écrite
-      communicationOrale: ['', Validators.required], // Champ pour les compétences en communication orale
-      resolutionProblemes: ['', Validators.required], // Champ pour les compétences en résolution de problèmes
-      priseDecision: ['', Validators.required], // Champ pour les compétences en prise de décision
+      writtenCommunication: ['', Validators.required], // Champ pour les compétences en communication écrite
+      oralCommunication: ['', Validators.required], // Champ pour les compétences en communication orale
+      problemSolving: ['', Validators.required], // Champ pour les compétences en résolution de problèmes
+      decisionMaking: ['', Validators.required], // Champ pour les compétences en prise de décision
 
       // Step 6: Antécédents judiciaires
-      verificationAntecedents: ['', Validators.required] // Champ pour la vérification des antécédents judiciaires
+      backgroundCheck: ['', Validators.required] // Champ pour la vérification des antécédents judiciaires
     })
   }
+
   nextStep() {
     this.currentStep++
   }
