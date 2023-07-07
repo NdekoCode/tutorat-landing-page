@@ -12,7 +12,7 @@
     "compodoc": "npx compodoc -p tsconfig.doc.json",
     "compodoc:serve": "npx compodoc -p tsconfig.doc.json -s",
     "compodoc:watch": "npx compodoc -p tsconfig.doc.json -s -w",
-    "build:ci": "ng build --prod",
+    "build:ci": "ng build --configuration production",
     "prepare": "husky install",
     "lint": "npx eslint \"src/**/*.{js,jsx,ts,tsx,html}\" --quiet --fix",
     "format": "npx prettier \"src/**/*.{js,jsx,ts,tsx,html,css,scss}\" --write"
@@ -66,7 +66,7 @@
   },
   "lint-staged": {
     "src/**/*.{ts,css,html}": [
-      "yarn lint"
+      "pnpm lint"
     ]
   },
   "jest": {
