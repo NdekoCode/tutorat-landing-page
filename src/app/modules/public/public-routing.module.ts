@@ -5,7 +5,7 @@ import { BlogComponent } from './pages/blog/blog.component'
 import { ContactComponent } from './pages/contact/contact.component'
 import { HomeComponent } from './pages/home/home.component'
 import { TutorsPageComponent } from './pages/tutors-page/tutors-page.component'
-import { PublicLayoutComponent } from './public-layout/public-layout.component'
+import { PublicLayoutComponent } from './public-layout.component'
 
 const routes: Routes = [
   {
