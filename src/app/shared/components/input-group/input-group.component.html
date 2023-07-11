@@ -1,0 +1,65 @@
+<div class="input-group">
+  <div class="relative field-container">
+    <label for="ville" class="input-label">Ville :</label>
+    <div class="input-icon">
+      <input
+        type="text"
+        id="city"
+        autocomplete="true"
+        type="text"
+        id="ville"
+        formControlName="ville"
+        placeholder="Entrez le nom de votre ville"
+      />
+      <svg
+        width="25"
+        height="19"
+        class="icon right-icon"
+        viewBox="0 0 25 19"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M19.3359 11.3636H17.3359V9.84847H19.3359M19.3359 14.3939H17.3359V12.8788H19.3359M13.3359 5.30302H11.3359V3.78786H13.3359M13.3359 8.33332H11.3359V6.81817H13.3359M13.3359 11.3636H11.3359V9.84847H13.3359M13.3359 14.3939H11.3359V12.8788H13.3359M7.33594 8.33332H5.33594V6.81817H7.33594M7.33594 11.3636H5.33594V9.84847H7.33594M7.33594 14.3939H5.33594V12.8788H7.33594M15.3359 8.33332V3.78786L12.3359 1.51514L9.33594 3.78786V5.30302H3.33594V15.9091H21.3359V8.33332H15.3359Z"
+          fill="currentColor"
+        />
+      </svg>
+    </div>
+    <div class="absolute text-invalid block-error -bottom-4" id="city-errors">
+      <p><span class="font-medium">Oops!</span> City is required</p>
+    </div>
+  </div>
+  <div class="relative field-container">
+    <label for="country" class="input-label">Pays :</label>
+    <div class="input-icon invalid">
+      <input
+        type="text"
+        id="country"
+        autocomplete="true"
+        type="text"
+        id="country"
+        formControlName="country"
+        placeholder="Entrez le nom de votre pays"
+      />
+      <svg
+        width="15"
+        height="18"
+        viewBox="0 0 15 18"
+        fill="none"
+        class="icon right-icon"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M4.22294 13.4466H14.3839V4.39479H4.22294V13.4466ZM9.38594 5.29577L13.0493 8.62692H12.1263V12.6237H9.98094V9.80243H8.62594V12.6237H6.59394V8.62692H5.64727L9.38594 5.29577ZM3.09394 2.16142V0.0908203H0.835938V17.0908H3.09394V3.21962H14.8359V2.16142H3.09394Z"
+          fill="currentColor"
+        />
+      </svg>
+    </div>
+    <div
+      class="absolute text-invalid block-error -bottom-4"
+      id="country-errors"
+    >
+      <p><span class="font-medium">Oops!</span> Country is required</p>
+    </div>
+  </div>
+</div>

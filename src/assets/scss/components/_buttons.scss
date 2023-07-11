@@ -1,4 +1,4 @@
-.btn {
+.button {
   gap      : rem(10);
   min-width: rem(50);
   display  : block;
@@ -14,12 +14,12 @@
     background-color: none;
   }
 
-  &.btn-primary {
+  &.button-primary {
     background: var(--yellow-dark);
     color     : var(--color-white);
   }
 
-  &.btn-action {
+  &.button-action {
     background-color: var(--background-color);
     color           : var(--color-white);
     font-weight     : 600;
@@ -35,7 +35,7 @@
 
   }
 
-  &.btn-icon {
+  &.button-icon {
     @apply flex items-center justify-center;
     row-gap: rem(5);
 
@@ -48,23 +48,23 @@
   }
 
 
-  &.btn-small {
+  &.button-small {
     @apply py-3;
   }
 
-  &.btn-dark {
+  &.button-dark {
     @apply bg-[#151D34] text-white rounded;
   }
 
-  &.btn-full {
+  &.button-full {
     @apply w-full;
   }
 
-  &.btn-blue-light {
+  &.button-blue-light {
     @apply bg-[#E0EFFE];
   }
 }
 
-.btn-container {
+.button-container {
   @apply flex items-center gap-3;
 }

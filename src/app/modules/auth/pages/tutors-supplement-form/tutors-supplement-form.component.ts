@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
+import { Alert, Timer } from 'src/app/core/utilities/types'
 
 @Component({
   selector: 'app-tutors-supplement-form',
@@ -8,19 +9,31 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 })
 export class TutorsSupplementFormComponent implements OnInit {
   tutorSupplementForm!: FormGroup
+  imagePath: string | undefined = '/assets/images/avatar.png'
   currentStep: number = 1
-
+  alert: Alert = {
+    isShown: false,
+    alertType: 'error',
+    alertTitle: '',
+    alertMessage: ''
+  }
+  timer: Timer
+  submitForm: boolean = false
+  isLoading: boolean = false
+  isChange: boolean = false
   constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit() {
     this.tutorSupplementForm = this.formBuilder.group({
       // Step 1: Informations personnelles
-      photo: ['', Validators.required], // Champ pour la photo de profil
+      /*
       city: ['', Validators.required], // Champ pour la ville
       country: ['', Validators.required], // Champ pour le pays
       address: ['', Validators.required], // Champ pour l'adresse
-      postalCode: ['', Validators.required], // Champ pour le code postal
-
+      postalCode: ['', Validators.required], // Champ pour le code postal */
+      photo: ['', Validators.required], // Champ pour la photo de profil
+      biography: ['', Validators.required],
+      hourlyRate: [0, Validators.required],
       // Step 2: Informations professionnelles
       experienceYear: ['', Validators.required], // Champ pour l'année d'expérience
       educationLevel: ['', Validators.required], // Champ pour le niveau d'études
@@ -106,6 +119,19 @@ export class TutorsSupplementFormComponent implements OnInit {
       // Envoyez les données du formulaire au serveur
       // eslint-disable-next-line no-console
       console.log(this.tutorSupplementForm.value)
+    }
+  }
+  onFileSelected(event: Event) {
+    const target = event.target as HTMLInputElement
+    if (target.files && target.files[0]) {
+      const file = target.files[0]
+      const reader = new FileReader()
+
+      reader.onload = (e: ProgressEvent<FileReader>) => {
+        this.imagePath = e.target?.result as string // Stockez l'URL de l'image prévisualisée dans une variable
+      }
+
+      reader.readAsDataURL(file) // Convertissez le fichier en URL base64 pour l'afficher
     }
   }
 }

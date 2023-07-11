@@ -9,13 +9,15 @@ import { AuthModule } from './modules/auth/auth.module'
 import { MySpaceModule } from './modules/myspace/myspace.module'
 import { InputContainerComponent } from './shared/components/input-container/input-container.component'
 import { InputComponent } from './shared/components/input/input.component'
+import { InputGroupComponent } from './shared/components/input-group/input-group.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     InputComponent,
     InputContainerComponent,
-    ErrorComponent
+    ErrorComponent,
+    InputGroupComponent
   ],
   imports: [
     BrowserModule,

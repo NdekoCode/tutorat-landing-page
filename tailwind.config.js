@@ -28,7 +28,6 @@ module.exports = {
   plugins: [require('daisyui')],
   daisyui: {
     themes: false, // true: all themes | false: only light + dark | array: specific themes like this ["light", "dark", "cupcake"]
-    darkTheme: 'light', // name of one of the included themes for dark mode
-    prefix: 'tw-' // prefix for daisyUI classnames (components, modifiers and responsive class names. Not colors)
+    darkTheme: 'light'
   }
 }

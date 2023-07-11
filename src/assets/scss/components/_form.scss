@@ -4,7 +4,7 @@
 
 .form-container {
   border-radius: rem(35);
-  padding      : rem(30);
+  padding      : rem(25);
 }
 
 .form-header {
@@ -84,17 +84,17 @@
   .form-login {
 
     .input-field,
-    .btn-full {
+    .button-full {
       @apply min-w-[200px] w-full;
     }
 
   }
 
-  .btn {
+  .button {
     @apply font-semibold;
   }
 
-  .btn-icon.btn-blue-light {
+  .button-icon.button-blue-light {
     @apply border-2 border-[#151D34] text-[#151D34] rounded;
   }
 }
@@ -115,6 +115,11 @@
   background        : url('/assets/images/tutor.jpg') no-repeat center center /cover;
   -webkit-transition: background-image 0.2s ease-in-out;
   transition        : background-image 0.2s ease-in-out;
+}
+
+.tutor-bg-extend {
+  @extend .tutor-bg;
+  background-image: url('/assets/images/tutor-1.jpg');
 }
 
 .client-bg {

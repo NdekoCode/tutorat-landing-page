@@ -28,7 +28,7 @@ describe('LoginComponent', () => {
     expect(element.querySelector('form')).toBeTruthy()
     expect(element.querySelector('#email')).toBeTruthy()
     expect(element.querySelector('#password')).toBeTruthy()
-    expect(element.querySelector('#btn-login')).toBeTruthy()
+    expect(element.querySelector('#button-login')).toBeTruthy()
   })
 
   it('should return model invalid when form is empty', () => {
