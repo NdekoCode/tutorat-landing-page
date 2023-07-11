@@ -10,12 +10,10 @@ import { PublicLayoutComponent } from './public-layout.component'
 const routes: Routes = [
   {
     path: '',
-    pathMatch: 'full',
     component: PublicLayoutComponent,
-    redirectTo: 'home',
     children: [
       {
-        path: 'home',
+        path: '',
         component: HomeComponent
       },
       {
