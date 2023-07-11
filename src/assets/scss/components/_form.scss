@@ -106,7 +106,7 @@
   }
 
   .field-check {
-    @apply min-h-[80px]
+    @apply min-h-[85px]
   }
 }
 
@@ -125,17 +125,17 @@
 }
 
 .field-check {
-  @apply border-2 border-transparent transition-all duration-200 rounded-lg;
+  @apply border border-gray-300 transition-all duration-200 rounded-lg;
 
   .check-item {
-    @apply ml-auto;
+    @apply ml-auto opacity-0 invisible;
   }
 
   &.active {
     @extend .border-blue;
 
     .check-item {
-      @apply text-white opacity-100;
+      @apply text-white opacity-100 visible;
       @extend .bg-blue;
     }
   }
