@@ -6,7 +6,7 @@
           class="flex items-center justify-center w-full h-full pr-0 rounde d-lg"
         >
           <div
-            class="flex flex-col w-full h-full rounded-curve-bottom tutor-bg"
+            class="flex flex-col w-full h-full rounded-curve-bottom tutor-bg-extend"
           >
             <div class="py-5 form-header block-blur-white">
               <h2 class="mb-3 text-3xl font-bold text-gray-100">
@@ -17,22 +17,6 @@
                 profil de tuteur. N’hésitez pas à ajouter autant de détails que
                 nécessaire.
               </p>
-            </div>
-            <div class="container m-5 mt-auto">
-              <div
-                class="rounded-curve-bottom-md block-description block-blur-white"
-              >
-                <h5 class="mb-3 text-3xl font-semibold fade-in-down">
-                  Devenir tuteur
-                </h5>
-                <p class="fadeInRight">
-                  Vous aurez l'opportunité de partager vos connaissances,
-                  d'aider les autres et de participer activement à la communauté
-                  de l'apprentissage. En devenant tuteur, vous formerez une
-                  partie précieuse de notre réseau et contribuerez à former la
-                  prochaine génération de talents.
-                </p>
-              </div>
             </div>
           </div>
         </div>
@@ -58,7 +42,7 @@
                       détails que nécessaire.
                     </p>
                   </div>
-                  <div class="shadow-md form-container bg-glace">
+                  <div class="shadow-md form-container min-h-[550px] bg-glace">
                     <!-- Etape 1: Informations personnelles -->
                     <div *ngIf="currentStep === 1">
                       <h3 class="mb-4 text-2xl font-bold">
@@ -175,18 +159,18 @@
                           </div>
                           <div
                             *ngIf="
-                              tutorSupplementForm.get('country')?.errors &&
-                              tutorSupplementForm.get('country')?.invalid &&
-                              tutorSupplementForm.get('country')?.touched
+                              tutorSupplementForm.get('hourlyRate')?.errors &&
+                              tutorSupplementForm.get('hourlyRate')?.invalid &&
+                              tutorSupplementForm.get('hourlyRate')?.touched
                             "
                             class="absolute text-invalid block-error -bottom-4"
                             id="country-errors"
                           >
                             <p
-                              *ngIf="tutorSupplementForm.get('country')?.errors?.['required']"
+                              *ngIf="tutorSupplementForm.get('hourlyRate')?.errors?.['required']"
                             >
-                              <span class="font-medium">Oops!</span> Country is
-                              required
+                              <span class="font-medium">Oops!</span> hourlyRate
+                              is required
                             </p>
                           </div>
                         </div>
@@ -232,93 +216,18 @@
                         nous aider à mieux comprendre votre expérience et vos
                         compétences.
                       </p>
-                      <div
-                        class="join join-vertical gap-x-3 lg:join-horizontal"
-                      >
-                        <div class="w-full max-w-xs join-item form-control">
-                          <label class="label">
-                            <span class="label-text"
-                              >What is your name?</span
-                            > </label
-                          ><input
-                            type="text"
-                            placeholder="Type here"
-                            class="w-full max-w-xs input input-bordered"
-                          />
-                        </div>
 
-                        <div class="w-full max-w-xs join-item form-control">
-                          <label class="label">
-                            <span class="label-text">What is your name?</span>
-                          </label>
-                          <input
-                            type="text"
-                            placeholder="Type here"
-                            class="w-full max-w-xs input input-bordered"
-                          />
-                        </div>
+                      <div class="w-full form-control">
+                        <label class="label">
+                          <span class="label-text"
+                            >Specialisations</span
+                          > </label
+                        ><input
+                          type="text"
+                          placeholder="Entrer vos specialisation"
+                          class="w-full max-w-xs input input-bordered"
+                        />
                       </div>
-                      <label for="anneeExperience">Année d'expérience :</label>
-                      <input
-                        type="text"
-                        id="anneeExperience"
-                        formControlName="anneeExperience"
-                        class="input-field"
-                      />
-
-                      <label for="niveauEtudes">Niveau d'études :</label>
-                      <input
-                        type="text"
-                        id="niveauEtudes"
-                        formControlName="niveauEtudes"
-                        class="input-field"
-                      />
-
-                      <label for="domaineEtudes">Domaine d'études :</label>
-                      <input
-                        type="text"
-                        id="domaineEtudes"
-                        formControlName="domaineEtudes"
-                        class="input-field"
-                      />
-
-                      <label for="periodeTemps">Période de temps :</label>
-                      <input
-                        type="text"
-                        id="periodeTemps"
-                        formControlName="periodeTemps"
-                        class="input-field"
-                      />
-
-                      <label for="actuellementInscrit"
-                        >Actuellement inscrit :</label
-                      >
-                      <input
-                        type="checkbox"
-                        id="actuellementInscrit"
-                        formControlName="actuellementInscrit"
-                        class="checkbox-field"
-                      />
-
-                      <label for="depuisMois"
-                        >Mois de début d'inscription :</label
-                      >
-                      <input
-                        type="text"
-                        id="depuisMois"
-                        formControlName="depuisMois"
-                        class="input-field"
-                      />
-
-                      <label for="depuisAnnee"
-                        >Année de début d'inscription :</label
-                      >
-                      <input
-                        type="text"
-                        id="depuisAnnee"
-                        formControlName="depuisAnnee"
-                        class="input-field"
-                      />
                     </div>
 
                     <!-- Etape 3: Disponibilité -->
