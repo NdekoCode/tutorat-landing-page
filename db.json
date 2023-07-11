@@ -1,0 +1,11 @@
+{
+  "userChoice": ["tutor", "client"],
+  "courses": [
+    { "id": 1, "name": "Physiques" },
+    { "id": 2, "name": "Algebre" }
+  ],
+  "typeId": {
+    "PASS": "Passeport",
+    "CARTE_ELECT": "Carte d'electeur"
+  }
+}

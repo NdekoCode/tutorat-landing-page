@@ -8,7 +8,7 @@
           class="p-4"
         >
           <div class="form-header">
-            <h2 class="text-4xl font-bold mb-4">
+            <h2 class="mb-4 text-4xl font-bold">
               Obtenir des informations supplémentaires
             </h2>
             <p class="form-description">
@@ -17,13 +17,13 @@
               nécessaire.
             </p>
           </div>
-          <div class="form-container shadow-md bg-glace mt-10">
-            <div class="step py-5 flex justify-center items-center">
+          <div class="mt-10 shadow-md form-container bg-glace">
+            <div class="flex items-center justify-center py-5 step">
               <div class="step-line"></div>
             </div>
             <!-- Etape 1: Informations personnelles -->
             <div *ngIf="currentStep === 1">
-              <h3 class="text-2xl font-bold mb-4">Informations personnelles</h3>
+              <h3 class="mb-4 text-2xl font-bold">Informations personnelles</h3>
               <p class="form-description">
                 Nous sommes ravis de vous accueillir en tant que tuteur!
                 Veuillez remplir le formulaire ci-dessous avec vos informations
@@ -32,24 +32,24 @@
               <div class="flex justify-center mb-5">
                 <label
                   for="photo"
-                  class="w-max flex flex-col items-center justify-center"
+                  class="flex flex-col items-center justify-center w-max"
                 >
                   <input
                     type="file"
-                    class="tw-file-input hidden form-control tw-file-input-bordered w-full max-w-xs"
+                    class="hidden w-full max-w-xs tw-file-input form-control tw-file-input-bordered"
                     id="photo"
                     formControlName="photo"
                   />
                   <img
                     src="/assets/images/avatar.png"
                     alt="Avatar"
-                    class="cursor-pointer opacity-75 hover:opacity-100 transition-opacity duration-150"
+                    class="transition-opacity duration-150 opacity-75 cursor-pointer hover:opacity-100"
                   />
                   <p
-                    class="border rounded text-gray border-gray-300 gap-x-1 py-2 px-3 mt-3 flex cursor-pointer items-center"
+                    class="flex items-center px-3 py-2 mt-3 border border-gray-300 rounded cursor-pointer text-gray gap-x-1"
                   >
                     <svg
-                      class="h-5 w-5"
+                      class="w-5 h-5"
                       width="25"
                       height="25"
                       viewBox="0 0 25 25"
@@ -77,7 +77,7 @@
               </div>
 
               <div class="input-group">
-                <div class="field-container relative">
+                <div class="relative field-container">
                   <label for="ville" class="input-label">Ville :</label>
                   <div
                     class="input-icon"
@@ -126,7 +126,7 @@
                     </p>
                   </div>
                 </div>
-                <div class="field-container relative">
+                <div class="relative field-container">
                   <label for="country" class="input-label">Pays :</label>
                   <div
                     class="input-icon"
@@ -178,7 +178,7 @@
               </div>
 
               <div class="input-group">
-                <div class="field-container relative">
+                <div class="relative field-container">
                   <label for="address" class="input-label">Address :</label>
                   <div
                     class="input-icon"
@@ -226,7 +226,7 @@
                     </p>
                   </div>
                 </div>
-                <div class="field-container relative">
+                <div class="relative field-container">
                   <label for="postalCode" class="input-label"
                     >Code postal :</label
                   >
@@ -281,7 +281,7 @@
 
             <!-- Etape 2: Informations professionnelles -->
             <div *ngIf="currentStep === 2">
-              <h2 class="text-2xl font-bold mb-4">
+              <h2 class="mb-4 text-2xl font-bold">
                 Informations professionnelles
               </h2>
               <p class="form-description">
@@ -349,7 +349,7 @@
 
             <!-- Etape 3: Disponibilité -->
             <div *ngIf="currentStep === 3">
-              <h2 class="text-2xl font-bold mb-4">Disponibilité</h2>
+              <h2 class="mb-4 text-2xl font-bold">Disponibilité</h2>
               <p class="form-description">
                 Nous savons que votre temps est précieux et nous voulons nous
                 assurer que vous êtes disponible pour les étudiants qui ont
@@ -413,7 +413,7 @@
 
             <!-- Etape 4: Préférences de tutorat -->
             <div *ngIf="currentStep === 4">
-              <h2 class="text-2xl font-bold mb-4">Préférences de tutorat</h2>
+              <h2 class="mb-4 text-2xl font-bold">Préférences de tutorat</h2>
               <label for="sujet">Sujet :</label>
               <input
                 type="text"
@@ -449,7 +449,7 @@
 
             <!-- Etape 5: Compétences en communication -->
             <div *ngIf="currentStep === 5">
-              <h2 class="text-2xl font-bold mb-4">
+              <h2 class="mb-4 text-2xl font-bold">
                 Compétences en communication
               </h2>
               <label for="communicationEcrite"
@@ -495,7 +495,7 @@
 
             <!-- Etape 6: Antécédents judiciaires -->
             <div *ngIf="currentStep === 6">
-              <h2 class="text-2xl font-bold mb-4">Antécédents judiciaires</h2>
+              <h2 class="mb-4 text-2xl font-bold">Antécédents judiciaires</h2>
               <label for="verificationAntecedents"
                 >Vérification des antécédents judiciaires :</label
               >
@@ -518,7 +518,7 @@
             </div>
           </div>
           <div class="form-footer">
-            <div class="btn-container mt-10">
+            <div class="mt-10 btn-container">
               <button
                 type="button"
                 class="btn btn-primary"

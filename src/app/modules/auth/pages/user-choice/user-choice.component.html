@@ -1,0 +1,238 @@
+<section class="fade">
+  <div class="auth-section form-step section-content">
+    <div class="flex flex-wrap w-full min-h-screen md:flex-nowrap">
+      <div
+        class="w-full p-5 my-5 min-w-[250px] md:max-w-lg bg-red-light rounded-curve-top"
+      >
+        <div class="container py-3">
+          <a routerLink="/" class="back-link hover:shadow-md">
+            <svg
+              width="10"
+              height="17"
+              viewBox="0 0 10 17"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9.15732 1.36714C9.0654 1.27499 8.95619 1.20187 8.83597 1.15198C8.71575 1.1021 8.58686 1.07642 8.45669 1.07642C8.32653 1.07642 8.19764 1.1021 8.07742 1.15198C7.95719 1.20187 7.84799 1.27499 7.75607 1.36714L1.17732 7.94589C1.10393 8.01913 1.0457 8.10613 1.00598 8.2019C0.96625 8.29767 0.945801 8.40033 0.945801 8.50402C0.945801 8.6077 0.96625 8.71037 1.00598 8.80614C1.0457 8.90191 1.10393 8.9889 1.17732 9.06214L7.75607 15.6409C8.14399 16.0288 8.7694 16.0288 9.15732 15.6409C9.54524 15.253 9.54524 14.6276 9.15732 14.2396L3.42565 8.50006L9.16524 2.76048C9.54524 2.38048 9.54524 1.74714 9.15732 1.36714Z"
+                fill="#151D34"
+                stroke="#151D34"
+                stroke-width="0.2"
+              />
+            </svg>
+          </a>
+
+          <div class="mb-5 max-w-max form-header">
+            <h2 class="mb-3 text-3xl font-semibold">
+              Decidez qui vous voulez etre
+            </h2>
+            <p class="max-w-2xl form-description">
+              Nous souhaitons créer une expérience chaleureuse et personnalisée
+              pour tous nos utilisateurs.
+            </p>
+          </div>
+          <form
+            action=""
+            (ngSubmit)="saveChoiceForm()"
+            [formGroup]="choiceForm"
+            method="POST"
+          >
+            <div class="w-full field-container">
+              <label
+                for="client"
+                class="block p-2 bg-white border-gray-300 cursor-pointer field-check"
+                [class]="userChoice === 'client' ? 'active' : ''"
+              >
+                <input
+                  type="radio"
+                  id="client"
+                  value="client"
+                  formControlName="userChoice"
+                  (input)="saveUserChoice('client')"
+                  class="hidden w-full max-w-xs tw-file-input form-control tw-file-input-bordered"
+                />
+                <div class="flex items-center w-full px-1 gap-x-5">
+                  <svg
+                    class="flex-none w-8 h-8 ml-3 fill-current"
+                    width="55"
+                    height="57"
+                    viewBox="0 0 55 57"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M54 31.05H40.84C40.45 24.36 36.15 18.85 30.49 17.39C33.96 16.15 36.45 12.85 36.45 8.96C36.45 4.02 32.43 0 27.49 0C22.55 0 18.53 4.02 18.53 8.96C18.53 12.85 21.02 16.16 24.49 17.39C18.83 18.85 14.54 24.36 14.14 31.05H1C0.45 31.05 0 31.5 0 32.05V38.51C0 39.06 0.45 39.51 1 39.51H3.11V55.61C3.11 56.16 3.56 56.61 4.11 56.61H50.89C51.44 56.61 51.89 56.16 51.89 55.61V39.51H54C54.55 39.51 55 39.06 55 38.51V32.05C55 31.5 54.55 31.05 54 31.05ZM20.54 8.96C20.54 5.12 23.66 2 27.5 2C31.34 2 34.46 5.12 34.46 8.96C34.46 12.8 31.34 15.92 27.5 15.92C23.66 15.92 20.54 12.8 20.54 8.96ZM27.5 19C33.48 19 38.4 24.32 38.85 31.05H16.15C16.6 24.32 21.52 19 27.5 19ZM49.89 54.61H5.11V39.51H49.89V54.61ZM53 37.51H50.89H4.11H2V33.05H15.12H39.89H53V37.51Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                  <div class="">
+                    <h4
+                      class="mb-1 text-lg font-semibold text-blue-950 text-blue"
+                    >
+                      Comme un client
+                    </h4>
+                    <p class="text-xs text-gray-500 max-w-[350px]">
+                      Nous prpoposons une expérience chaleureuse et
+                      personnalisée pour tous nos client qui recherchent un
+                      tuteur.
+                    </p>
+                  </div>
+                  <div class="check-item">
+                    <svg
+                      class="w-5 h-5"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"
+                        class="fill-current"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </label>
+            </div>
+            <div class="w-full field-container">
+              <label
+                for="tutor"
+                class="block px-2 py-3 bg-white border-gray-300 cursor-pointer field-check"
+                [class]="userChoice === 'tutor' ? 'active' : ''"
+              >
+                <input
+                  type="radio"
+                  id="tutor"
+                  value="tutor"
+                  (input)="saveUserChoice('tutor')"
+                  formControlName="userChoice"
+                  class="hidden w-full max-w-xs tw-file-input form-control tw-file-input-bordered"
+                />
+                <div class="flex items-center w-full px-1 gap-x-5">
+                  <svg
+                    class="flex-none w-8 h-8 ml-3 fill-current"
+                    viewBox="0 0 80 75"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M77.9646 50.727L77.5036 50.68V43.737L76.3226 43.637C76.0296 43.612 75.7216 43.6 75.4016 43.6C72.3466 43.6 68.3506 44.635 64.9616 46.084C67.9016 44.025 69.8316 40.619 69.8316 36.766C69.8316 30.493 64.7276 25.389 58.4546 25.389C55.4936 25.389 52.6226 26.58 50.4956 28.673C48.7816 26.827 46.3916 25.193 43.3896 23.797C46.5126 21.359 48.5326 17.57 48.5326 13.311C48.5326 5.971 42.5616 0 35.2226 0C27.8836 0 21.9126 5.971 21.9126 13.311C21.9126 20.65 27.8826 26.622 35.2226 26.622C36.5776 26.622 37.8846 26.415 39.1176 26.037C37.3956 27.021 35.4326 27.557 33.4236 27.557C28.9786 27.557 25.0076 25.062 23.0606 21.047L22.8156 20.54L21.0136 20.555C20.2356 20.685 1.94862 23.885 0.532616 34.959C-0.823384 45.562 0.835615 59.466 0.852615 59.605L0.923615 60.201L7.22562 61.943L8.96262 55.035V65.01H39.4046V69.479L40.9376 69.442C44.0896 69.442 52.4016 71.028 56.5186 73.62L58.4106 74.809V74.866L58.4556 74.839L58.4996 74.866V74.809L60.3916 73.62C64.5076 71.028 72.8326 69.442 75.9856 69.442L77.5046 69.471V63.696L78.0566 63.534C79.2186 63.192 79.9996 62.153 79.9996 60.95V53.329C79.9996 52.123 79.2176 51.086 77.9646 50.727ZM50.3366 30.298L50.4666 30.136L50.4696 30.139L50.8446 29.733C52.8156 27.6 55.5896 26.378 58.4546 26.378C64.1836 26.378 68.8446 31.038 68.8446 36.767C68.8446 42.496 64.1836 47.156 58.4546 47.156C56.6136 47.156 54.7936 46.656 53.1926 45.711C50.0296 43.842 48.0646 40.414 48.0646 36.768C48.0646 34.43 48.8716 32.133 50.3366 30.298ZM35.2226 25.633C28.4286 25.633 22.9006 20.106 22.9006 13.311C22.9006 6.515 28.4286 0.988 35.2226 0.988C42.0166 0.988 47.5446 6.515 47.5446 13.311C47.5446 17.441 45.4946 21.094 42.3686 23.331L42.3506 23.323L42.2916 23.387C40.2896 24.797 37.8536 25.633 35.2226 25.633ZM39.9996 62.58L39.0236 62.969C38.1106 62.701 37.4976 61.891 37.4976 60.949V53.328C37.4976 52.4 38.1226 51.57 39.0176 51.31L39.9996 51.594C39.9996 51.594 42.4106 52.742 42.4106 53.328V60.949C42.4106 61.416 39.9996 62.58 39.9996 62.58ZM56.7136 71.662C52.2576 69.23 44.5106 67.734 41.1926 67.656V63.226C42.2636 62.769 43.3986 62.029 43.3986 60.949V53.328C43.3986 52.029 41.6936 51.224 40.7936 50.892V45.012C43.7816 44.789 48.7286 46.032 52.7066 47.959C54.3946 48.807 55.9346 50.178 56.7146 51.152L56.7136 71.662ZM58.6716 50.203L58.4556 50.488L58.2376 50.203C57.8786 49.728 57.0926 48.789 55.8756 47.842C56.7196 48.041 57.5846 48.143 58.4546 48.143C59.6686 48.143 60.8376 47.948 61.9346 47.592C60.4966 48.434 59.3336 49.328 58.6716 50.203ZM75.7176 67.659C72.3796 67.743 64.6436 69.237 60.1966 71.663V51.155C62.4436 48.425 70.8946 45.257 75.7176 45.391V50.731C74.6616 51.163 73.2206 51.995 73.2206 53.329V60.95C73.2206 62.278 74.6626 63.11 75.7176 63.544V67.659ZM79.0126 60.95C79.0126 61.712 78.5166 62.368 77.7786 62.585L76.7066 62.898L76.3816 62.742C75.3306 62.359 74.2096 61.687 74.2096 60.951V53.33C74.2096 52.588 75.3306 51.916 76.3816 51.535L76.5176 51.486V51.572L77.7766 51.693C78.5166 51.91 79.0136 52.568 79.0136 53.33L79.0126 60.95Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                  <div class="">
+                    <h4 class="mb-1 text-lg font-semibold">Comme un tuteur</h4>
+                    <p class="text-xs text-gray-500 max-w-[350px]">
+                      Partager vos connaissances, aider les autres et de
+                      participer activement à la communauté de l'apprentissage
+                    </p>
+                  </div>
+                  <div class="check-item">
+                    <svg
+                      class="w-5 h-5"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"
+                        class="fill-current"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </label>
+            </div>
+            <div class="!w-full mt-3 field-container">
+              <button
+                class="flex items-center justify-center btn gap-x-1 btn-form btn-dark btn-full"
+                [disabled]="choiceForm.invalid"
+              >
+                <svg
+                  *ngIf="isLoading"
+                  class="w-5 h-5 mr-3 -ml-1 text-indigo-500 animate-spin"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    class="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    stroke-width="4"
+                  ></circle>
+                  <path
+                    class="opacity-75"
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                  ></path>
+                </svg>
+                {{ isLoading ? 'Loading...' : 'Continuez' }}
+              </button>
+              {{ choiceForm.value | json }}
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="hidden w-full md:block">
+        <div
+          class="flex items-center justify-center w-full h-full p-5 pr-0 rounded-lg"
+        >
+          <div
+            class="flex flex-col w-full h-full rounded-curve-bottom"
+            [class]="userChoice === 'tutor' ? 'tutor-bg' : 'client-bg'"
+          >
+            <div class="container m-5 mt-auto">
+              <div
+                class="rounded-curve-bottom-md block-description block-blur-white"
+                *ngIf="userChoice === 'tutor'; else notTutor"
+              >
+                <h5 class="mb-3 text-3xl font-semibold fade-in-down">
+                  Devenir tuteur
+                </h5>
+                <p class="fadeInRight">
+                  Vous aurez l'opportunité de partager vos connaissances,
+                  d'aider les autres et de participer activement à la communauté
+                  de l'apprentissage. En devenant tuteur, vous formerez une
+                  partie précieuse de notre réseau et contribuerez à former la
+                  prochaine génération de talents.
+                </p>
+              </div>
+              <ng-template #notTutor>
+                <div
+                  class="rounded-curve-bottom-md block-description block-blur-white"
+                >
+                  <h5 class="mb-3 text-3xl font-semibold fade-in-down">
+                    Laisser la plateforme décider pour vous (être considéré
+                    comme un client)
+                  </h5>
+                  <p class="fadeInRight">
+                    Si vous souhaitez bénéficier des services de tutorat
+                    dispensés par nos tuteurs, choisissez cette option. Notre
+                    plateforme sélectionnera pour vous un tuteur compétent en
+                    fonction de vos besoins et vous pourrez profiter de
+                    l'expertise de nos tuteurs pour améliorer votre
+                    apprentissage.
+                  </p>
+                </div>
+              </ng-template>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-alert
+  *ngIf="submitForm"
+  [alertTitle]="alert.alertTitle"
+  [isShown]="alert.isShown"
+  [alertType]="alert.alertType"
+  [alertMessage]="alert.alertMessage"
+/>

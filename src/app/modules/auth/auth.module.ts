@@ -12,6 +12,7 @@ import { ForgetPasswordComponent } from './pages/forget-password/forget-password
 import { SignupComponent } from './pages/signup/signup.component'
 import { VerifyUserComponent } from './pages/verify-user/verify-user.component'
 import { TutorsSupplementFormComponent } from './pages/tutors-supplement-form/tutors-supplement-form.component'
+import { UserChoiceComponent } from './pages/user-choice/user-choice.component'
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { TutorsSupplementFormComponent } from './pages/tutors-supplement-form/tu
     ConfirmationComponent,
     VerifyUserComponent,
     LogoutComponent,
-    TutorsSupplementFormComponent
+    TutorsSupplementFormComponent,
+    UserChoiceComponent
   ],
   exports: [],
   imports: [CommonModule, ReactiveFormsModule, AuthRoutingModule, SharedModule]

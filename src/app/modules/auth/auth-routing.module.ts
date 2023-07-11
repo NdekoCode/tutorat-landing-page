@@ -8,6 +8,7 @@ import { OTPVerificationComponent } from './pages/otp-verification/otp-verificat
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component'
 import { SignupComponent } from './pages/signup/signup.component'
 import { TutorsSupplementFormComponent } from './pages/tutors-supplement-form/tutors-supplement-form.component'
+import { UserChoiceComponent } from './pages/user-choice/user-choice.component'
 import { VerifyUserComponent } from './pages/verify-user/verify-user.component'
 
 const routes: Routes = [
@@ -23,6 +24,10 @@ const routes: Routes = [
   {
     path: 'signup',
     component: SignupComponent
+  },
+  {
+    path: 'user-choice',
+    component: UserChoiceComponent
   },
   {
     path: 'forget-password',

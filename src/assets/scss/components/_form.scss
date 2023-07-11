@@ -10,3 +10,133 @@
 .form-header {
   text-align: center;
 }
+
+.input-group {
+  @apply w-full;
+
+  .field-container {
+    @apply w-1/2 mb-3;
+  }
+}
+
+.form-tutor {
+  background-color: var(--reg-light);
+  background      : url('/assets/images/icons/bar-decorator.png') no-repeat center center / contain;
+}
+
+.auth-section {
+  .block-content {
+    @apply min-h-screen;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin            : 0;
+  }
+
+  /* Works for Firefox */
+  input[type="number"] {
+    -moz-appearance: textfield;
+    appearance     : textfield;
+  }
+
+  .field-container,
+  .input-group {
+    @apply mb-3 max-w-[400px];
+  }
+
+  .input-group {
+
+    .field-container {
+      @apply basis-1/2 mb-0 w-full;
+
+      input {
+        @apply min-w-full;
+      }
+
+    }
+  }
+
+  .block__right,
+  .block__left {
+    @apply flex flex-col justify-center;
+  }
+
+
+  .block__left,
+  .block__display {
+    display: none;
+    @extend .bg-red-light;
+
+    @media #{$lg-screen} {
+
+      @apply flex flex-col justify-center;
+    }
+  }
+
+  .block__right,
+  .block__form-context,
+  .block__left .block__img {
+    @apply max-w-[450px] mx-auto;
+  }
+
+  .form-login {
+
+    .input-field,
+    .btn-full {
+      @apply min-w-[200px] w-full;
+    }
+
+  }
+
+  .btn {
+    @apply font-semibold;
+  }
+
+  .btn-icon.btn-blue-light {
+    @apply border-2 border-[#151D34] text-[#151D34] rounded;
+  }
+}
+
+.form-step {
+
+  .block__form-context {
+    @apply flex items-center justify-center;
+  }
+
+  .field-check {
+    @apply min-h-[80px]
+  }
+}
+
+.tutor-bg {
+  animation         : fadeIn var(--transition-1) forwards;
+  background        : url('/assets/images/tutor.jpg') no-repeat center center /cover;
+  -webkit-transition: background-image 0.2s ease-in-out;
+  transition        : background-image 0.2s ease-in-out;
+}
+
+.client-bg {
+  background        : url('/assets/images/student.png') no-repeat center center /cover;
+  -webkit-transition: background-image var(--transition-1) ease-in-out;
+  transition        : background-image var(--transition-1) ease-in-out;
+  animation         : fadeIn var(--transition-1) forwards;
+}
+
+.field-check {
+  @apply border-2 border-transparent transition-all duration-200 rounded-lg;
+
+  .check-item {
+    @apply ml-auto;
+  }
+
+  &.active {
+    @extend .border-blue;
+
+    .check-item {
+      @apply text-white opacity-100;
+      @extend .bg-blue;
+    }
+  }
+}

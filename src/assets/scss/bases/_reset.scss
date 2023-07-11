@@ -175,3 +175,40 @@ body {
 .text-blue-gray {
   color: var(--blue-gray);
 }
+
+.text-blue {
+  color: #151D34;
+}
+
+.border-blue {
+  border-color: #151D34;
+}
+
+.bg-blue {
+  background-color: #151D34;
+}
+
+.rounded-curve-top {
+  border-top-right-radius: 55px;
+}
+
+.rounded-curve-bottom {
+
+  border-bottom-left-radius: 55px;
+
+}
+
+.rounded-curve-bottom-md {
+
+  border-bottom-left-radius: 35px;
+
+}
+
+.block-blur-white {
+  @apply bg-black/40 text-white;
+  backdrop-filter: blur(5px);
+}
+
+.block-description {
+  @apply p-5 mt-auto mr-10 border border-gray-300/25 min-h-[180px];
+}
