@@ -3,10 +3,10 @@
   [ngClass]="isShown ? 'fade-trans' : 'fade-trans-reverse'"
   *ngIf="isShown"
 >
-  <div class="alert">
+  <div class="alert-block">
     <div [class]="alertColor"></div>
-    <div class="alert__body">
-      <div class="alert__content">
+    <div class="alert-block__body">
+      <div class="alert-block__content">
         <label class="text-lg font-bold text-gray-800">{{ alertTitle }}</label>
         <p class="text-gray-500">
           {{ alertMessage }}

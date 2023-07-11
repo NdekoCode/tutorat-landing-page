@@ -216,89 +216,22 @@
                         nous aider à mieux comprendre votre expérience et vos
                         compétences.
                       </p>
+                    </div>
 
+                    <!-- Etape 4: Préférences de tutorat -->
+                    <div *ngIf="currentStep === 2">
                       <div class="w-full form-control">
                         <label class="label">
-                          <span class="label-text"
-                            >Specialisations</span
+                          <span class="label-text">
+                            Préférences de tutorat</span
                           > </label
                         ><input
                           type="text"
                           placeholder="Entrer vos specialisation"
-                          class="w-full max-w-xs input input-bordered"
+                          class="w-full input input-bordered"
                         />
                       </div>
-                    </div>
-
-                    <!-- Etape 3: Disponibilité -->
-                    <div *ngIf="currentStep === 3">
-                      <h2 class="mb-3 text-2xl font-bold">Disponibilité</h2>
-                      <p class="form-description">
-                        Nous savons que votre temps est précieux et nous voulons
-                        nous assurer que vous êtes disponible pour les étudiants
-                        qui ont besoin de votre aide. Veuillez remplir le
-                        formulaire ci-dessous avec vos disponibilités pour nous
-                        aider à mieux planifier les sessions de tutorat.
-                      </p>
-                      <label for="timezone">Timezone :</label>
-                      <input
-                        type="text"
-                        id="timezone"
-                        formControlName="timezone"
-                        class="input-field"
-                      />
-
-                      <div formGroupName="jours">
-                        <label for="lundi">Lundi :</label>
-                        <input
-                          type="checkbox"
-                          id="lundi"
-                          formControlName="lundi.active"
-                          class="checkbox-field"
-                        />
-                        <input
-                          type="day"
-                          id="lundiDebut"
-                          formControlName="lundi.start"
-                          class="input-field"
-                        />
-                        <input
-                          type="text"
-                          id="lundiFin"
-                          formControlName="lundi.end"
-                          class="input-field"
-                        />
-
-                        <!-- Ajoutez les autres jours de la semaine de la même manière -->
-                        <label for="mardi">Mardi :</label>
-                        <input
-                          type="checkbox"
-                          id="mardi"
-                          formControlName="mardi.active"
-                          class="checkbox-field"
-                        />
-                        <input
-                          type="text"
-                          id="mardiDebut"
-                          formControlName="mardi.start"
-                          class="input-field"
-                        />
-                        <input
-                          type="text"
-                          id="mardiFin"
-                          formControlName="mardi.end"
-                          class="input-field"
-                        />
-
-                        <!-- ... -->
-                      </div>
-                    </div>
-
-                    <!-- Etape 4: Préférences de tutorat -->
-                    <div *ngIf="currentStep === 4">
-                      <h2 class="mb-3 text-2xl font-bold">
-                        Préférences de tutorat
-                      </h2>
+                      <h2 class="mb-3 text-2xl font-bold"></h2>
                       <label for="sujet">Sujet :</label>
                       <input
                         type="text"
@@ -322,106 +255,84 @@
                         formControlName="typeTutorat"
                         class="input-field"
                       />
-
-                      <label for="typeEleve">Type d'élève :</label>
-                      <input
-                        type="text"
-                        id="typeEleve"
-                        formControlName="typeEleve"
-                        class="input-field"
-                      />
-                    </div>
-
-                    <!-- Etape 5: Compétences en communication -->
-                    <div *ngIf="currentStep === 5">
-                      <h2 class="mb-3 text-2xl font-bold">
-                        Compétences en communication
-                      </h2>
-                      <label for="communicationEcrite"
-                        >Compétences en communication écrite :</label
-                      >
-                      <input
-                        type="text"
-                        id="communicationEcrite"
-                        formControlName="communicationEcrite"
-                        class="input-field"
-                      />
-
-                      <label for="communicationOrale"
-                        >Compétences en communication orale :</label
-                      >
-                      <input
-                        type="text"
-                        id="communicationOrale"
-                        formControlName="communicationOrale"
-                        class="input-field"
-                      />
-
-                      <label for="resolutionProblemes"
-                        >Compétences en résolution de problèmes :</label
-                      >
-                      <input
-                        type="text"
-                        id="resolutionProblemes"
-                        formControlName="resolutionProblemes"
-                        class="input-field"
-                      />
-
-                      <label for="priseDecision"
-                        >Compétences en prise de décision :</label
-                      >
-                      <input
-                        type="text"
-                        id="priseDecision"
-                        formControlName="priseDecision"
-                        class="input-field"
-                      />
                     </div>
 
                     <!-- Etape 6: Antécédents judiciaires -->
-                    <div *ngIf="currentStep === 6">
+                    <div *ngIf="currentStep === 3">
                       <h2 class="mb-3 text-2xl font-bold">
-                        Antécédents judiciaires
+                        Documents judiciaires
                       </h2>
-                      <label for="verificationAntecedents"
-                        >Vérification des antécédents judiciaires :</label
-                      >
-                      <input
-                        type="text"
-                        id="verificationAntecedents"
-                        formControlName="verificationAntecedents"
-                        class="input-field"
-                      />
-                      <div class="button-container">
-                        <button
-                          type="button"
-                          class="button button-primary"
-                          (click)="previousStep()"
+                      <div class="pt-4 mb-6">
+                        <label
+                          class="mb-5 block text-xl font-semibold text-[#07074D]"
                         >
-                          Précédent
-                        </button>
-                        <button type="submit" class="button button-primary">
-                          Soumettre
-                        </button>
+                          Upload File
+                        </label>
+
+                        <div class="mb-8">
+                          <input
+                            type="file"
+                            name="file"
+                            id="verificationAntecedents"
+                            formControlName="verificationAntecedents"
+                            class="sr-only"
+                          />
+                          <label
+                            for="verificationAntecedents"
+                            class="relative flex min-h-[200px] items-center justify-center rounded-md border border-dashed border-[#e0e0e0] p-12 text-center"
+                          >
+                            <div>
+                              <span
+                                class="mb-2 block text-xl font-semibold text-[#07074D]"
+                              >
+                                Entrer vos document pour verifier vos
+                                antécédents judiciaires
+                              </span>
+                              <span
+                                class="mb-2 block text-base font-medium text-[#6B7280]"
+                              >
+                                Or
+                              </span>
+                              <span
+                                class="inline-flex rounded border border-[#e0e0e0] py-2 px-7 text-base font-medium text-[#07074D]"
+                              >
+                                Browse
+                              </span>
+                            </div>
+                          </label>
+                        </div>
                       </div>
                     </div>
                   </div>
                   <div class="form-footer">
-                    <div class="mt-10 button-container">
+                    <div
+                      class="items-center justify-between mt-10 button-container"
+                    >
                       <button
+                        *ngIf="currentStep > 1"
                         type="button"
-                        class="button button-primary"
+                        class="mr-auto button button-primary"
                         (click)="previousStep()"
                       >
                         Précédent
                       </button>
+
                       <button
-                        type="button"
-                        class="button button-primary"
-                        (click)="nextStep()"
+                        *ngIf="currentStep === 3; else notLast"
+                        type="submit"
+                        class="ml-auto button button-primary"
                       >
-                        Suivant
+                        Soumettre
                       </button>
+                      <ng-template #notLast>
+                        <button
+                          type="button"
+                          class="ml-auto button button-primary"
+                          (click)="nextStep()"
+                        >
+                          Suivant
+                        </button>
+                      </ng-template>
                     </div>
                   </div>
                 </form>
