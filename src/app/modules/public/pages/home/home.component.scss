@@ -1,0 +1,18 @@
+.stat {
+  @media only screen and (min-width:1024px) {
+    border-color: var(--reg-light);
+  }
+}
+
+.stat-image {
+  width                  : 100vw;
+  height                 : 40vw;
+  border-top-left-radius : 50%;
+  border-top-right-radius: 50%;
+  flex-direction         : column;
+  justify-content        : center;
+  margin-top             : 3rem;
+  display                : flex;
+  position               : relative;
+  overflow               : hidden;
+}
