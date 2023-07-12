@@ -8,6 +8,8 @@
 @import './bases/typography';
 
 @import './layouts/topbar';
+@import './layouts/notification';
+@import './layouts/navigation';
 @import './layouts/banner';
 @import './layouts/how-it-works';
 @import './layouts/about';
@@ -55,6 +57,11 @@
 
 .text-green {
   color: var(--green-dark);
+}
+
+.bg-green {
+  background-color: var(--green-dark);
+  color           : var(--color-white);
 }
 
 .bg-red-light {

@@ -26,6 +26,22 @@
 
 }
 
+%blockSpace,
+%section {
+  padding-block: $basic-space;
+
+
+  @media #{$sm-screen} {
+    padding-block: $section-basic-space;
+
+    &:not(:last-child),
+    &:not(:last-of-type) {
+      padding-bottom: 0;
+    }
+  }
+
+}
+
 %updatingContent {
 
   .container {
@@ -165,4 +181,72 @@
 
 .in-back {
   z-index: -1;
+}
+
+%responsiveDesktopNavbar {
+  .navbar__link-btn.red-gradient {
+    display: none;
+  }
+
+  .navbar__buttons-list {
+    gap: rem(10) !important;
+  }
+
+  @media #{$lg-screen} {
+    min-height      : auto !important;
+    background-color: initial !important;
+    position        : initial !important;
+    display         : flex !important;
+    flex-direction  : row;
+    align-items     : center;
+    padding         : 0;
+
+    .navbar__link-btn.red-gradient {
+      display: inline-block;
+    }
+
+    .navbar__list {
+      display       : flex;
+      flex-direction: row;
+      align-items   : center;
+      gap           : rem(25);
+
+      &:first-of-type {
+        padding-top : 0;
+        margin-right: auto;
+      }
+
+
+      &:last-of-type {
+        margin-left: auto;
+      }
+
+      .btn.red-gradient {
+        flex: none;
+      }
+    }
+
+    .navbar__link {
+      font-size  : 1rem;
+      font-weight: initial;
+      color      : var(--color-dark-2);
+    }
+  }
+}
+
+%bgRedGradient {
+  background-image: var(--primary-color-gradient);
+  color           : var(--color-white);
+}
+
+%roundedXFull {
+  border-radius: 99px;
+}
+
+%hoverLink {
+  @include linkEffect()
+}
+
+%hoverLinkVisible {
+  @include linkEffect(true);
 }

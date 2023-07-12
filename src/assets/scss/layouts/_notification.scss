@@ -1,0 +1,81 @@
+@use "../abstracts/placeholders";
+@use "../abstracts/functions";
+
+.notification {
+  background-color: var(--yellow-light);
+  padding-block   : rem(15);
+  color           : var(--primary-color);
+  font-size       : rem(15);
+  margin-bottom   : rem(25);
+
+  @apply relative;
+
+  @media #{$md-screen} {
+    margin-bottom: 0;
+  }
+
+  .container {
+    gap      : rem(10);
+    flex-wrap: wrap;
+    @apply flex items-center justify-center;
+
+    @media #{$md-screen} {
+      flex-wrap: nowrap;
+      gap      : rem(25);
+    }
+
+    @media #{$sm-screen} {}
+
+    @media #{$md-screen} {
+      gap: rem(50);
+    }
+  }
+
+  .notification__btn {
+
+    font-weight   : 600;
+    padding-block : rem(5);
+    padding-inline: rem(25);
+    @extend %bgRedGradient;
+    @extend %roundedXFull;
+
+    @media #{$md-screen} {
+      padding-inline: rem(45);
+    }
+  }
+
+  .notification__link,
+  .notification__btn {
+    font-size: rem(14);
+
+    @media #{$x-sm-screen} {
+      flex: none;
+    }
+  }
+
+  .notification__link {
+    font-weight: 700;
+    @apply relative;
+    @include hoverLink(true);
+  }
+
+
+  .notification__close {
+    width    : rem(25);
+    height   : rem(25);
+    position : absolute;
+    right    : 15px;
+    top      : 15%;
+    transform: translateY(-50%);
+    color    : var(--primary-color);
+
+    @media #{$lg-screen} {
+      top: 25%;
+    }
+
+    @media #{$xl-screen} {
+      top: 50%;
+    }
+  }
+
+}

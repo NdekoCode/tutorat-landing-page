@@ -1,0 +1,26 @@
+%bgBlob {
+  background-image   : url('/assets/images/Blob.png');
+  background-size    : 450px;
+  background-repeat  : no-repeat;
+  background-position: top -75px right -175px;
+}
+
+.bgblob {
+  @extend %bgBlob;
+
+  &.bgblob-left {
+    background-position: top -75px left -175px;
+  }
+
+  &.bgblob-center {
+    background-position: center center;
+  }
+
+  &.bgblob-bottom-left {
+    background-position: bottom 75px left -175px;
+  }
+
+  &.bgblob-bottom-right {
+    background-position: bottom 75px right -175px;
+  }
+}
