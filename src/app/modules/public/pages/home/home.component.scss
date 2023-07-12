@@ -16,3 +16,7 @@
   position               : relative;
   overflow               : hidden;
 }
+
+.stat-desc {
+  @apply text-sm;
+}
