@@ -33,9 +33,15 @@
     <a href="#" class="btn btn-primary user-toggler" aria-label="Sign in page">
       Devenir tuteur
     </a>
-    <div class="sign-btns">
-      <button type="button">S'inscrire</button>
-      <button type="button">Se connecter</button>
+    <div class="sign-btns button-container gap-x-3">
+      <a
+        routerLink="/auth/signup"
+        class="normal-case bg-transparent border-transparent hover:bg-transparent hover:border-gray-50 btn"
+        >S'inscrire</a
+      >
+      <a href="/auth/login" class="text-white normal-case btn bg-dark"
+        >Se connecter</a
+      >
     </div>
   </div>
 </nav>

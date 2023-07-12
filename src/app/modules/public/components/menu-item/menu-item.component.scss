@@ -65,20 +65,23 @@ nav {
   margin-left: auto;
 }
 
-.sign-btns button {
-  font-size    : 16px;
-  min-width    : 90px;
-  padding      : 10px 5px;
-  margin       : 0 5px;
-  border-radius: 5px;
-  cursor       : pointer;
-  border       : none;
+.sign-btns {
+  button {
+    font-size    : 16px;
+    min-width    : 90px;
+    padding      : 10px 5px;
+    margin       : 0 5px;
+    border-radius: 5px;
+    cursor       : pointer;
+    border       : none;
+
+    &:nth-child(2) {
+      border: none;
+    }
+  }
+
 }
 
-.sign-btns button:nth-child(2) {
-  border    : none;
-  background: rgba(146, 195, 238, 0.718);
-}
 
 .user-toggler {
   display: none;

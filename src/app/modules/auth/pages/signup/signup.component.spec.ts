@@ -89,7 +89,7 @@ xdescribe('SignupComponent', () => {
 
     component.saveRegisterForm()
 
-    expect(component.router.navigate).toHaveBeenCalledWith(['/login'])
+    expect(component.router.navigate).toHaveBeenCalledWith(['/auth/login'])
   })
 
   afterEach(() => {

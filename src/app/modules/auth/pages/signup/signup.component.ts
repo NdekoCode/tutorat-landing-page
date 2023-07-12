@@ -63,7 +63,7 @@ export class SignupComponent implements OnInit, OnDestroy {
                 this.registerForm.value.email
             }
             this.timer = window.setTimeout(() => {
-              this.router.navigate(['/login'])
+              this.router.navigate(['/auth/login'])
               window.clearTimeout(this.timer)
             }, GLOBAL_CONSTANTS.AUTH_TIMEOUT)
             this.isLoading = false
