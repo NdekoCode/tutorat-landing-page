@@ -171,24 +171,24 @@ body {
 }
 
 .text-gray {
-  color: var(--color-gray);
+  color: var(--color-gray) !important;
 
 }
 
 .text-blue-gray {
-  color: var(--blue-gray);
+  color: var(--blue-gray) !important;
 }
 
 .text-blue {
-  color: #151D34;
+  color: #151D34 !important;
 }
 
 .border-blue {
-  border-color: #151D34;
+  border-color: #151D34 !important;
 }
 
 .bg-blue {
-  background-color: #151D34;
+  background-color: #151D34 !important;
 }
 
 .rounded-curve-top {
@@ -218,4 +218,8 @@ body {
 
 .font-crimson {
   font-family: 'Crimson Text', Georgia, 'Times New Roman', Times, serif !important;
+}
+
+.text-green-light {
+  color: var(--gree-light);
 }
