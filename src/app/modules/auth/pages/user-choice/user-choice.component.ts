@@ -25,7 +25,7 @@ export class UserChoiceComponent implements OnInit {
   saveChoiceForm() {
     if (this.choiceForm.valid) {
       if (this.choiceForm.value.userChoice === 'tutor') {
-        this._router.navigate(['/tutors-form'])
+        this._router.navigate(['/auth/tutors-form'])
       } else {
         this._router.navigate(['/myspace'])
       }

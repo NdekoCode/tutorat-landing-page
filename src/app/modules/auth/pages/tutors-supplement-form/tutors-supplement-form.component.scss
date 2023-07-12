@@ -18,8 +18,8 @@
 }
 
 .form-tutor {
-  background-color: var(--reg-light);
-  background      : url('/assets/images/icons/bar-decorator.png') no-repeat center center / contain;
+  background-color   : var(--reg-light);
+  // background      : url('/assets/images/icons/bar-decorator.png') no-repeat center center / contain;
 
   .input-field {
     @apply flex flex-nowrap w-full max-w-full;

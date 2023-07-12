@@ -102,9 +102,7 @@
                         </label>
                       </div>
 
-                      <div
-                        class="flex-wrap join join-vertical gap-x-3 lg:join-horizontal"
-                      >
+                      <div class="">
                         <div class="relative w-full join-item">
                           <label for="hourlyRate" class="input-label"
                             >Taux horaire :</label
@@ -209,7 +207,7 @@
                       <h2 class="mb-3 text-2xl font-bold">
                         Informations professionnelles
                       </h2>
-                      <p class="form-description">
+                      <p class="mb-3 form-description">
                         Nous sommes convaincus que vous avez beaucoup à offrir
                         en tant que tuteur! Veuillez remplir le formulaire
                         ci-dessous avec vos informations professionnelles pour
@@ -219,7 +217,7 @@
                     </div>
 
                     <!-- Etape 4: Préférences de tutorat -->
-                    <div *ngIf="currentStep === 2">
+                    <div *ngIf="currentStep === 2" class="mb-3">
                       <div class="w-full form-control">
                         <label class="label">
                           <span class="label-text">
@@ -231,30 +229,19 @@
                           class="w-full input input-bordered"
                         />
                       </div>
-                      <h2 class="mb-3 text-2xl font-bold"></h2>
-                      <label for="sujet">Sujet :</label>
-                      <input
-                        type="text"
-                        id="sujet"
-                        formControlName="sujet"
-                        class="input-field"
-                      />
-
-                      <label for="niveauScolaire">Niveau scolaire :</label>
-                      <input
-                        type="text"
-                        id="niveauScolaire"
-                        formControlName="niveauScolaire"
-                        class="input-field"
-                      />
-
-                      <label for="typeTutorat">Type de tutorat :</label>
-                      <input
-                        type="text"
-                        id="typeTutorat"
-                        formControlName="typeTutorat"
-                        class="input-field"
-                      />
+                      <div class="w-full form-control">
+                        <label for="niveauScolaire">
+                          <span class="label-text">Niveau scolaire </span
+                          >:</label
+                        >
+                        <input
+                          type="text"
+                          id="niveauScolaire"
+                          placeholder="Entrer votre niveau scolaire"
+                          formControlName="niveauScolaire"
+                          class="w-full input input-bordered"
+                        />
+                      </div>
                     </div>
 
                     <!-- Etape 6: Antécédents judiciaires -->
@@ -265,6 +252,7 @@
                       <div class="pt-4 mb-6">
                         <label
                           class="mb-5 block text-xl font-semibold text-[#07074D]"
+                          for="verificationAntecedents"
                         >
                           Upload File
                         </label>
@@ -279,7 +267,7 @@
                           />
                           <label
                             for="verificationAntecedents"
-                            class="relative flex min-h-[200px] items-center justify-center rounded-md border border-dashed border-[#e0e0e0] p-12 text-center"
+                            class="relative flex min-h-[200px] items-center justify-center rounded-md border border-dashed border-[#e0e0e0] p-12 cursor-pointer text-center"
                           >
                             <div>
                               <span
@@ -287,11 +275,6 @@
                               >
                                 Entrer vos document pour verifier vos
                                 antécédents judiciaires
-                              </span>
-                              <span
-                                class="mb-2 block text-base font-medium text-[#6B7280]"
-                              >
-                                Or
                               </span>
                               <span
                                 class="inline-flex rounded border border-[#e0e0e0] py-2 px-7 text-base font-medium text-[#07074D]"
@@ -303,6 +286,59 @@
                         </div>
                       </div>
                     </div>
+                    <div class="mt-8 space-y-3" *ngIf="currentStep === 4">
+                      <div class="grid grid-cols-1 space-y-2">
+                        <label
+                          class="text-sm font-bold tracking-wide text-gray-500"
+                          >Titre de la video</label
+                        >
+                        <input
+                          formControlName="videoTitle"
+                          class="p-2 text-base border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500"
+                          type="text"
+                          placeholder="entrer le titre de la video"
+                        />
+                      </div>
+                      <div class="grid grid-cols-1 space-y-2">
+                        <label
+                          class="text-sm font-bold tracking-wide text-gray-500 cursor-pointer"
+                          >Attach Video</label
+                        >
+                        <div class="flex items-center justify-center w-full">
+                          <label
+                            class="flex flex-col w-full p-10 text-center border-4 border-dashed rounded-lg h-60 group"
+                            id="video-file"
+                          >
+                            <div
+                              class="flex flex-col items-center justify-center w-full h-full text-center"
+                            >
+                              <div
+                                class="flex flex-auto w-2/5 mx-auto -mt-10 max-h-48"
+                              >
+                                <img
+                                  class="object-center has-mask h-36"
+                                  src="https://img.freepik.com/free-vector/image-upload-concept-landing-page_52683-27130.jpg?size=338&ext=jpg"
+                                  alt="video image"
+                                />
+                              </div>
+                              <p class="text-gray-500 pointer-none">
+                                <span class="text-sm">Upload video</span> files
+                                here
+                              </p>
+                            </div>
+                            <input
+                              formControlName="videoBio"
+                              type="file"
+                              class="hidden"
+                              id="video-file"
+                            />
+                          </label>
+                        </div>
+                      </div>
+                      <p class="text-sm text-gray-300">
+                        <span>File type: mp4,webp,3gp of videos</span>
+                      </p>
+                    </div>
                   </div>
                   <div class="form-footer">
                     <div
@@ -311,23 +347,23 @@
                       <button
                         *ngIf="currentStep > 1"
                         type="button"
-                        class="mr-auto button button-primary"
+                        class="px-5 mr-auto button btn hover:bg-yellow-600 button-primary"
                         (click)="previousStep()"
                       >
                         Précédent
                       </button>
 
                       <button
-                        *ngIf="currentStep === 3; else notLast"
+                        *ngIf="currentStep === 4; else notLast"
                         type="submit"
-                        class="ml-auto button button-primary"
+                        class="px-5 ml-auto btn hover:bg-yellow-600 button button-primary"
                       >
                         Soumettre
                       </button>
                       <ng-template #notLast>
                         <button
                           type="button"
-                          class="ml-auto button button-primary"
+                          class="px-5 ml-auto btn hover:bg-yellow-600 button button-primary"
                           (click)="nextStep()"
                         >
                           Suivant

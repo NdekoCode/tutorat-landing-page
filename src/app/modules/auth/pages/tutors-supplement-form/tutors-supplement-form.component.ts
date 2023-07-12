@@ -38,7 +38,8 @@ export class TutorsSupplementFormComponent implements OnInit {
       // Step 4: Préférences de tutorat
       // Ajoutez les champs pour les préférences de tutorat
       subject: ['', Validators.required], // Champ pour le sujet de tutorat
-      tutoringType: ['', Validators.required], // Champ pour le type de tutorat (en ligne ou en présentiel)
+      videoBio: ['', Validators.required], // Champ pour le type de tutorat (en ligne ou en présentiel)
+      videoTitle: ['', Validators.required], // Champ pour le type de titre de la video
 
       // Step 6: Antécédents judiciaires
       documentCheck: ['', Validators.required] // Champ pour la vérification des antécédents judiciaires
