@@ -68,3 +68,23 @@
 .button-container {
   @apply flex items-center gap-3;
 }
+
+.button-circle {
+  display      : none;
+  position     : fixed;
+  right        : 1%;
+  bottom       : 0;
+  min-width    : max-content;
+  min-height   : max-content;
+  aspect-ratio : 1/1;
+  border-radius: 100%;
+  padding      : 1em;
+  cursor       : pointer;
+  z-index      : 100;
+
+  svg {
+    width       : rem(16);
+    aspect-ratio: 1/1;
+  }
+
+}

@@ -1,9 +1,23 @@
 nav {
   // position   : fixed;
-  width      : 100%;
-  display    : flex;
-  align-items: center;
-  padding    : 15px 25px;
+
+  .container {
+
+    display    : flex;
+    align-items: center;
+
+    padding: 15px 25px;
+
+    @media only screen and (min-width:1024px) {
+      width         : 100%;
+      padding-inline: 0;
+    }
+
+    @media only screen and (min-width: 1280px) {
+      @apply max-w-6xl;
+
+    }
+  }
 }
 
 .nav-icon {
@@ -11,18 +25,19 @@ nav {
   align-items    : center;
   text-decoration: none;
   margin-right   : 20px;
+
+  span {
+    font-size  : 25px;
+    margin-left: 10px;
+    font-weight: 400;
+    color      : #333;
+  }
+
+  img {
+    width: 150px;
+  }
 }
 
-.nav-icon span {
-  font-size  : 25px;
-  margin-left: 10px;
-  font-weight: 400;
-  color      : #333;
-}
-
-.nav-icon img {
-  width: 150px;
-}
 
 .hamburger {
   display: none;
@@ -88,7 +103,7 @@ nav {
   display: none;
 }
 
-@media only screen and (min-width:900px) {
+@media only screen and (min-width:1024px) {
 
 
   .main-navlinks {
@@ -97,7 +112,7 @@ nav {
 
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   nav {
     padding : 15px 20px;
     position: relative;
@@ -229,7 +244,7 @@ nav {
 
 }
 
-@media (max-width: 500px) {
+@media (max-width: 576px) {
   .nav-icon {
     img {
       width: 100px;

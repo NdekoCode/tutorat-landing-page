@@ -146,3 +146,46 @@
 .btn {
   @apply rounded-md;
 }
+
+.video-cover {
+
+  background: linear-gradient(134deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.45) 51.56%, rgba(0, 0, 0, 0.20) 100%), url(/assets/images/tutor-1.jpg) center center/cover no-repeat, lightgray 50%/ cover no-repeat;
+
+  box-shadow: 0px 32px 64px -12px rgba(16, 24, 40, 0.20);
+}
+
+.title {
+  @apply text-3xl whitespace-normal overflow-ellipsis;
+
+  @screen md {
+    @apply text-4xl;
+  }
+
+  &.title-up {
+
+    @apply text-4xl;
+
+    @screen md {
+      @apply text-5xl;
+    }
+  }
+}
+
+
+
+.primary-gradient {
+  background-image: var(--primary-color-gradient);
+  color           : var(--color-white);
+  font-weight     : 500;
+}
+
+a.primary-gradient {
+  color          : var(--color-white);
+  text-decoration: none;
+
+  &::after,
+  &::before {
+    display: none !important;
+
+  }
+}

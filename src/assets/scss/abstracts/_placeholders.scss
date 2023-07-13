@@ -184,7 +184,7 @@
 }
 
 %responsiveDesktopNavbar {
-  .navbar__link-btn.red-gradient {
+  .navbar__link-btn.primary-gradient {
     display: none;
   }
 
@@ -201,7 +201,7 @@
     align-items     : center;
     padding         : 0;
 
-    .navbar__link-btn.red-gradient {
+    .navbar__link-btn.primary-gradient {
       display: inline-block;
     }
 
@@ -221,7 +221,7 @@
         margin-left: auto;
       }
 
-      .btn.red-gradient {
+      .btn.primary-gradient {
         flex: none;
       }
     }

@@ -1,56 +1,58 @@
 <nav appScroll>
-  <a
-    routerLink="/"
-    class="mx-auto nav-icon ld:mx-0"
-    aria-label="homepage"
-    aria-current="page"
-  >
-    <img src="/assets/images/icons/Logo.png" alt="Logo tutorat" />
-  </a>
-
-  <div class="main-navlinks">
-    <button
-      type="button"
-      class="hamburger"
-      (click)="toggleNav()"
-      [class]="isActive ? 'open' : ''"
-      aria-label="Toggle Navigation"
-      [ariaExpanded]="isActive ? 'true' : 'false'"
-    >
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-    <div
-      class="navlinks-container"
-      [class]="isActive ? 'open' : ''"
-      #navContainer
-    >
-      <a routerLink="/services" aria-current="page">Services</a>
-      <a routerLink="/tutors">Tutors</a>
-      <a routerLink="/blog">Blog</a>
-      <a routerLink="/about">A propos</a>
-      <a routerLink="/contact">Contact</a>
-    </div>
-  </div>
-
-  <div class="nav-authentication">
+  <div class="container">
     <a
-      routerLink="/auth/signup"
-      class="text-white normal-case btn bg-dark user-toggler"
-      aria-label="Sign in page"
+      routerLink="/"
+      class="mx-auto nav-icon lg:mx-0"
+      aria-label="homepage"
+      aria-current="page"
     >
-      Devenir tuteur
+      <img src="/assets/images/icons/Logo.png" alt="Logo tutorat" />
     </a>
-    <div class="sign-btns button-container gap-x-3">
+
+    <div class="main-navlinks">
+      <button
+        type="button"
+        class="hamburger"
+        (click)="toggleNav()"
+        [class]="isActive ? 'open' : ''"
+        aria-label="Toggle Navigation"
+        [ariaExpanded]="isActive ? 'true' : 'false'"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div
+        class="navlinks-container"
+        [class]="isActive ? 'open' : ''"
+        #navContainer
+      >
+        <a routerLink="/services" aria-current="page">Services</a>
+        <a routerLink="/tutors">Tutors</a>
+        <a routerLink="/blog">Blog</a>
+        <a routerLink="/about">A propos</a>
+        <a routerLink="/contact">Contact</a>
+      </div>
+    </div>
+
+    <div class="nav-authentication">
       <a
         routerLink="/auth/signup"
-        class="normal-case bg-transparent border-transparent hover:bg-transparent hover:border-gray-50 btn"
-        >S'inscrire</a
+        class="text-white normal-case btn bg-dark user-toggler"
+        aria-label="Sign in page"
       >
-      <a routerLink="/auth/login" class="text-white normal-case btn bg-dark"
-        >Se connecter</a
-      >
+        Devenir tuteur
+      </a>
+      <div class="sign-btns button-container gap-x-3">
+        <a
+          routerLink="/auth/signup"
+          class="normal-case bg-transparent border-transparent hover:bg-transparent hover:border-gray-50 btn"
+          >S'inscrire</a
+        >
+        <a routerLink="/auth/login" class="text-white normal-case btn bg-dark"
+          >Se connecter</a
+        >
+      </div>
     </div>
   </div>
 </nav>

@@ -1,4 +1,4 @@
-.modal {
+.modal-item {
   position        : fixed;
   inset           : 0;
   width           : 100vw;
@@ -10,30 +10,34 @@
   @apply flex items-center justify-center;
 
 
-  .button.button-close {
-    padding         : rem(15);
-    position        : absolute;
-    right           : rem(15);
-    top             : rem(25);
-    background-color: var(--primary-color);
-    color           : var(--color-white);
+  .button {
+    &.button-close {
+      padding         : rem(15);
+      position        : absolute;
+      right           : rem(15);
+      top             : rem(25);
+      background-color: var(--primary-color);
+      color           : var(--color-white);
 
-    @media #{$md-screen} {
+      @media #{$md-screen} {
 
-      right: rem(25);
-    }
+        right: rem(25);
+      }
 
-    svg {
-      width: rem(25);
-    }
+      svg {
+        width: rem(25);
+      }
 
-    &:hover {
-      background-color: var(--color-white);
-      border-color    : var(--background-color);
-      @apply border;
+      &:hover {
+        background-color: rgb(235, 87, 87);
+        color           : var(--color-white);
+        border-color    : rgb(235, 87, 87);
+        @apply border;
 
+      }
     }
   }
+
 
 }
 
