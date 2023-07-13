@@ -4,6 +4,7 @@ import { AboutComponent } from './pages/about/about.component'
 import { BlogComponent } from './pages/blog/blog.component'
 import { ContactComponent } from './pages/contact/contact.component'
 import { HomeComponent } from './pages/home/home.component'
+import { ServicesComponent } from './pages/services/services.component'
 import { TutorsPageComponent } from './pages/tutors-page/tutors-page.component'
 import { PublicLayoutComponent } from './public-layout.component'
 
@@ -15,6 +16,10 @@ const routes: Routes = [
       {
         path: '',
         component: HomeComponent
+      },
+      {
+        path: 'services',
+        component: ServicesComponent
       },
       {
         path: 'contact',

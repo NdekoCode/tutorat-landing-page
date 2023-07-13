@@ -12,6 +12,7 @@ import { HomeComponent } from './pages/home/home.component'
 import { TutorsPageComponent } from './pages/tutors-page/tutors-page.component'
 import { PublicLayoutComponent } from './public-layout.component'
 import { PublicRoutingModule } from './public-routing.module'
+import { ServicesComponent } from './pages/services/services.component'
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { PublicRoutingModule } from './public-routing.module'
     MenuItemComponent,
     FooterComponent,
     HeaderComponent,
-    NotificationBarComponent
+    NotificationBarComponent,
+    ServicesComponent
   ],
   imports: [CommonModule, PublicRoutingModule]
 })
