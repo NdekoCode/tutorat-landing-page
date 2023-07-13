@@ -1,5 +1,10 @@
 <nav appScroll>
-  <a routerLink="/" class="nav-icon" aria-label="homepage" aria-current="page">
+  <a
+    routerLink="/"
+    class="mx-auto nav-icon ld:mx-0"
+    aria-label="homepage"
+    aria-current="page"
+  >
     <img src="/assets/images/icons/Logo.png" alt="Logo tutorat" />
   </a>
 
@@ -30,7 +35,11 @@
   </div>
 
   <div class="nav-authentication">
-    <a href="#" class="btn btn-primary user-toggler" aria-label="Sign in page">
+    <a
+      routerLink="/auth/signup"
+      class="text-white normal-case btn bg-dark user-toggler"
+      aria-label="Sign in page"
+    >
       Devenir tuteur
     </a>
     <div class="sign-btns button-container gap-x-3">
@@ -39,7 +48,7 @@
         class="normal-case bg-transparent border-transparent hover:bg-transparent hover:border-gray-50 btn"
         >S'inscrire</a
       >
-      <a href="/auth/login" class="text-white normal-case btn bg-dark"
+      <a routerLink="/auth/login" class="text-white normal-case btn bg-dark"
         >Se connecter</a
       >
     </div>
