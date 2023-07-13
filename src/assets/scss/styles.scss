@@ -15,6 +15,7 @@
 @import './layouts/about';
 @import './layouts/testimonials';
 @import './layouts/faq';
+@import './components/blob';
 @import './components/block';
 @import './components/inputs';
 @import './components/form';
@@ -127,4 +128,13 @@
 
 .bar-infos {
   @apply bg-blue-600;
+}
+
+.flex-middle {
+  @apply flex justify-center items-center;
+}
+
+.flex-col-middle {
+  @extend .flex-middle;
+  @apply flex-col;
 }

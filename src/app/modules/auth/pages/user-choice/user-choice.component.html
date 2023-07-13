@@ -53,7 +53,7 @@
                 />
                 <div class="flex items-center w-full px-1 gap-x-5">
                   <div
-                    class="flex items-center justify-center flex-none w-10 h-10 ml-3 border rounded-xl border-gray"
+                    class="flex-middle flex-none w-10 h-10 ml-3 border rounded-xl border-gray"
                   >
                     <svg
                       class="flex-none w-6 h-6 fill-current"
@@ -114,7 +114,7 @@
                 />
                 <div class="flex items-center w-full px-1 gap-x-5">
                   <div
-                    class="flex items-center justify-center flex-none w-10 h-10 ml-3 border rounded-xl border-gray"
+                    class="flex-middle flex-none w-10 h-10 ml-3 border rounded-xl border-gray"
                   >
                     <svg
                       class="flex-none w-6 h-6 fill-current"
@@ -159,7 +159,7 @@
             </div>
             <div class="!w-full mt-3 field-container">
               <button
-                class="flex items-center justify-center button gap-x-1 button-form button-dark button-full"
+                class="flex-middle button gap-x-1 button-form button-dark button-full"
                 [disabled]="choiceForm.invalid"
               >
                 <svg
@@ -190,9 +190,7 @@
         </div>
       </div>
       <div class="hidden w-full md:block">
-        <div
-          class="flex items-center justify-center w-full h-full p-5 pr-0 rounded-lg"
-        >
+        <div class="flex-middle w-full h-full p-5 pr-0 rounded-lg">
           <div
             class="flex flex-col w-full h-full rounded-curve-bottom"
             [class]="userChoice === 'tutor' ? 'tutor-bg' : 'client-bg'"

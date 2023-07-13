@@ -117,7 +117,7 @@
   </div>
 </section>
 
-<section class="my-10 mt-20">
+<section class="my-10 mt-20 bgblob bgblob-bottom-right">
   <div class="container">
     <div
       class="flex-col-reverse mb-20 lg:gap-x-10 hero-content lg:flex-row-reverse lg:"
@@ -166,11 +166,11 @@
     </div>
   </div>
 </section>
-<section class="min-h-screen hero bgblob">
+<section class="min-h-[750px] hero">
   <div class="container">
     <div class="relative">
       <div
-        class="absolute opacity-75 left-5 top-[5%] -transform-y-1/4 min-h-[250px] min-w-[250px] -z-0"
+        class="absolute opacity-25 md:opacity-50 lg:opacity-75 xl:opacity-100 left-5 top-[5%] -transform-y-1/4 min-h-[250px] min-w-[250px] -z-0"
       >
         <div class="flex">
           <img
@@ -208,7 +208,7 @@
             <strong class="font-bold">Nathalie R.</strong>
             <span> Cliente Tutorat</span>
           </p>
-          <div class="flex flex-col items-center justify-center w-full">
+          <div class="w-full flex-col-middle">
             <div class="flex items-center mb-5 space-x-3">
               <svg
                 class="w-4 h-4 text-yellow-300"
@@ -299,13 +299,13 @@
     </div>
   </div>
 </section>
-<section class="hero bgblob">
+<section class="hero bgblob bgblob-top-left">
   <div class="container">
     <div
-      class="flex-col-reverse mb-20 lg:gap-x-10 hero-content lg:flex-row-reverse lg:"
+      class="flex-col-reverse mb-5 lg:gap-x-10 hero-content lg:flex-row-reverse lg:"
     >
       <div class="max-w-lg">
-        <div class="join gap-x-3">
+        <div class="mb-10 join gap-x-3">
           <svg
             class="w-10 h-10 join-item"
             viewBox="0 0 26 32"
@@ -351,7 +351,7 @@
           </div>
         </div>
 
-        <div class="join gap-x-3">
+        <div class="mb-10 join gap-x-3">
           <svg
             class="w-10 h-10 join-item"
             viewBox="0 0 22 22"
@@ -405,9 +405,64 @@
       </div>
     </div>
 
-    <div class="flex items-center justify-center text-center">
-      <div class="max-w-2xl w-full min-h-[300px] lg:min-h-[350px] bg-gray-300">
-        <div class="flex flex-col items-center justify-center w-full"></div>
+    <div class="flex-middle">
+      <div
+        class="max-w-2xl w-full min-h-[300px] lg:min-h-[350px] rounded-lg video-cover relative bg-gray-300"
+      >
+        <div class="px-10 text-white pt-14">
+          <p
+            class="py-0.5 px-2 text-sm bg-white/30 w-max backdrop-blur-sm rounded-e-full rounded-s-full"
+          >
+            Qui somme-nous ?
+          </p>
+          <h4 class="max-w-xs text-4xl font-semibold font-crimson">
+            Le future de votre travail
+          </h4>
+        </div>
+        <button
+          class="absolute -translate-x-1/2 -translate-y-1/2 rounded-full cursor-pointer flex-middle top-1/2 left-1/2 flex-middlebutton"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-12 h-12 blob"
+            viewBox="0 0 80 80"
+            fill="none"
+          >
+            <g filter="url(#filter0_b_31_2145)">
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M40 80C62.0914 80 80 62.0914 80 40C80 17.9086 62.0914 0 40 0C17.9086 0 0 17.9086 0 40C0 62.0914 17.9086 80 40 80ZM33.75 54.6721L56.25 42.096C57.9167 41.1645 57.9167 38.8355 56.25 37.904L33.75 25.3279C32.0833 24.3963 30 25.5608 30 27.4239L30 52.5761C30 54.4392 32.0833 55.6037 33.75 54.6721Z"
+                fill="#FFFDF4"
+              />
+            </g>
+            <defs>
+              <filter
+                id="filter0_b_31_2145"
+                x="-16"
+                y="-16"
+                width="112"
+                height="112"
+                filterUnits="userSpaceOnUse"
+                color-interpolation-filters="sRGB"
+              >
+                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <feGaussianBlur in="BackgroundImageFix" stdDeviation="8" />
+                <feComposite
+                  in2="SourceAlpha"
+                  operator="in"
+                  result="effect1_backgroundBlur_31_2145"
+                />
+                <feBlend
+                  mode="normal"
+                  in="SourceGraphic"
+                  in2="effect1_backgroundBlur_31_2145"
+                  result="shape"
+                />
+              </filter>
+            </defs>
+          </svg>
+        </button>
       </div>
     </div>
   </div>

@@ -1,15 +1,23 @@
 %bgBlob {
   background-image   : url('/assets/images/Blob.png');
-  background-size    : 450px;
+  background-size    : calc(max(30%, rem(650))) !important;
   background-repeat  : no-repeat;
   background-position: top -75px right -175px;
+}
+
+.blob {
+  background   : rgba(0, 0, 0, .4);
+  border-radius: 50%;
+  box-shadow   : 0 0 rgba(#000000, 0.75);
+  animation    : pulse 1.5s infinite;
+  aspect-ratio : 1/1;
 }
 
 .bgblob {
   @extend %bgBlob;
 
   &.bgblob-left {
-    background-position: top -75px left -175px;
+    background-position: top 250px left 25px;
   }
 
   &.bgblob-center {
@@ -17,10 +25,18 @@
   }
 
   &.bgblob-bottom-left {
-    background-position: bottom 75px left -175px;
+    background-position: bottom -250px left -150px;
   }
 
   &.bgblob-bottom-right {
-    background-position: bottom 75px right -175px;
+    background-position: bottom -250px right -150px;
+  }
+
+  &.bgblob-top-left {
+    background-position: top -150px left -150px;
+  }
+
+  &.bgblob-top-right {
+    background-position: top -150px right -150px;
   }
 }
