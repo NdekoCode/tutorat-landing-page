@@ -142,3 +142,7 @@
 .bg-red-light-1 {
   background-color: var(--red-light-1);
 }
+
+.btn {
+  @apply rounded-md;
+}
