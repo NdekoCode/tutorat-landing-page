@@ -138,3 +138,7 @@
   @extend .flex-middle;
   @apply flex-col;
 }
+
+.bg-red-light-1 {
+  background-color: var(--red-light-1);
+}
