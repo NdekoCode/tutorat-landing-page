@@ -46,19 +46,23 @@ body {
   padding-inline: rem(20);
 
   @media #{$sm-screen} {
-    max-width: 540px;
+    max-width: 526px;
   }
 
   @media #{$md-screen} {
-    max-width: 720px;
+    max-width: 718px;
   }
 
   @media #{$lg-screen} {
-    max-width: 960px;
+    max-width: 975px;
   }
 
   @media #{$xl-screen} {
-    max-width: 1140px;
+    max-width: 1230px;
+  }
+
+  @media #{$xl-screen} {
+    max-width: 1350px;
   }
 
 
