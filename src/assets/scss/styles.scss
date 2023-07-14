@@ -67,7 +67,7 @@
 }
 
 .bg-red-light {
-  background-color: var(--reg-light);
+  background-color: var(--red-light);
 
 }
 
@@ -169,7 +169,8 @@
     }
 
     @screen lg {
-      @apply text-4xl;
+      @apply text-[2.75rem];
+      line-height: 2.75rem;
     }
   }
 

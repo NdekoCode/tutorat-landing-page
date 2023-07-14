@@ -27,14 +27,53 @@
         [class]="isActive ? 'open' : ''"
         #navContainer
       >
-        <a routerLink="/services" aria-current="page">Services</a>
-        <a routerLink="/tutors">Tutors</a>
-        <a routerLink="/blog">Blog</a>
-        <a routerLink="/about">A propos</a>
-        <a routerLink="/contact">Contact</a>
+        <button (click)="toggleNav()" class="mb-10 text-dark lg:hidden">
+          <svg
+            class="w-10 h-10"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 512 512"
+          >
+            <path
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="32"
+              fill="currentColor"
+              d="M368 368L144 144M368 144L144 368"
+            />
+          </svg>
+        </button>
+        <a routerLink="/services" aria-current="page" (click)="toggleNav()"
+          >Services</a
+        >
+        <a routerLink="/tutors" (click)="toggleNav()">Tutors</a>
+        <a routerLink="/blog" (click)="toggleNav()">Blog</a>
+        <a routerLink="/about" (click)="toggleNav()">A propos</a>
+        <a routerLink="/contact" (click)="toggleNav()">Contact</a>
+
+        <div class="flex-col items-start lg:hidden button-container gap-y-2">
+          <a
+            routerLink="/auth/signup"
+            (click)="toggleNav()"
+            class="normal-case border-2 bg-transparent hover:!text-white after:!hidden btn-outline btn"
+            >S'inscrire</a
+          >
+          <a
+            routerLink="/auth/login"
+            (click)="toggleNav()"
+            class="!text-white normal-case after:!hidden btn bg-dark"
+            >Se connecter</a
+          >
+        </div>
       </div>
     </div>
 
+    <div
+      class="burger-overlay-bg"
+      [class]="isActive ? 'active' : ''"
+      (click)="toggleNav()"
+    ></div>
     <div class="nav-authentication">
       <a
         routerLink="/auth/signup"

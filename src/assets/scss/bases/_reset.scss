@@ -37,8 +37,11 @@ body {
 }
 
 body {
-  background-color: var(--reg-light);
+  background-color : var(--red-light);
+  background-image : linear-gradient(to left, var(--red-light) 75%, var(--red-light-1) 100%);
+  background-repeat: no-repeat;
 }
+
 
 .container {
   @extend %container;
@@ -51,13 +54,6 @@ body {
     max-width: 1350px;
   }
 
-
-  @media #{$md-screen} {
-    &:not(.content) {
-
-      padding-inline: 0;
-    }
-  }
 
   @media #{$xl-screen} {
     &.fixed {
@@ -222,5 +218,20 @@ body {
 }
 
 .border-red-light {
-  border-color: var(--reg-light) !important;
+  border-color: var(--red-light) !important;
+}
+
+.burger-overlay-bg {
+
+  opacity   : 0.3;
+  background: #000;
+  position  : fixed;
+  top       : 0;
+  left      : 0;
+  height    : 100%;
+  width     : 100%;
+  min-height: 700px;
+  z-index   : 5;
+  display   : none;
+
 }

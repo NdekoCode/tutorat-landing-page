@@ -17,11 +17,12 @@
 
   @media #{$lg-screen} {
     max-width     : 1024px;
-    padding-inline: 0;
+    padding-inline: rem(15);
   }
 
   @media #{$xl-screen} {
-    max-width: 1281px;
+    max-width     : 1281px;
+    padding-inline: 0;
   }
 
   @media #{$xxl-screen} {
