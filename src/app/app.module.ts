@@ -12,7 +12,6 @@ import { InputContainerComponent } from './shared/components/input-container/inp
 import { InputGroupComponent } from './shared/components/input-group/input-group.component'
 import { InputComponent } from './shared/components/input/input.component'
 import { ScrollHideDirective } from './shared/directives/scroll-hide.directive'
-import { ScrollDirective } from './shared/directives/scroll.directive'
 import { SafePipe } from './shared/pipes/safe.pipe'
 
 @NgModule({
@@ -20,7 +19,6 @@ import { SafePipe } from './shared/pipes/safe.pipe'
     AppComponent,
     SafePipe,
     ScrollHideDirective,
-    ScrollDirective,
     InputComponent,
     InputContainerComponent,
     ErrorComponent,

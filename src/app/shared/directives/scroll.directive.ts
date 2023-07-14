@@ -6,7 +6,7 @@ import { Directive, HostBinding, HostListener } from '@angular/core'
 export class ScrollDirective {
   @HostBinding('class.scroll-nav') scrollNav!: boolean
   @HostListener('window:scroll') onScroll() {
-    if (window.scrollY >= 50) {
+    if (window.scrollY >= 150) {
       this.scrollNav = true
     } else {
       this.scrollNav = false
