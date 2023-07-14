@@ -3,9 +3,8 @@
 }
 
 .items-nav {
-  margin-inline: 0 !important;
-  margin-right : auto !important;
-  margin-left  : 0 !important;
+  margin-right: auto !important;
+  margin-left : 0 !important;
 }
 
 nav {
@@ -23,6 +22,10 @@ nav {
     }
 
     @media screen and (min-width: 1280px) {
+      .main-navlinks {
+        margin-inline: auto !important;
+      }
+
       @apply max-w-[75rem];
       padding-inline: 0;
     }
@@ -141,7 +144,7 @@ nav {
     }
 
     .main-navlinks {
-      margin-right: auto;
+      // margin-right: auto;
     }
   }
 
