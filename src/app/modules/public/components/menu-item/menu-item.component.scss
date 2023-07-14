@@ -9,14 +9,13 @@ nav {
     padding: 15px 25px;
 
     @media only screen and (min-width:1024px) {
-      width         : 100%;
       padding-inline: 0;
     }
 
     @media only screen and (min-width: 1280px) {
-      @apply max-w-6xl;
-
+      @apply max-w-[75rem];
     }
+
   }
 }
 
@@ -24,7 +23,7 @@ nav {
   display        : flex;
   align-items    : center;
   text-decoration: none;
-  margin-right   : 20px;
+  margin-inline  : auto;
 
   span {
     font-size  : 25px;
@@ -106,16 +105,29 @@ nav {
 @media only screen and (min-width:1024px) {
 
 
+  .nav-icon {
+    margin-right: auto;
+    margin-left : 0;
+  }
+
   .main-navlinks {
-    margin-left: auto;
+    margin-inline: auto;
   }
 
 }
 
-@media (max-width: 1024px) {
+@media only screen and (max-width: 1024px) {
   nav {
     padding : 15px 20px;
     position: relative;
+
+    .nav-icon {
+      margin-inline: auto;
+    }
+
+    .main-navlinks {
+      margin-right: auto;
+    }
   }
 
   /* nav */
@@ -244,7 +256,7 @@ nav {
 
 }
 
-@media (max-width: 576px) {
+@media only screen and (max-width: 576px) {
   .nav-icon {
     img {
       width: 100px;

@@ -41,21 +41,7 @@ body {
 }
 
 .container {
-  width         : 100%;
-  margin-inline : auto;
-  padding-inline: rem(20);
-
-  @media #{$sm-screen} {
-    max-width: 526px;
-  }
-
-  @media #{$md-screen} {
-    max-width: 718px;
-  }
-
-  @media #{$lg-screen} {
-    max-width: 975px;
-  }
+  @extend %container;
 
   @media #{$xl-screen} {
     max-width: 1230px;
@@ -67,11 +53,6 @@ body {
 
 
   @media #{$md-screen} {
-    &:not(.content) {
-
-      padding-inline: 0;
-    }
-
     &:not(.content) {
 
       padding-inline: 0;

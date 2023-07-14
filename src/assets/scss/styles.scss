@@ -161,6 +161,19 @@
     @apply text-4xl;
   }
 
+  &.title-sm {
+    @apply text-2xl;
+
+    @screen md {
+      @apply text-3xl;
+    }
+
+    @screen lg {
+      @apply text-4xl;
+    }
+  }
+
+
   &.title-up {
 
     @apply text-4xl;
