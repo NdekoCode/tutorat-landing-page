@@ -2,6 +2,12 @@
   display: none;
 }
 
+.items-nav {
+  margin-inline: 0 !important;
+  margin-right : auto !important;
+  margin-left  : 0 !important;
+}
+
 nav {
   // position   : fixed;
 
@@ -117,11 +123,6 @@ nav {
 
   .main-navlinks {
     margin-inline: auto;
-  }
-
-  .items-nav {
-    margin-right: auto !important;
-    margin-left : 0 !important;
   }
 
   .close-item {
