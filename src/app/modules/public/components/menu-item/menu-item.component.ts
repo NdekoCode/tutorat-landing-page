@@ -11,6 +11,8 @@ export class MenuItemComponent {
   isActive: boolean = false
 
   toggleNav() {
-    this.isActive = !this.isActive
+    if (window.innerWidth <= 1024) {
+      this.isActive = !this.isActive
+    }
   }
 }

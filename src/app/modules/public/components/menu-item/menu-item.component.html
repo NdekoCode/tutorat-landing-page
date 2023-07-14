@@ -9,7 +9,7 @@
       <img src="/assets/images/icons/Logo.png" alt="Logo tutorat" />
     </a>
 
-    <div class="main-navlinks">
+    <div class="main-navlinks items-nav">
       <button
         type="button"
         class="hamburger"
@@ -27,7 +27,7 @@
         [class]="isActive ? 'open' : ''"
         #navContainer
       >
-        <button (click)="toggleNav()" class="mb-10 text-dark lg:!hidden">
+        <button (click)="toggleNav()" class="mb-10 text-dark close-item">
           <svg
             class="w-10 h-10"
             xmlns="http://www.w3.org/2000/svg"
@@ -52,7 +52,7 @@
         <a routerLink="/about" (click)="toggleNav()">A propos</a>
         <a routerLink="/contact" (click)="toggleNav()">Contact</a>
 
-        <div class="flex-col items-start lg:!hidden button-container gap-y-2">
+        <div class="button-auth-app button-container">
           <a
             routerLink="/auth/signup"
             (click)="toggleNav()"
