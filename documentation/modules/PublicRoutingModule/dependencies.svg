@@ -24,13 +24,13 @@
 <title>cluster_PublicRoutingModule</title>
 <polygon fill="none" stroke="black" stroke-dasharray="1,5" points="141,-70 141,-268 355,-268 355,-70 141,-70"/>
 </g>
-<g id="clust4" class="cluster">
-<title>cluster_PublicRoutingModule_exports</title>
-<polygon fill="none" stroke="black" points="189,-208 189,-260 307,-260 307,-208 189,-208"/>
-</g>
 <g id="clust3" class="cluster">
 <title>cluster_PublicRoutingModule_imports</title>
 <polygon fill="none" stroke="black" points="149,-78 149,-130 347,-130 347,-78 149,-78"/>
+</g>
+<g id="clust4" class="cluster">
+<title>cluster_PublicRoutingModule_exports</title>
+<polygon fill="none" stroke="black" points="189,-208 189,-260 307,-260 307,-208 189,-208"/>
 </g>
 <!-- RouterModule.forChild(args) -->
 <g id="node1" class="node">

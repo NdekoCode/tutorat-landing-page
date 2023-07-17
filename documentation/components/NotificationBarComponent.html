@@ -193,7 +193,7 @@
                                     <a href="../components/MyspaceLayoutComponent.html" >MyspaceLayoutComponent</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../components/NotificationBarComponent.html" >NotificationBarComponent</a>
+                                    <a href="../components/NotificationBarComponent.html"  class="active" >NotificationBarComponent</a>
                                 </li>
                                 <li class="link">
                                     <a href="../components/OTPVerificationComponent.html" >OTPVerificationComponent</a>
@@ -220,7 +220,7 @@
                                     <a href="../components/SidemenuComponent.html" >SidemenuComponent</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../components/SignupComponent.html"  class="active" >SignupComponent</a>
+                                    <a href="../components/SignupComponent.html" >SignupComponent</a>
                                 </li>
                                 <li class="link">
                                     <a href="../components/SpinnerComponent.html" >SpinnerComponent</a>
@@ -519,7 +519,7 @@
                                            <a href="../components/MyspaceLayoutComponent.html" >MyspaceLayoutComponent</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../components/NotificationBarComponent.html" >NotificationBarComponent</a>
+                                           <a href="../components/NotificationBarComponent.html"  class="active" >NotificationBarComponent</a>
                                        </li>
                                        <li class="link">
                                            <a href="../components/OTPVerificationComponent.html" >OTPVerificationComponent</a>
@@ -546,7 +546,7 @@
                                            <a href="../components/SidemenuComponent.html" >SidemenuComponent</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../components/SignupComponent.html"  class="active" >SignupComponent</a>
+                                           <a href="../components/SignupComponent.html" >SignupComponent</a>
                                        </li>
                                        <li class="link">
                                            <a href="../components/SpinnerComponent.html" >SpinnerComponent</a>
@@ -672,7 +672,7 @@
 
 <ol class="breadcrumb">
   <li>Components</li>
-  <li>SignupComponent</li>
+  <li>NotificationBarComponent</li>
 </ol>
 
 
@@ -690,7 +690,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/modules/auth/pages/signup/signup.component.ts</code>
+    <code>src/app/modules/public/components/notification-bar/notification-bar.component.ts</code>
 </p>
 
 
@@ -713,15 +713,19 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-signup</code></td>
+                <td class="col-md-9"><code>app-notification-bar</code></td>
             </tr>
 
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>notification-bar.component.scss</code></td>
+            </tr>
 
 
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>signup.component.html</code></td>
+                <td class="col-md-9"><code>notification-bar.component.html</code></td>
             </tr>
 
 
@@ -731,19 +735,6 @@
 
 
 
-    <section>
-        <h3 id="constructor">Constructor</h3>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <code>constructor(fb: <a href="https://angular.io/docs/ts/latest/api/forms/index/FormBuilder-class.html" target="_blank" >FormBuilder</a>, router: <a href="https://angular.io/docs/ts/latest/api/router/index/Router-class.html" target="_blank" >Router</a>, authService: any)</code>
-                        </td>
-                    </tr>
-    
-                </tbody>
-            </table>
-    </section>
 
     <section>
         <h3 id="methods">Methods</h3>
@@ -751,37 +742,13 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <b> viewPassword</b>
+                            <b> onClose</b>
                         </td>
                     </tr>
     
                     <tr>
                         <td class="col-md-4">
-    <code>viewPassword()</code>
-                        </td>
-                    </tr>
-    
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-description">
-                                    <b>Returns: </b>    <code>void</code>
-    
-                                </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> saveRegisterForm</b>
-                        </td>
-                    </tr>
-    
-                    <tr>
-                        <td class="col-md-4">
-    <code>saveRegisterForm()</code>
+    <code>onClose()</code>
                         </td>
                     </tr>
     
@@ -803,72 +770,12 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <b> alert</b>
+                            <b> isClosed</b>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <code>alert:     <code>any</code>
-    </bcode>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> authService</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <code>authService:     <code>any</code>
-    </bcode>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> fb</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <code>fb:     <code><a href="https://angular.io/docs/ts/latest/api/forms/index/FormBuilder-class.html" target="_blank" >FormBuilder</a></code>
-    </bcode>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> FormGroup</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <code>FormGroup:     <code>any</code>
-    </bcode>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> isChange</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <code>isChange:     <code>boolean</code>
+                            <code>isClosed:     <code>boolean</code>
     </bcode>
                         </td>
                     </tr>
@@ -877,190 +784,22 @@
                                 <i>Default value: </i><code>false</code>
                             </td>
                         </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> isLoading</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <code>isLoading:     <code>boolean</code>
-    </bcode>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <i>Default value: </i><code>false</code>
-                            </td>
-                        </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b><span class="modifier">Public</span> registerForm</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <span class="modifier-icon fa fa-circle"></span><code>registerForm:     <code>boolean</code>
-    </bcode>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> router</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <code>router:     <code><a href="https://angular.io/docs/ts/latest/api/router/index/Router-class.html" target="_blank" >Router</a></code>
-    </bcode>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> submitForm</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <code>submitForm:     <code>boolean</code>
-    </bcode>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <i>Default value: </i><code>false</code>
-                            </td>
-                        </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> timer</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <code>timer:     <code>any</code>
-    </bcode>
-                        </td>
-                    </tr>
                 </tbody>
             </table>
     </section>
 </div>
         <div class="tab-pane fade tab-source-code" id="source">
-            <pre><code class="hljs javascript">import { Component, OnDestroy, OnInit } from &#x27;@angular/core&#x27;
-import { FormBuilder, FormGroup, Validators } from &#x27;@angular/forms&#x27;
-import { Router } from &#x27;@angular/router&#x27;
-import { ALERT_AUTH, GLOBAL_CONSTANTS } from &#x27;src/app/core/utilities/constants&#x27;
-import {
-  emailValidator,
-  passwordValidator,
-  phoneValidator
-} from &#x27;src/app/core/utilities/forms&#x27;
-import { Alert, Timer } from &#x27;src/app/core/utilities/types&#x27;
-import { AuthService } from &#x27;src/app/shared/services/auth/auth.service&#x27;
+            <pre><code class="hljs javascript">import { Component } from &#x27;@angular/core&#x27;
 
 @Component({
-  selector: &#x27;app-signup&#x27;,
-  templateUrl: &#x27;./signup.component.html&#x27;
+  selector: &#x27;app-notification-bar&#x27;,
+  templateUrl: &#x27;./notification-bar.component.html&#x27;,
+  styleUrls: [&#x27;./notification-bar.component.scss&#x27;]
 })
-export class SignupComponent implements OnInit, OnDestroy {
-  constructor(
-    public fb: FormBuilder,
-    public router: Router,
-    public authService: AuthService
-  ) {}
-  alert: Alert &#x3D; {
-    isShown: false,
-    alertType: &#x27;error&#x27;,
-    alertTitle: &#x27;&#x27;,
-    alertMessage: &#x27;&#x27;
-  }
-  timer: Timer
-  submitForm: boolean &#x3D; false
-  isLoading: boolean &#x3D; false
-  public registerForm!: FormGroup
-  isChange: boolean &#x3D; false
-  viewPassword() {
-    this.isChange &#x3D; !this.isChange
-  }
-  ngOnInit(): void {
-    this.registerForm &#x3D; this.fb.group({
-      lastName: [&#x27;&#x27;, [Validators.required, Validators.minLength(2)]],
-      firstName: [&#x27;&#x27;, [Validators.required, Validators.minLength(2)]],
-      ...phoneValidator,
-      ...emailValidator,
-      ...passwordValidator,
-      confirmPassword: [&#x27;&#x27;, [Validators.required]]
-    })
-  }
-  saveRegisterForm() {
-    this.submitForm &#x3D; false
-    this.isLoading &#x3D; true
-    if (this.registerForm.valid) {
-      this.authService
-        .signup(this.registerForm.value)
-
-        .subscribe({
-          next: (response) &#x3D;&gt; {
-            this.submitForm &#x3D; true
-            this.alert &#x3D; {
-              isShown: true,
-              alertTitle: ALERT_AUTH.signup.success.alertTitle,
-              alertType: &#x27;success&#x27;,
-              alertMessage:
-                ALERT_AUTH.signup.success.alertMessage +
-                this.registerForm.value.email
-            }
-            this.timer &#x3D; window.setTimeout(() &#x3D;&gt; {
-              this.router.navigate([&#x27;/auth/login&#x27;])
-              window.clearTimeout(this.timer)
-            }, GLOBAL_CONSTANTS.AUTH_TIMEOUT)
-            this.isLoading &#x3D; false
-          },
-          error: (httpErrorResponse) &#x3D;&gt; {
-            this.submitForm &#x3D; true
-            this.isLoading &#x3D; false
-            if (httpErrorResponse.error.statusCode &#x3D;&#x3D;&#x3D; 409) {
-              this.alert &#x3D; {
-                isShown: true,
-                alertTitle: ALERT_AUTH.signup.error.alertTitle,
-                alertType: &#x27;error&#x27;,
-                alertMessage: httpErrorResponse.error.message
-              }
-            } else if (httpErrorResponse.error.statusCode &#x3D;&#x3D;&#x3D; 400) {
-              this.alert &#x3D; {
-                ...this.alert,
-                isShown: true,
-                alertTitle: ALERT_AUTH.signup.error.alertTitle,
-                alertMessage: httpErrorResponse.error.message
-              }
-            }
-          }
-        })
-    }
-  }
-  ngOnDestroy(): void {
-    window.clearTimeout(this.timer)
+export class NotificationBarComponent {
+  isClosed: boolean &#x3D; false
+  onClose() {
+    this.isClosed &#x3D; !this.isClosed
   }
 }
 </code></pre>

@@ -220,7 +220,7 @@
                                     <a href="../components/SidemenuComponent.html" >SidemenuComponent</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../components/SignupComponent.html"  class="active" >SignupComponent</a>
+                                    <a href="../components/SignupComponent.html" >SignupComponent</a>
                                 </li>
                                 <li class="link">
                                     <a href="../components/SpinnerComponent.html" >SpinnerComponent</a>
@@ -261,7 +261,7 @@
                                     <a href="../directives/ScrollDirective.html" >ScrollDirective</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../directives/ScrollHideDirective.html" >ScrollHideDirective</a>
+                                    <a href="../directives/ScrollHideDirective.html"  class="active" >ScrollHideDirective</a>
                                 </li>
                         </ul>
                     </li>
@@ -546,7 +546,7 @@
                                            <a href="../components/SidemenuComponent.html" >SidemenuComponent</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../components/SignupComponent.html"  class="active" >SignupComponent</a>
+                                           <a href="../components/SignupComponent.html" >SignupComponent</a>
                                        </li>
                                        <li class="link">
                                            <a href="../components/SpinnerComponent.html" >SpinnerComponent</a>
@@ -587,7 +587,7 @@
                                            <a href="../directives/ScrollDirective.html" >ScrollDirective</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../directives/ScrollHideDirective.html" >ScrollHideDirective</a>
+                                           <a href="../directives/ScrollHideDirective.html"  class="active" >ScrollHideDirective</a>
                                        </li>
                                </ul>
                            </li>
@@ -666,408 +666,135 @@
                    
                    </nav>
                </div>
-               <div class="content component">
+               <div class="content directive">
                    <div class="content-data">
 
 
+
 <ol class="breadcrumb">
-  <li>Components</li>
-  <li>SignupComponent</li>
+  <li>Directives</li>
+  <li>ScrollHideDirective</li>
 </ol>
 
+<ul class="nav nav-tabs" role="tablist">
+    <li class="active">
+        <a href="#infos" id="infos-tab" role="tab" data-toggle="tab">Infos</a>
+    </li>
+    <li>
+        <a href="#source" role="tab" id="source-tab" data-toggle="tab">Source</a>
+    </li>
+</ul>
 
-    <ul class="nav nav-tabs" role="tablist">
-        <li class="active">
-            <a href="#infos" id="infos-tab" role="tab" data-toggle="tab">Infos</a>
-        </li>
-        <li>
-            <a href="#source" role="tab" id="source-tab" data-toggle="tab">Source</a>
-        </li>
-    </ul>
-
-    <div class="tab-content">
-        <div class="tab-pane fade active in" id="infos"><p class="comment">
-    <h3>File</h3>
-</p>
-<p class="comment">
-    <code>src/app/modules/auth/pages/signup/signup.component.ts</code>
-</p>
-
-
-
-<section>
-    <h3>Metadata</h3>
-    <table class="table table-sm table-hover">
-        <tbody>
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="infos">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/shared/directives/scroll-hide.directive.ts</code>
+        </p>
 
 
 
-
-
-
-
-
-
-
-
-
-            <tr>
-                <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-signup</code></td>
-            </tr>
-
-
-
-
-            <tr>
-                <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>signup.component.html</code></td>
-            </tr>
-
-
-        </tbody>
-    </table>
-</section>
-
-
-
-    <section>
-        <h3 id="constructor">Constructor</h3>
-            <table class="table table-sm table-bordered">
+        <section>
+            <h3>Metadata</h3>
+            <table class="table table-sm table-hover">
                 <tbody>
+
                     <tr>
-                        <td class="col-md-4">
-                            <code>constructor(fb: <a href="https://angular.io/docs/ts/latest/api/forms/index/FormBuilder-class.html" target="_blank" >FormBuilder</a>, router: <a href="https://angular.io/docs/ts/latest/api/router/index/Router-class.html" target="_blank" >Router</a>, authService: any)</code>
-                        </td>
+                        <td class="col-md-3">selector</td>
+                        <td class="col-md-9"><code>[appScrollHide]</code></td>
                     </tr>
-    
+
                 </tbody>
             </table>
-    </section>
+        </section>
 
-    <section>
-        <h3 id="methods">Methods</h3>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> viewPassword</b>
-                        </td>
-                    </tr>
-    
-                    <tr>
-                        <td class="col-md-4">
-    <code>viewPassword()</code>
-                        </td>
-                    </tr>
-    
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-description">
-                                    <b>Returns: </b>    <code>void</code>
-    
-                                </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> saveRegisterForm</b>
-                        </td>
-                    </tr>
-    
-                    <tr>
-                        <td class="col-md-4">
-    <code>saveRegisterForm()</code>
-                        </td>
-                    </tr>
-    
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-description">
-                                    <b>Returns: </b>    <code>void</code>
-    
-                                </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-    </section>
 
-    <section>
-        <h3 id="inputs">Properties</h3>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> alert</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <code>alert:     <code>any</code>
-    </bcode>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> authService</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <code>authService:     <code>any</code>
-    </bcode>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> fb</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <code>fb:     <code><a href="https://angular.io/docs/ts/latest/api/forms/index/FormBuilder-class.html" target="_blank" >FormBuilder</a></code>
-    </bcode>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> FormGroup</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <code>FormGroup:     <code>any</code>
-    </bcode>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> isChange</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <code>isChange:     <code>boolean</code>
-    </bcode>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <i>Default value: </i><code>false</code>
-                            </td>
-                        </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> isLoading</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <code>isLoading:     <code>boolean</code>
-    </bcode>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <i>Default value: </i><code>false</code>
-                            </td>
-                        </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b><span class="modifier">Public</span> registerForm</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <span class="modifier-icon fa fa-circle"></span><code>registerForm:     <code>boolean</code>
-    </bcode>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> router</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <code>router:     <code><a href="https://angular.io/docs/ts/latest/api/router/index/Router-class.html" target="_blank" >Router</a></code>
-    </bcode>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> submitForm</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <code>submitForm:     <code>boolean</code>
-    </bcode>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <i>Default value: </i><code>false</code>
-                            </td>
-                        </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> timer</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <code>timer:     <code>any</code>
-    </bcode>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-    </section>
-</div>
-        <div class="tab-pane fade tab-source-code" id="source">
-            <pre><code class="hljs javascript">import { Component, OnDestroy, OnInit } from &#x27;@angular/core&#x27;
-import { FormBuilder, FormGroup, Validators } from &#x27;@angular/forms&#x27;
-import { Router } from &#x27;@angular/router&#x27;
-import { ALERT_AUTH, GLOBAL_CONSTANTS } from &#x27;src/app/core/utilities/constants&#x27;
-import {
-  emailValidator,
-  passwordValidator,
-  phoneValidator
-} from &#x27;src/app/core/utilities/forms&#x27;
-import { Alert, Timer } from &#x27;src/app/core/utilities/types&#x27;
-import { AuthService } from &#x27;src/app/shared/services/auth/auth.service&#x27;
 
-@Component({
-  selector: &#x27;app-signup&#x27;,
-  templateUrl: &#x27;./signup.component.html&#x27;
+
+            <section>
+                <h3 id="methods">Methods</h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> onScroll</b>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            <code>onScroll()</code>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description">
+                                            <b>Returns: </b>    <code>void</code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+            </section>
+
+            <section>
+                <h3 id="inputs">Properties</h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> boolean</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <code>boolean:     <code>any</code>
+            </bcode>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> scrolHide</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <code>scrolHide:     <code>boolean</code>
+            </bcode>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+            </section>
+
+    </div>
+    <div class="tab-pane fade tab-source-code" id="source">
+        <pre><code class="hljs javascript">import { Directive, HostBinding, HostListener } from &#x27;@angular/core&#x27;
+
+@Directive({
+  selector: &#x27;[appScrollHide]&#x27;
 })
-export class SignupComponent implements OnInit, OnDestroy {
-  constructor(
-    public fb: FormBuilder,
-    public router: Router,
-    public authService: AuthService
-  ) {}
-  alert: Alert &#x3D; {
-    isShown: false,
-    alertType: &#x27;error&#x27;,
-    alertTitle: &#x27;&#x27;,
-    alertMessage: &#x27;&#x27;
-  }
-  timer: Timer
-  submitForm: boolean &#x3D; false
-  isLoading: boolean &#x3D; false
-  public registerForm!: FormGroup
-  isChange: boolean &#x3D; false
-  viewPassword() {
-    this.isChange &#x3D; !this.isChange
-  }
-  ngOnInit(): void {
-    this.registerForm &#x3D; this.fb.group({
-      lastName: [&#x27;&#x27;, [Validators.required, Validators.minLength(2)]],
-      firstName: [&#x27;&#x27;, [Validators.required, Validators.minLength(2)]],
-      ...phoneValidator,
-      ...emailValidator,
-      ...passwordValidator,
-      confirmPassword: [&#x27;&#x27;, [Validators.required]]
-    })
-  }
-  saveRegisterForm() {
-    this.submitForm &#x3D; false
-    this.isLoading &#x3D; true
-    if (this.registerForm.valid) {
-      this.authService
-        .signup(this.registerForm.value)
-
-        .subscribe({
-          next: (response) &#x3D;&gt; {
-            this.submitForm &#x3D; true
-            this.alert &#x3D; {
-              isShown: true,
-              alertTitle: ALERT_AUTH.signup.success.alertTitle,
-              alertType: &#x27;success&#x27;,
-              alertMessage:
-                ALERT_AUTH.signup.success.alertMessage +
-                this.registerForm.value.email
-            }
-            this.timer &#x3D; window.setTimeout(() &#x3D;&gt; {
-              this.router.navigate([&#x27;/auth/login&#x27;])
-              window.clearTimeout(this.timer)
-            }, GLOBAL_CONSTANTS.AUTH_TIMEOUT)
-            this.isLoading &#x3D; false
-          },
-          error: (httpErrorResponse) &#x3D;&gt; {
-            this.submitForm &#x3D; true
-            this.isLoading &#x3D; false
-            if (httpErrorResponse.error.statusCode &#x3D;&#x3D;&#x3D; 409) {
-              this.alert &#x3D; {
-                isShown: true,
-                alertTitle: ALERT_AUTH.signup.error.alertTitle,
-                alertType: &#x27;error&#x27;,
-                alertMessage: httpErrorResponse.error.message
-              }
-            } else if (httpErrorResponse.error.statusCode &#x3D;&#x3D;&#x3D; 400) {
-              this.alert &#x3D; {
-                ...this.alert,
-                isShown: true,
-                alertTitle: ALERT_AUTH.signup.error.alertTitle,
-                alertMessage: httpErrorResponse.error.message
-              }
-            }
-          }
-        })
+export class ScrollHideDirective {
+  @HostBinding(&#x27;class.scroll-hide&#x27;) scrolHide!: boolean
+  @HostListener(&#x27;window:scroll&#x27;) onScroll() {
+    if (window.scrollY &gt;&#x3D; 50) {
+      this.scrolHide &#x3D; true
+    } else {
+      this.scrolHide &#x3D; false
     }
-  }
-  ngOnDestroy(): void {
-    window.clearTimeout(this.timer)
   }
 }
 </code></pre>
-        </div>
     </div>
-
-
+</div>
 
 
 

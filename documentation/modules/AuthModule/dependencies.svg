@@ -24,187 +24,187 @@
 <title>cluster_AuthModule</title>
 <polygon fill="none" stroke="black" stroke-dasharray="1,5" points="8,-70 8,-195 2302,-195 2302,-70 8,-70"/>
 </g>
-<g id="clust13" class="cluster">
-<title>cluster_AuthModule_imports</title>
-<polygon fill="none" stroke="black" points="1737,-78 1737,-130 2294,-130 2294,-78 1737,-78"/>
-</g>
 <g id="clust2" class="cluster">
 <title>cluster_AuthModule_declarations</title>
-<polygon fill="none" stroke="black" points="16,-78 16,-130 1729,-130 1729,-78 16,-78"/>
+<polygon fill="none" stroke="black" points="581,-78 581,-130 2294,-130 2294,-78 581,-78"/>
+</g>
+<g id="clust13" class="cluster">
+<title>cluster_AuthModule_imports</title>
+<polygon fill="none" stroke="black" points="16,-78 16,-130 573,-130 573,-78 16,-78"/>
 </g>
 <!-- SignupComponent -->
 <g id="node1" class="node">
 <title>SignupComponent</title>
-<polygon fill="#ffffb3" stroke="black" points="1720.51,-122 1599.49,-122 1599.49,-86 1720.51,-86 1720.51,-122"/>
-<text text-anchor="middle" x="1660" y="-99.8" font-family="Times,serif" font-size="14.00">SignupComponent</text>
+<polygon fill="#ffffb3" stroke="black" points="2285.51,-122 2164.49,-122 2164.49,-86 2285.51,-86 2285.51,-122"/>
+<text text-anchor="middle" x="2225" y="-99.8" font-family="Times,serif" font-size="14.00">SignupComponent</text>
 </g>
 <!-- AuthModule -->
 <g id="node11" class="node">
 <title>AuthModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="1312.55,-187 1309.55,-191 1288.55,-191 1285.55,-187 1225.45,-187 1225.45,-151 1312.55,-151 1312.55,-187"/>
-<text text-anchor="middle" x="1269" y="-164.8" font-family="Times,serif" font-size="14.00">AuthModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="1166.55,-187 1163.55,-191 1142.55,-191 1139.55,-187 1079.45,-187 1079.45,-151 1166.55,-151 1166.55,-187"/>
+<text text-anchor="middle" x="1123" y="-164.8" font-family="Times,serif" font-size="14.00">AuthModule</text>
 </g>
 <!-- SignupComponent&#45;&gt;AuthModule -->
 <g id="edge1" class="edge">
 <title>SignupComponent&#45;&gt;AuthModule</title>
-<path fill="none" stroke="black" d="M1660,-122.03C1660,-139.06 1660,-162 1660,-162 1660,-162 1322.71,-162 1322.71,-162"/>
-<polygon fill="black" stroke="black" points="1322.71,-158.5 1312.71,-162 1322.71,-165.5 1322.71,-158.5"/>
+<path fill="none" stroke="black" d="M2225,-122.09C2225,-145.13 2225,-182 2225,-182 2225,-182 1176.88,-182 1176.88,-182"/>
+<polygon fill="black" stroke="black" points="1176.88,-178.5 1166.88,-182 1176.88,-185.5 1176.88,-178.5"/>
 </g>
 <!-- LoginComponent -->
 <g id="node2" class="node">
 <title>LoginComponent</title>
-<polygon fill="#ffffb3" stroke="black" points="1581.28,-122 1466.72,-122 1466.72,-86 1581.28,-86 1581.28,-122"/>
-<text text-anchor="middle" x="1524" y="-99.8" font-family="Times,serif" font-size="14.00">LoginComponent</text>
+<polygon fill="#ffffb3" stroke="black" points="2146.28,-122 2031.72,-122 2031.72,-86 2146.28,-86 2146.28,-122"/>
+<text text-anchor="middle" x="2089" y="-99.8" font-family="Times,serif" font-size="14.00">LoginComponent</text>
 </g>
 <!-- LoginComponent&#45;&gt;AuthModule -->
 <g id="edge2" class="edge">
 <title>LoginComponent&#45;&gt;AuthModule</title>
-<path fill="none" stroke="black" d="M1524,-122.24C1524,-137.57 1524,-157 1524,-157 1524,-157 1322.84,-157 1322.84,-157"/>
-<polygon fill="black" stroke="black" points="1322.84,-153.5 1312.84,-157 1322.84,-160.5 1322.84,-153.5"/>
+<path fill="none" stroke="black" d="M2089,-122.04C2089,-143.66 2089,-177 2089,-177 2089,-177 1176.7,-177 1176.7,-177"/>
+<polygon fill="black" stroke="black" points="1176.7,-173.5 1166.7,-177 1176.7,-180.5 1176.7,-173.5"/>
 </g>
 <!-- ForgetPasswordComponent -->
 <g id="node3" class="node">
 <title>ForgetPasswordComponent</title>
-<polygon fill="#ffffb3" stroke="black" points="1448.54,-122 1277.46,-122 1277.46,-86 1448.54,-86 1448.54,-122"/>
-<text text-anchor="middle" x="1363" y="-99.8" font-family="Times,serif" font-size="14.00">ForgetPasswordComponent</text>
+<polygon fill="#ffffb3" stroke="black" points="2013.54,-122 1842.46,-122 1842.46,-86 2013.54,-86 2013.54,-122"/>
+<text text-anchor="middle" x="1928" y="-99.8" font-family="Times,serif" font-size="14.00">ForgetPasswordComponent</text>
 </g>
 <!-- ForgetPasswordComponent&#45;&gt;AuthModule -->
 <g id="edge3" class="edge">
 <title>ForgetPasswordComponent&#45;&gt;AuthModule</title>
-<path fill="none" stroke="black" d="M1295,-122.11C1295,-122.11 1295,-140.99 1295,-140.99"/>
-<polygon fill="black" stroke="black" points="1291.5,-140.99 1295,-150.99 1298.5,-140.99 1291.5,-140.99"/>
+<path fill="none" stroke="black" d="M1928,-122.22C1928,-142.37 1928,-172 1928,-172 1928,-172 1176.57,-172 1176.57,-172"/>
+<polygon fill="black" stroke="black" points="1176.57,-168.5 1166.57,-172 1176.57,-175.5 1176.57,-168.5"/>
 </g>
 <!-- ResetPasswordComponent -->
 <g id="node4" class="node">
 <title>ResetPasswordComponent</title>
-<polygon fill="#ffffb3" stroke="black" points="1259.09,-122 1092.91,-122 1092.91,-86 1259.09,-86 1259.09,-122"/>
-<text text-anchor="middle" x="1176" y="-99.8" font-family="Times,serif" font-size="14.00">ResetPasswordComponent</text>
+<polygon fill="#ffffb3" stroke="black" points="1824.09,-122 1657.91,-122 1657.91,-86 1824.09,-86 1824.09,-122"/>
+<text text-anchor="middle" x="1741" y="-99.8" font-family="Times,serif" font-size="14.00">ResetPasswordComponent</text>
 </g>
 <!-- ResetPasswordComponent&#45;&gt;AuthModule -->
 <g id="edge4" class="edge">
 <title>ResetPasswordComponent&#45;&gt;AuthModule</title>
-<path fill="none" stroke="black" d="M1242.13,-122.11C1242.13,-122.11 1242.13,-140.99 1242.13,-140.99"/>
-<polygon fill="black" stroke="black" points="1238.64,-140.99 1242.13,-150.99 1245.64,-140.99 1238.64,-140.99"/>
+<path fill="none" stroke="black" d="M1741,-122.22C1741,-140.83 1741,-167 1741,-167 1741,-167 1176.95,-167 1176.95,-167"/>
+<polygon fill="black" stroke="black" points="1176.95,-163.5 1166.95,-167 1176.95,-170.5 1176.95,-163.5"/>
 </g>
 <!-- OTPVerificationComponent -->
 <g id="node5" class="node">
 <title>OTPVerificationComponent</title>
-<polygon fill="#ffffb3" stroke="black" points="1074.91,-122 899.09,-122 899.09,-86 1074.91,-86 1074.91,-122"/>
-<text text-anchor="middle" x="987" y="-99.8" font-family="Times,serif" font-size="14.00">OTPVerificationComponent</text>
+<polygon fill="#ffffb3" stroke="black" points="1639.91,-122 1464.09,-122 1464.09,-86 1639.91,-86 1639.91,-122"/>
+<text text-anchor="middle" x="1552" y="-99.8" font-family="Times,serif" font-size="14.00">OTPVerificationComponent</text>
 </g>
 <!-- OTPVerificationComponent&#45;&gt;AuthModule -->
 <g id="edge5" class="edge">
 <title>OTPVerificationComponent&#45;&gt;AuthModule</title>
-<path fill="none" stroke="black" d="M987,-122.24C987,-137.57 987,-157 987,-157 987,-157 1215.25,-157 1215.25,-157"/>
-<polygon fill="black" stroke="black" points="1215.25,-160.5 1225.25,-157 1215.25,-153.5 1215.25,-160.5"/>
+<path fill="none" stroke="black" d="M1552,-122.03C1552,-139.06 1552,-162 1552,-162 1552,-162 1176.89,-162 1176.89,-162"/>
+<polygon fill="black" stroke="black" points="1176.89,-158.5 1166.89,-162 1176.89,-165.5 1176.89,-158.5"/>
 </g>
 <!-- ConfirmationComponent -->
 <g id="node6" class="node">
 <title>ConfirmationComponent</title>
-<polygon fill="#ffffb3" stroke="black" points="881.27,-122 724.73,-122 724.73,-86 881.27,-86 881.27,-122"/>
-<text text-anchor="middle" x="803" y="-99.8" font-family="Times,serif" font-size="14.00">ConfirmationComponent</text>
+<polygon fill="#ffffb3" stroke="black" points="1446.27,-122 1289.73,-122 1289.73,-86 1446.27,-86 1446.27,-122"/>
+<text text-anchor="middle" x="1368" y="-99.8" font-family="Times,serif" font-size="14.00">ConfirmationComponent</text>
 </g>
 <!-- ConfirmationComponent&#45;&gt;AuthModule -->
 <g id="edge6" class="edge">
 <title>ConfirmationComponent&#45;&gt;AuthModule</title>
-<path fill="none" stroke="black" d="M803,-122.03C803,-139.06 803,-162 803,-162 803,-162 1215.16,-162 1215.16,-162"/>
-<polygon fill="black" stroke="black" points="1215.16,-165.5 1225.16,-162 1215.16,-158.5 1215.16,-165.5"/>
+<path fill="none" stroke="black" d="M1368,-122.24C1368,-137.57 1368,-157 1368,-157 1368,-157 1176.8,-157 1176.8,-157"/>
+<polygon fill="black" stroke="black" points="1176.8,-153.5 1166.8,-157 1176.8,-160.5 1176.8,-153.5"/>
 </g>
 <!-- VerifyUserComponent -->
 <g id="node7" class="node">
 <title>VerifyUserComponent</title>
-<polygon fill="#ffffb3" stroke="black" points="706.29,-122 561.71,-122 561.71,-86 706.29,-86 706.29,-122"/>
-<text text-anchor="middle" x="634" y="-99.8" font-family="Times,serif" font-size="14.00">VerifyUserComponent</text>
+<polygon fill="#ffffb3" stroke="black" points="1271.29,-122 1126.71,-122 1126.71,-86 1271.29,-86 1271.29,-122"/>
+<text text-anchor="middle" x="1199" y="-99.8" font-family="Times,serif" font-size="14.00">VerifyUserComponent</text>
 </g>
 <!-- VerifyUserComponent&#45;&gt;AuthModule -->
 <g id="edge7" class="edge">
 <title>VerifyUserComponent&#45;&gt;AuthModule</title>
-<path fill="none" stroke="black" d="M634,-122.22C634,-140.83 634,-167 634,-167 634,-167 1215.35,-167 1215.35,-167"/>
-<polygon fill="black" stroke="black" points="1215.35,-170.5 1225.35,-167 1215.35,-163.5 1215.35,-170.5"/>
+<path fill="none" stroke="black" d="M1146.81,-122.11C1146.81,-122.11 1146.81,-140.99 1146.81,-140.99"/>
+<polygon fill="black" stroke="black" points="1143.31,-140.99 1146.81,-150.99 1150.31,-140.99 1143.31,-140.99"/>
 </g>
 <!-- LogoutComponent -->
 <g id="node8" class="node">
 <title>LogoutComponent</title>
-<polygon fill="#ffffb3" stroke="black" points="543.78,-122 422.22,-122 422.22,-86 543.78,-86 543.78,-122"/>
-<text text-anchor="middle" x="483" y="-99.8" font-family="Times,serif" font-size="14.00">LogoutComponent</text>
+<polygon fill="#ffffb3" stroke="black" points="1108.78,-122 987.22,-122 987.22,-86 1108.78,-86 1108.78,-122"/>
+<text text-anchor="middle" x="1048" y="-99.8" font-family="Times,serif" font-size="14.00">LogoutComponent</text>
 </g>
 <!-- LogoutComponent&#45;&gt;AuthModule -->
 <g id="edge8" class="edge">
 <title>LogoutComponent&#45;&gt;AuthModule</title>
-<path fill="none" stroke="black" d="M483,-122.22C483,-142.37 483,-172 483,-172 483,-172 1215.34,-172 1215.34,-172"/>
-<polygon fill="black" stroke="black" points="1215.34,-175.5 1225.34,-172 1215.34,-168.5 1215.34,-175.5"/>
+<path fill="none" stroke="black" d="M1094.06,-122.11C1094.06,-122.11 1094.06,-140.99 1094.06,-140.99"/>
+<polygon fill="black" stroke="black" points="1090.56,-140.99 1094.06,-150.99 1097.56,-140.99 1090.56,-140.99"/>
 </g>
 <!-- TutorsSupplementFormComponent -->
 <g id="node9" class="node">
 <title>TutorsSupplementFormComponent</title>
-<polygon fill="#ffffb3" stroke="black" points="404.6,-122 189.4,-122 189.4,-86 404.6,-86 404.6,-122"/>
-<text text-anchor="middle" x="297" y="-99.8" font-family="Times,serif" font-size="14.00">TutorsSupplementFormComponent</text>
+<polygon fill="#ffffb3" stroke="black" points="969.6,-122 754.4,-122 754.4,-86 969.6,-86 969.6,-122"/>
+<text text-anchor="middle" x="862" y="-99.8" font-family="Times,serif" font-size="14.00">TutorsSupplementFormComponent</text>
 </g>
 <!-- TutorsSupplementFormComponent&#45;&gt;AuthModule -->
 <g id="edge9" class="edge">
 <title>TutorsSupplementFormComponent&#45;&gt;AuthModule</title>
-<path fill="none" stroke="black" d="M297,-122.04C297,-143.66 297,-177 297,-177 297,-177 1215.35,-177 1215.35,-177"/>
-<polygon fill="black" stroke="black" points="1215.35,-180.5 1225.35,-177 1215.35,-173.5 1215.35,-180.5"/>
+<path fill="none" stroke="black" d="M862,-122.24C862,-137.57 862,-157 862,-157 862,-157 1069.31,-157 1069.31,-157"/>
+<polygon fill="black" stroke="black" points="1069.31,-160.5 1079.31,-157 1069.31,-153.5 1069.31,-160.5"/>
 </g>
 <!-- UserChoiceComponent -->
 <g id="node10" class="node">
 <title>UserChoiceComponent</title>
-<polygon fill="#ffffb3" stroke="black" points="171.92,-122 24.08,-122 24.08,-86 171.92,-86 171.92,-122"/>
-<text text-anchor="middle" x="98" y="-99.8" font-family="Times,serif" font-size="14.00">UserChoiceComponent</text>
+<polygon fill="#ffffb3" stroke="black" points="736.92,-122 589.08,-122 589.08,-86 736.92,-86 736.92,-122"/>
+<text text-anchor="middle" x="663" y="-99.8" font-family="Times,serif" font-size="14.00">UserChoiceComponent</text>
 </g>
 <!-- UserChoiceComponent&#45;&gt;AuthModule -->
 <g id="edge10" class="edge">
 <title>UserChoiceComponent&#45;&gt;AuthModule</title>
-<path fill="none" stroke="black" d="M98,-122.09C98,-145.13 98,-182 98,-182 98,-182 1215.23,-182 1215.23,-182"/>
-<polygon fill="black" stroke="black" points="1215.23,-185.5 1225.23,-182 1215.23,-178.5 1215.23,-185.5"/>
+<path fill="none" stroke="black" d="M663,-122.03C663,-139.06 663,-162 663,-162 663,-162 1069.31,-162 1069.31,-162"/>
+<polygon fill="black" stroke="black" points="1069.31,-165.5 1079.31,-162 1069.31,-158.5 1069.31,-165.5"/>
 </g>
 <!-- CommonModule -->
 <g id="node12" class="node">
 <title>CommonModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="2285.67,-122 2282.67,-126 2261.67,-126 2258.67,-122 2174.33,-122 2174.33,-86 2285.67,-86 2285.67,-122"/>
-<text text-anchor="middle" x="2230" y="-99.8" font-family="Times,serif" font-size="14.00">CommonModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="564.67,-122 561.67,-126 540.67,-126 537.67,-122 453.33,-122 453.33,-86 564.67,-86 564.67,-122"/>
+<text text-anchor="middle" x="509" y="-99.8" font-family="Times,serif" font-size="14.00">CommonModule</text>
 </g>
 <!-- CommonModule&#45;&gt;AuthModule -->
 <g id="edge11" class="edge">
 <title>CommonModule&#45;&gt;AuthModule</title>
-<path fill="none" stroke="black" d="M2230,-122.09C2230,-145.13 2230,-182 2230,-182 2230,-182 1322.79,-182 1322.79,-182"/>
-<polygon fill="black" stroke="black" points="1322.79,-178.5 1312.79,-182 1322.79,-185.5 1322.79,-178.5"/>
+<path fill="none" stroke="black" d="M509,-122.22C509,-140.83 509,-167 509,-167 509,-167 1069.33,-167 1069.33,-167"/>
+<polygon fill="black" stroke="black" points="1069.33,-170.5 1079.33,-167 1069.33,-163.5 1069.33,-170.5"/>
 </g>
 <!-- ReactiveFormsModule -->
 <g id="node13" class="node">
 <title>ReactiveFormsModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="2156.3,-122 2153.3,-126 2132.3,-126 2129.3,-122 2011.7,-122 2011.7,-86 2156.3,-86 2156.3,-122"/>
-<text text-anchor="middle" x="2084" y="-99.8" font-family="Times,serif" font-size="14.00">ReactiveFormsModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="435.3,-122 432.3,-126 411.3,-126 408.3,-122 290.7,-122 290.7,-86 435.3,-86 435.3,-122"/>
+<text text-anchor="middle" x="363" y="-99.8" font-family="Times,serif" font-size="14.00">ReactiveFormsModule</text>
 </g>
 <!-- ReactiveFormsModule&#45;&gt;AuthModule -->
 <g id="edge12" class="edge">
 <title>ReactiveFormsModule&#45;&gt;AuthModule</title>
-<path fill="none" stroke="black" d="M2084,-122.04C2084,-143.66 2084,-177 2084,-177 2084,-177 1322.82,-177 1322.82,-177"/>
-<polygon fill="black" stroke="black" points="1322.82,-173.5 1312.82,-177 1322.82,-180.5 1322.82,-173.5"/>
+<path fill="none" stroke="black" d="M363,-122.22C363,-142.37 363,-172 363,-172 363,-172 1069.41,-172 1069.41,-172"/>
+<polygon fill="black" stroke="black" points="1069.41,-175.5 1079.41,-172 1069.41,-168.5 1069.41,-175.5"/>
 </g>
 <!-- AuthRoutingModule -->
 <g id="node14" class="node">
 <title>AuthRoutingModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="1994.17,-122 1991.17,-126 1970.17,-126 1967.17,-122 1861.83,-122 1861.83,-86 1994.17,-86 1994.17,-122"/>
-<text text-anchor="middle" x="1928" y="-99.8" font-family="Times,serif" font-size="14.00">AuthRoutingModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="273.17,-122 270.17,-126 249.17,-126 246.17,-122 140.83,-122 140.83,-86 273.17,-86 273.17,-122"/>
+<text text-anchor="middle" x="207" y="-99.8" font-family="Times,serif" font-size="14.00">AuthRoutingModule</text>
 </g>
 <!-- AuthRoutingModule&#45;&gt;AuthModule -->
 <g id="edge13" class="edge">
 <title>AuthRoutingModule&#45;&gt;AuthModule</title>
-<path fill="none" stroke="black" d="M1928,-122.22C1928,-142.37 1928,-172 1928,-172 1928,-172 1322.75,-172 1322.75,-172"/>
-<polygon fill="black" stroke="black" points="1322.75,-168.5 1312.75,-172 1322.75,-175.5 1322.75,-168.5"/>
+<path fill="none" stroke="black" d="M207,-122.04C207,-143.66 207,-177 207,-177 207,-177 1069.44,-177 1069.44,-177"/>
+<polygon fill="black" stroke="black" points="1069.44,-180.5 1079.44,-177 1069.44,-173.5 1069.44,-180.5"/>
 </g>
 <!-- SharedModule -->
 <g id="node15" class="node">
 <title>SharedModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="1843.42,-122 1840.42,-126 1819.42,-126 1816.42,-122 1744.58,-122 1744.58,-86 1843.42,-86 1843.42,-122"/>
-<text text-anchor="middle" x="1794" y="-99.8" font-family="Times,serif" font-size="14.00">SharedModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="122.42,-122 119.42,-126 98.42,-126 95.42,-122 23.58,-122 23.58,-86 122.42,-86 122.42,-122"/>
+<text text-anchor="middle" x="73" y="-99.8" font-family="Times,serif" font-size="14.00">SharedModule</text>
 </g>
 <!-- SharedModule&#45;&gt;AuthModule -->
 <g id="edge14" class="edge">
 <title>SharedModule&#45;&gt;AuthModule</title>
-<path fill="none" stroke="black" d="M1794,-122.22C1794,-140.83 1794,-167 1794,-167 1794,-167 1322.86,-167 1322.86,-167"/>
-<polygon fill="black" stroke="black" points="1322.86,-163.5 1312.86,-167 1322.86,-170.5 1322.86,-163.5"/>
+<path fill="none" stroke="black" d="M73,-122.09C73,-145.13 73,-182 73,-182 73,-182 1069.22,-182 1069.22,-182"/>
+<polygon fill="black" stroke="black" points="1069.22,-185.5 1079.22,-182 1069.22,-178.5 1069.22,-185.5"/>
 </g>
 </g>
 </svg>
