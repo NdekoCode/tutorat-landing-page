@@ -7,9 +7,13 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "jest",
+    "jserver": "json-server --watch db.json",
     "test:watch": "jest --watch",
-    "test:ci": "jest --coverage",
-    "build:ci": "ng build --prod",
+    "test:cov": "jest --coverage",
+    "compodoc": "npx compodoc -p tsconfig.doc.json",
+    "compodoc:serve": "npx compodoc -p tsconfig.doc.json -s",
+    "compodoc:watch": "npx compodoc -p tsconfig.doc.json -s -w",
+    "build:ci": "ng build --configuration production",
     "prepare": "husky install",
     "lint": "npx eslint \"src/**/*.{js,jsx,ts,tsx,html}\" --quiet --fix",
     "format": "npx prettier \"src/**/*.{js,jsx,ts,tsx,html,css,scss}\" --write"
@@ -37,12 +41,14 @@
     "@angular-eslint/template-parser": "15.2.1",
     "@angular/cli": "~15.2.6",
     "@angular/compiler-cli": "^15.2.0",
+    "@ngneat/spectator": "^15.0.1",
     "@types/jasmine": "~4.3.0",
     "@types/jest": "^29.5.2",
     "@types/node": "^20.2.5",
     "@typescript-eslint/eslint-plugin": "5.48.2",
     "@typescript-eslint/parser": "5.48.2",
     "autoprefixer": "^10.4.14",
+    "daisyui": "^3.1.9",
     "eslint": "^8.33.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
@@ -61,7 +67,7 @@
   },
   "lint-staged": {
     "src/**/*.{ts,css,html}": [
-      "yarn lint"
+      "pnpm lint"
     ]
   },
   "jest": {

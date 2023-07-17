@@ -1,0 +1,32 @@
+.stat {
+  @media only screen and (min-width:1024px) {
+    border-color: var(--red-light);
+  }
+}
+
+.stat-image {
+  width                  : 100vw;
+  height                 : 35vw;
+  border-top-left-radius : 50%;
+  border-top-right-radius: 50%;
+  flex-direction         : column;
+  justify-content        : center;
+  margin-top             : 3rem;
+  display                : flex;
+  position               : relative;
+  overflow               : hidden;
+}
+
+.stat-desc {
+  @apply text-sm;
+}
+
+.ressource-card {
+  border    : 1px solid #B6AD90;
+  background: rgba(255, 255, 255, 0.00);
+  box-shadow: 4px 4px 12px 0px rgba(147, 106, 27, 0.16);
+}
+
+.img-block {
+  display: block;
+}

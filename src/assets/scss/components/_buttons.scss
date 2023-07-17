@@ -1,15 +1,25 @@
-.btn {
-  text-align   : center;
-  gap          : rem(10);
-  min-width    : rem(50);
-  border-radius: rem(5);
-  @apply border px-2 py-3 transition-all duration-300 rounded opacity-95 border-transparent;
+.button {
+  gap      : rem(10);
+  min-width: rem(50);
+  display  : block;
+  @apply border text-center px-2 py-3 transition-all duration-300 w-max rounded opacity-95 border-transparent;
+
+  &:disabled,
+  &:disabled:hover {
+    @apply opacity-70 cursor-not-allowed;
+  }
 
   &:hover {
     @apply opacity-100;
+    background-color: none;
   }
 
-  &.btn-action {
+  &.button-primary {
+    background: var(--yellow-dark);
+    color     : var(--color-white);
+  }
+
+  &.button-action {
     background-color: var(--background-color);
     color           : var(--color-white);
     font-weight     : 600;
@@ -25,7 +35,7 @@
 
   }
 
-  &.btn-icon {
+  &.button-icon {
     @apply flex items-center justify-center;
     row-gap: rem(5);
 
@@ -38,19 +48,49 @@
   }
 
 
-  &.btn-small {
+  &.button-small {
     @apply py-3;
   }
 
-  &.btn-dark {
+  &.button-dark {
     @apply bg-[#151D34] text-white rounded;
   }
 
-  &.btn-full {
+  &.button-full {
     @apply w-full;
   }
 
-  &.btn-blue-light {
+  &.button-blue-light {
     @apply bg-[#E0EFFE];
   }
+}
+
+.button-container {
+  @apply flex items-center gap-3;
+}
+
+.button-circle {
+  display      : none;
+  position     : fixed;
+  right        : 1%;
+  bottom       : 0;
+  min-width    : max-content;
+  min-height   : max-content;
+  aspect-ratio : 1/1;
+  border-radius: 100%;
+  padding      : 1em;
+  cursor       : pointer;
+  z-index      : 100;
+
+  svg {
+    width       : rem(16);
+    aspect-ratio: 1/1;
+  }
+
+}
+
+.no-button {
+  border          : none !important;
+  background-color: transparent !important;
+  padding         : 0 !important;
 }

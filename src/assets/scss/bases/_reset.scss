@@ -1,9 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
 ::selection {
-  background-color: var(--blue-dark);
-  color           : var(--bg-gray-smooth);
+  background-color: var(--yellow-light);
+  color           : var(--color-white);
 }
 
 ::-webkit-scrollbar {
@@ -37,39 +36,24 @@ body {
   min-height     : 100vh;
 }
 
+body {
+  background-color : var(--red-light);
+  background-image : linear-gradient(to left, var(--red-light) 75%, var(--red-light-1) 100%);
+  background-repeat: no-repeat;
+}
+
+
 .container {
-  width         : 100%;
-  margin-inline : auto;
-  padding-inline: rem(20);
+  @extend %container;
 
-  @media #{$sm-screen} {
-    max-width: 540px;
-  }
-
-  @media #{$md-screen} {
-    max-width: 720px;
-  }
-
-  @media #{$lg-screen} {
-    max-width: 960px;
+  @media #{$xl-screen} {
+    max-width: 1230px;
   }
 
   @media #{$xl-screen} {
-    max-width: 1140px;
+    max-width: 1350px;
   }
 
-
-  @media #{$md-screen} {
-    &:not(.content) {
-
-      padding-inline: 0;
-    }
-
-    &:not(.content) {
-
-      padding-inline: 0;
-    }
-  }
 
   @media #{$xl-screen} {
     &.fixed {
@@ -157,4 +141,99 @@ body {
 
 .bg-smooth {
   background-color: var(--bg-gray-smooth);
+}
+
+.text-blue-light {
+  color: var(--text-blue);
+}
+
+.bg-glace {
+  background-color: var(--white-glace);
+}
+
+.text-gray {
+  color: var(--color-gray) !important;
+
+}
+
+.text-blue-gray {
+  color: var(--blue-gray) !important;
+}
+
+.text-blue {
+  color: #151D34 !important;
+}
+
+.border-blue {
+  border-color: #151D34 !important;
+}
+
+.bg-blue {
+  background-color: #151D34 !important;
+}
+
+.rounded-curve-top {
+  border-top-right-radius: 55px;
+}
+
+.rounded-curve-bottom {
+
+  border-bottom-left-radius: 55px;
+
+}
+
+.rounded-curve-bottom-md {
+
+  border-bottom-left-radius: 35px;
+
+}
+
+.block-blur-white {
+  @apply bg-black/40 text-white;
+  backdrop-filter: blur(5px);
+}
+
+.block-description {
+  @apply p-5 mt-auto mr-10 border border-gray-300/25 min-h-[180px];
+}
+
+.font-crimson {
+  font-family: 'Crimson Text', Georgia, 'Times New Roman', Times, serif !important;
+}
+
+.text-green-light {
+  color: var(--gree-light);
+}
+
+.text-yellow-dark {
+  color: var(--yellow-dark) !important;
+}
+
+.text-blue-light {
+  color: var(--blue-air) !important;
+}
+
+.bg-blue-light {
+  background-color: var(--blue-air) !important;
+}
+
+.border-red-light {
+  border-color: var(--red-light) !important;
+}
+
+.burger-overlay-bg {
+
+  opacity   : 0.3;
+  background: #000;
+  position  : fixed;
+  top       : 0;
+  left      : 0;
+  bottom    : 0;
+  right     : 0;
+  height    : 100%;
+  width     : 100%;
+  min-height: 100vh;
+  z-index   : 5;
+  display   : none;
+
 }

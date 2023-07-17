@@ -1,0 +1,165 @@
+.topbar {
+  padding-top   : rem(25);
+  padding-bottom: rem(25);
+  transition    : padding 0.35s;
+  min-width     : rem(75);
+
+  @apply relative;
+
+  @media #{$lg-screen} {
+
+    padding-bottom: initial;
+  }
+
+
+  .logo {
+    margin-right: auto;
+
+    @media #{$lg-screen} {
+      min-width: rem(180);
+
+      img {
+        width: 100%;
+      }
+    }
+
+  }
+
+  .container {
+    max-width      : 1200px;
+    display        : flex;
+    justify-content: space-between;
+    align-items    : center;
+
+
+    @media #{$lg-screen} {
+      min-height: rem(80);
+
+      .navbar {
+        margin-left: rem(45);
+
+        .navbar__link {
+          font-weight: 500;
+          cursor     : pointer;
+        }
+      }
+    }
+
+    @media #{$xl-screen} {
+
+      .navbar {
+        margin-left: rem(70);
+      }
+    }
+  }
+
+
+
+  .nav-toggle-btn {
+    position: absolute;
+    right   : rem(5);
+    z-index : 10;
+
+    &.active {
+      position: fixed;
+      top     : rem(25);
+    }
+
+    @media #{$sm-screen} {
+      right: 5%;
+    }
+
+    @media #{$lg-screen } {
+      display: none;
+
+    }
+  }
+
+  .nav-toggle-btn.active~.navbar {
+    display         : block;
+    background-color: var(--color-dark-2);
+    animation       : fadeIn 0.35s ease-in forwards;
+
+    @extend %responsiveDesktopNavbar;
+
+  }
+}
+
+.navbar {
+  width     : 100%;
+  position  : fixed;
+  top       : 0;
+  left      : 0;
+  min-height: 100vh;
+  z-index   : 5;
+  display   : none;
+
+
+  &.active {
+    padding-top : rem(25);
+    padding-left: rem(15);
+    color       : var(--color-little-gray);
+
+
+    .navbar__list {
+      @apply flex flex-col;
+
+      li {
+        margin-bottom: rem(25);
+
+        @media #{$lg-screen} {
+
+          margin-bottom: 0;
+        }
+      }
+
+    }
+
+    .navbar__link {
+      font-size  : rem(25);
+      font-weight: 700;
+    }
+
+    .actions-navbar {
+      img {
+        width: rem(130);
+      }
+
+      display    : flex;
+      align-items: center;
+      gap        : rem(10);
+
+      @media #{$xs-screen} {
+        img {
+          width: auto;
+        }
+      }
+
+      @media #{$sm-screen} {
+        justify-content: space-between;
+        margin-right   : rem(125);
+      }
+    }
+  }
+
+  @extend %responsiveDesktopNavbar
+}
+
+.navbar__list {
+  a {
+    display: inline-block;
+    @extend %hoverLink;
+  }
+
+  &:first-of-type {
+    padding-top: rem(50);
+  }
+}
+
+.actions-navbar {
+  display: none;
+
+  @media #{$lg-screen } {
+    display: none !important;
+  }
+}

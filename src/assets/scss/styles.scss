@@ -8,13 +8,17 @@
 @import './bases/typography';
 
 @import './layouts/topbar';
+@import './layouts/notification';
+@import './layouts/navigation';
 @import './layouts/banner';
 @import './layouts/how-it-works';
 @import './layouts/about';
 @import './layouts/testimonials';
 @import './layouts/faq';
+@import './components/blob';
 @import './components/block';
 @import './components/inputs';
+@import './components/form';
 @import './components/modal';
 @import './layouts/header';
 @import './layouts/footer';
@@ -24,6 +28,7 @@
 @import './components/card';
 
 @import './pages/login';
+@import './pages/signup';
 @import './pages/home';
 // @import './pages/about';
 // @import './pages/contact';
@@ -44,7 +49,8 @@
 }
 
 .bg-dark {
-  background-color: var(--primary-color);
+  background-color: var(--primary-color) !important;
+  color           : var(--color-white);
 }
 
 .text-dark {
@@ -55,8 +61,13 @@
   color: var(--green-dark);
 }
 
+.bg-green {
+  background-color: var(--green-dark);
+  color           : var(--color-white);
+}
+
 .bg-red-light {
-  background-color: var(--reg-light);
+  background-color: var(--red-light);
 
 }
 
@@ -77,4 +88,118 @@
 
 .back-link {
   @apply flex items-center justify-center w-10 h-10 mb-5 border border-gray-200 rounded transition-all duration-300;
+}
+
+.alert-block {
+  @apply flex w-full max-w-md mx-auto overflow-hidden bg-white rounded-lg shadow-lg transition-all;
+
+  &__body {
+    @apply flex items-start justify-between w-full px-2 py-2;
+  }
+
+  &__content {
+    @apply flex flex-col ml-2;
+  }
+}
+
+.bar {
+  @apply w-2;
+}
+
+.bar-success,
+.bar-error,
+.bar-infos,
+.bar-warning {
+  @extend .bar;
+}
+
+
+.bar-error {
+  @apply bg-red-600;
+}
+
+.bar-success {
+  @apply bg-green-600;
+}
+
+.bar-warning {
+  @apply bg-yellow-600;
+}
+
+.bar-infos {
+  @apply bg-blue-600;
+}
+
+.flex-middle {
+  @apply flex justify-center items-center;
+}
+
+.flex-col-middle {
+  @extend .flex-middle;
+  @apply flex-col;
+}
+
+.bg-red-light-1 {
+  background-color: var(--red-light-1);
+}
+
+.btn {
+  @apply rounded-md;
+}
+
+.video-cover {
+
+  background: linear-gradient(134deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.45) 51.56%, rgba(0, 0, 0, 0.20) 100%), url(/assets/images/tutor-1.jpg) center center/cover no-repeat, lightgray 50%/ cover no-repeat;
+
+  box-shadow: 0px 32px 64px -12px rgba(16, 24, 40, 0.20);
+}
+
+.title {
+  @apply text-3xl whitespace-normal overflow-ellipsis;
+
+  @screen md {
+    @apply text-4xl;
+  }
+
+  &.title-sm {
+    @apply text-2xl;
+
+    @screen md {
+      @apply text-3xl;
+    }
+
+    @screen lg {
+      @apply text-[2.75rem];
+      line-height: 2.75rem;
+    }
+  }
+
+
+  &.title-up {
+
+    @apply text-4xl;
+
+    @screen md {
+      @apply text-5xl;
+    }
+  }
+}
+
+
+
+.primary-gradient {
+  background-image: var(--primary-color-gradient);
+  color           : var(--color-white);
+  font-weight     : 500;
+}
+
+a.primary-gradient {
+  color          : var(--color-white);
+  text-decoration: none;
+
+  &::after,
+  &::before {
+    display: none !important;
+
+  }
 }

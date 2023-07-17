@@ -8,13 +8,37 @@
 
 }
 
+.input-group {
+  @apply mb-3;
+
+  @media #{$lg-screen} {
+
+    @apply flex items-center gap-x-3 mb-1;
+  }
+
+
+}
+
+.color-input {
+  color: rgb(218 218 218 / var(--tw-border-opacity));
+}
+
 .input {
   @apply border border-[#DADADA] font-medium transition-all duration-300 rounded bg-[#F7F8F9] px-2 py-3;
 }
 
 .input-icon {
+  background-color: transparent;
   @extend .input;
   @apply relative ring-2 ring-transparent;
+
+
+  &.invalid {
+    input::placeholder {
+      @apply placeholder-red-400;
+
+    }
+  }
 
   &:active,
   :focus {
@@ -23,12 +47,25 @@
   }
 
   .icon {
-    @apply absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer;
+    color: #8391A1;
+
+    @apply absolute top-1/2 -translate-y-1/2 cursor-pointer;
+
+    &.right-icon {
+      @apply right-3;
+    }
+
+    &.left-icon {
+
+      @apply left-3;
+
+    }
   }
+
 
   input {
 
-    @apply outline-none h-full w-full bg-transparent;
+    @apply outline-none h-full w-max bg-transparent;
 
     &:placeholder {
       color: #8391A1;
@@ -38,4 +75,65 @@
 
 .input-label {
   @apply block mb-1 text-base text-[#5A5A5D];
+}
+
+.invalid {
+  @apply bg-red-50 border-red-500 text-red-900 placeholder-red-400;
+
+  &.invalid:focus {
+    @apply ring-red-500 border-red-500;
+  }
+}
+
+.text-invalid {
+  @apply mt-1 text-xs text-red-600;
+}
+
+.error-color {
+  @apply text-red-500;
+}
+
+.success-color {
+  @apply text-green-500;
+}
+
+.infos-color {
+  @apply text-blue-500;
+}
+
+.warning-color {
+  @apply text-yellow-500;
+}
+
+
+.bg-error {
+  @apply bg-red-500 transition-colors duration-300;
+
+  &:hover {
+    @apply bg-red-600
+  }
+}
+
+.bg-success {
+  @apply bg-green-500 transition-colors duration-300;
+
+  &:hover {
+    @apply bg-green-600
+  }
+}
+
+.bg-infos {
+  @apply bg-blue-500 transition-colors duration-300;
+
+  &:hover {
+    @apply bg-blue-600
+  }
+}
+
+.bg-warning {
+  @apply bg-yellow-500 transition-colors duration-300;
+
+  &:hover {
+    @apply bg-yellow-600
+  }
 }

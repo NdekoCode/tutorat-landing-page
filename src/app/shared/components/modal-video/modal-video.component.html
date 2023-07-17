@@ -1,0 +1,42 @@
+<div
+  class="modal-item"
+  (click)="onShow()"
+  [ngStyle]="{ 'z-index': isShown ? '125' : '100' }"
+>
+  <div
+    class="modal__container fadeUp"
+    (click)="stopProp($event)"
+    style="--aspect-ratio: 3 / 4; z-index: 120"
+  >
+    <iframe
+      width="640"
+      height="360"
+      [src]="videoSrc"
+      title="Online CRM and Task Management - TeamGram"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+    ></iframe>
+  </div>
+  <button
+    class="button button-close"
+    (click)="stopProp($event)"
+    (click)="onShow()"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="ionicon"
+      viewBox="0 0 512 512"
+    >
+      <title>Close</title>
+      <path
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="32"
+        d="M368 368L144 144M368 144L144 368"
+      />
+    </svg>
+  </button>
+</div>

@@ -15,8 +15,7 @@
 
 @mixin linkEffect($visible: false) {
 
-  @extend %decorationNone;
-  @extend %posRelative;
+  @apply no-underline relative;
 
   &::after {
     content: '';
