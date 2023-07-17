@@ -14,7 +14,7 @@ const routes: Routes = [
     component: CreateSessionComponent
   },
   {
-    path: 'calendars',
+    path: 'calendar',
     component: CalendarsComponent
   }
 ]

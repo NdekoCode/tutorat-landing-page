@@ -46,13 +46,8 @@ const routes: Routes = [
     component: OTPVerificationComponent
   },
   {
-    path: 'tutors-form',
+    path: 'tutor-form',
     component: TutorsSupplementFormComponent
-  },
-
-  {
-    path: 'verify-user',
-    component: ConfirmationComponent
   },
 
   {
