@@ -14,13 +14,8 @@ export function isExists<T>(value: T): boolean {
   return typeof value !== 'undefined' && value !== null
 }
 export function hasProperties(objet: object, keys: string[] | string): boolean {
-  // Vérifier si l'objet est défini
-  if (objet === undefined || objet === null) {
-    return false
-  }
-
-  // Vérifier si les clés sont définies
-  if (keys === undefined || keys === null) {
+  // Vérifier si l'objet est défini  ou si les clés sont définies
+  if (!isExists(objet) || !isExists(keys)) {
     return false
   }
 
@@ -30,24 +25,32 @@ export function hasProperties(objet: object, keys: string[] | string): boolean {
   }
 
   // Vérifier si toutes les clés sont présentes dans l'objet
-  for (const key of keys) {
-    if (!objet.hasOwnProperty(key)) {
-      return false
-    }
+  const allKeysPresent = keys.every((key) => objet.hasOwnProperty(key))
+  if (!allKeysPresent) {
+    return false
   }
-
   // Toutes les clés sont présentes dans l'objet
   return true
 }
 export function localStorageSetItem(key: string, value: UtilityType): void {
-  const serializedValue = JSON.stringify(value)
-  window.localStorage.setItem(key, serializedValue)
+  try {
+    const serializedValue = JSON.stringify(value)
+    window.localStorage.setItem(key, serializedValue)
+  } catch (e) {
+    console.error('Erreur lors de la sérialisation de la valeur', e)
+  }
 }
 
 export function localStorageGetItem<T>(key: string): T | null {
   const serializedValue = localStorage.getItem(key)
+
   if (serializedValue) {
-    return JSON.parse(serializedValue) as T
+    try {
+      return JSON.parse(serializedValue) as T
+    } catch (e) {
+      console.error('Erreur lors de la désérialisation de la valeur', e)
+      return null
+    }
   }
   return null
 }
