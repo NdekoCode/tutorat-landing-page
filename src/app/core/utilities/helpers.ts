@@ -1,10 +1,10 @@
 import { UtilityType } from './types'
 
 /* eslint-disable no-undefined */
-export function isEmptyObject(value: object) {
+export function isEmptyObject(value: object | null | undefined) {
   return (
-    value &&
-    ((Object.keys(value).length < 1 && value.constructor === Object) ||
+    isExists(value) &&
+    ((Object.keys(value!).length < 1 && value?.constructor === Object) ||
       JSON.stringify(value) === '{}' ||
       Object.getOwnPropertyNames(value).length === 0)
   )
