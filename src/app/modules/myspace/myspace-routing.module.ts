@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
+import { MYSPACE_ROUTES } from 'src/app/core/routes/routes'
+import { formatURL } from 'src/app/core/utilities/helpers'
 import { OverviewComponent } from './modules/tutor/pages/overview/overview.component'
 import { MyspaceLayoutComponent } from './myspace-layout.component'
 import { MessagesComponent } from './pages/messages/messages.component'
@@ -8,28 +10,28 @@ import { TutorsComponent } from './pages/tutors/tutors.component'
 
 const routes: Routes = [
   {
-    path: '',
+    path: formatURL(MYSPACE_ROUTES.HOME, { 'myspace/': '' }),
     component: MyspaceLayoutComponent,
     children: [
       {
         path: '',
         pathMatch: 'full',
-        redirectTo: 'overview'
+        redirectTo: formatURL(MYSPACE_ROUTES.OVERVIEW, { 'myspace/': '' })
       },
       {
-        path: 'overview',
+        path: formatURL(MYSPACE_ROUTES.OVERVIEW, { 'myspace/': '' }),
         component: OverviewComponent
       },
       {
-        path: 'tutors',
+        path: formatURL(MYSPACE_ROUTES.TUTORS, { 'myspace/': '' }),
         component: TutorsComponent
       },
       {
-        path: 'messages',
+        path: formatURL(MYSPACE_ROUTES.MESSAGES, { 'myspace/': '' }),
         component: MessagesComponent
       },
       {
-        path: 'settings',
+        path: formatURL(MYSPACE_ROUTES.SETTINGS, { 'myspace/': '' }),
         component: SettingsComponent
       },
       {

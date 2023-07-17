@@ -16,48 +16,48 @@ import { VerifyUserComponent } from './pages/verify-user/verify-user.component'
 const routes: Routes = [
   {
     path: '',
-    redirectTo: formatURL(AUTH_ROUTES.LOGIN),
+    redirectTo: formatURL(AUTH_ROUTES.LOGIN, { 'auth/': '' }),
     pathMatch: 'full'
   },
   {
-    path: formatURL(AUTH_ROUTES.LOGIN),
+    path: formatURL(AUTH_ROUTES.LOGIN, { 'auth/': '' }),
     component: LoginComponent
   },
   {
-    path: formatURL(AUTH_ROUTES.SIGNUP),
+    path: formatURL(AUTH_ROUTES.SIGNUP, { 'auth/': '' }),
     component: SignupComponent
   },
   {
-    path: formatURL(AUTH_ROUTES.USER_CHOICE),
+    path: formatURL(AUTH_ROUTES.USER_CHOICE, { 'auth/': '' }),
     component: UserChoiceComponent
   },
   {
-    path: formatURL(AUTH_ROUTES.FORGET_PASSWORD),
+    path: formatURL(AUTH_ROUTES.FORGET_PASSWORD, { 'auth/': '' }),
     component: ForgetPasswordComponent
   },
   {
-    path: formatURL(AUTH_ROUTES.VERIFY_USER),
+    path: formatURL(AUTH_ROUTES.VERIFY_USER, { 'auth/': '' }),
     component: VerifyUserComponent
   },
   {
-    path: formatURL(AUTH_ROUTES.RESET_PASSWORD),
+    path: formatURL(AUTH_ROUTES.RESET_PASSWORD, { 'auth/': '' }),
     component: ResetPasswordComponent
   },
   {
-    path: formatURL(AUTH_ROUTES.VERIFY_PASSWORD),
+    path: formatURL(AUTH_ROUTES.VERIFY_PASSWORD, { 'auth/': '' }),
     component: OTPVerificationComponent
   },
   {
-    path: formatURL(AUTH_ROUTES.TUTOR_FORM),
+    path: formatURL(AUTH_ROUTES.TUTOR_FORM, { 'auth/': '' }),
     component: TutorsSupplementFormComponent
   },
 
   {
-    path: formatURL(AUTH_ROUTES.CONFIRMATION),
+    path: formatURL(AUTH_ROUTES.CONFIRMATION, { 'auth/': '' }),
     component: ConfirmationComponent
   },
   {
-    path: formatURL(AUTH_ROUTES.LOGOUT),
+    path: formatURL(AUTH_ROUTES.LOGOUT, { 'auth/': '' }),
     component: LogoutComponent
   }
 ]

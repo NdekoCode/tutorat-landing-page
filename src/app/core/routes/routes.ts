@@ -1,3 +1,7 @@
+export const AUTH_BASE_NAME: string = 'auth'
+export const MYSPACE_BASE_NAME: string = 'myspace'
+export const TUTOR_BASE_NAME: string = 'tutor'
+export const USER_BASE_NAME: string = 'user'
 export enum AUTH_ROUTES {
   LOGIN = '/auth/login',
   SIGNUP = '/auth/signup',
@@ -28,10 +32,10 @@ export enum MYSPACE_ROUTES {
   SETTINGS = '/myspace/settings'
 }
 export enum MYSPACE_TUTOR_ROUTES {
-  GET_TOTOR = '/tutor/:id',
-  CREATE_SESSION = '/tutor/create-session',
-  CALENDAR = '/tutor/calendar'
+  GET_TOTOR = '/myspace/tutor/:id',
+  CREATE_SESSION = '/myspace/tutor/create-session',
+  CALENDAR = '/myspace/tutor/calendar'
 }
 export enum MYSPACE_USER_ROUTES {
-  GET_USER = '/user/:id'
+  GET_USER = '/myspace/user/:id'
 }
