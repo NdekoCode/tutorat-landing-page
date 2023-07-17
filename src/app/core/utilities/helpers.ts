@@ -54,3 +54,22 @@ export function localStorageGetItem<T>(key: string): T | null {
   }
   return null
 }
+export function formatURL(
+  url: string,
+  params: { [key: string]: string } = {}
+): string {
+  let formattedURL = url
+
+  // Supprimer le premier slash
+  if (formattedURL.startsWith('/')) {
+    formattedURL = formattedURL.substring(1)
+  }
+  if (isExists(params) && !isEmptyObject(params)) {
+    // Remplacer les paramètres spécifiques par les nouvelles valeurs
+    Object.keys(params).forEach((param) => {
+      formattedURL = formattedURL.replace(param, params[param])
+    })
+  }
+
+  return formattedURL
+}
