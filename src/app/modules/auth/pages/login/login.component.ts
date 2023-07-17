@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core'
 import { FormBuilder, FormGroup } from '@angular/forms'
 import { Router } from '@angular/router'
+import { MYSPACE_ROUTES } from 'src/app/core/routes/routes'
 import { ALERT_AUTH, GLOBAL_CONSTANTS } from 'src/app/core/utilities/constants'
 import { emailValidator, passwordValidator } from 'src/app/core/utilities/forms'
 import { Alert, Timer, Token } from 'src/app/core/utilities/types'
@@ -52,7 +53,7 @@ export class LoginComponent implements OnInit, OnDestroy {
             alertMessage: ALERT_AUTH.login.success.alertMessage
           }
           setTimeout(() => {
-            this._router.navigate(['myspace'])
+            this._router.navigate([MYSPACE_ROUTES.HOME])
             clearTimeout(this.timer)
           }, GLOBAL_CONSTANTS.AUTH_TIMEOUT_LOGIN)
         },

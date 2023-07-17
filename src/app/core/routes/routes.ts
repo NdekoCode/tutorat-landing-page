@@ -16,10 +16,12 @@ export enum PUBLIC_ROUTES {
   CONTACT = '/contact',
   TUTORS = '/tutors',
   ABOUT = '/about',
+  SERVICES = '/services',
   BLOG = '/blog'
 }
 
 export enum MYSPACE_ROUTES {
+  HOME = '/myspace',
   OVERVIEW = '/myspace/overview',
   TUTORS = '/myspace/tutors',
   MESSAGES = '/myspace/messages',

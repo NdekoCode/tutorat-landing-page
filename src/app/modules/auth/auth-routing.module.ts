@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
+import { AUTH_ROUTES } from 'src/app/core/routes/routes'
+import { formatURL } from 'src/app/core/utilities/helpers'
 import { ConfirmationComponent } from './pages/confirmation/confirmation.component'
 import { ForgetPasswordComponent } from './pages/forget-password/forget-password.component'
 import { LoginComponent } from './pages/login/login.component'
@@ -14,48 +16,48 @@ import { VerifyUserComponent } from './pages/verify-user/verify-user.component'
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: formatURL(AUTH_ROUTES.LOGIN),
     pathMatch: 'full'
   },
   {
-    path: 'login',
+    path: formatURL(AUTH_ROUTES.LOGIN),
     component: LoginComponent
   },
   {
-    path: 'signup',
+    path: formatURL(AUTH_ROUTES.SIGNUP),
     component: SignupComponent
   },
   {
-    path: 'user-choice',
+    path: formatURL(AUTH_ROUTES.USER_CHOICE),
     component: UserChoiceComponent
   },
   {
-    path: 'forget-password',
+    path: formatURL(AUTH_ROUTES.FORGET_PASSWORD),
     component: ForgetPasswordComponent
   },
   {
-    path: 'verify-user',
+    path: formatURL(AUTH_ROUTES.VERIFY_USER),
     component: VerifyUserComponent
   },
   {
-    path: 'reset-password',
+    path: formatURL(AUTH_ROUTES.RESET_PASSWORD),
     component: ResetPasswordComponent
   },
   {
-    path: 'verify-password',
+    path: formatURL(AUTH_ROUTES.VERIFY_PASSWORD),
     component: OTPVerificationComponent
   },
   {
-    path: 'tutor-form',
+    path: formatURL(AUTH_ROUTES.TUTOR_FORM),
     component: TutorsSupplementFormComponent
   },
 
   {
-    path: 'confirmation',
+    path: formatURL(AUTH_ROUTES.CONFIRMATION),
     component: ConfirmationComponent
   },
   {
-    path: 'logout',
+    path: formatURL(AUTH_ROUTES.LOGOUT),
     component: LogoutComponent
   }
 ]
