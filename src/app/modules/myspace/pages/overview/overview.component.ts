@@ -21,6 +21,8 @@ export class OverviewComponent implements OnInit {
     cours: '',
     city: ''
   }
+  isShown: boolean = false
+  videoId!: string
   constructor(
     private activatedRoute: ActivatedRoute,
     private tutorService: TutorService
@@ -42,8 +44,21 @@ export class OverviewComponent implements OnInit {
       this.filteredTutors = this.tutors
     }
   }
+  getTutorEventData(tutor: Tutor) {
+    const urlPart = tutor.video.url.split('/')
+    this.videoId = urlPart[urlPart.length - 1]
+    this.onToggleShow()
+  }
+
+  onShow(arg: Event | boolean) {
+    this.onToggleShow()
+  }
   // eslint-disable-next-line class-methods-use-this
   autoArray(n: number) {
     return generateArray(n)
+  }
+
+  onToggleShow() {
+    this.isShown = !this.isShown
   }
 }

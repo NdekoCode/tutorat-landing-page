@@ -177,7 +177,7 @@
       </div>
       <div class="flex flex-col mt-auto space-y-3">
         <button
-          (click)="onToggleShow()"
+          (click)="playVideo()"
           class="flex px-0 normal-case bg-transparent border-none flex-nowrap gap-x-3 btn hover:bg-transparent"
         >
           <span
@@ -215,10 +215,10 @@
     </div>
   </div>
 </div>
-
+<!-- 
 <app-modal-video
   *ngIf="isShown"
   (showModal)="onShow($event)"
   [style]="'opacity-dark-ligtht'"
   [completeUrl]="tutor.tutor.video.url"
-></app-modal-video>
+></app-modal-video> -->

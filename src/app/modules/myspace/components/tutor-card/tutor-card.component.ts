@@ -1,6 +1,6 @@
-import { Component, Input } from '@angular/core'
+import { Component, EventEmitter, Input, Output } from '@angular/core'
 import { ITutor } from 'src/app/core/utilities/interfaces'
-import { ToggleVideoService } from 'src/app/shared/services/toggle/toggle-video.service'
+import { Tutor } from 'src/app/core/utilities/types'
 
 @Component({
   selector: 'app-tutor-card',
@@ -9,22 +9,9 @@ import { ToggleVideoService } from 'src/app/shared/services/toggle/toggle-video.
 })
 export class TutorCardComponent {
   @Input() tutor!: ITutor
+  @Output() playTutorVideo = new EventEmitter<Tutor>()
 
-  constructor(private toggleVideoService: ToggleVideoService) {}
-  get isShown() {
-    return this.toggleVideoService.toggleService.isShown
-  }
-  get videoId() {
-    return this.toggleVideoService.videoId
-  }
-  ngOnInit(): void {
-    const urlPart = this.tutor.tutor.video.url.split('/')
-    this.toggleVideoService.setVideoId(urlPart[urlPart.length - 1])
-  }
-  onToggleShow() {
-    this.toggleVideoService.toggleService.onToggleShow()
-  }
-  onShow(arg: Event | boolean) {
-    this.onToggleShow()
+  playVideo() {
+    this.playTutorVideo.emit(this.tutor.tutor)
   }
 }

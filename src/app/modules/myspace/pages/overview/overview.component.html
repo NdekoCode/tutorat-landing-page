@@ -143,6 +143,17 @@
     </div>
   </div>
   <div class="grid grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3 gap-3">
-    <app-tutor-card *ngFor="let tutor of filteredTutors" [tutor]="tutor" />
+    <app-tutor-card
+      (playTutorVideo)="getTutorEventData($event)"
+      *ngFor="let tutor of filteredTutors"
+      [tutor]="tutor"
+    />
   </div>
 </div>
+
+<app-modal-video
+  *ngIf="isShown"
+  (showModal)="onShow($event)"
+  [videoId]="videoId"
+  [style]="'opacity-dark-ligtht'"
+></app-modal-video>

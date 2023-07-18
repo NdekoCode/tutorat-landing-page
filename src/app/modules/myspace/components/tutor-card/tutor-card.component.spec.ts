@@ -39,7 +39,7 @@ describe('TutorCardComponent', () => {
       tutor: {} as Tutor // Mocking the Tutor class
     }
     const toggleVideoService = new ToggleVideoService(toggleService)
-    const component = new TutorCardComponent(toggleVideoService)
+    const component = new TutorCardComponent()
     component.tutor = tutor
     expect(component.tutor).toBeDefined()
   })
