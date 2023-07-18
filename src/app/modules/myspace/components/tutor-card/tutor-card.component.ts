@@ -1,12 +1,15 @@
-import { Component, OnInit } from '@angular/core'
-import { ToggleVideoService } from '../../../../shared/services/toggle/toggle-video.service'
+import { Component, Input } from '@angular/core'
+import { ITutor } from 'src/app/core/utilities/interfaces'
+import { ToggleVideoService } from 'src/app/shared/services/toggle/toggle-video.service'
 
 @Component({
-  selector: 'app-block-video',
-  templateUrl: './block-video.component.html',
-  styleUrls: ['./block-video.component.scss']
+  selector: 'app-tutor-card',
+  templateUrl: './tutor-card.component.html',
+  styleUrls: ['./tutor-card.component.scss']
 })
-export class BlockVideoComponent implements OnInit {
+export class TutorCardComponent {
+  @Input() tutor!: ITutor
+
   constructor(private toggleVideoService: ToggleVideoService) {}
   get isShown() {
     return this.toggleVideoService.toggleService.isShown

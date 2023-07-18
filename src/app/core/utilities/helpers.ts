@@ -1,4 +1,5 @@
-import { UtilityType } from './types'
+import { USERS } from './constants'
+import { Tutor, User, UtilityType } from './types'
 
 /* eslint-disable no-undefined */
 export function isEmptyObject(value: object | null | undefined) {
@@ -72,4 +73,52 @@ export function formatURL(
   }
 
   return formattedURL
+}
+export function generateArray(n: number): number[] {
+  return Array.from({ length: n }, (_, i) => i)
+}
+export function getUsers(tutor: boolean = false): (User | Tutor)[] | [] {
+  if (tutor) {
+    return USERS.filter((user) => isExists(user.tutor))
+  }
+  return USERS.filter((user) => isEmptyObject(user.tutor))
+}
+
+export function filterTutor(
+  data: User[],
+  filters: Partial<Tutor & { city: string; specialization?: string | number }>
+): User[] {
+  return data.filter((entry) => {
+    const tutor = entry.tutor!
+    let isValid = true
+
+    if (
+      filters.hourlyRate !== undefined &&
+      tutor?.hourlyRate !== filters.hourlyRate
+    ) {
+      isValid = false
+    }
+
+    if (
+      filters.specialization &&
+      !tutor.specialization.includes(filters.specialization)
+    ) {
+      isValid = false
+    }
+
+    if (
+      filters.city &&
+      tutor.address.city.toLowerCase() !== filters.city.toLowerCase()
+    ) {
+      isValid = false
+    }
+
+    return isValid
+  })
+}
+export function getLimitData(
+  data: UtilityType[],
+  limit: number
+): UtilityType[] {
+  return data.slice(0, limit)
 }

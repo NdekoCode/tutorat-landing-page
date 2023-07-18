@@ -47,37 +47,56 @@ export type AlertSuccess = {
   statusCode: number
   message: string
 }
-export type Tutor = {
-  photo: string
-  ville: string
-  pays: string
-  address: string
-  codePostal: string
-  anneeExperience: number
-  niveauEtudes: string
-  domaineEtudes: string
-  periodeTemps: string
-  actuellementInscrit: boolean
-  depuisMois: string
-  depuisAnnee: string
-  timezone: string
-  jours: {
-    lundi: {
-      active: boolean
-      debut: string
-      fin: string
-    }
-    mardi: {
-      active: boolean
-      debut: string
-      fin: string
-    }
-    // Ajoutez les autres jours de la semaine de la même manière
-  }
-  // Ajoutez les propriétés pour les autres étapes du formulaire
+export type Experience = {
+  enterprise: string
+  poste: string
+  startTime: Date
+  endTime: Date
 }
-export type JoursSemaine = {
-  lundi: boolean
-  mardi: boolean
-  // Ajoutez les autres jours de la semaine
+
+export type Video = {
+  url: string
+  thumbnail?: string
+  description?: string
+}
+export type Document = {
+  documentUrl: string
+  description: string
+  documentType: number
+}
+export type Address = {
+  address: string
+  city: string
+  postalCode: string
+  state: string
+}
+
+export type User = {
+  firstName: string
+  lastName: string
+  age: number
+  gender: string
+  email: string
+  phone: string
+  password?: string | ''
+  image: string
+  address: {
+    address: string
+    city: string
+    postalCode: string
+    state: string
+  }
+  tutor: Tutor | null
+}
+
+export type Tutor = {
+  bio: string
+  hourlyRate: number
+  transport: number
+  specialization: (number | string)[]
+  video: Video
+  experience?: Experience[]
+  document?: Document[]
+
+  address: Address
 }

@@ -253,3 +253,7 @@ body {
 .text-red {
   @apply text-[#FA553A]
 }
+
+.opacity-dark-ligtht {
+  background-color: rgba(0, 0, 0, .1) !important;
+}
