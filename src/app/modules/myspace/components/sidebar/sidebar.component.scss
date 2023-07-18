@@ -1,5 +1,5 @@
 .sidebar-item {
-  @apply flex items-center border-l-[4px] px-6 border-transparent w-full p-2 text-base font-normal text-[#F7F6FB] transition-all duration-150;
+  @apply flex items-center border-l-[4px] px-6 border-transparent w-full p-3 text-base font-normal text-[#F7F6FB] transition-all duration-150;
 
   &:hover {
     @apply bg-[#1A4F3B] border-[#F7F6FB] text-[#F7F6FB];
