@@ -1,6 +1,12 @@
-<nav class="fixed z-30 w-full bg-white border-b border-gray-200">
-  <div class="container px-3 py-3 lg:px-5 lg:pl-3">
+<nav class="fixed z-30 w-full border-b border-gray-200 bg-light">
+  <div class="px-3 py-3 mx-auto max-w-7xl lg:px-3">
     <div class="flex items-center justify-between">
+      <div class="hidden xl:flex xl:items-center xl:gap-x-3">
+        <h2 class="text-3xl font-bold">Salut, Christian</h2>
+        <p class="text-sm text-gray-500 align-baseline">
+          Ravi de vous revoir 😊
+        </p>
+      </div>
       <div class="flex items-center justify-start">
         <button
           id="toggleSidebarMobile"
@@ -36,8 +42,8 @@
           </svg>
         </button>
         <form action="#" method="GET" class="hidden lg:block lg:pl-32">
-          <label for="topbar-search" class="sr-only">Search</label>
-          <div class="relative mt-1 lg:w-64">
+          <label for="topbar-search" class="sr-only">Rechercher</label>
+          <div class="relative w-full mt-1 lg:w-96">
             <div
               class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
             >
@@ -56,10 +62,10 @@
             </div>
             <input
               type="text"
-              name="email"
+              name="search"
               id="topbar-search"
-              class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full pl-10 p-2.5"
-              placeholder="Search"
+              class="w-full rounded-e-full rounded-s-full text-gray-900 sm:text-sm focus:shadow-md transition-all min-w-[200px] shadow-sm block bg-white outline-none pl-10 p-2.5"
+              placeholder="Rechercher des cours, des documents, des activités..."
             />
           </div>
         </form>
@@ -73,6 +79,7 @@
           <span class="sr-only">Rechercher</span>
           <svg
             class="w-6 h-6"
+            [class]="isActive ? 'hidden' : ''"
             fill="currentColor"
             viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg"
@@ -84,7 +91,8 @@
             ></path>
           </svg>
         </button>
-        <div class="items-center hidden lg:flex">
+        <!-- Theme Button -->
+        <div class="items-center mx-3 lg:flex">
           <span class="mr-5 text-base font-normal text-gray-500"
             ><label class="swap swap-rotate">
               <!-- this hidden checkbox controls the state -->
@@ -92,7 +100,7 @@
 
               <!-- sun icon -->
               <svg
-                class="w-10 h-10 fill-current swap-on"
+                class="w-6 h-6 fill-current swap-on"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
               >
@@ -103,7 +111,7 @@
 
               <!-- moon icon -->
               <svg
-                class="w-10 h-10 fill-current swap-off"
+                class="w-6 h-6 fill-current swap-off"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
               >

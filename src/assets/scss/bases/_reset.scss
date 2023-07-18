@@ -237,3 +237,19 @@ body {
   display   : none;
 
 }
+
+.bg-light {
+  background-color: #F7F6FB;
+}
+
+.bg-green-dark {
+  background-color: #1A4F3B;
+}
+
+.text-white-light {
+  color: #F7F6FB;
+}
+
+.text-red {
+  @apply text-[#FA553A]
+}

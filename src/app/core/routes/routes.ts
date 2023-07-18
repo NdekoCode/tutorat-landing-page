@@ -29,12 +29,10 @@ export enum MYSPACE_ROUTES {
   OVERVIEW = '/myspace/overview',
   TUTORS = '/myspace/tutors',
   MESSAGES = '/myspace/messages',
-  SETTINGS = '/myspace/settings'
-}
-export enum MYSPACE_TUTOR_ROUTES {
-  GET_TOTOR = '/myspace/tutor/:id',
+  SETTINGS = '/myspace/settings',
+  CALENDAR = '/myspace/calendar',
   CREATE_SESSION = '/myspace/tutor/create-session',
-  CALENDAR = '/myspace/tutor/calendar'
+  GET_TOTOR = '/myspace/tutor/:id'
 }
 export enum MYSPACE_USER_ROUTES {
   GET_USER = '/myspace/user/:id'
