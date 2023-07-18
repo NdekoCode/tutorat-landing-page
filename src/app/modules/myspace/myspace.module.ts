@@ -1,7 +1,9 @@
 import { CommonModule } from '@angular/common'
 import { NgModule } from '@angular/core'
 import { HeadermenuComponent } from './components/headermenu/headermenu.component'
+import { NavbarComponent } from './components/navbar/navbar.component'
 import { SidemenuComponent } from './components/sidemenu/sidemenu.component'
+import { MyspaceShareModule } from './modules/myspace-share/myspace-share.module'
 import { TutorModule } from './modules/tutor/tutor.module'
 import { UserModule } from './modules/user/user.module'
 import { MyspaceLayoutComponent } from './myspace-layout.component'
@@ -19,6 +21,13 @@ import { TutorsComponent } from './pages/tutors/tutors.component'
     SidemenuComponent,
     HeadermenuComponent
   ],
-  imports: [CommonModule, MySpaceRoutingModule, UserModule, TutorModule]
+  imports: [
+    CommonModule,
+    MySpaceRoutingModule,
+    MyspaceShareModule,
+    UserModule,
+    TutorModule
+  ],
+  exports: [NavbarComponent]
 })
 export class MySpaceModule {}

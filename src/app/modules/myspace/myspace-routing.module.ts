@@ -7,10 +7,9 @@ import { MyspaceLayoutComponent } from './myspace-layout.component'
 import { MessagesComponent } from './pages/messages/messages.component'
 import { SettingsComponent } from './pages/settings/settings.component'
 import { TutorsComponent } from './pages/tutors/tutors.component'
-
 const routes: Routes = [
   {
-    path: formatURL(MYSPACE_ROUTES.HOME, { 'myspace/': '' }),
+    path: formatURL(MYSPACE_ROUTES.HOME, { 'myspace/': '', myspace: '' }),
     component: MyspaceLayoutComponent,
     children: [
       {
