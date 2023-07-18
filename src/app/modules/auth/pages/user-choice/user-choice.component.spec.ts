@@ -46,6 +46,6 @@ describe('UserChoiceComponent', () => {
 
     component.saveChoiceForm()
 
-    expect(mockRouter.navigate).toHaveBeenCalledWith(['/auth/tutors-form'])
+    expect(mockRouter.navigate).toHaveBeenCalledWith(['/auth/tutor-form'])
   })
 })
