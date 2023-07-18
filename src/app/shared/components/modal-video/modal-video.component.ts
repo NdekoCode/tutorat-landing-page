@@ -20,6 +20,9 @@ export class ModalVideoComponent implements OnInit {
   public videoSrc!: string
 
   constructor(private sanitizer: DomSanitizer) {}
+  setVideoId(videoId: string) {
+    this.videoId = videoId
+  }
   ngOnInit(): void {
     this.videoUrl += this.videoId
     if (isExists(this.completeUrl)) {

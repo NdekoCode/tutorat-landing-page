@@ -20,6 +20,8 @@
           <input
             type="text"
             placeholder="Entrer le cours"
+            [(ngModel)]="filters.cours"
+            (change)="filterTutors(filters)"
             class="outline-none ring-transparent border-transparent ring-0 rounded-md w-full max-w-xs"
           />
           <svg
@@ -53,6 +55,8 @@
             type="number"
             placeholder="Prix par heure"
             id="price"
+            [(ngModel)]="filters.hourlyRate"
+            (change)="filterTutors(filters)"
             class="outline-none ring-transparent border-transparent ring-0 rounded-md w-full max-w-xs"
           />
           <svg
@@ -85,7 +89,9 @@
           <input
             type="text"
             placeholder="Le tuteur est de"
+            [(ngModel)]="filters.city"
             id="location"
+            (change)="filterTutors(filters)"
             class="outline-none ring-transparent border-transparent ring-0 rounded-md w-full max-w-xs"
           />
           <svg
@@ -102,7 +108,7 @@
         </div>
       </label>
 
-      <label for="location">
+      <label for="schedule">
         <div class="flex items-center px-3 text-gray">
           <svg
             class="w-6 h-6 mr-3"
@@ -118,7 +124,7 @@
           <input
             type="text"
             placeholder="Je suis disponible"
-            id="location"
+            id="schedule"
             class="outline-none ring-transparent border-transparent ring-0 rounded-md w-full max-w-xs"
           />
           <svg
@@ -137,6 +143,6 @@
     </div>
   </div>
   <div class="grid grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3 gap-3">
-    <app-tutor-card *ngFor="let tutor of tutors" [tutor]="tutor" />
+    <app-tutor-card *ngFor="let tutor of filteredTutors" [tutor]="tutor" />
   </div>
 </div>

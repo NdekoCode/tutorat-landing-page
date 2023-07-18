@@ -125,13 +125,13 @@
             </div>
           </div>
           <div class="user-fees pr-3">
-            <div class="flex items-center justify-between">
+            <div class="flex items-center gap-x-3 justify-between">
               <p clas="flex flex-col w-16">
                 <span class="block mb-1 text-xs font-medium text-gray-500"
                   >Essaie</span
                 >
                 <span class="block text-sm font-medium text-blue"
-                  >USD 20.00</span
+                  >{{ 20 * 2300 | number }} FC</span
                 >
               </p>
               <p clas="flex flex-col w-16">
@@ -167,9 +167,12 @@
         <h6 class="block mb-3 text-sm font-medium text-gray-500 self-start">
           Cours
         </h6>
-        <p>
-          <span class="text-base font-medium text-blue">Anglais</span>,
-          <span class="text-base font-medium text-blue">Math</span>
+        <p class="flex flex-wrap">
+          <span
+            class="text-base font-medium text-blue"
+            *ngFor="let cour of tutor.tutor.specialization"
+            >{{ cour }},</span
+          >
         </p>
       </div>
       <div class="flex flex-col mt-auto space-y-3">
@@ -178,7 +181,7 @@
           class="flex px-0 normal-case bg-transparent border-none flex-nowrap gap-x-3 btn hover:bg-transparent"
         >
           <span
-            class="flex-none w-8 h-8 p-1 border rounded-full flex-middle text-blue"
+            class="flex-none w-8 h-8 p-1 border-2 border-gray rounded-full flex-middle text-blue"
           >
             <svg
               class="w-4 h-4"
@@ -194,7 +197,7 @@
               />
             </svg>
           </span>
-          <span class="whitespace-nowrap">Regarder l'intro</span>
+          <span class="whitespace-nowrap underline">Regarder l'intro</span>
         </button>
         <a
           href="/myspace/new-sessions"

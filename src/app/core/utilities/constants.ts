@@ -138,7 +138,7 @@ export const USERS: User[] = [
       hourlyRate: 38,
       transport: 2,
       specialization: ['Physique', 'Trigonometrie', 'Geographie'],
-      video: { url: 'https://www.youtube.com/embed/UKFLd0PTtcw' },
+      video: { url: 'https://www.youtube.com/embed/1H5hyXn1soM' },
       address: {
         address: '2721 Lindsay Avenue',
         city: 'Louisville',
@@ -182,7 +182,7 @@ export const USERS: User[] = [
       hourlyRate: 38,
       transport: 1,
       specialization: ['Chimie', 'Trigonometrie'],
-      video: { url: 'https://www.youtube.com/embed/UKFLd0PTtcw' },
+      video: { url: 'https://www.youtube.com/embed/jNSiuyBauG4' },
       address: {
         address: '637 Britannia Drive',
         city: 'Vallejo',
@@ -270,7 +270,7 @@ export const USERS: User[] = [
       hourlyRate: 38,
       transport: 3,
       specialization: ['Physique', 'Geometry'],
-      video: { url: 'https://www.youtube.com/embed/UKFLd0PTtcw' },
+      video: { url: 'https://www.youtube.com/embed/14uVY4S19-4' },
       address: {
         address: '2203 7th Street Road',
         city: 'Louisville',
@@ -370,7 +370,7 @@ export const USERS: User[] = [
       hourlyRate: 41,
       transport: 0,
       specialization: ['Anglais', 'Chimie', 'Math'],
-      video: { url: 'https://www.youtube.com/embed/UKFLd0PTtcw' },
+      video: { url: 'https://www.youtube.com/embed/gK_BMewAnOk' },
       address: {
         address: '4 Old Colony Way',
         city: 'Yarmouth',
@@ -398,7 +398,7 @@ export const USERS: User[] = [
       hourlyRate: 36,
       transport: 0,
       specialization: ['Trigonometrie', 'Anglais', 'Geometry'],
-      video: { url: 'https://www.youtube.com/embed/UKFLd0PTtcw' },
+      video: { url: 'https://www.youtube.com/embed/6S9jvoyIz_w' },
       address: {
         address: '314 South 17th Street',
         city: 'Nashville',
@@ -442,7 +442,7 @@ export const USERS: User[] = [
       hourlyRate: 32,
       transport: 4,
       specialization: ['Santé', 'Geographie', 'Trigonometrie'],
-      video: { url: 'https://www.youtube.com/embed/UKFLd0PTtcw' },
+      video: { url: 'https://www.youtube.com/embed/7H-phEizrTY' },
       address: {
         address: '5461 West Shades Valley Drive',
         city: 'Montgomery',

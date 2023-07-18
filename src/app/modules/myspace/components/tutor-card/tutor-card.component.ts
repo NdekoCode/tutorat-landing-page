@@ -18,7 +18,8 @@ export class TutorCardComponent {
     return this.toggleVideoService.videoId
   }
   ngOnInit(): void {
-    this.toggleVideoService.setVideoId('E1nLfCSarT8')
+    const urlPart = this.tutor.tutor.video.url.split('/')
+    this.toggleVideoService.setVideoId(urlPart[urlPart.length - 1])
   }
   onToggleShow() {
     this.toggleVideoService.toggleService.onToggleShow()

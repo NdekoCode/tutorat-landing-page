@@ -1,6 +1,20 @@
 import { USERS } from './constants'
 import { Tutor, User, UtilityType } from './types'
 
+export function objectHasValue(obj: { [key: string]: UtilityType }): boolean {
+  if (!isEmptyObject(obj)) {
+    // Vérifie si l'objet existe et n'est pas vide
+
+    for (const key in obj) {
+      if (obj.hasOwnProperty(key) && obj[key]!) {
+        // Vérifie si au moins une des propriétés a une valeur réellement existante
+        return true
+      }
+    }
+  }
+
+  return false
+}
 /* eslint-disable no-undefined */
 export function isEmptyObject(value: object | null | undefined) {
   return (
@@ -86,23 +100,20 @@ export function getUsers(tutor: boolean = false): (User | Tutor)[] | [] {
 
 export function filterTutor(
   data: User[],
-  filters: Partial<Tutor & { city: string; specialization?: string | number }>
+  filters: Partial<Tutor & { city: string; cours?: string | number }>
 ): User[] {
   return data.filter((entry) => {
     const tutor = entry.tutor!
     let isValid = true
 
     if (
-      filters.hourlyRate !== undefined &&
-      tutor?.hourlyRate !== filters.hourlyRate
+      filters.hourlyRate &&
+      tutor?.hourlyRate * 2300 > filters.hourlyRate * 2300
     ) {
       isValid = false
     }
 
-    if (
-      filters.specialization &&
-      !tutor.specialization.includes(filters.specialization)
-    ) {
+    if (filters.cours && !tutor.specialization.includes(filters.cours)) {
       isValid = false
     }
 
