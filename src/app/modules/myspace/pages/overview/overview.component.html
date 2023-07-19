@@ -7,22 +7,30 @@
     >
     </app-tutor-carousel>
   </div>
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
-    <div class="">
-      <div class="flex items-center justify-between">
-        <h3 class="text-3xl font-bold text-blue my-5">Suggestion</h3>
-        <a
-          routerLink="/myspace/tutors"
-          class="text-gray font-medium hover:underline"
-          >Voir tout</a
+  <div class="">
+    <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-5">
+      <div class="">
+        <div class="flex items-center justify-between">
+          <h3 class="text-3xl font-bold text-blue my-5">Suggestion</h3>
+          <a
+            routerLink="/myspace/tutors"
+            class="text-gray font-medium hover:underline"
+            >Voir tout</a
+          >
+        </div>
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-1"
+          *ngFor="let tutor of suggestionTutors"
         >
+          <app-tutor-suggestion-card [tutor]="tutor" />
+        </div>
       </div>
-      <div class="le" *ngFor="let tutor of suggestionTutors">
-        <app-tutor-suggestion-card [tutor]="tutor" />
+      <div class="w-full rounded flex flex-col gap-y-1 pt-20">
+        <app-social-card
+          *ngFor="let tutor of suggestionTutors.slice(0, 2)"
+          [tutor]="tutor"
+        />
       </div>
-    </div>
-    <div class="w-full rounded flex flex-col gap-y-3 pt-20">
-      <app-social-card *ngFor="let tutor of suggestionTutors" [tutor]="tutor" />
     </div>
   </div>
 </div>

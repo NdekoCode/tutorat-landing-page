@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common'
 import { HttpClientModule } from '@angular/common/http'
 import { NgModule } from '@angular/core'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { RouterModule } from '@angular/router'
 import { AlertScreenComponent } from 'src/app/shared/components/alert-screen/alert-screen.component'
 import { AlertComponent } from 'src/app/shared/components/alert/alert.component'
 import { CenteredSkeletonComponent } from 'src/app/shared/components/centered-skeleton/centered-skeleton.component'
@@ -35,7 +36,7 @@ import { TextareaComponent } from './components/textarea/textarea.component'
     SocialCardComponent,
     DataTipDirective
   ],
-  imports: [CommonModule, ReactiveFormsModule, FormsModule],
+  imports: [CommonModule, RouterModule, ReactiveFormsModule, FormsModule],
   exports: [
     HttpClientModule,
     ReactiveFormsModule,
@@ -54,7 +55,8 @@ import { TextareaComponent } from './components/textarea/textarea.component'
     TutorShortCardComponent,
     TutorSuggestionCardComponent,
     SocialCardComponent,
-    DataTipDirective
+    DataTipDirective,
+    FormsModule
   ]
 })
 export class SharedModule {}
