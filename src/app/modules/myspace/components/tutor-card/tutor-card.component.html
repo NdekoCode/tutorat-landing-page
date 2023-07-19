@@ -11,8 +11,8 @@
         <figure
           class="relative w-full sm:w-auto flex !overflow-visible flex-col items-center avatar"
         >
-          <div class="relative w-full !overflow-visible sm:w-36 rounded-lg">
-            <img [src]="tutor.image" alt="Tutor name" />
+          <div class="relative w-full !overflow-visible sm:w-36">
+            <img [src]="tutor.image" alt="Tutor name" class="rounded-lg" />
             <figcaption
               class="bg-green w-max absolute -bottom-2 left-1/2 -translate-x-1/2 text-xs rounded-xl inline-block text-white p-0.5"
             >
@@ -215,10 +215,3 @@
     </div>
   </div>
 </div>
-<!-- 
-<app-modal-video
-  *ngIf="isShown"
-  (showModal)="onShow($event)"
-  [style]="'opacity-dark-ligtht'"
-  [completeUrl]="tutor.tutor.video.url"
-></app-modal-video> -->

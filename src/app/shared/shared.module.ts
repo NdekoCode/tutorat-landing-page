@@ -6,7 +6,10 @@ import { AlertScreenComponent } from 'src/app/shared/components/alert-screen/ale
 import { AlertComponent } from 'src/app/shared/components/alert/alert.component'
 import { CenteredSkeletonComponent } from 'src/app/shared/components/centered-skeleton/centered-skeleton.component'
 import { ModalVideoComponent } from 'src/app/shared/components/modal-video/modal-video.component'
+import { TutorCarouselComponent } from 'src/app/shared/components/tutor-carousel/tutor-carousel.component'
+import { TutorShortCardComponent } from 'src/app/shared/components/tutor-short-card/tutor-short-card.component'
 import { ScrollDirective } from 'src/app/shared/directives/scroll.directive'
+import { TutorCardComponent } from '../modules/myspace/components/tutor-card/tutor-card.component'
 import { InputGroupComponent } from './components/input-group/input-group.component'
 import { InputIconComponent } from './components/input-icon/input-icon.component'
 import { InputComponent } from './components/input/input.component'
@@ -21,7 +24,10 @@ import { TextareaComponent } from './components/textarea/textarea.component'
     InputComponent,
     InputGroupComponent,
     InputIconComponent,
-    TextareaComponent
+    TextareaComponent,
+    TutorCardComponent,
+    TutorCarouselComponent,
+    TutorShortCardComponent
   ],
   imports: [CommonModule, ReactiveFormsModule, FormsModule],
   exports: [
@@ -36,7 +42,10 @@ import { TextareaComponent } from './components/textarea/textarea.component'
     InputGroupComponent,
     InputIconComponent,
     TextareaComponent,
-    FormsModule
+    FormsModule,
+    TutorCardComponent,
+    TutorCarouselComponent,
+    TutorShortCardComponent
   ]
 })
 export class SharedModule {}

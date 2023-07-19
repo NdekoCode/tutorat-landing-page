@@ -7,7 +7,6 @@ import { HeadermenuComponent } from './components/headermenu/headermenu.componen
 import { NavbarComponent } from './components/navbar/navbar.component'
 import { SidebarComponent } from './components/sidebar/sidebar.component'
 import { SidemenuComponent } from './components/sidemenu/sidemenu.component'
-import { TutorCardComponent } from './components/tutor-card/tutor-card.component'
 import { MyspaceLayoutComponent } from './myspace-layout.component'
 import { MySpaceRoutingModule } from './myspace-routing.module'
 import { CalendarComponent } from './pages/calendar/calendar.component'
@@ -30,8 +29,7 @@ import { TutorsComponent } from './pages/tutors/tutors.component'
     HeadermenuComponent,
     NavbarComponent,
     SidebarComponent,
-    FooterComponent,
-    TutorCardComponent
+    FooterComponent
   ],
   imports: [CommonModule, MySpaceRoutingModule, SharedModule, FormsModule]
 })
