@@ -1,10 +1,8 @@
-<div class="bg-white border border-white shadow-lg rounded-3xl p-4 m-4">
+<div class="bg-white relative border border-white shadow-ui rounded-3xl p-4">
   <div class="flex-none sm:flex">
-    <div class="relative h-32 w-32 sm:mb-0 mb-3">
-      <div class="avatar">
-        <div class="w-24 rounded-xl">
-          <img [src]="tutor.image" [alt]="tutor.firstName" />
-        </div>
+    <div class="avatar sm:mb-0 mb-3 h-24 w-24">
+      <div class="rounded-xl">
+        <img [src]="tutor.image" [alt]="tutor.firstName" />
       </div>
       <a
         href="#"
@@ -141,11 +139,32 @@
           <p class="whitespace-nowrap">14 Sessions</p>
         </div>
         <button
-          class="bg-green hover:bg-green-500 px-5 ml-4 py-2 text-xs shadow-sm hover:shadow-lg font-medium tracking-wider border-2 border-green-300 hover:border-green-500 text-white rounded-full transition ease-in duration-300"
+          class="w-max bg-green hover:bg-green-500 ml-4 p-2 text-xs shadow-sm hover:shadow-lg font-medium tracking-wider hover:border-green-500 text-white rounded-full transition ease-in duration-300"
         >
-          Voir le profile
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5"
+            fill="currentColor"
+            viewBox="0 0 512 512"
+          >
+            <path
+              d="M87.48 380c1.2-4.38-1.43-10.47-3.94-14.86a42.63 42.63 0 00-2.54-3.8 199.81 199.81 0 01-33-110C47.64 139.09 140.72 48 255.82 48 356.2 48 440 117.54 459.57 209.85a199 199 0 014.43 41.64c0 112.41-89.49 204.93-204.59 204.93-18.31 0-43-4.6-56.47-8.37s-26.92-8.77-30.39-10.11a31.14 31.14 0 00-11.13-2.07 30.7 30.7 0 00-12.08 2.43L81.5 462.78a15.92 15.92 0 01-4.66 1.22 9.61 9.61 0 01-9.58-9.74 15.85 15.85 0 01.6-3.29z"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-miterlimit="10"
+              stroke-width="32"
+            />
+            <circle cx="160" cy="256" r="32" />
+            <circle cx="256" cy="256" r="32" />
+            <circle cx="352" cy="256" r="32" />
+          </svg>
         </button>
       </div>
     </div>
   </div>
+  <a
+    [routerLink]="'/myspace/tutor/' + tutor.id"
+    class="absolute inset-0 opacity-0"
+  ></a>
 </div>

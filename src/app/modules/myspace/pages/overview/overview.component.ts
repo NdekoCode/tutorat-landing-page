@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
-import { filterTutor, objectHasValue } from 'src/app/core/utilities/helpers'
 import { ITutor } from 'src/app/core/utilities/interfaces'
 import { Tutor } from 'src/app/core/utilities/types'
 import { TutorService } from 'src/app/shared/services/tutor/tutor.service'
@@ -10,15 +9,8 @@ import { TutorService } from 'src/app/shared/services/tutor/tutor.service'
 })
 export class OverviewComponent implements OnInit {
   userId!: number
-  carouselItems = [
-    'Slide 1',
-    'Slide 2',
-    'Slide 3',
-    'Slide 4',
-    'Slide 5',
-    'Slide 6'
-  ]
-  filteredTutors: ITutor[] = []
+  suggestionTutors: ITutor[] = []
+  topTutors: ITutor[] = []
   filters: Partial<Tutor & { city: string; cours?: string | number }> = {
     hourlyRate: 0,
     cours: '',
@@ -36,15 +28,9 @@ export class OverviewComponent implements OnInit {
   }
   ngOnInit(): void {
     this.userId = this.activatedRoute.snapshot.params['id']
-    this.filteredTutors = this.tutors
-  }
-  filterTutors(
-    filter: Partial<Tutor & { city: string; cours?: string | number }>
-  ) {
-    if (objectHasValue(filter)) {
-      this.filteredTutors = filterTutor(this.tutors, filter) as ITutor[]
-    } else {
-      this.filteredTutors = this.tutors
-    }
+    this.suggestionTutors = this.tutorService
+      .getTutors()
+      .filter((t) => t.address.city === 'Goma')
+    this.topTutors = this.tutorService.getLimitTutor(20)
   }
 }

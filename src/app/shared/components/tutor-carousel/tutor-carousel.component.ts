@@ -1,16 +1,18 @@
-import { Component, Input, OnInit } from '@angular/core'
+import { Component, Input, OnDestroy, OnInit } from '@angular/core'
+import { GLOBAL_CONSTANTS } from 'src/app/core/utilities/constants'
 import { ITutor } from 'src/app/core/utilities/interfaces'
+import { Timer } from 'src/app/core/utilities/types'
 
 @Component({
   selector: 'app-tutor-carousel',
   templateUrl: './tutor-carousel.component.html',
   styleUrls: ['./tutor-carousel.component.scss']
 })
-export class TutorCarouselComponent implements OnInit {
+export class TutorCarouselComponent implements OnInit, OnDestroy {
   @Input() items!: ITutor[]
   @Input() slidesPerPage!: number
   @Input() paginationPerSlide!: number
-
+  timer: Timer
   currentIndex = 0
   slideWidth!: string
   carouselStyle!: { [key: string]: string }
@@ -22,6 +24,9 @@ export class TutorCarouselComponent implements OnInit {
     this.updateCarouselStyle()
 
     this.widthCarousel = { width: `calc(100% / ${this.slidesPerPage})` }
+    this.timer = window.setInterval(() => {
+      this.nextSlide()
+    }, GLOBAL_CONSTANTS.SLIDE_TIMEOUT)
   }
 
   prevSlide(): void {
@@ -35,6 +40,8 @@ export class TutorCarouselComponent implements OnInit {
     if (this.currentIndex < this.items.length - this.slidesPerPage) {
       this.currentIndex++
       this.updateCarouselStyle()
+    } else {
+      this.currentIndex = 0
     }
   }
 
@@ -43,5 +50,8 @@ export class TutorCarouselComponent implements OnInit {
     this.carouselStyle = {
       transform: `translateX(${translateXValue}%)`
     }
+  }
+  ngOnDestroy(): void {
+    window.clearInterval(this.timer)
   }
 }
