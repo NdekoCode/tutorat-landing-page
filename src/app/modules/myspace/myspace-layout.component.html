@@ -1,2 +1,22 @@
-<app-sidemenu />
-<router-outlet></router-outlet>
+<!-- This is an example component -->
+<div>
+  <div class="flex overflow-hidden bg-light fixed inset-0">
+    <app-sidebar />
+    <div
+      class="fixed inset-0 z-10 hidden bg-gray-900 opacity-50"
+      id="sidebarBackdrop"
+    ></div>
+    <div
+      id="main-content"
+      class="relative flex flex-col w-full h-full min-h-screen overflow-y-auto bg-light lg:ml-64"
+    >
+      <app-navbar />
+      <main class="pt-16 flex flex-col h-full overflow-y-scroll">
+        <div class="px-4 pt-6">
+          <router-outlet></router-outlet>
+        </div>
+        <app-footer />
+      </main>
+    </div>
+  </div>
+</div>

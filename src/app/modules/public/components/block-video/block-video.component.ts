@@ -1,15 +1,24 @@
-import { Component } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
+import { ToggleVideoService } from '../../../../shared/services/toggle/toggle-video.service'
 
 @Component({
   selector: 'app-block-video',
   templateUrl: './block-video.component.html',
   styleUrls: ['./block-video.component.scss']
 })
-export class BlockVideoComponent {
-  isShown: boolean = false
-  videoId: string = 'E1nLfCSarT8'
+export class BlockVideoComponent implements OnInit {
+  constructor(private toggleVideoService: ToggleVideoService) {}
+  get isShown() {
+    return this.toggleVideoService.toggleService.isShown
+  }
+  get videoId() {
+    return this.toggleVideoService.videoId
+  }
+  ngOnInit(): void {
+    this.toggleVideoService.setVideoId('E1nLfCSarT8')
+  }
   onToggleShow() {
-    this.isShown = !this.isShown
+    this.toggleVideoService.toggleService.onToggleShow()
   }
   onShow(arg: Event | boolean) {
     this.onToggleShow()

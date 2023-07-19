@@ -1,46 +1,60 @@
 import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
-import { OverviewComponent } from './modules/tutor/pages/overview/overview.component'
+import { MYSPACE_ROUTES } from 'src/app/core/routes/routes'
+import { formatURL } from 'src/app/core/utilities/helpers'
 import { MyspaceLayoutComponent } from './myspace-layout.component'
+import { CalendarComponent } from './pages/calendar/calendar.component'
+import { CreateSessionComponent } from './pages/create-session/create-session.component'
 import { MessagesComponent } from './pages/messages/messages.component'
+import { OverviewComponent } from './pages/overview/overview.component'
 import { SettingsComponent } from './pages/settings/settings.component'
 import { TutorsComponent } from './pages/tutors/tutors.component'
-
 const routes: Routes = [
   {
-    path: '',
+    path: formatURL(MYSPACE_ROUTES.HOME, { 'myspace/': '', myspace: '' }),
     component: MyspaceLayoutComponent,
     children: [
       {
         path: '',
         pathMatch: 'full',
-        redirectTo: 'overview'
+        redirectTo: formatURL(MYSPACE_ROUTES.OVERVIEW, { 'myspace/': '' })
       },
       {
-        path: 'overview',
+        path: formatURL(MYSPACE_ROUTES.OVERVIEW, { 'myspace/': '' }),
         component: OverviewComponent
       },
       {
-        path: 'tutors',
+        path: formatURL(MYSPACE_ROUTES.TUTORS, { 'myspace/': '' }),
         component: TutorsComponent
       },
       {
-        path: 'messages',
+        path: formatURL(MYSPACE_ROUTES.MESSAGES, { 'myspace/': '' }),
         component: MessagesComponent
       },
       {
-        path: 'settings',
+        path: formatURL(MYSPACE_ROUTES.SETTINGS, { 'myspace/': '' }),
         component: SettingsComponent
       },
       {
-        path: 'tutor',
-        loadChildren: () =>
-          import('./modules/tutor/tutor.module').then((m) => m.TutorModule)
+        path: formatURL(MYSPACE_ROUTES.GET_TOTOR, {
+          'myspace/': '',
+          'tutor/': ''
+        }),
+        component: OverviewComponent
       },
       {
-        path: 'user',
-        loadChildren: () =>
-          import('./modules/user/user.module').then((m) => m.UserModule)
+        path: formatURL(MYSPACE_ROUTES.CREATE_SESSION, {
+          'myspace/': '',
+          'tutor/': ''
+        }),
+        component: CreateSessionComponent
+      },
+      {
+        path: formatURL(MYSPACE_ROUTES.CALENDAR, {
+          'myspace/': '',
+          'tutor/': ''
+        }),
+        component: CalendarComponent
       }
     ]
   }

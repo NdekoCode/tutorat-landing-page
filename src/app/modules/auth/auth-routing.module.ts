@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
+import { AUTH_ROUTES } from 'src/app/core/routes/routes'
+import { formatURL } from 'src/app/core/utilities/helpers'
 import { ConfirmationComponent } from './pages/confirmation/confirmation.component'
 import { ForgetPasswordComponent } from './pages/forget-password/forget-password.component'
 import { LoginComponent } from './pages/login/login.component'
@@ -14,53 +16,48 @@ import { VerifyUserComponent } from './pages/verify-user/verify-user.component'
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: formatURL(AUTH_ROUTES.LOGIN, { 'auth/': '' }),
     pathMatch: 'full'
   },
   {
-    path: 'login',
+    path: formatURL(AUTH_ROUTES.LOGIN, { 'auth/': '' }),
     component: LoginComponent
   },
   {
-    path: 'signup',
+    path: formatURL(AUTH_ROUTES.SIGNUP, { 'auth/': '' }),
     component: SignupComponent
   },
   {
-    path: 'user-choice',
+    path: formatURL(AUTH_ROUTES.USER_CHOICE, { 'auth/': '' }),
     component: UserChoiceComponent
   },
   {
-    path: 'forget-password',
+    path: formatURL(AUTH_ROUTES.FORGET_PASSWORD, { 'auth/': '' }),
     component: ForgetPasswordComponent
   },
   {
-    path: 'verify-user',
+    path: formatURL(AUTH_ROUTES.VERIFY_USER, { 'auth/': '' }),
     component: VerifyUserComponent
   },
   {
-    path: 'reset-password',
+    path: formatURL(AUTH_ROUTES.RESET_PASSWORD, { 'auth/': '' }),
     component: ResetPasswordComponent
   },
   {
-    path: 'verify-password',
+    path: formatURL(AUTH_ROUTES.VERIFY_PASSWORD, { 'auth/': '' }),
     component: OTPVerificationComponent
   },
   {
-    path: 'tutors-form',
+    path: formatURL(AUTH_ROUTES.TUTOR_FORM, { 'auth/': '' }),
     component: TutorsSupplementFormComponent
   },
 
   {
-    path: 'verify-user',
-    component: ConfirmationComponent
-  },
-
-  {
-    path: 'confirmation',
+    path: formatURL(AUTH_ROUTES.CONFIRMATION, { 'auth/': '' }),
     component: ConfirmationComponent
   },
   {
-    path: 'logout',
+    path: formatURL(AUTH_ROUTES.LOGOUT, { 'auth/': '' }),
     component: LogoutComponent
   }
 ]

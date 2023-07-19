@@ -4,4 +4,9 @@ import { Component } from '@angular/core'
   selector: 'app-myspace-layout',
   templateUrl: './myspace-layout.component.html'
 })
-export class MyspaceLayoutComponent {}
+export class MyspaceLayoutComponent {
+  isActive = false
+  toggleActive() {
+    this.isActive = !this.isActive
+  }
+}

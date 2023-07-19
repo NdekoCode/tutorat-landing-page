@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
-import { ErrorComponent } from './components/error/error.component'
 import { AuthGuard } from './core/guards/auth.guard'
+import { ErrorComponent } from './shared/components/error/error.component'
 
 const routes: Routes = [
   {

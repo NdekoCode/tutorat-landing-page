@@ -59,8 +59,6 @@ export class TutorsSupplementFormComponent implements OnInit {
     // eslint-disable-next-line no-console
     if (this.tutorSupplementForm.valid) {
       // Envoyez les données du formulaire au serveur
-      // eslint-disable-next-line no-console
-      console.log(this.tutorSupplementForm.value)
     }
   }
   onFileSelected(event: Event) {

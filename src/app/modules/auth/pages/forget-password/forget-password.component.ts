@@ -35,9 +35,6 @@ export class ForgetPasswordComponent implements OnInit, OnDestroy {
   saveEmail() {
     this.submitForm = false
     this.isLoading = true
-    // eslint-disable-next-line no-console
-    console.log(this.forgetPasswordForm)
-    // this._router.navigate(['/verify-password'])
     if (this.forgetPasswordForm.valid) {
       this.authService
         .sendResetPasswordToken(this.forgetPasswordForm.value)

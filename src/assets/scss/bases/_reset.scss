@@ -164,6 +164,10 @@ body {
   color: #151D34 !important;
 }
 
+.border-gray {
+  border-color: #8D8E8E !important;
+}
+
 .border-blue {
   border-color: #151D34 !important;
 }
@@ -236,4 +240,24 @@ body {
   z-index   : 5;
   display   : none;
 
+}
+
+.bg-light {
+  background-color: #F7F6FB;
+}
+
+.bg-green-dark {
+  background-color: #1A4F3B;
+}
+
+.text-white-light {
+  color: #F7F6FB;
+}
+
+.text-red {
+  @apply text-[#FA553A]
+}
+
+.opacity-dark-ligtht {
+  background-color: rgba(0, 0, 0, .1) !important;
 }

@@ -145,4 +145,4 @@ The Tutorat project is currently under development. Some features may not be ful
 
 ## Credits
 
-This project is based on the work of [Zabibu]. We would like to thank all contributors who participated in this project.
+This project is based on the work of [Zabibu](https://zabibu.co).

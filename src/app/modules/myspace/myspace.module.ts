@@ -1,24 +1,38 @@
 import { CommonModule } from '@angular/common'
 import { NgModule } from '@angular/core'
+import { FormsModule } from '@angular/forms'
+import { SharedModule } from '../shared/shared.module'
+import { FooterComponent } from './components/footer/footer.component'
 import { HeadermenuComponent } from './components/headermenu/headermenu.component'
+import { NavbarComponent } from './components/navbar/navbar.component'
+import { SidebarComponent } from './components/sidebar/sidebar.component'
 import { SidemenuComponent } from './components/sidemenu/sidemenu.component'
-import { TutorModule } from './modules/tutor/tutor.module'
-import { UserModule } from './modules/user/user.module'
+import { TutorCardComponent } from './components/tutor-card/tutor-card.component'
 import { MyspaceLayoutComponent } from './myspace-layout.component'
 import { MySpaceRoutingModule } from './myspace-routing.module'
+import { CalendarComponent } from './pages/calendar/calendar.component'
+import { CreateSessionComponent } from './pages/create-session/create-session.component'
 import { MessagesComponent } from './pages/messages/messages.component'
+import { OverviewComponent } from './pages/overview/overview.component'
 import { SettingsComponent } from './pages/settings/settings.component'
 import { TutorsComponent } from './pages/tutors/tutors.component'
 
 @NgModule({
   declarations: [
+    OverviewComponent,
     TutorsComponent,
+    CreateSessionComponent,
+    CalendarComponent,
     MessagesComponent,
     SettingsComponent,
     MyspaceLayoutComponent,
     SidemenuComponent,
-    HeadermenuComponent
+    HeadermenuComponent,
+    NavbarComponent,
+    SidebarComponent,
+    FooterComponent,
+    TutorCardComponent
   ],
-  imports: [CommonModule, MySpaceRoutingModule, UserModule, TutorModule]
+  imports: [CommonModule, MySpaceRoutingModule, SharedModule, FormsModule]
 })
 export class MySpaceModule {}

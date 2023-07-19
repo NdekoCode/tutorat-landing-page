@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
+import { PUBLIC_ROUTES } from 'src/app/core/routes/routes'
+import { formatURL } from 'src/app/core/utilities/helpers'
 import { AboutComponent } from './pages/about/about.component'
 import { BlogComponent } from './pages/blog/blog.component'
 import { ContactComponent } from './pages/contact/contact.component'
@@ -14,27 +16,27 @@ const routes: Routes = [
     component: PublicLayoutComponent,
     children: [
       {
-        path: '',
+        path: formatURL(PUBLIC_ROUTES.HOME),
         component: HomeComponent
       },
       {
-        path: 'services',
+        path: formatURL(PUBLIC_ROUTES.SERVICES),
         component: ServicesComponent
       },
       {
-        path: 'contact',
+        path: formatURL(PUBLIC_ROUTES.CONTACT),
         component: ContactComponent
       },
       {
-        path: 'tutors',
+        path: formatURL(PUBLIC_ROUTES.TUTORS),
         component: TutorsPageComponent
       },
       {
-        path: 'about',
+        path: formatURL(PUBLIC_ROUTES.ABOUT),
         component: AboutComponent
       },
       {
-        path: 'blog',
+        path: formatURL(PUBLIC_ROUTES.BLOG),
         component: BlogComponent
       }
     ]
