@@ -13,7 +13,6 @@ import { InputGroupComponent } from './shared/components/input-group/input-group
 import { InputComponent } from './shared/components/input/input.component'
 import { ScrollHideDirective } from './shared/directives/scroll-hide.directive'
 import { SafePipe } from './shared/pipes/safe.pipe'
-import { CarouselComponent } from './shared/components/carousel/carousel.component'
 
 @NgModule({
   declarations: [
@@ -23,8 +22,7 @@ import { CarouselComponent } from './shared/components/carousel/carousel.compone
     InputComponent,
     InputContainerComponent,
     ErrorComponent,
-    InputGroupComponent,
-    CarouselComponent
+    InputGroupComponent
   ],
   imports: [
     BrowserModule,

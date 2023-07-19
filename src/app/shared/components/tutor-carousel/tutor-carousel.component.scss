@@ -1,0 +1,23 @@
+.carousel-container {
+  overflow: hidden;
+  width   : 100%;
+}
+
+.carousel-item {
+  display           : flex;
+  transition        : transform 0.5s;
+  scroll-snap-type  : x mandatory;
+  scroll-behavior   : smooth;
+  -ms-overflow-style: none;
+  scrollbar-width   : none;
+  @apply gap-x-5;
+}
+
+.slide {
+  flex     : 0 0 auto;
+  min-width: 250px !important;
+}
+
+button {
+  margin-top: 10px;
+}

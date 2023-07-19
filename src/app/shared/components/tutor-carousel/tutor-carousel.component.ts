@@ -1,12 +1,13 @@
 import { Component, Input, OnInit } from '@angular/core'
+import { ITutor } from 'src/app/core/utilities/interfaces'
 
 @Component({
-  selector: 'app-carousel',
-  templateUrl: './carousel.component.html',
-  styleUrls: ['./carousel.component.css']
+  selector: 'app-tutor-carousel',
+  templateUrl: './tutor-carousel.component.html',
+  styleUrls: ['./tutor-carousel.component.scss']
 })
-export class CarouselComponent implements OnInit {
-  @Input() items!: unknown[]
+export class TutorCarouselComponent implements OnInit {
+  @Input() items!: ITutor[]
   @Input() slidesPerPage!: number
   @Input() paginationPerSlide!: number
 
