@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
 import {
   filterTutor,
@@ -14,7 +14,7 @@ import { TutorService } from 'src/app/shared/services/tutor/tutor.service'
   templateUrl: './tutors.component.html',
   styleUrls: ['./tutors.component.scss']
 })
-export class TutorsComponent {
+export class TutorsComponent implements OnInit {
   userId!: number
   filteredTutors: ITutor[] = []
   filters: Partial<Tutor & { city: string; cours?: string | number }> = {

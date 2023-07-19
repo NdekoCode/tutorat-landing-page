@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing'
-
+import { ActivatedRoute } from '@angular/router'
+import { TutorService } from 'src/app/shared/services/tutor/tutor.service'
 import { TutorsComponent } from './tutors.component'
 
 describe('TutorsComponent', () => {
@@ -8,7 +9,18 @@ describe('TutorsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [TutorsComponent]
+      declarations: [TutorsComponent],
+      providers: [
+        {
+          provide: ActivatedRoute,
+          useValue: {
+            snapshot: {
+              params: { id: 1 }
+            }
+          }
+        },
+        TutorService
+      ]
     }).compileComponents()
 
     fixture = TestBed.createComponent(TutorsComponent)
