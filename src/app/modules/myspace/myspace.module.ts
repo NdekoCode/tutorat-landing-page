@@ -15,6 +15,7 @@ import { MessagesComponent } from './pages/messages/messages.component'
 import { OverviewComponent } from './pages/overview/overview.component'
 import { SettingsComponent } from './pages/settings/settings.component'
 import { TutorsComponent } from './pages/tutors/tutors.component'
+import { ViewTutorComponent } from './pages/view-tutor/view-tutor.component'
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { TutorsComponent } from './pages/tutors/tutors.component'
     HeadermenuComponent,
     NavbarComponent,
     SidebarComponent,
-    FooterComponent
+    FooterComponent,
+    ViewTutorComponent
   ],
   imports: [CommonModule, MySpaceRoutingModule, SharedModule, FormsModule]
 })

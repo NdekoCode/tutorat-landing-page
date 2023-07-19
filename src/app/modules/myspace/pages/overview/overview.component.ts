@@ -12,15 +12,9 @@ import { CoursesService } from '../../../../shared/services/courses/courses.serv
 })
 export class OverviewComponent implements OnInit {
   userId!: number
-  carouselItems = [
-    'Slide 1',
-    'Slide 2',
-    'Slide 3',
-    'Slide 4',
-    'Slide 5',
-    'Slide 6'
-  ]
+  suggestionTutors: ITutor[] = []
   filteredTutors: ITutor[] = []
+  topTutors: ITutor[] = []
   filters: Partial<Tutor & { city: string; cours?: string | number }> = {
     hourlyRate: 0,
     cours: '',
@@ -50,5 +44,9 @@ export class OverviewComponent implements OnInit {
     } else {
       this.filteredTutors = this.tutors
     }
+    this.suggestionTutors = this.tutorService
+      .getTutors()
+      .filter((t) => t.address.city === 'Goma')
+    this.topTutors = this.tutorService.getLimitTutor(20)
   }
 }

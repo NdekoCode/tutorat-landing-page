@@ -1,10 +1,28 @@
 <div class="w-full">
   <div class="">
     <app-tutor-carousel
-      [items]="filteredTutors"
-      [slidesPerPage]="3"
+      [items]="topTutors"
+      [slidesPerPage]="4"
       [paginationPerSlide]="5"
     >
     </app-tutor-carousel>
+  </div>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+    <div class="">
+      <div class="flex items-center justify-between">
+        <h3 class="text-3xl font-bold text-blue my-5">Suggestion</h3>
+        <a
+          routerLink="/myspace/tutors"
+          class="text-gray font-medium hover:underline"
+          >Voir tout</a
+        >
+      </div>
+      <div class="le" *ngFor="let tutor of suggestionTutors">
+        <app-tutor-suggestion-card [tutor]="tutor" />
+      </div>
+    </div>
+    <div class="w-full rounded flex flex-col gap-y-3 pt-20">
+      <app-social-card *ngFor="let tutor of suggestionTutors" [tutor]="tutor" />
+    </div>
   </div>
 </div>

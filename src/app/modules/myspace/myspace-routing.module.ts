@@ -9,6 +9,7 @@ import { MessagesComponent } from './pages/messages/messages.component'
 import { OverviewComponent } from './pages/overview/overview.component'
 import { SettingsComponent } from './pages/settings/settings.component'
 import { TutorsComponent } from './pages/tutors/tutors.component'
+import { ViewTutorComponent } from './pages/view-tutor/view-tutor.component'
 const routes: Routes = [
   {
     path: formatURL(MYSPACE_ROUTES.HOME, { 'myspace/': '', myspace: '' }),
@@ -36,11 +37,10 @@ const routes: Routes = [
         component: SettingsComponent
       },
       {
-        path: formatURL(MYSPACE_ROUTES.GET_TOTOR, {
-          'myspace/': '',
-          'tutor/': ''
+        path: formatURL(MYSPACE_ROUTES.GET_TUTOR, {
+          'myspace/': ''
         }),
-        component: OverviewComponent
+        component: ViewTutorComponent
       },
       {
         path: formatURL(MYSPACE_ROUTES.CREATE_SESSION, {

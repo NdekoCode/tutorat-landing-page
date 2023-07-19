@@ -204,12 +204,10 @@ a.primary-gradient {
   }
 }
 
-html,
-body {
-  height: 100%;
+.shadow-ui {
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, .05);
 }
 
-body {
-  margin     : 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+.bg-space {
+  background-color: #f8f9fa !important;
 }
