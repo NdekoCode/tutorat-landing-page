@@ -19,17 +19,27 @@
           >
         </div>
         <div
-          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-1"
-          *ngFor="let tutor of suggestionTutors"
+          class="grid grid-cols-1 sm:grid-cols-2 sm:gap-x-3 md:gap-x-2 lg:grid-cols-1"
         >
-          <app-tutor-suggestion-card [tutor]="tutor" />
+          <app-tutor-suggestion-card
+            *ngFor="let tutor of suggestionTutors"
+            [tutor]="tutor"
+          />
         </div>
       </div>
-      <div class="w-full rounded flex flex-col gap-y-1 pt-20">
-        <app-social-card
-          *ngFor="let tutor of suggestionTutors.slice(0, 2)"
-          [tutor]="tutor"
-        />
+      <div class="">
+        <div class="flex items-center justify-end">
+          <h3 class="text-3xl font-bold text-blue my-5 text-right">
+            Videos populaires
+          </h3>
+        </div>
+
+        <div class="w-full rounded flex flex-col gap-y-1">
+          <app-social-card
+            *ngFor="let tutor of suggestionTutors.slice(0, 2)"
+            [tutor]="tutor"
+          />
+        </div>
       </div>
     </div>
   </div>
