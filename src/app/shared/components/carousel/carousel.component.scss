@@ -1,0 +1,17 @@
+.carousel-container {
+  overflow: hidden;
+  width   : 100%;
+}
+
+.carousel {
+  display   : flex;
+  transition: transform 0.5s;
+}
+
+.slide {
+  flex: 0 0 auto;
+}
+
+button {
+  margin-top: 10px;
+}
