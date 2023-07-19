@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common'
 import { HttpClientModule } from '@angular/common/http'
 import { NgModule } from '@angular/core'
-import { ReactiveFormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { RouterModule } from '@angular/router'
 import { AlertScreenComponent } from 'src/app/shared/components/alert-screen/alert-screen.component'
 import { AlertComponent } from 'src/app/shared/components/alert/alert.component'
@@ -28,7 +28,8 @@ import { TutorCardComponent } from '../myspace/components/tutor-card/tutor-card.
     SocialCardComponent,
     DataTipDirective
   ],
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, FormsModule],
+
   exports: [
     HttpClientModule,
     ReactiveFormsModule,
@@ -42,7 +43,8 @@ import { TutorCardComponent } from '../myspace/components/tutor-card/tutor-card.
     TutorShortCardComponent,
     TutorSuggestionCardComponent,
     SocialCardComponent,
-    DataTipDirective
+    DataTipDirective,
+    FormsModule
   ]
 })
 export class SharedModule {}

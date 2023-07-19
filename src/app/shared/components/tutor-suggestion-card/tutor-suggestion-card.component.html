@@ -1,14 +1,14 @@
 <div
-  class="flex relative group bg-white items-center shadow mb-5 rounded-lg p-2.5 gap-x-3"
+  class="flex relative group min-h-[130px] mb-3 h-max bg-white items-center shadow rounded-lg p-2.5 px-3 gap-x-3"
 >
   <img
     [src]="tutor.image"
     [alt]="tutor.firstName + ' ' + tutor.lastName"
     class="w-16 object-cover h-16 rounded-full"
   />
-  <div class="flex flex-col justify-center w-full px-2 py-1">
+  <div class="flex flex-col justify-center w-full">
     <div class="flex justify-between items-center">
-      <div class="flex flex-col py-3">
+      <div class="flex flex-col">
         <div class="flex gap-x-2">
           <h2 class="text-sm font-semibold mb-1">
             {{ tutor.firstName + ' ' + tutor.lastName }}
@@ -28,9 +28,8 @@
             <p class="font-normal">4.5</p>
           </div>
         </div>
-        <p></p>
         <div
-          class="flex items-center justify-between min-w-[180px] w-full gap-x-5 font-medium text-gray-900"
+          class="flex items-center sm:flex-wrap xl:flex-nowrap lg:justify-between min-w-[180px] w-full gap-x-5 font-medium text-gray-900"
         >
           <p class="flex items-center">
             <span class="text-gray-400 text-sm font-normal">Enseigne: </span>

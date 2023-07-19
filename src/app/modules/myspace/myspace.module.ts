@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common'
 import { NgModule } from '@angular/core'
-import { FormsModule } from '@angular/forms'
 import { SharedModule } from '../shared/shared.module'
 import { FooterComponent } from './components/footer/footer.component'
 import { HeadermenuComponent } from './components/headermenu/headermenu.component'
@@ -33,6 +32,6 @@ import { ViewTutorComponent } from './pages/view-tutor/view-tutor.component'
     FooterComponent,
     ViewTutorComponent
   ],
-  imports: [CommonModule, MySpaceRoutingModule, SharedModule, FormsModule]
+  imports: [CommonModule, MySpaceRoutingModule, SharedModule]
 })
 export class MySpaceModule {}
