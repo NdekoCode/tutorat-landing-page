@@ -1,39 +1,42 @@
-<div class="carousel-container mr-20">
-  <div class="w-full mr-20 flex justify-end">
-    <button (click)="prevSlide()" class="text-gray">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="h-8 w-8"
-        viewBox="0 0 512 512"
-      >
-        <path
-          fill="none"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="48"
-          d="M328 112L184 256l144 144"
-        />
-      </svg>
-    </button>
-    <button (click)="nextSlide()" class="text-gray">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="h-8 w-8"
-        viewBox="0 0 512 512"
-      >
-        <path
-          fill="none"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="48"
-          d="M184 112l144 144-144 144"
-        />
-      </svg>
-    </button>
+<div class="mt-5 mb-10 carousel-container">
+  <div class="flex items-center justify-between w-full">
+    <h3 class="text-3xl font-bold text-blue">Les tuteurs les mieux cotés</h3>
+    <div class="flex gap-x-1">
+      <button (click)="prevSlide()" class="text-gray">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-8 h-8"
+          viewBox="0 0 512 512"
+        >
+          <path
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="48"
+            d="M328 112L184 256l144 144"
+          />
+        </svg>
+      </button>
+      <button (click)="nextSlide()" class="text-gray">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-8 h-8"
+          viewBox="0 0 512 512"
+        >
+          <path
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="48"
+            d="M184 112l144 144-144 144"
+          />
+        </svg>
+      </button>
+    </div>
   </div>
-  <div class="carousel-item" [ngStyle]="carouselStyle">
+  <div class="mr-20 carousel-item" [ngStyle]="carouselStyle">
     <div class="slide" *ngFor="let item of items">
       <app-tutor-short-card [tutor]="item" />
     </div>

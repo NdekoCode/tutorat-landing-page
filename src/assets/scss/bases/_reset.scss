@@ -139,6 +139,10 @@ body {
   @apply text-base text-gray-500 mb-1;
 }
 
+.text-gray-light {
+  color: var(--text-blue-gray-light);
+}
+
 .bg-smooth {
   background-color: var(--bg-gray-smooth);
 }
@@ -211,6 +215,14 @@ body {
 
 .text-yellow-dark {
   color: var(--yellow-dark) !important;
+}
+
+.bg-yellow-dark {
+  background-color: var(--yellow-dark) !important;
+}
+
+.bg-yellow {
+  background-color: var(--yellow-light) !important;
 }
 
 .text-blue-light {

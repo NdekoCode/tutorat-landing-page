@@ -1,23 +1,23 @@
 <div
-  class="flex relative group min-h-[130px] mb-3 h-max bg-white items-center shadow rounded-lg p-2.5 px-3 gap-x-3"
+  class="flex relative group min-h-[130px] mb-3 h-max bg-white items-center hover:shadow-md hover:shadow-gray-100 border border-gray-100 rounded-lg p-2.5 px-3 gap-x-3"
 >
   <img
     [src]="tutor.image"
     [alt]="tutor.firstName + ' ' + tutor.lastName"
-    class="w-16 object-cover h-16 rounded-full"
+    class="object-cover w-16 h-16 rounded-full"
   />
   <div class="flex flex-col justify-center w-full">
-    <div class="flex justify-between items-center">
+    <div class="flex items-center justify-between">
       <div class="flex flex-col">
         <div class="flex gap-x-2">
-          <h2 class="text-sm font-semibold mb-1">
+          <h2 class="mb-1 text-sm font-semibold">
             {{ tutor.firstName + ' ' + tutor.lastName }}
           </h2>
 
           <div class="flex items-center mr-auto text-sm text-gray-400">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5 text-yellow-500 mr-1"
+              class="w-5 h-5 mr-1 text-yellow-500"
               viewBox="0 0 20 20"
               fill="currentColor"
             >
@@ -32,19 +32,19 @@
           class="flex items-center sm:flex-wrap xl:flex-nowrap lg:justify-between min-w-[180px] w-full gap-x-5 font-medium text-gray-900"
         >
           <p class="flex items-center">
-            <span class="text-gray-400 text-sm font-normal">Enseigne: </span>
-            <span class="text-blue text-sm font-semibold">
+            <span class="text-sm font-normal text-gray-400">Enseigne: </span>
+            <span class="text-sm font-semibold text-blue">
               {{ tutor.tutor.specialization[0] }}</span
             >
           </p>
           <p class="flex items-center">
             {{ tutor.tutor.hourlyRate * 2300 | number }} FC
-            <span class="text-gray-400 text-sm font-normal"> /heure</span>
+            <span class="text-sm font-normal text-gray-400"> /heure</span>
           </p>
         </div>
       </div>
       <svg
-        class="h-8 w-8 text-gray-500 group-hover:translate-x-1 transition-all hover:text-blue-400 cursor-pointer"
+        class="w-8 h-8 text-gray-500 transition-all cursor-pointer group-hover:translate-x-1 hover:text-blue-400"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 512 512"
       >
