@@ -143,3 +143,96 @@ export function getLimitData(
 ): UtilityType[] {
   return data.slice(0, limit)
 }
+type EventParticipant = {
+  image: string
+}
+
+type Event = {
+  title: string
+  schedule: string
+  participants: EventParticipant[]
+  numberOfParticipants: string
+}
+
+type Day = {
+  day: number
+  events?: Event[]
+}
+
+type Month = {
+  name: string
+  days: Day[]
+}
+
+type Calendar = {
+  year: number
+  months: Month[]
+}
+
+export function generateCalendar(date: string): Calendar {
+  const [day, month, year] = date.split('/')
+
+  const calendar: Calendar = {
+    year: parseInt(year),
+    months: [
+      {
+        name: getMonthName(parseInt(month)),
+        days: generateDays(parseInt(day), parseInt(month), parseInt(year))
+      }
+    ]
+  }
+
+  return calendar
+}
+
+export function getMonthName(month: number): string {
+  const monthList = [
+    'Janvier',
+    'Février',
+    'Mars',
+    'Avril',
+    'Mai',
+    'Juin',
+    'Juillet',
+    'Août',
+    'Septembre',
+    'Octobre',
+    'Novembre',
+    'Décembre'
+  ]
+
+  return monthList[month - 1]
+}
+
+export function generateDays(day: number, month: number, year: number): Day[] {
+  const numberOfDays = new Date(year, month, 0).getDate()
+  const daysList: Day[] = []
+
+  for (let i = 1; i <= numberOfDays; i++) {
+    const dayObj: Day = {
+      day: i
+    }
+
+    if (i === day) {
+      dayObj.events = generateEvents()
+    }
+
+    daysList.push(dayObj)
+  }
+
+  return daysList
+}
+
+export function generateEvents(): Event[] {
+  const event: Event = {
+    title: 'Chemistry Session',
+    schedule: '12:00-14:00',
+    participants: [
+      { image: '/assets/images/user-1.png' },
+      { image: '/assets/images/user-3.png' }
+    ],
+    numberOfParticipants: '2'
+  }
+
+  return [event]
+}
