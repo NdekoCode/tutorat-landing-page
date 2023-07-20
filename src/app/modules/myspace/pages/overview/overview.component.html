@@ -5,6 +5,13 @@
       [slidesPerPage]="4"
       [paginationPerSlide]="5"
     >
+      <h3 class="text-3xl font-bold text-blue" title>
+        Les tuteurs les mieux cotés
+      </h3>
+
+      <div class="slide" *ngFor="let item of topTutors">
+        <app-tutor-short-card [tutor]="item" />
+      </div>
     </app-tutor-carousel>
   </div>
   <div class="">
