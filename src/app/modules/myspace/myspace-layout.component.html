@@ -1,6 +1,6 @@
 <!-- This is an example component -->
 <div>
-  <div class="flex bg-space overflow-hidden fixed inset-0">
+  <div class="fixed inset-0 flex overflow-hidden bg-space">
     <app-sidebar />
     <div
       class="fixed inset-0 z-10 hidden bg-gray-900 opacity-50"
@@ -11,7 +11,7 @@
       class="relative flex flex-col w-full h-full min-h-screen overflow-y-auto lg:ml-64"
     >
       <app-navbar />
-      <main class="pt-16 flex flex-col h-full overflow-y-scroll">
+      <main class="flex flex-col h-full overflow-y-scroll">
         <div class="px-4 pt-6">
           <router-outlet></router-outlet>
         </div>
