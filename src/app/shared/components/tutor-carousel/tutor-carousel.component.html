@@ -1,6 +1,6 @@
 <div class="mt-5 mb-10 carousel-container">
   <div class="flex items-center justify-between w-full">
-    <h3 class="text-3xl font-bold text-blue">Les tuteurs les mieux cotés</h3>
+    <ng-content select="[title]"></ng-content>
     <div class="flex gap-x-1">
       <button (click)="prevSlide()" class="text-gray">
         <svg
@@ -37,8 +37,6 @@
     </div>
   </div>
   <div class="mr-20 carousel-item" [ngStyle]="carouselStyle">
-    <div class="slide" *ngFor="let item of items">
-      <app-tutor-short-card [tutor]="item" />
-    </div>
+    <ng-content></ng-content>
   </div>
 </div>
