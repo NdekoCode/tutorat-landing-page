@@ -7,6 +7,7 @@ import { AlertScreenComponent } from 'src/app/shared/components/alert-screen/ale
 import { AlertComponent } from 'src/app/shared/components/alert/alert.component'
 import { CenteredSkeletonComponent } from 'src/app/shared/components/centered-skeleton/centered-skeleton.component'
 import { ModalVideoComponent } from 'src/app/shared/components/modal-video/modal-video.component'
+import { RatingComponent } from 'src/app/shared/components/rating/rating.component'
 import { SocialCardComponent } from 'src/app/shared/components/social-card/social-card.component'
 import { TutorCarouselComponent } from 'src/app/shared/components/tutor-carousel/tutor-carousel.component'
 import { TutorShortCardComponent } from 'src/app/shared/components/tutor-short-card/tutor-short-card.component'
@@ -26,7 +27,8 @@ import { TutorCardComponent } from '../myspace/components/tutor-card/tutor-card.
     TutorShortCardComponent,
     TutorSuggestionCardComponent,
     SocialCardComponent,
-    DataTipDirective
+    DataTipDirective,
+    RatingComponent
   ],
   imports: [CommonModule, RouterModule, FormsModule],
 
@@ -44,7 +46,8 @@ import { TutorCardComponent } from '../myspace/components/tutor-card/tutor-card.
     TutorSuggestionCardComponent,
     SocialCardComponent,
     DataTipDirective,
-    FormsModule
+    FormsModule,
+    RatingComponent
   ]
 })
 export class SharedModule {}
