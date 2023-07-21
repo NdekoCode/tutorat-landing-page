@@ -28,9 +28,7 @@ export class OverviewComponent implements OnInit {
   }
   ngOnInit(): void {
     this.userId = this.activatedRoute.snapshot.params['id']
-    this.suggestionTutors = this.tutorService
-      .getTutors()
-      .filter((t) => t.address.city === 'Goma')
+    this.suggestionTutors = this.tutorService.getSuggestionTutors('Goma')
     this.topTutors = this.tutorService.getLimitTutor(20)
   }
 }
