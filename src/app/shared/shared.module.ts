@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { RouterModule } from '@angular/router'
 import { AlertScreenComponent } from 'src/app/shared/components/alert-screen/alert-screen.component'
 import { AlertComponent } from 'src/app/shared/components/alert/alert.component'
+import { CardTutorSuggestionComponent } from 'src/app/shared/components/card-tutor-suggestion/card-tutor-suggestion.component'
 import { CenteredSkeletonComponent } from 'src/app/shared/components/centered-skeleton/centered-skeleton.component'
 import { ModalVideoComponent } from 'src/app/shared/components/modal-video/modal-video.component'
 import { RatingComponent } from 'src/app/shared/components/rating/rating.component'
@@ -36,7 +37,8 @@ import { TextareaComponent } from './components/textarea/textarea.component'
     TutorSuggestionCardComponent,
     SocialCardComponent,
     DataTipDirective,
-    RatingComponent
+    RatingComponent,
+    CardTutorSuggestionComponent
   ],
   imports: [CommonModule, RouterModule, ReactiveFormsModule, FormsModule],
   exports: [
@@ -59,7 +61,9 @@ import { TextareaComponent } from './components/textarea/textarea.component'
     SocialCardComponent,
     DataTipDirective,
     FormsModule,
-    RatingComponent
+    RatingComponent,
+    RatingComponent,
+    CardTutorSuggestionComponent
   ]
 })
 export class SharedModule {}
