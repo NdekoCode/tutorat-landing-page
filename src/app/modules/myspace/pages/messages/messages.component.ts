@@ -9,13 +9,8 @@ import { TutorService } from '../../../../shared/services/tutor/tutor.service'
   styleUrls: ['./messages.component.scss']
 })
 export class MessagesComponent implements OnInit {
-  hideLayoutPart = false
   tutorsMessage: ITutor[] = []
   activatedTutor!: ITutor
-  contentLayoutHidden: string[] = [
-    MYSPACE_ROUTES.MESSAGES,
-    MYSPACE_ROUTES.CALENDAR
-  ]
   constructor(private tutorService: TutorService) {}
   ngOnInit(): void {
     this.tutorsMessage = this.tutorService.getLimitTutor(12)
