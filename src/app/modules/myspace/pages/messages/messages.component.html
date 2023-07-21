@@ -1,6 +1,4 @@
-<div
-  class="grid h-screen min-w-full grid-cols-3 overflow-y-auto border rounded"
->
+<div class="grid min-w-full grid-cols-3 overflow-y-auto border rounded">
   <div class="bg-white border-r border-gray-300">
     <div class="mx-3 my-3">
       <div class="relative text-gray-600 focus-within:text-gray-400">
@@ -31,20 +29,21 @@
 
     <aside class="flex w-full h-screen mt-8 overflow-y-auto bg-white">
       <ul class="w-full space-y-4">
-        <li>
+        <li *ngFor="let item of tutorsMessage">
           <button
+            (click)="getActivatedTutor(item)"
             class="flex justify-between w-full px-5 py-2 transition-colors duration-200 gap-x-2 hover:bg-gray-100 focus:outline-none"
           >
             <div class="flex items-center gap-x-2 lg:gap-x-3">
               <img
                 class="object-cover w-10 h-10 rounded-full"
-                src="/assets/images/tutor-img-1.png"
+                [src]="item.image"
                 alt=""
               />
 
               <div class="text-left rtl:text-right">
                 <h1 class="text-sm font-medium text-gray-700 capitalize">
-                  Sammy Mbabhazi
+                  {{ item.firstName + ' ' + item.lastName }}
                 </h1>
 
                 <p class="text-xs text-gray-500 400">Last Message</p>
@@ -56,135 +55,6 @@
             >
           </button>
         </li>
-        <li>
-          <button
-            class="flex items-center w-full px-5 py-2 transition-colors duration-200 :bg-gray-800 gap-x-2 hover:bg-gray-100 focus:outline-none"
-          >
-            <img
-              class="object-cover w-8 h-8 rounded-full"
-              src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&h=880&q=80"
-              alt=""
-            />
-
-            <div class="text-left rtl:text-right">
-              <h1 class="text-sm font-medium text-gray-700 capitalize">
-                arthur melo
-              </h1>
-
-              <p class="text-xs text-gray-500 400">Last Message</p>
-            </div>
-          </button>
-        </li>
-        <li>
-          <button
-            class="flex items-center w-full px-5 py-2 transition-colors duration-200 bg-gray-100 800 gap-x-2 focus:outline-none"
-          >
-            <div class="relative">
-              <img
-                class="object-cover w-8 h-8 rounded-full"
-                src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&h=764&q=100"
-                alt=""
-              />
-              <span
-                class="h-2 w-2 rounded-full bg-emerald-500 absolute right-0.5 ring-1 ring-white bottom-0"
-              ></span>
-            </div>
-
-            <div class="text-left rtl:text-right">
-              <h1 class="text-sm font-medium text-gray-700 capitalize">
-                Jane Doe
-              </h1>
-
-              <p class="text-xs text-gray-500 400">Last Message</p>
-            </div>
-          </button>
-        </li>
-        <li>
-          <button
-            class="flex items-center w-full px-5 py-2 transition-colors duration-200 :bg-gray-800 gap-x-2 hover:bg-gray-100 focus:outline-none"
-          >
-            <img
-              class="object-cover w-8 h-8 rounded-full"
-              src="https://images.unsplash.com/photo-1531590878845-12627191e687?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&h=764&q=80"
-              alt=""
-            />
-
-            <div class="text-left rtl:text-right">
-              <h1 class="text-sm font-medium text-gray-700 capitalize">
-                Amelia. Anderson
-              </h1>
-
-              <p class="text-xs text-gray-500 400">Last Message</p>
-            </div>
-          </button>
-        </li>
-        <li>
-          <button
-            class="flex items-center w-full px-5 py-2 transition-colors duration-200 :bg-gray-800 gap-x-2 hover:bg-gray-100 focus:outline-none"
-          >
-            <img
-              class="object-cover w-8 h-8 rounded-full"
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&h=687&q=80"
-              alt=""
-            />
-
-            <div class="text-left rtl:text-right">
-              <h1 class="text-sm font-medium text-gray-700 capitalize">
-                Joseph Gonzalez
-              </h1>
-
-              <p class="text-xs text-gray-500 400">Last Message</p>
-            </div>
-          </button>
-        </li>
-        <li>
-          <button
-            class="flex items-center w-full px-5 py-2 transition-colors duration-200 hover:bg-gray-100 :bg-gray-800 gap-x-2 focus:outline-none"
-          >
-            <div class="relative">
-              <img
-                class="object-cover w-8 h-8 rounded-full"
-                src="https://images.unsplash.com/photo-1488508872907-592763824245?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&h=1470&q=80"
-                alt=""
-              />
-              <span
-                class="h-2 w-2 rounded-full bg-emerald-500 absolute right-0.5 ring-1 ring-white bottom-0"
-              ></span>
-            </div>
-
-            <div class="text-left rtl:text-right">
-              <h1 class="text-sm font-medium text-gray-700 capitalize">
-                Olivia Wathan
-              </h1>
-
-              <p class="text-xs text-gray-500 400">Last Message</p>
-            </div>
-          </button>
-        </li>
-        <li>
-          <button
-            class="flex items-center w-full px-5 py-2 transition-colors duration-200 hover:bg-gray-100 :bg-gray-800 gap-x-2 focus:outline-none"
-          >
-            <div class="relative">
-              <img
-                class="object-cover w-8 h-8 rounded-full"
-                src="https://images.unsplash.com/photo-1608174386344-80898cec6beb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&h=687&q=80"
-                alt=""
-              />
-              <span
-                class="h-2 w-2 rounded-full bg-emerald-500 absolute right-0.5 ring-1 ring-white bottom-0"
-              ></span>
-            </div>
-
-            <div class="text-left rtl:text-right">
-              <h1 class="text-sm font-medium text-gray-700 capitalize">
-                Junior REIS
-              </h1>
-
-              <p class="text-xs text-gray-500 400">Last Message</p>
-            </div>
-          </button>
-        </li>
       </ul>
     </aside>
   </div>
@@ -193,10 +63,12 @@
       <div class="flex items-center py-3 pl-3 border-b border-gray-300">
         <img
           class="object-cover w-10 h-10 rounded-full"
-          src="https://images.pexels.com/photos/3777931/pexels-photo-3777931.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260"
+          [src]="activatedTutor.image"
           alt="username"
         />
-        <span class="block ml-2 text-base font-bold text-gray-600">Arick</span>
+        <span class="block ml-2 text-base font-bold text-gray-600">{{
+          activatedTutor.firstName + ' ' + activatedTutor.lastName
+        }}</span>
         <span class="ml-2 text-green-500 connected">
           <svg width="6" height="6">
             <circle cx="3" cy="3" r="3" fill="currentColor"></circle>
@@ -227,7 +99,12 @@
             <div class="chat chat-end">
               <div class="chat-image avatar">
                 <div class="w-6 rounded-full">
-                  <img src="/assets/images/user-2.png" alt="user" />
+                  <img
+                    [src]="activatedTutor.image"
+                    [alt]="
+                      activatedTutor.firstName + ' ' + activatedTutor.lastName
+                    "
+                  />
                 </div>
               </div>
               <div class="chat-bubble bg-green">I hate you!</div>
