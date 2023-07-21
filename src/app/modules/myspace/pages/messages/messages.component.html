@@ -1,4 +1,4 @@
-<div class="grid min-w-full grid-cols-3 overflow-y-auto border rounded">
+<div class="grid h-screen min-w-full grid-cols-3 border rounded">
   <div class="bg-white border-r border-gray-300">
     <div class="mx-3 my-3">
       <div class="relative text-gray-600 focus-within:text-gray-400">
@@ -58,8 +58,8 @@
       </ul>
     </aside>
   </div>
-  <div class="col-span-2 bg-white">
-    <div class="w-full">
+  <div class="col-span-2 overflow-y-auto bg-white">
+    <div class="relative flex flex-col w-full">
       <div class="flex items-center py-3 pl-3 border-b border-gray-300">
         <img
           class="object-cover w-10 h-10 rounded-full"
@@ -77,8 +77,7 @@
       </div>
       <div
         id="chat"
-        class="relative w-full p-10 overflow-y-auto"
-        style="height: 700px"
+        class="relative flex h-[450px] flex-col w-full max-h-screen p-10 overflow-y-auto"
         ref="toolbarChat"
       >
         <ul>
@@ -113,10 +112,9 @@
           </li>
         </ul>
       </div>
-
       <form
         method="POST"
-        class="flex items-center justify-between w-full px-3 py-3 border-t border-gray-300"
+        class="sticky bottom-0 left-0 right-0 flex items-center justify-between w-full px-3 py-3 mt-auto bg-white border-t border-gray-300"
       >
         <label for="image" class="outline-none focus:outline-none">
           <svg
