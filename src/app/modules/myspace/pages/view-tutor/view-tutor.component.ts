@@ -8,13 +8,10 @@ import { ActivatedRoute } from '@angular/router'
 })
 export class ViewTutorComponent implements OnInit {
   activeFragment!: string
+  userId!: number
   constructor(private route: ActivatedRoute) {}
   ngOnInit() {
-    this.route.fragment.subscribe((fragment) => {
-      if (fragment) {
-        document.querySelector('#' + fragment)?.scrollIntoView()
-      }
-    })
+    this.userId = this.route.snapshot.params['id']
   }
 
   isLinkActive(fragment: string): boolean {
