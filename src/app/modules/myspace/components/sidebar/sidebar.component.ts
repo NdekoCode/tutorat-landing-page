@@ -14,8 +14,14 @@ export class SidebarComponent {
   @Input() isActive: boolean = false
 
   @Output() isToggleActive = new EventEmitter<boolean>()
-  toggleActive() {
-    this.isActive = !this.isActive
-    this.isToggleActive.emit(this.isActive)
+  toggleActive(toggleValue: boolean | null = null) {
+    if (window.innerWidth <= 1024) {
+      if (toggleValue !== null) {
+        this.isActive = !!toggleValue
+      } else {
+        this.isActive = !this.isActive
+      }
+      this.isToggleActive.emit(this.isActive)
+    }
   }
 }

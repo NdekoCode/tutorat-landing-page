@@ -6,6 +6,7 @@ import { HeadermenuComponent } from './components/headermenu/headermenu.componen
 import { NavbarComponent } from './components/navbar/navbar.component'
 import { SidebarComponent } from './components/sidebar/sidebar.component'
 import { SidemenuComponent } from './components/sidemenu/sidemenu.component'
+import { SpaceContentComponent } from './components/space-content/space-content.component'
 import { MyspaceLayoutComponent } from './myspace-layout.component'
 import { MySpaceRoutingModule } from './myspace-routing.module'
 import { CalendarComponent } from './pages/calendar/calendar.component'
@@ -30,7 +31,8 @@ import { ViewTutorComponent } from './pages/view-tutor/view-tutor.component'
     NavbarComponent,
     SidebarComponent,
     FooterComponent,
-    ViewTutorComponent
+    ViewTutorComponent,
+    SpaceContentComponent
   ],
   imports: [CommonModule, MySpaceRoutingModule, SharedModule]
 })
