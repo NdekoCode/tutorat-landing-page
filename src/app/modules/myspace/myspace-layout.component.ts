@@ -9,4 +9,7 @@ export class MyspaceLayoutComponent {
   toggleActive() {
     this.isActive = !this.isActive
   }
+  onToggle(arg: Event | boolean) {
+    this.toggleActive()
+  }
 }
