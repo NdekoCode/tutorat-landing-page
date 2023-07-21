@@ -14,9 +14,7 @@
     >
       <app-navbar [isActive]="isActive" (isToggleActive)="onToggle($event)" />
       <main class="flex flex-col h-full overflow-y-scroll">
-        <div class="px-4 pt-6">
-          <router-outlet></router-outlet>
-        </div>
+        <router-outlet></router-outlet>
         <app-footer />
       </main>
     </div>
