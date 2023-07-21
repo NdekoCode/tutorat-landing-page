@@ -1,18 +1,27 @@
-<div class="w-full profile">
+<div class="w-full profile" *ngIf="tutor; else notUser">
   <div
     class="grid grid-flow-row-dense grid-cols-1 xl:justify-between xl:grid-cols-3"
   >
     <div class="xl:col-span-2">
       <div class="flex flex-wrap items-center gap-x-3 md:flex-nowrap">
         <figure>
-          <img src="/assets/images/tutor-img-2.png" alt="Tutor" />
+          <img
+            [src]="tutor.image"
+            [alt]="tutor.firstName + ' ' + tutor.lastName"
+          />
         </figure>
         <div class="">
           <div class="flex items-center mb-2 gap-x-1">
-            <h3 class="text-lg font-bold">Myrtle F.</h3>
+            <h3 class="text-lg font-bold">
+              {{ tutor.firstName + ' ' + tutor.lastName }}
+            </h3>
             <img
-              src="https://www.countryflagicons.com/FLAT/24/CD.png"
-              alt="CD"
+              [src]="
+                'https://www.countryflagicons.com/FLAT/24/' +
+                tutor.tutor.address.state +
+                '.png'
+              "
+              [alt]="tutor.tutor.address.state"
             />
             <svg
               class="w-4"
@@ -48,7 +57,10 @@
                   /></svg
               ></span>
               <p class="text-sm text-blue">
-                Enseigne: <span>Angalis</span>, <span>Math</span>
+                Enseigne:
+                <span *ngFor="let cour of tutor.tutor.specialization"
+                  >{{ cour }},</span
+                >
               </p>
             </div>
             <div class="flex items-center mb-1 gap-x-2">
@@ -493,7 +505,7 @@
 
       <div
         id="comments"
-        class="max-w-5xl p-5 mt-5 bg-white border border-gray-100 rounded-lg shadow-dui gap-x-4"
+        class="max-w-5xl p-5 pb-10 mt-5 bg-white border border-gray-100 rounded-lg shadow-dui gap-x-4"
       >
         <h5 class="mb-3 text-xl font-semibold text-dark">
           Ce que disent les élèves
@@ -548,7 +560,7 @@
           </div>
         </div>
         <div class="relative mt-10">
-          <div class="relative z-[1]">
+          <div class="">
             <div class="flex items-center space-x-2">
               <div class="flex self-start flex-shrink-0 cursor-pointer">
                 <img
@@ -644,7 +656,7 @@
               </div>
             </div>
           </div>
-          <div class="relative z-[1]">
+          <div class="">
             <div class="flex items-center space-x-2">
               <div class="flex self-start flex-shrink-0 cursor-pointer">
                 <img
@@ -741,7 +753,7 @@
             </div>
           </div>
           <div
-            class="absolute -bottom-14 flex-middle z-[2] py-5 inset-x-0 min-h-[120px] mask-content"
+            class="absolute -bottom-10 flex-middle z-[2] py-5 inset-x-0 min-h-[120px] mask-content"
           >
             <a href="#" class="w-full px-10 mx-10 text-white button bg-green"
               >Voir tous les commentaires</a
@@ -750,556 +762,698 @@
         </div>
       </div>
       <div
-        class="hidden xl:block xl:ml-3 max-w-[310px] p-5 bg-white rounded-xl w-full shadow-ui"
+        id="cv"
+        class="max-w-5xl p-5 mt-5 bg-white border border-gray-100 rounded-lg shadow-dui gap-x-4"
       >
-        <div class="">
-          <div class="flex items-center justify-between">
+        <div
+          class="flex items-center justify-between py-10 border-b border-gray-100"
+        >
+          <h5 class="mb-3 text-xl font-semibold text-dark">CV</h5>
+          <ul class="flex flex-wrap -mb-px tabs">
+            <li class="mr-2">
+              <a
+                [routerLink]="['/myspace/tutor/', 1]"
+                fragment="certification"
+                class="inline-block p-2 border-b-2 border-blue-600 rounded-t-lg tab-link text-dark active"
+                aria-current="page"
+              >
+                Expérience professionnelle
+              </a>
+            </li>
+            <li class="mr-2">
+              <a
+                [routerLink]="['/myspace/tutor/', 1]"
+                fragment="certification"
+                class="inline-block p-2 border-b-2 border-transparent rounded-t-lg tab-link hover:text-gray-600 hover:border-gray-300"
+              >
+                Certifications
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div
+          class="flex py-3 border-b border-gray-100 flex-items gap-x-10 text-gray"
+        >
+          <span>2019 — 2020</span>
+          <p class="flex flex-col">
+            <span class="inline-block mb-1">Croisières Silversea</span>
+            <span class="inline-block mb-1">Chef de rang</span>
+          </p>
+        </div>
+        <div
+          class="flex py-3 border-b border-gray-100 flex-items gap-x-10 text-gray"
+        >
+          <span>2015 — 2019</span>
+          <p class="flex flex-col">
+            <span class="inline-block mb-1">Croisières Disney</span>
             <span
-              tabindex="0"
-              class="text-base font-bold text-gray-800 focus:outline-none"
-              >Juillet 2023</span
+              >Formateur en excellence de service pour l'alimentation et les
+              boissons</span
             >
-            <div class="flex items-center">
-              <button
-                aria-label="calendar backward"
-                class="text-gray-800 focus:text-gray-400 hover:text-gray-400"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="icon icon-tabler icon-tabler-chevron-left"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+          </p>
+        </div>
+        <div
+          class="flex py-3 border-b border-gray-100 flex-items gap-x-10 text-gray"
+        >
+          <span>2014 — 2015</span>
+          <p class="flex flex-col">
+            <span class="inline-block mb-1">Hôtel Victoria & Alfred</span>
+            <span>Chef d'équipe</span>
+          </p>
+        </div>
+        <div
+          class="flex py-3 border-b border-gray-100 flex-items gap-x-10 text-gray"
+        >
+          <span>2014 — 2015</span>
+          <p class="flex flex-col">
+            <span class="inline-block mb-1">Southern Right Charters</span>
+            <span>Photographe et vidéographe de baleines</span>
+          </p>
+        </div>
+        <div class="flex py-3 flex-items gap-x-10 text-gray">
+          <span>2009 — 2014</span>
+          <p class="flex flex-col">
+            <span class="inline-block mb-1">Image Photo Services</span>
+            <span>Photographe et vidéaste de croisière </span>
+          </p>
+        </div>
+      </div>
+      <div class="">
+        <app-tutor-carousel
+          [items]="suggestionTutors"
+          [slidesPerPage]="4"
+          [paginationPerSlide]="3"
+        >
+          <h6 class="mb-3 text-xl font-bold" title>
+            Vous pourriez aussi aimer
+          </h6>
+          <div class="slide" *ngFor="let item of suggestionTutors">
+            <div class="w-36 min-h-[250px] flex-col-middle">
+              <div class="relative w-full mb-5 h-36">
+                <img
+                  class="object-cover w-full h-36 rounded-2xl"
+                  [src]="item.image"
+                  alt="Tutor"
+                />
+
+                <h6
+                  class="z-[3] absolute text-lg font-semibold text-gray-200 bottom-2"
                 >
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                  <polyline points="15 6 9 12 15 18" />
-                </svg>
-              </button>
-              <button
-                aria-label="calendar forward"
-                class="ml-3 text-gray-800 focus:text-gray-400 hover:text-gray-400"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="icon icon-tabler icon-tabler-chevron-right"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                  <polyline points="9 6 15 12 9 18" />
-                </svg>
-              </button>
+                  {{ item.firstName + ' ' + item.lastName }}
+                </h6>
+                <div
+                  class="w-full inset-0 h-12 left-0 top-[104px] absolute dark-light-gradient"
+                ></div>
+              </div>
+              <div class="w-full">
+                <div class="flex flex-col gap-y-2">
+                  <p
+                    class="flex items-center mb-2 text-sm leading-tight gap-x-1"
+                  >
+                    <svg
+                      width="12"
+                      height="12"
+                      viewBox="0 0 12 12"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M5.94697 1.1507C5.98139 1.06004 6.06894 1 6.16672 1C6.2645 1 6.35205 1.06004 6.38647 1.1507L7.57489 4.48843H10.9312C11.0295 4.48842 11.1174 4.54907 11.1515 4.64042C11.1855 4.73176 11.1585 4.83445 11.0838 4.89773L8.27921 7.20103L9.45308 10.6941C9.4853 10.7901 9.45111 10.8958 9.36853 10.9554C9.28595 11.015 9.17395 11.0149 9.09153 10.955L6.16625 8.82896L3.23956 10.955C3.15712 11.0137 3.04597 11.0132 2.96406 10.9538C2.88214 10.8945 2.848 10.7897 2.87942 10.6941L4.05329 7.20103L1.24822 4.89773C1.17351 4.83445 1.14651 4.73176 1.18057 4.64042C1.21462 4.54907 1.30252 4.48842 1.40082 4.48843H4.75761L5.94697 1.1507Z"
+                        fill="#FEC84B"
+                        stroke="#FEC84B"
+                      /></svg
+                    ><span class="font-medium text-slate-900">4.7</span>
+                    <span
+                      class="text-sm font-medium leading-tight text-slate-500"
+                      >(35)</span
+                    >
+                  </p>
+                  <p
+                    class="mb-2 text-sm font-normal leading-tight text-slate-900"
+                  >
+                    Certifié avec 5 ans d'expérience" en utilisant...
+                  </p>
+                  <p class="text-base leading-snug text-slate-900">
+                    {{ item.tutor.hourlyRate * 2300 }} FC / leçon
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="flex items-center justify-between pt-12 overflow-x-auto">
-            <table class="w-full" aria-describedby="Date time">
-              <thead>
-                <tr>
-                  <th>
-                    <div class="flex justify-center w-full">
-                      <p class="text-sm font-medium text-center text-gray-800">
-                        Lun
-                      </p>
-                    </div>
-                  </th>
-                  <th>
-                    <div class="flex justify-center w-full">
-                      <p class="text-sm font-medium text-center text-gray-800">
-                        Mar
-                      </p>
-                    </div>
-                  </th>
-                  <th>
-                    <div class="flex justify-center w-full">
-                      <p class="text-sm font-medium text-center text-gray-800">
-                        Mer
-                      </p>
-                    </div>
-                  </th>
-                  <th>
-                    <div class="flex justify-center w-full">
-                      <p class="text-sm font-medium text-center text-gray-800">
-                        Jeu
-                      </p>
-                    </div>
-                  </th>
-                  <th>
-                    <div class="flex justify-center w-full">
-                      <p class="text-sm font-medium text-center text-gray-800">
-                        Vend
-                      </p>
-                    </div>
-                  </th>
-                  <th>
-                    <div class="flex justify-center w-full">
-                      <p class="text-sm font-medium text-center text-gray-800">
-                        Sam
-                      </p>
-                    </div>
-                  </th>
-                  <th>
-                    <div class="flex justify-center w-full">
-                      <p class="text-sm font-medium text-center text-gray-800">
-                        Dim
-                      </p>
-                    </div>
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td class="pt-6">
-                    <div
-                      class="flex justify-center w-full px-2 py-2 cursor-pointer"
-                    ></div>
-                  </td>
-                  <td class="pt-6">
-                    <div
-                      class="flex justify-center w-full px-2 py-2 cursor-pointer"
-                    ></div>
-                  </td>
-                  <td>
-                    <div
-                      class="flex justify-center w-full px-2 py-2 cursor-pointer"
-                    ></div>
-                  </td>
-                  <td class="pt-6">
-                    <div
-                      class="flex justify-center w-full px-2 py-2 cursor-pointer"
-                    >
-                      <p class="text-sm font-medium text-gray-500">1</p>
-                    </div>
-                  </td>
-                  <td class="pt-6">
-                    <div
-                      class="flex justify-center w-full px-2 py-2 cursor-pointer"
-                    >
-                      <p class="text-sm font-medium text-gray-500">2</p>
-                    </div>
-                  </td>
-                  <td class="pt-6">
-                    <div
-                      class="flex justify-center w-full px-2 py-2 cursor-pointer"
-                    >
-                      <p class="text-sm text-gray-500">3</p>
-                    </div>
-                  </td>
-                  <td class="pt-6">
-                    <div
-                      class="flex justify-center w-full px-2 py-2 cursor-pointer"
-                    >
-                      <p class="text-sm text-gray-500">4</p>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div
-                      class="flex justify-center w-full px-2 py-2 cursor-pointer"
-                    >
-                      <p class="text-sm font-medium text-gray-500">5</p>
-                    </div>
-                  </td>
-                  <td>
-                    <div
-                      class="flex justify-center w-full px-2 py-2 cursor-pointer"
-                    >
-                      <p class="text-sm font-medium text-gray-500">6</p>
-                    </div>
-                  </td>
-                  <td>
-                    <div
-                      class="flex justify-center w-full px-2 py-2 cursor-pointer"
-                    >
-                      <p class="text-sm font-medium text-gray-500">7</p>
-                    </div>
-                  </td>
-                  <td>
-                    <div
-                      class="flex justify-center w-full px-2 py-2 cursor-pointer"
-                    >
-                      <p class="text-sm font-medium text-gray-500">8</p>
-                    </div>
-                  </td>
-                  <td>
-                    <div
-                      class="flex justify-center w-full px-2 py-2 cursor-pointer"
-                    >
-                      <p class="text-sm font-medium text-gray-500">9</p>
-                    </div>
-                  </td>
-                  <td>
-                    <div
-                      class="flex justify-center w-full px-2 py-2 cursor-pointer"
-                    >
-                      <p class="text-sm text-gray-500">10</p>
-                    </div>
-                  </td>
-                  <td>
-                    <div
-                      class="flex justify-center w-full px-2 py-2 cursor-pointer"
-                    >
-                      <p class="text-sm text-gray-500">11</p>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div
-                      class="flex justify-center w-full px-2 py-2 cursor-pointer"
-                    >
-                      <p class="text-sm font-medium text-gray-500">12</p>
-                    </div>
-                  </td>
-                  <td>
-                    <div
-                      class="flex justify-center w-full px-2 py-2 cursor-pointer"
-                    >
-                      <p class="text-sm font-medium text-gray-500">13</p>
-                    </div>
-                  </td>
-                  <td>
-                    <div
-                      class="flex justify-center w-full px-2 py-2 cursor-pointer"
-                    >
-                      <p class="text-sm font-medium text-gray-500">14</p>
-                    </div>
-                  </td>
-                  <td>
-                    <div
-                      class="flex justify-center w-full px-2 py-2 cursor-pointer"
-                    >
-                      <p class="text-sm font-medium text-gray-500">15</p>
-                    </div>
-                  </td>
-                  <td>
-                    <div
-                      class="flex justify-center w-full px-2 py-2 cursor-pointer"
-                    >
-                      <p class="text-sm font-medium text-gray-500">16</p>
-                    </div>
-                  </td>
-                  <td>
-                    <div
-                      class="flex justify-center w-full px-2 py-2 cursor-pointer"
-                    >
-                      <p class="text-sm text-gray-500">17</p>
-                    </div>
-                  </td>
-                  <td>
-                    <div
-                      class="flex justify-center w-full px-2 py-2 cursor-pointer"
-                    >
-                      <p class="text-sm text-gray-500">18</p>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div
-                      class="flex justify-center w-full px-2 py-2 cursor-pointer"
-                    >
-                      <p class="text-sm font-medium text-gray-500">19</p>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="w-full h-full">
-                      <div
-                        class="flex items-center justify-center w-full rounded-full cursor-pointer"
-                      >
-                        <a
-                          role="link"
-                          tabindex="0"
-                          class="flex items-center justify-center w-8 h-8 text-sm font-medium text-white bg-indigo-700 rounded-full bg-dark"
-                          >20</a
-                        >
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                    <div
-                      class="flex justify-center w-full px-2 py-2 cursor-pointer"
-                    >
-                      <p class="text-sm font-medium text-gray-500">21</p>
-                    </div>
-                  </td>
-                  <td>
-                    <div
-                      class="flex justify-center w-full px-2 py-2 cursor-pointer"
-                    >
-                      <p class="text-sm font-medium text-gray-500">22</p>
-                    </div>
-                  </td>
-                  <td>
-                    <div
-                      class="flex justify-center w-full px-2 py-2 cursor-pointer"
-                    >
-                      <p class="text-sm font-medium text-gray-500">23</p>
-                    </div>
-                  </td>
-                  <td>
-                    <div
-                      class="flex justify-center w-full px-2 py-2 cursor-pointer"
-                    >
-                      <p class="text-sm text-gray-500">24</p>
-                    </div>
-                  </td>
-                  <td>
-                    <div
-                      class="flex justify-center w-full px-2 py-2 cursor-pointer"
-                    >
-                      <p class="text-sm text-gray-500">25</p>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div
-                      class="flex justify-center w-full px-2 py-2 cursor-pointer"
-                    >
-                      <p class="text-sm font-medium text-gray-500">26</p>
-                    </div>
-                  </td>
-                  <td>
-                    <div
-                      class="flex justify-center w-full px-2 py-2 cursor-pointer"
-                    >
-                      <p class="text-sm font-medium text-gray-500">27</p>
-                    </div>
-                  </td>
-                  <td>
-                    <div
-                      class="flex justify-center w-full px-2 py-2 cursor-pointer"
-                    >
-                      <p class="text-sm font-medium text-gray-500">28</p>
-                    </div>
-                  </td>
-                  <td>
-                    <div
-                      class="flex justify-center w-full px-2 py-2 cursor-pointer"
-                    >
-                      <p class="text-sm font-medium text-gray-500">29</p>
-                    </div>
-                  </td>
-                  <td>
-                    <div
-                      class="flex justify-center w-full px-2 py-2 cursor-pointer"
-                    >
-                      <p class="text-sm font-medium text-gray-500">30</p>
-                    </div>
-                  </td>
-                  <td>
-                    <div
-                      class="flex justify-center w-full px-2 py-2 cursor-pointer"
-                    >
-                      <p class="text-sm font-medium text-gray-500">31</p>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <div class="mt-10 rounded-b">
-          <div class="mb-3 rounded-lg relative h-[200px] w-full bg-gray-900">
+        </app-tutor-carousel>
+      </div>
+    </div>
+
+    <div
+      class="hidden xl:block xl:ml-3 max-w-[310px] p-5 bg-white rounded-xl w-full shadow-ui"
+    >
+      <div class="">
+        <div class="flex items-center justify-between">
+          <span
+            tabindex="0"
+            class="text-base font-bold text-gray-800 focus:outline-none"
+            >Juillet 2023</span
+          >
+          <div class="flex items-center">
             <button
-              class="absolute -translate-x-1/2 -translate-y-1/2 rounded-full cursor-pointer flex-middle top-1/2 left-1/2 flex-middlebutton"
+              aria-label="calendar backward"
+              class="text-gray-800 focus:text-gray-400 hover:text-gray-400"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="w-8 h-8 blob"
-                viewBox="0 0 80 80"
+                class="icon icon-tabler icon-tabler-chevron-left"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
                 fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
               >
-                <g filter="url(#filter0_b_31_2145)">
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M40 80C62.0914 80 80 62.0914 80 40C80 17.9086 62.0914 0 40 0C17.9086 0 0 17.9086 0 40C0 62.0914 17.9086 80 40 80ZM33.75 54.6721L56.25 42.096C57.9167 41.1645 57.9167 38.8355 56.25 37.904L33.75 25.3279C32.0833 24.3963 30 25.5608 30 27.4239L30 52.5761C30 54.4392 32.0833 55.6037 33.75 54.6721Z"
-                    fill="#FFFDF4"
-                  />
-                </g>
-                <defs>
-                  <filter
-                    id="filter0_b_31_2145"
-                    x="-16"
-                    y="-16"
-                    width="112"
-                    height="112"
-                    filterUnits="userSpaceOnUse"
-                    color-interpolation-filters="sRGB"
-                  >
-                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                    <feGaussianBlur in="BackgroundImageFix" stdDeviation="8" />
-                    <feComposite
-                      in2="SourceAlpha"
-                      operator="in"
-                      result="effect1_backgroundBlur_31_2145"
-                    />
-                    <feBlend
-                      mode="normal"
-                      in="SourceGraphic"
-                      in2="effect1_backgroundBlur_31_2145"
-                      result="shape"
-                    />
-                  </filter>
-                </defs>
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <polyline points="15 6 9 12 15 18" />
+              </svg>
+            </button>
+            <button
+              aria-label="calendar forward"
+              class="ml-3 text-gray-800 focus:text-gray-400 hover:text-gray-400"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-chevron-right"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <polyline points="9 6 15 12 9 18" />
               </svg>
             </button>
           </div>
-          <div class="">
-            <div class="flex items-center justify-between gap-x-2">
-              <div class="flex-col-middle">
-                <p class="flex items-center mb-3 gap-x-1">
-                  <svg
-                    class="w-4 h-4"
-                    viewBox="0 0 12 12"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
+        </div>
+        <div class="flex items-center justify-between pt-12 overflow-x-auto">
+          <table class="w-full" aria-describedby="Date time">
+            <thead>
+              <tr>
+                <th>
+                  <div class="flex justify-center w-full">
+                    <p class="text-sm font-medium text-center text-gray-800">
+                      Lun
+                    </p>
+                  </div>
+                </th>
+                <th>
+                  <div class="flex justify-center w-full">
+                    <p class="text-sm font-medium text-center text-gray-800">
+                      Mar
+                    </p>
+                  </div>
+                </th>
+                <th>
+                  <div class="flex justify-center w-full">
+                    <p class="text-sm font-medium text-center text-gray-800">
+                      Mer
+                    </p>
+                  </div>
+                </th>
+                <th>
+                  <div class="flex justify-center w-full">
+                    <p class="text-sm font-medium text-center text-gray-800">
+                      Jeu
+                    </p>
+                  </div>
+                </th>
+                <th>
+                  <div class="flex justify-center w-full">
+                    <p class="text-sm font-medium text-center text-gray-800">
+                      Vend
+                    </p>
+                  </div>
+                </th>
+                <th>
+                  <div class="flex justify-center w-full">
+                    <p class="text-sm font-medium text-center text-gray-800">
+                      Sam
+                    </p>
+                  </div>
+                </th>
+                <th>
+                  <div class="flex justify-center w-full">
+                    <p class="text-sm font-medium text-center text-gray-800">
+                      Dim
+                    </p>
+                  </div>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="pt-6">
+                  <div
+                    class="flex justify-center w-full px-2 py-2 cursor-pointer"
+                  ></div>
+                </td>
+                <td class="pt-6">
+                  <div
+                    class="flex justify-center w-full px-2 py-2 cursor-pointer"
+                  ></div>
+                </td>
+                <td>
+                  <div
+                    class="flex justify-center w-full px-2 py-2 cursor-pointer"
+                  ></div>
+                </td>
+                <td class="pt-6">
+                  <div
+                    class="flex justify-center w-full px-2 py-2 cursor-pointer"
                   >
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M5.94697 1.1507C5.98139 1.06004 6.06894 1 6.16672 1C6.2645 1 6.35205 1.06004 6.38647 1.1507L7.57489 4.48843H10.9312C11.0295 4.48842 11.1174 4.54907 11.1515 4.64042C11.1855 4.73176 11.1585 4.83445 11.0838 4.89773L8.27921 7.20103L9.45308 10.6941C9.4853 10.7901 9.45111 10.8958 9.36853 10.9554C9.28595 11.015 9.17395 11.0149 9.09153 10.955L6.16625 8.82896L3.23956 10.955C3.15712 11.0137 3.04597 11.0132 2.96406 10.9538C2.88214 10.8945 2.848 10.7897 2.87942 10.6941L4.05329 7.20103L1.24822 4.89773C1.17351 4.83445 1.14651 4.73176 1.18057 4.64042C1.21462 4.54907 1.30252 4.48842 1.40082 4.48843H4.75761L5.94697 1.1507Z"
-                      fill="#C4951B"
-                      stroke="#C4951B"
-                    />
-                  </svg>
-                  <span class="text-xl font-medium">5</span>
-                </p>
-                <p class="text-xs">
-                  <span class="mr-2 font-medium">22</span>
-                  <span class="text-gray">commentaires</span>
-                </p>
-              </div>
-              <div class="flex-col-middle">
-                <p class="mb-2">
-                  <span class="text-xl font-medium">17 </span>
-                  <span class="text-sm">$</span>
-                </p>
-                <p class="text-xs text-gray">50-min leçon</p>
-              </div>
-            </div>
-          </div>
-          <div class="mt-10 flex-col-middle gap-y-2">
-            <a
-              href="/myspace/new-sessions"
-              class="w-full normal-case btn btn-success hover:bg-green-900 bg-green"
+                    <p class="text-sm font-medium text-gray-500">1</p>
+                  </div>
+                </td>
+                <td class="pt-6">
+                  <div
+                    class="flex justify-center w-full px-2 py-2 cursor-pointer"
+                  >
+                    <p class="text-sm font-medium text-gray-500">2</p>
+                  </div>
+                </td>
+                <td class="pt-6">
+                  <div
+                    class="flex justify-center w-full px-2 py-2 cursor-pointer"
+                  >
+                    <p class="text-sm text-gray-500">3</p>
+                  </div>
+                </td>
+                <td class="pt-6">
+                  <div
+                    class="flex justify-center w-full px-2 py-2 cursor-pointer"
+                  >
+                    <p class="text-sm text-gray-500">4</p>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div
+                    class="flex justify-center w-full px-2 py-2 cursor-pointer"
+                  >
+                    <p class="text-sm font-medium text-gray-500">5</p>
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="flex justify-center w-full px-2 py-2 cursor-pointer"
+                  >
+                    <p class="text-sm font-medium text-gray-500">6</p>
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="flex justify-center w-full px-2 py-2 cursor-pointer"
+                  >
+                    <p class="text-sm font-medium text-gray-500">7</p>
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="flex justify-center w-full px-2 py-2 cursor-pointer"
+                  >
+                    <p class="text-sm font-medium text-gray-500">8</p>
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="flex justify-center w-full px-2 py-2 cursor-pointer"
+                  >
+                    <p class="text-sm font-medium text-gray-500">9</p>
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="flex justify-center w-full px-2 py-2 cursor-pointer"
+                  >
+                    <p class="text-sm text-gray-500">10</p>
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="flex justify-center w-full px-2 py-2 cursor-pointer"
+                  >
+                    <p class="text-sm text-gray-500">11</p>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div
+                    class="flex justify-center w-full px-2 py-2 cursor-pointer"
+                  >
+                    <p class="text-sm font-medium text-gray-500">12</p>
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="flex justify-center w-full px-2 py-2 cursor-pointer"
+                  >
+                    <p class="text-sm font-medium text-gray-500">13</p>
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="flex justify-center w-full px-2 py-2 cursor-pointer"
+                  >
+                    <p class="text-sm font-medium text-gray-500">14</p>
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="flex justify-center w-full px-2 py-2 cursor-pointer"
+                  >
+                    <p class="text-sm font-medium text-gray-500">15</p>
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="flex justify-center w-full px-2 py-2 cursor-pointer"
+                  >
+                    <p class="text-sm font-medium text-gray-500">16</p>
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="flex justify-center w-full px-2 py-2 cursor-pointer"
+                  >
+                    <p class="text-sm text-gray-500">17</p>
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="flex justify-center w-full px-2 py-2 cursor-pointer"
+                  >
+                    <p class="text-sm text-gray-500">18</p>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div
+                    class="flex justify-center w-full px-2 py-2 cursor-pointer"
+                  >
+                    <p class="text-sm font-medium text-gray-500">19</p>
+                  </div>
+                </td>
+                <td>
+                  <div class="w-full h-full">
+                    <div
+                      class="flex items-center justify-center w-full rounded-full cursor-pointer"
+                    >
+                      <a
+                        role="link"
+                        tabindex="0"
+                        class="flex items-center justify-center w-8 h-8 text-sm font-medium text-white bg-indigo-700 rounded-full bg-dark"
+                        >20</a
+                      >
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="flex justify-center w-full px-2 py-2 cursor-pointer"
+                  >
+                    <p class="text-sm font-medium text-gray-500">21</p>
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="flex justify-center w-full px-2 py-2 cursor-pointer"
+                  >
+                    <p class="text-sm font-medium text-gray-500">22</p>
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="flex justify-center w-full px-2 py-2 cursor-pointer"
+                  >
+                    <p class="text-sm font-medium text-gray-500">23</p>
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="flex justify-center w-full px-2 py-2 cursor-pointer"
+                  >
+                    <p class="text-sm text-gray-500">24</p>
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="flex justify-center w-full px-2 py-2 cursor-pointer"
+                  >
+                    <p class="text-sm text-gray-500">25</p>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div
+                    class="flex justify-center w-full px-2 py-2 cursor-pointer"
+                  >
+                    <p class="text-sm font-medium text-gray-500">26</p>
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="flex justify-center w-full px-2 py-2 cursor-pointer"
+                  >
+                    <p class="text-sm font-medium text-gray-500">27</p>
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="flex justify-center w-full px-2 py-2 cursor-pointer"
+                  >
+                    <p class="text-sm font-medium text-gray-500">28</p>
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="flex justify-center w-full px-2 py-2 cursor-pointer"
+                  >
+                    <p class="text-sm font-medium text-gray-500">29</p>
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="flex justify-center w-full px-2 py-2 cursor-pointer"
+                  >
+                    <p class="text-sm font-medium text-gray-500">30</p>
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="flex justify-center w-full px-2 py-2 cursor-pointer"
+                  >
+                    <p class="text-sm font-medium text-gray-500">31</p>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="mt-10 rounded-b">
+        <div class="mb-3 rounded-lg relative h-[200px] w-full bg-gray-900">
+          <button
+            class="absolute -translate-x-1/2 -translate-y-1/2 rounded-full cursor-pointer flex-middle top-1/2 left-1/2 flex-middlebutton"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-8 h-8 blob"
+              viewBox="0 0 80 80"
+              fill="none"
             >
-              Réserver une leçon d'essai
-            </a>
-            <a
-              href="/myspace/new-sessions"
-              class="pl-5 !justify-start w-full normal-case bg-white button-icon button text-green border-green hover:bg-green-900 hover:text-white"
-            >
-              <svg
-                class="w-4 h-4"
-                viewBox="0 0 16 13"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
+              <g filter="url(#filter0_b_31_2145)">
                 <path
-                  d="M15.0948 0.763672H0.905199C0.665003 0.769975 0.436577 0.869032 0.267819 1.04007C0.0990607 1.21111 0.00307886 1.44084 0 1.6811L0 12.0787C0.00307886 12.3189 0.0990607 12.5486 0.267819 12.7197C0.436577 12.8907 0.665003 12.9898 0.905199 12.9961H15.0948C15.335 12.9898 15.5634 12.8907 15.7322 12.7197C15.9009 12.5486 15.9969 12.3189 16 12.0787V1.69334C16.0001 1.45095 15.9055 1.21812 15.7364 1.04446C15.5673 0.870805 15.3371 0.77005 15.0948 0.763672ZM14.3486 2.21933L8 8.06642L1.65138 2.21933H14.3486ZM1.40673 3.78508L7.57187 9.55878C7.69807 9.66648 7.85855 9.72564 8.02446 9.72564C8.19038 9.72564 8.35086 9.66648 8.47706 9.55878L14.5933 3.82178V11.5894H1.40673V3.78508Z"
-                  fill="currentColor"
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M40 80C62.0914 80 80 62.0914 80 40C80 17.9086 62.0914 0 40 0C17.9086 0 0 17.9086 0 40C0 62.0914 17.9086 80 40 80ZM33.75 54.6721L56.25 42.096C57.9167 41.1645 57.9167 38.8355 56.25 37.904L33.75 25.3279C32.0833 24.3963 30 25.5608 30 27.4239L30 52.5761C30 54.4392 32.0833 55.6037 33.75 54.6721Z"
+                  fill="#FFFDF4"
                 />
-              </svg>
-
-              <span>Envoyer un message</span>
-            </a>
-            <a
-              href="/myspace/new-sessions"
-              class="pl-5 !justify-start w-full normal-case bg-white button-icon button text-green border-green hover:bg-green-900 hover:text-white"
-            >
-              <svg
-                class="w-4 h-4"
-                viewBox="0 0 16 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M2.37691 2.35589C4.05513 1.20211 6.1618 1.71589 7.3218 3.08478L7.99913 3.88389L8.67735 3.08389C9.83913 1.715 11.944 1.19678 13.6196 2.35411L13.6222 2.35589C14.5085 2.963 15.0694 4.01189 15.1085 5.11144C15.1529 6.37189 14.5485 7.85367 13.2125 9.58167C11.9867 11.1657 10.2169 12.8688 8.00091 14.6812C5.78491 12.8679 4.01513 11.1657 2.79024 9.58167C1.45602 7.85455 0.848909 6.371 0.890687 5.11055C0.929798 4.011 1.49158 2.963 2.37691 2.355V2.35589Z"
-                  stroke="currentColor"
-                  stroke-width="1.77778"
-                />
-              </svg>
-              <span>Enregistrer dans ma liste</span>
-            </a>
-          </div>
-          <div class="mt-10 flex-col-middle gap-y-3">
-            <div class="flex items-center gap-x-3">
-              <svg
-                class="w-6 h-6"
-                viewBox="0 0 16 11"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M14.8178 0.879797L14.9068 0.883797C15.0969 0.865905 15.2881 0.902787 15.4578 0.990086C15.6276 1.07739 15.7688 1.21145 15.8649 1.37645C15.9609 1.54145 16.0076 1.73048 15.9997 1.92121C15.9917 2.11194 15.9293 2.2964 15.8198 2.4528L15.8178 5.8798C15.8175 6.13468 15.7199 6.37983 15.545 6.56517C15.37 6.7505 15.1309 6.86203 14.8764 6.87697C14.622 6.89191 14.3714 6.80912 14.176 6.64553C13.9805 6.48194 13.8549 6.24989 13.8248 5.9968L13.8178 5.8798V4.5648L9.67781 8.9038C9.50467 9.08518 9.2697 9.19489 9.01947 9.21119C8.76924 9.22749 8.52202 9.14919 8.32681 8.9918L8.23081 8.9038L5.77281 6.3278L1.72281 10.5698C1.55475 10.7458 1.32828 10.8545 1.08583 10.8754C0.843392 10.8964 0.601616 10.8283 0.405812 10.6838L0.309812 10.6038C0.133552 10.4357 0.0247114 10.209 0.00372158 9.96634C-0.0172683 9.72367 0.0510355 9.48168 0.195812 9.2858L0.275812 9.1898L5.04881 4.1898C5.222 4.00814 5.45718 3.89824 5.70764 3.88194C5.9581 3.86564 6.20553 3.94412 6.40081 4.1018L6.49581 4.1898L8.95381 6.7648L12.6618 2.8798H10.9998C10.7549 2.87976 10.5185 2.78984 10.3354 2.62708C10.1524 2.46432 10.0355 2.24005 10.0068 1.9968L9.99981 1.8798C9.99984 1.63486 10.0898 1.39846 10.2525 1.21542C10.4153 1.03239 10.6396 0.915454 10.8828 0.886797L10.9998 0.879797H14.8178Z"
-                  fill="#E34192"
-                />
-              </svg>
-
-              <p class="text-sm">
-                1 leçon réservée dans les dernières 48 heures
+              </g>
+              <defs>
+                <filter
+                  id="filter0_b_31_2145"
+                  x="-16"
+                  y="-16"
+                  width="112"
+                  height="112"
+                  filterUnits="userSpaceOnUse"
+                  color-interpolation-filters="sRGB"
+                >
+                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                  <feGaussianBlur in="BackgroundImageFix" stdDeviation="8" />
+                  <feComposite
+                    in2="SourceAlpha"
+                    operator="in"
+                    result="effect1_backgroundBlur_31_2145"
+                  />
+                  <feBlend
+                    mode="normal"
+                    in="SourceGraphic"
+                    in2="effect1_backgroundBlur_31_2145"
+                    result="shape"
+                  />
+                </filter>
+              </defs>
+            </svg>
+          </button>
+        </div>
+        <div class="">
+          <div class="flex items-center justify-between gap-x-2">
+            <div class="flex-col-middle">
+              <p class="flex items-center mb-3 gap-x-1">
+                <svg
+                  class="w-4 h-4"
+                  viewBox="0 0 12 12"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M5.94697 1.1507C5.98139 1.06004 6.06894 1 6.16672 1C6.2645 1 6.35205 1.06004 6.38647 1.1507L7.57489 4.48843H10.9312C11.0295 4.48842 11.1174 4.54907 11.1515 4.64042C11.1855 4.73176 11.1585 4.83445 11.0838 4.89773L8.27921 7.20103L9.45308 10.6941C9.4853 10.7901 9.45111 10.8958 9.36853 10.9554C9.28595 11.015 9.17395 11.0149 9.09153 10.955L6.16625 8.82896L3.23956 10.955C3.15712 11.0137 3.04597 11.0132 2.96406 10.9538C2.88214 10.8945 2.848 10.7897 2.87942 10.6941L4.05329 7.20103L1.24822 4.89773C1.17351 4.83445 1.14651 4.73176 1.18057 4.64042C1.21462 4.54907 1.30252 4.48842 1.40082 4.48843H4.75761L5.94697 1.1507Z"
+                    fill="#C4951B"
+                    stroke="#C4951B"
+                  />
+                </svg>
+                <span class="text-xl font-medium">5</span>
+              </p>
+              <p class="text-xs">
+                <span class="mr-2 font-medium">22</span>
+                <span class="text-gray">commentaires</span>
               </p>
             </div>
-            <div class="flex items-center gap-x-3">
-              <svg
-                class="w-5 h-5"
-                viewBox="0 0 10 11"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M5 9.87988C7.20914 9.87988 9 8.08902 9 5.87988C9 3.67074 7.20914 1.87988 5 1.87988C2.79086 1.87988 1 3.67074 1 5.87988C1 8.08902 2.79086 9.87988 5 9.87988Z"
-                  stroke="#00909A"
-                  stroke-width="2"
-                />
-              </svg>
-
-              <p class="text-sm">Répond généralement dans l'heure</p>
+            <div class="flex-col-middle">
+              <p class="mb-2">
+                <span class="text-xl font-medium">17 </span>
+                <span class="text-sm">$</span>
+              </p>
+              <p class="text-xs text-gray">50-min leçon</p>
             </div>
-
-            <div
-              class="flex items-center p-3 mt-5 border border-gray-100 shadow rounded-xl gap-x-3 shadow-ui shadow-gray-100"
+          </div>
+        </div>
+        <div class="mt-10 flex-col-middle gap-y-2">
+          <a
+            href="/myspace/new-sessions"
+            class="w-full normal-case btn btn-success hover:bg-green-900 bg-green"
+          >
+            Réserver une leçon d'essai
+          </a>
+          <a
+            href="/myspace/new-sessions"
+            class="pl-5 !justify-start w-full normal-case bg-white button-icon button text-green border-green hover:bg-green-900 hover:text-white"
+          >
+            <svg
+              class="w-4 h-4"
+              viewBox="0 0 16 13"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <svg
-                class="flex-none w-8 h-8"
-                viewBox="0 0 40 41"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M20.0001 0.879956C21.1819 0.874291 22.3419 1.19899 23.349 1.81741C24.3562 2.43584 25.1705 3.32339 25.7001 4.37996C25.8724 4.72134 26.1613 4.98972 26.5144 5.13648C26.8675 5.28323 27.2616 5.29866 27.6251 5.17996C28.7492 4.80574 29.9554 4.75256 31.1082 5.02638C32.2609 5.3002 33.3143 5.89018 34.1501 6.72996C34.9899 7.56571 35.5798 8.61917 35.8536 9.77187C36.1275 10.9246 36.0743 12.1308 35.7001 13.255C35.5814 13.6185 35.5968 14.0125 35.7435 14.3656C35.8903 14.7187 36.1587 15.0076 36.5001 15.18C37.5566 15.7096 38.4442 16.5239 39.0626 17.531C39.681 18.5382 40.0057 19.6981 40.0001 20.88C40.0057 22.0618 39.681 23.2217 39.0626 24.2289C38.4442 25.236 37.5566 26.0503 36.5001 26.58C36.1587 26.7523 35.8903 27.0412 35.7435 27.3943C35.5968 27.7474 35.5814 28.1414 35.7001 28.505C36.0743 29.6291 36.1275 30.8353 35.8536 31.988C35.5798 33.1407 34.9899 34.1942 34.1501 35.03C33.3143 35.8697 32.2609 36.4597 31.1082 36.7335C29.9554 37.0074 28.7492 36.9542 27.6251 36.58C27.2616 36.4613 26.8675 36.4767 26.5144 36.6234C26.1613 36.7702 25.8724 37.0386 25.7001 37.38C25.1705 38.4365 24.3562 39.3241 23.349 39.9425C22.3419 40.5609 21.1819 40.8856 20.0001 40.88C18.8182 40.8856 17.6583 40.5609 16.6511 39.9425C15.644 39.3241 14.8297 38.4365 14.3001 37.38C14.1278 37.0386 13.8389 36.7702 13.4857 36.6234C13.1326 36.4767 12.7386 36.4613 12.3751 36.58C11.2509 36.9542 10.0447 37.0074 8.89199 36.7335C7.73928 36.4597 6.68582 35.8697 5.85007 35.03C5.01029 34.1942 4.42032 33.1407 4.1465 31.988C3.87267 30.8353 3.92586 29.6291 4.30007 28.505C4.41877 28.1414 4.40335 27.7474 4.25659 27.3943C4.10984 27.0412 3.84146 26.7523 3.50007 26.58C2.44351 26.0503 1.55596 25.236 0.93753 24.2289C0.319103 23.2217 -0.00559152 22.0618 7.2865e-05 20.88C-0.00559152 19.6981 0.319103 18.5382 0.93753 17.531C1.55596 16.5239 2.44351 15.7096 3.50007 15.18C3.84146 15.0076 4.10984 14.7187 4.25659 14.3656C4.40335 14.0125 4.41877 13.6185 4.30007 13.255C3.92586 12.1308 3.87267 10.9246 4.1465 9.77187C4.42032 8.61917 5.01029 7.56571 5.85007 6.72996C6.68582 5.89018 7.73928 5.3002 8.89199 5.02638C10.0447 4.75256 11.2509 4.80574 12.3751 5.17996C12.7386 5.29866 13.1326 5.28323 13.4857 5.13648C13.8389 4.98972 14.1278 4.72134 14.3001 4.37996C14.8297 3.32339 15.644 2.43584 16.6511 1.81741C17.6583 1.19899 18.8182 0.874291 20.0001 0.879956Z"
-                  fill="#E4EAFB"
-                />
-                <path
-                  d="M18 19.3799L20 14.8799L22 19.3799L27 19.8799L23.294 23.1149L24.5 27.8799L20 25.5859L15.5 27.8799L16.706 23.1149L13 19.8799L18 19.3799Z"
-                  stroke="#6483DD"
-                  stroke-width="2"
-                  stroke-linejoin="round"
-                />
-              </svg>
+              <path
+                d="M15.0948 0.763672H0.905199C0.665003 0.769975 0.436577 0.869032 0.267819 1.04007C0.0990607 1.21111 0.00307886 1.44084 0 1.6811L0 12.0787C0.00307886 12.3189 0.0990607 12.5486 0.267819 12.7197C0.436577 12.8907 0.665003 12.9898 0.905199 12.9961H15.0948C15.335 12.9898 15.5634 12.8907 15.7322 12.7197C15.9009 12.5486 15.9969 12.3189 16 12.0787V1.69334C16.0001 1.45095 15.9055 1.21812 15.7364 1.04446C15.5673 0.870805 15.3371 0.77005 15.0948 0.763672ZM14.3486 2.21933L8 8.06642L1.65138 2.21933H14.3486ZM1.40673 3.78508L7.57187 9.55878C7.69807 9.66648 7.85855 9.72564 8.02446 9.72564C8.19038 9.72564 8.35086 9.66648 8.47706 9.55878L14.5933 3.82178V11.5894H1.40673V3.78508Z"
+                fill="currentColor"
+              />
+            </svg>
 
-              <div class="">
-                <h6 class="mb-2 text-base font-semibold">Populaire</h6>
+            <span>Envoyer un message</span>
+          </a>
+          <a
+            href="/myspace/new-sessions"
+            class="pl-5 !justify-start w-full normal-case bg-white button-icon button text-green border-green hover:bg-green-900 hover:text-white"
+          >
+            <svg
+              class="w-4 h-4"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M2.37691 2.35589C4.05513 1.20211 6.1618 1.71589 7.3218 3.08478L7.99913 3.88389L8.67735 3.08389C9.83913 1.715 11.944 1.19678 13.6196 2.35411L13.6222 2.35589C14.5085 2.963 15.0694 4.01189 15.1085 5.11144C15.1529 6.37189 14.5485 7.85367 13.2125 9.58167C11.9867 11.1657 10.2169 12.8688 8.00091 14.6812C5.78491 12.8679 4.01513 11.1657 2.79024 9.58167C1.45602 7.85455 0.848909 6.371 0.890687 5.11055C0.929798 4.011 1.49158 2.963 2.37691 2.355V2.35589Z"
+                stroke="currentColor"
+                stroke-width="1.77778"
+              />
+            </svg>
+            <span>Enregistrer dans ma liste</span>
+          </a>
+        </div>
+        <div class="mt-10 flex-col-middle gap-y-3">
+          <div class="flex items-center gap-x-3">
+            <svg
+              class="w-6 h-6"
+              viewBox="0 0 16 11"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M14.8178 0.879797L14.9068 0.883797C15.0969 0.865905 15.2881 0.902787 15.4578 0.990086C15.6276 1.07739 15.7688 1.21145 15.8649 1.37645C15.9609 1.54145 16.0076 1.73048 15.9997 1.92121C15.9917 2.11194 15.9293 2.2964 15.8198 2.4528L15.8178 5.8798C15.8175 6.13468 15.7199 6.37983 15.545 6.56517C15.37 6.7505 15.1309 6.86203 14.8764 6.87697C14.622 6.89191 14.3714 6.80912 14.176 6.64553C13.9805 6.48194 13.8549 6.24989 13.8248 5.9968L13.8178 5.8798V4.5648L9.67781 8.9038C9.50467 9.08518 9.2697 9.19489 9.01947 9.21119C8.76924 9.22749 8.52202 9.14919 8.32681 8.9918L8.23081 8.9038L5.77281 6.3278L1.72281 10.5698C1.55475 10.7458 1.32828 10.8545 1.08583 10.8754C0.843392 10.8964 0.601616 10.8283 0.405812 10.6838L0.309812 10.6038C0.133552 10.4357 0.0247114 10.209 0.00372158 9.96634C-0.0172683 9.72367 0.0510355 9.48168 0.195812 9.2858L0.275812 9.1898L5.04881 4.1898C5.222 4.00814 5.45718 3.89824 5.70764 3.88194C5.9581 3.86564 6.20553 3.94412 6.40081 4.1018L6.49581 4.1898L8.95381 6.7648L12.6618 2.8798H10.9998C10.7549 2.87976 10.5185 2.78984 10.3354 2.62708C10.1524 2.46432 10.0355 2.24005 10.0068 1.9968L9.99981 1.8798C9.99984 1.63486 10.0898 1.39846 10.2525 1.21542C10.4153 1.03239 10.6396 0.915454 10.8828 0.886797L10.9998 0.879797H14.8178Z"
+                fill="#E34192"
+              />
+            </svg>
 
-                <p class="text-sm">
-                  2 étudiants ont contacté ce tuteur dans les les dernières 48
-                  heures
-                </p>
-              </div>
+            <p class="text-sm">1 leçon réservée dans les dernières 48 heures</p>
+          </div>
+          <div class="flex items-center gap-x-3">
+            <svg
+              class="w-5 h-5"
+              viewBox="0 0 10 11"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5 9.87988C7.20914 9.87988 9 8.08902 9 5.87988C9 3.67074 7.20914 1.87988 5 1.87988C2.79086 1.87988 1 3.67074 1 5.87988C1 8.08902 2.79086 9.87988 5 9.87988Z"
+                stroke="#00909A"
+                stroke-width="2"
+              />
+            </svg>
+
+            <p class="text-sm">Répond généralement dans l'heure</p>
+          </div>
+
+          <div
+            class="flex items-center p-3 mt-5 border border-gray-100 shadow rounded-xl gap-x-3 shadow-ui shadow-gray-100"
+          >
+            <svg
+              class="flex-none w-8 h-8"
+              viewBox="0 0 40 41"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20.0001 0.879956C21.1819 0.874291 22.3419 1.19899 23.349 1.81741C24.3562 2.43584 25.1705 3.32339 25.7001 4.37996C25.8724 4.72134 26.1613 4.98972 26.5144 5.13648C26.8675 5.28323 27.2616 5.29866 27.6251 5.17996C28.7492 4.80574 29.9554 4.75256 31.1082 5.02638C32.2609 5.3002 33.3143 5.89018 34.1501 6.72996C34.9899 7.56571 35.5798 8.61917 35.8536 9.77187C36.1275 10.9246 36.0743 12.1308 35.7001 13.255C35.5814 13.6185 35.5968 14.0125 35.7435 14.3656C35.8903 14.7187 36.1587 15.0076 36.5001 15.18C37.5566 15.7096 38.4442 16.5239 39.0626 17.531C39.681 18.5382 40.0057 19.6981 40.0001 20.88C40.0057 22.0618 39.681 23.2217 39.0626 24.2289C38.4442 25.236 37.5566 26.0503 36.5001 26.58C36.1587 26.7523 35.8903 27.0412 35.7435 27.3943C35.5968 27.7474 35.5814 28.1414 35.7001 28.505C36.0743 29.6291 36.1275 30.8353 35.8536 31.988C35.5798 33.1407 34.9899 34.1942 34.1501 35.03C33.3143 35.8697 32.2609 36.4597 31.1082 36.7335C29.9554 37.0074 28.7492 36.9542 27.6251 36.58C27.2616 36.4613 26.8675 36.4767 26.5144 36.6234C26.1613 36.7702 25.8724 37.0386 25.7001 37.38C25.1705 38.4365 24.3562 39.3241 23.349 39.9425C22.3419 40.5609 21.1819 40.8856 20.0001 40.88C18.8182 40.8856 17.6583 40.5609 16.6511 39.9425C15.644 39.3241 14.8297 38.4365 14.3001 37.38C14.1278 37.0386 13.8389 36.7702 13.4857 36.6234C13.1326 36.4767 12.7386 36.4613 12.3751 36.58C11.2509 36.9542 10.0447 37.0074 8.89199 36.7335C7.73928 36.4597 6.68582 35.8697 5.85007 35.03C5.01029 34.1942 4.42032 33.1407 4.1465 31.988C3.87267 30.8353 3.92586 29.6291 4.30007 28.505C4.41877 28.1414 4.40335 27.7474 4.25659 27.3943C4.10984 27.0412 3.84146 26.7523 3.50007 26.58C2.44351 26.0503 1.55596 25.236 0.93753 24.2289C0.319103 23.2217 -0.00559152 22.0618 7.2865e-05 20.88C-0.00559152 19.6981 0.319103 18.5382 0.93753 17.531C1.55596 16.5239 2.44351 15.7096 3.50007 15.18C3.84146 15.0076 4.10984 14.7187 4.25659 14.3656C4.40335 14.0125 4.41877 13.6185 4.30007 13.255C3.92586 12.1308 3.87267 10.9246 4.1465 9.77187C4.42032 8.61917 5.01029 7.56571 5.85007 6.72996C6.68582 5.89018 7.73928 5.3002 8.89199 5.02638C10.0447 4.75256 11.2509 4.80574 12.3751 5.17996C12.7386 5.29866 13.1326 5.28323 13.4857 5.13648C13.8389 4.98972 14.1278 4.72134 14.3001 4.37996C14.8297 3.32339 15.644 2.43584 16.6511 1.81741C17.6583 1.19899 18.8182 0.874291 20.0001 0.879956Z"
+                fill="#E4EAFB"
+              />
+              <path
+                d="M18 19.3799L20 14.8799L22 19.3799L27 19.8799L23.294 23.1149L24.5 27.8799L20 25.5859L15.5 27.8799L16.706 23.1149L13 19.8799L18 19.3799Z"
+                stroke="#6483DD"
+                stroke-width="2"
+                stroke-linejoin="round"
+              />
+            </svg>
+
+            <div class="">
+              <h6 class="mb-2 text-base font-semibold">Populaire</h6>
+
+              <p class="text-sm">
+                2 étudiants ont contacté ce tuteur dans les les dernières 48
+                heures
+              </p>
             </div>
           </div>
         </div>
@@ -1307,3 +1461,8 @@
     </div>
   </div>
 </div>
+<ng-template #notUser>
+  <div class="w-full">
+    <h5 class="text-xl font-semibold text-center">Not tutor found</h5>
+  </div>
+</ng-template>
