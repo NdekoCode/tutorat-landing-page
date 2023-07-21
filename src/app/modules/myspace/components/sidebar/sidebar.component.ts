@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component, EventEmitter, Input, Output } from '@angular/core'
 import { AuthService } from 'src/app/shared/services/auth/auth.service'
 
 @Component({
@@ -10,5 +10,12 @@ export class SidebarComponent {
   constructor(private authService: AuthService) {}
   logout() {
     this.authService.logout()
+  }
+  @Input() isActive: boolean = false
+
+  @Output() isToggleActive = new EventEmitter<boolean>()
+  toggleActive() {
+    this.isActive = !this.isActive
+    this.isToggleActive.emit(this.isActive)
   }
 }
