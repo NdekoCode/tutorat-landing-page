@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
 import { AuthGuard } from './core/guards/auth.guard'
+import { VerifyTutorGuard } from './core/guards/verify-tutor.guard'
 import { ErrorComponent } from './shared/components/error/error.component'
 
 const routes: Routes = [
@@ -21,7 +22,7 @@ const routes: Routes = [
     path: 'myspace',
     loadChildren: () =>
       import('./modules/myspace/myspace.module').then((m) => m.MySpaceModule),
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard, VerifyTutorGuard]
   },
   {
     path: '**',

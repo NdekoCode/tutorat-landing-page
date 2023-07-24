@@ -6,6 +6,13 @@ export enum GLOBAL_CONSTANTS {
   AUTH_TIMEOUT_LOGIN = 2000
 }
 
+export const TUTOR_REQUIRED_FIELDS = Object.freeze([
+  'bio',
+  'hourlyRate',
+  'specialization',
+  'video',
+  'document'
+])
 export const ALERT_COLORS = Object.freeze({
   error: 'error-color',
   success: 'success-color',

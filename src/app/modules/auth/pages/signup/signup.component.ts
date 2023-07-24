@@ -68,40 +68,25 @@ export class SignupComponent implements OnInit, OnDestroy {
                 ALERT_AUTH.signup.success.alertMessage +
                 this.registerForm.value.email
             }
-            this.timer = window.setTimeout(() => {
-              this.router.navigate([AUTH_ROUTES.LOGIN])
-              window.clearTimeout(this.timer)
-            }, GLOBAL_CONSTANTS.AUTH_TIMEOUT)
-            this.isLoading = false
             const loginData = {
               email: this.registerForm.get('email')?.value,
               password: this.registerForm.get('password')?.value
             }
             this.authService.login(loginData).subscribe({
               next: (response) => {
-                this.submitForm = true
                 this.authService.token.saveToken(response as Token)
                 this.isLoading = false
-                this.alert = {
-                  isShown: true,
-                  alertTitle: ALERT_AUTH.login.success.alertTitle,
-                  alertType: 'success',
-                  alertMessage: ALERT_AUTH.login.success.alertMessage
-                }
                 setTimeout(() => {
                   this.router.navigate([AUTH_ROUTES.USER_CHOICE])
                   clearTimeout(this.timer)
                 }, GLOBAL_CONSTANTS.AUTH_TIMEOUT_LOGIN)
               },
-              error: (err) => {
-                this.submitForm = true
+              error: () => {
                 this.isLoading = false
-                this.alert = {
-                  isShown: true,
-                  alertTitle: ALERT_AUTH.login.error.alertTitle,
-                  alertType: 'error',
-                  alertMessage: err.error.message
-                }
+                this.timer = window.setTimeout(() => {
+                  this.router.navigate([AUTH_ROUTES.LOGIN])
+                  window.clearTimeout(this.timer)
+                }, GLOBAL_CONSTANTS.AUTH_TIMEOUT)
               }
             })
           },
@@ -144,11 +129,14 @@ export class SignupComponent implements OnInit, OnDestroy {
                 this.loggedIn = true
                 this.isLoading = false
                 this.authService.token.saveToken(response)
+
                 this.alert = {
                   isShown: true,
-                  alertTitle: ALERT_AUTH.login.success.alertTitle,
+                  alertTitle: ALERT_AUTH.signup.success.alertTitle,
                   alertType: 'success',
-                  alertMessage: ALERT_AUTH.login.success.alertMessage
+                  alertMessage:
+                    ALERT_AUTH.signup.success.alertMessage +
+                    this.registerForm.value.email
                 }
                 setTimeout(() => {
                   this.router.navigate([MYSPACE_ROUTES.HOME])
@@ -160,7 +148,7 @@ export class SignupComponent implements OnInit, OnDestroy {
                 this.isLoading = false
                 this.alert = {
                   isShown: true,
-                  alertTitle: ALERT_AUTH.login.error.alertTitle,
+                  alertTitle: ALERT_AUTH.signup.error.alertTitle,
                   alertType: 'error',
                   alertMessage: err.error.message
                 }

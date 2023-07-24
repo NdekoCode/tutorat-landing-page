@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
+import { hourlyRateErrorsInput } from 'src/app/core/utilities/forms'
 import { Alert, Timer } from 'src/app/core/utilities/types'
 
 @Component({
@@ -17,32 +18,30 @@ export class TutorsSupplementFormComponent implements OnInit {
     alertTitle: '',
     alertMessage: ''
   }
+  hourlyRateErrors = hourlyRateErrorsInput
   timer: Timer
   submitForm: boolean = false
   isLoading: boolean = false
   isChange: boolean = false
+
+  fb = new FormBuilder()
+  tutorForm!: FormGroup
   constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit() {
-    this.tutorSupplementForm = this.formBuilder.group({
-      // Step 1: Informations personnelles
-      /*
-      city: ['', Validators.required], // Champ pour la ville
-      country: ['', Validators.required], // Champ pour le pays
-      address: ['', Validators.required], // Champ pour l'adresse
-      postalCode: ['', Validators.required], // Champ pour le code postal */
-      photo: ['', Validators.required], // Champ pour la photo de profil
-      biography: ['', Validators.required],
-      hourlyRate: [0, Validators.required],
-
-      // Step 4: Préférences de tutorat
-      // Ajoutez les champs pour les préférences de tutorat
-      subject: ['', Validators.required], // Champ pour le sujet de tutorat
-      videoBio: ['', Validators.required], // Champ pour le type de tutorat (en ligne ou en présentiel)
-      videoTitle: ['', Validators.required], // Champ pour le type de titre de la video
-
-      // Step 6: Antécédents judiciaires
-      documentCheck: ['', Validators.required] // Champ pour la vérification des antécédents judiciaires
+    this.tutorForm = this.formBuilder.group({
+      photo: ['', Validators.required],
+      bio: ['', Validators.required],
+      hourlyRate: ['', Validators.required],
+      transport: ['', Validators.required],
+      specialization: this.formBuilder.array([]),
+      video: this.formBuilder.group({
+        url: ['', Validators.required],
+        thumbnail: ['', Validators.required],
+        description: ['', Validators.required]
+      }),
+      experience: this.formBuilder.array([]),
+      document: this.formBuilder.array([])
     })
   }
 

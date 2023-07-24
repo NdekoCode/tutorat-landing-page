@@ -7,15 +7,25 @@ import { AlertComponent } from 'src/app/shared/components/alert/alert.component'
 import { CenteredSkeletonComponent } from 'src/app/shared/components/centered-skeleton/centered-skeleton.component'
 import { ModalVideoComponent } from 'src/app/shared/components/modal-video/modal-video.component'
 import { ScrollDirective } from 'src/app/shared/directives/scroll.directive'
+import { InputGroupComponent } from './components/input-group/input-group.component'
+import { InputIconComponent } from './components/input-icon/input-icon.component'
+import { InputComponent } from './components/input/input.component'
+import { ShipInputComponent } from './components/ship-input/ship-input.component'
+import { TextareaComponent } from './components/textarea/textarea.component'
 @NgModule({
   declarations: [
     AlertComponent,
     AlertScreenComponent,
     CenteredSkeletonComponent,
     ModalVideoComponent,
-    ScrollDirective
+    ScrollDirective,
+    ShipInputComponent,
+    InputComponent,
+    InputGroupComponent,
+    InputIconComponent,
+    TextareaComponent
   ],
-  imports: [CommonModule],
+  imports: [CommonModule, ReactiveFormsModule],
   exports: [
     HttpClientModule,
     ReactiveFormsModule,
@@ -23,7 +33,12 @@ import { ScrollDirective } from 'src/app/shared/directives/scroll.directive'
     AlertScreenComponent,
     CenteredSkeletonComponent,
     ModalVideoComponent,
-    ScrollDirective
+    ScrollDirective,
+    InputComponent,
+    InputGroupComponent,
+    InputIconComponent,
+    TextareaComponent,
+    ShipInputComponent
   ]
 })
 export class SharedModule {}

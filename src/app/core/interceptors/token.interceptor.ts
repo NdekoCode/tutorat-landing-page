@@ -55,7 +55,7 @@ export class TokenInterceptor implements HttpInterceptor {
                 catchError((err) => {
                   this.refreshingToken = false
                   this.tokenService.clearToken()
-                  return throwError('Session expired')
+                  return throwError('Error refresh token ', err)
                 })
               )
             }
@@ -72,7 +72,7 @@ export class TokenInterceptor implements HttpInterceptor {
             )
           }
 
-          return throwError('Session expired')
+          return throwError(error)
         })
       )
     }

@@ -28,9 +28,13 @@ export function isEmptyObject(value: object | null | undefined) {
 export function isExists<T>(value: T): boolean {
   return typeof value !== 'undefined' && value !== null
 }
-export function hasProperties(objet: object, keys: string[] | string): boolean {
+export function hasProperties(
+  object: { [key: string]: unknown },
+  keys: string[] | string,
+  noEmpty = false
+): boolean {
   // Vérifier si l'objet est défini  ou si les clés sont définies
-  if (!isExists(objet) || !isExists(keys)) {
+  if (!isExists(object) || !isExists(keys)) {
     return false
   }
 
@@ -38,9 +42,15 @@ export function hasProperties(objet: object, keys: string[] | string): boolean {
   if (typeof keys === 'string') {
     keys = [keys]
   }
-
+  let allKeysPresent: boolean = false
   // Vérifier si toutes les clés sont présentes dans l'objet
-  const allKeysPresent = keys.every((key) => objet.hasOwnProperty(key))
+  if (noEmpty) {
+    allKeysPresent = keys.every(
+      (key) => object.hasOwnProperty(key) && isExists(object[key])
+    )
+  } else {
+    allKeysPresent = keys.every((key) => object.hasOwnProperty(key))
+  }
   if (!allKeysPresent) {
     return false
   }

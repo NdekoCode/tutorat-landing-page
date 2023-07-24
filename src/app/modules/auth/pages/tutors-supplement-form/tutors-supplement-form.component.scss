@@ -1,3 +1,12 @@
+.field-container,
+.input-icon {
+  @apply w-full max-w-full;
+
+  input {
+    @apply w-full;
+  }
+}
+
 .input-groupp {
   @apply w-full;
 

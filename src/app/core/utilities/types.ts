@@ -96,7 +96,6 @@ export type User = {
   }
   tutor: Tutor | null
 }
-
 export type Tutor = {
   bio: string
   hourlyRate: number
@@ -107,4 +106,8 @@ export type Tutor = {
   document?: Document[]
 
   address: Address
+}
+export type ErrorValidationType = {
+  key: string
+  message: string
 }

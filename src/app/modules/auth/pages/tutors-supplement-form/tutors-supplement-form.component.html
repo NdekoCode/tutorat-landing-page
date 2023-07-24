@@ -10,7 +10,7 @@
               <h2 class="mb-3 text-3xl font-bold text-gray-100">
                 Obtenir des informations supplémentaires
               </h2>
-              <p class="text-sm text-gray-300 form-description">
+              <p class="text-sm text-gray-100 form-description">
                 Veuillez remplir le formulaire ci-dessous pour créer votre
                 profil de tuteur. N’hésitez pas à ajouter autant de détails que
                 nécessaire.
@@ -26,10 +26,7 @@
           <div class="w-full bg-red-light form-tutor">
             <div class="flex justify-center">
               <div class="w-full">
-                <form
-                  [formGroup]="tutorSupplementForm"
-                  (ngSubmit)="saveTutorForm()"
-                >
+                <form [formGroup]="tutorForm" (ngSubmit)="saveTutorForm()">
                   <div class="form-header lg:hidden">
                     <h2 class="mb-4 text-3xl font-bold">
                       Obtenir des informations supplémentaires
@@ -98,7 +95,7 @@
                       </div>
 
                       <div class="">
-                        <div class="relative w-full join-item">
+                        <div class="relative w-full join-item mb-3">
                           <label for="hourlyRate" class="input-label"
                             >Taux horaire :</label
                           >
@@ -106,18 +103,21 @@
                             class="input-icon"
                             [ngClass]="{
                               invalid:
-                                tutorSupplementForm.get('hourlyRate')
-                                  ?.touched &&
-                                tutorSupplementForm.get('hourlyRate')?.invalid
+                                tutorForm.get('hourlyRate')?.touched &&
+                                tutorForm.get('hourlyRate')?.invalid
                             }"
                           >
                             <input
-                              type="text"
-                              id="country"
                               type="number"
-                              id="hourlyRate"
+                              placeholder="Combien esperez-vous gagnez par heure"
                               formControlName="hourlyRate"
-                              placeholder="Entrez votre taux horaire"
+                              id="hourlyRate"
+                              class="w-full"
+                              [ngClass]="{
+                                invalid:
+                                  tutorForm.get('hourlyRate')?.touched &&
+                                  tutorForm.get('hourlyRate')?.invalid
+                              }"
                             />
 
                             <svg
@@ -152,42 +152,114 @@
                           </div>
                           <div
                             *ngIf="
-                              tutorSupplementForm.get('hourlyRate')?.errors &&
-                              tutorSupplementForm.get('hourlyRate')?.invalid &&
-                              tutorSupplementForm.get('hourlyRate')?.touched
+                              tutorForm.get('hourlyRate')?.errors &&
+                              tutorForm.get('hourlyRate')?.invalid &&
+                              tutorForm.get('hourlyRate')?.touched
                             "
                             class="absolute text-invalid block-error -bottom-4"
                             id="country-errors"
                           >
                             <p
-                              *ngIf="tutorSupplementForm.get('hourlyRate')?.errors?.['required']"
+                              *ngIf="tutorForm.get('hourlyRate')?.errors?.['required']"
                             >
                               <span class="font-medium">Oops!</span> hourlyRate
                               is required
                             </p>
                           </div>
                         </div>
+                        <div class="relative w-full join-item mb-3">
+                          <label for="transport" class="input-label"
+                            >Transport :</label
+                          >
+                          <div
+                            class="input-icon"
+                            [ngClass]="{
+                              invalid:
+                                tutorForm.get('transport')?.touched &&
+                                tutorForm.get('transport')?.invalid
+                            }"
+                          >
+                            <input
+                              type="number"
+                              placeholder="Combien estmiez-vous vos frais de transport"
+                              formControlName="transport"
+                              id="transport"
+                              [ngClass]="{
+                                invalid:
+                                  tutorForm.get('transport')?.touched &&
+                                  tutorForm.get('transport')?.invalid
+                              }"
+                            />
+
+                            <svg
+                              class="w-6 h-6 icon right-icon"
+                              width="80"
+                              height="80"
+                              viewBox="0 0 80 80"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M38.333 31.667V13.333H31.667V35C31.667 36.843 33.157 38.333 35 38.333H53.333V31.667H38.333Z"
+                                fill="currentColor"
+                              />
+                              <path
+                                d="M35 56.666C36.8408 56.666 38.333 55.1738 38.333 53.333C38.333 51.4922 36.8408 50 35 50C33.1592 50 31.667 51.4922 31.667 53.333C31.667 55.1738 33.1592 56.666 35 56.666Z"
+                                fill="currentColor"
+                              />
+                              <path
+                                d="M16.667 38.333C18.5077 38.333 20 36.8408 20 35C20 33.1592 18.5077 31.667 16.667 31.667C14.8262 31.667 13.334 33.1592 13.334 35C13.334 36.8408 14.8262 38.333 16.667 38.333Z"
+                                fill="currentColor"
+                              />
+                              <path
+                                d="M70 52.5H63.333C61.491 52.5 60 51.009 60 49.167H59.993L60 49.163C60 47.321 61.491 45.833 63.333 45.833H70C71.843 45.833 73.33 47.324 73.33 49.167H80C80 43.646 75.518 39.167 70 39.163V31.667H63.333V39.167V39.163C57.812 39.163 53.333 43.64 53.333 49.163V49.167C53.333 54.688 57.812 59.167 63.333 59.167H70C71.843 59.167 73.33 60.657 73.33 62.5H73.327C73.327 64.343 71.836 65.833 69.993 65.833H63.33C61.491 65.833 60 64.343 60 62.5H53.333C53.333 68.021 57.812 72.5 63.333 72.5V80H70V72.5C75.518 72.493 79.997 68.021 79.997 62.5H80C80 56.979 75.518 52.5 70 52.5Z"
+                                fill="currentColor"
+                              />
+                              <path
+                                d="M61.175 24.16C56.917 13.894 46.807 6.667 35 6.667C19.349 6.667 6.667 19.349 6.667 35C6.667 50.647 19.349 63.333 35 63.333C38.841 63.333 42.5 62.562 45.843 61.175L48.396 67.334C44.268 69.046 39.746 70 35 70C15.671 70 0 54.329 0 35C0 15.671 15.671 0 35 0C49.583 0 62.073 8.926 67.334 21.608L61.175 24.16Z"
+                                fill="currentColor"
+                              />
+                            </svg>
+                          </div>
+                          <div
+                            *ngIf="
+                              tutorForm.get('transport')?.errors &&
+                              tutorForm.get('transport')?.invalid &&
+                              tutorForm.get('transport')?.touched
+                            "
+                            class="absolute text-invalid block-error -bottom-4"
+                            id="country-errors"
+                          >
+                            <p
+                              *ngIf="tutorForm.get('transport')?.errors?.['required']"
+                            >
+                              <span class="font-medium">Oops!</span> transport
+                              is required
+                            </p>
+                          </div>
+                        </div>
                         <div class="relative w-full join-item">
-                          <label for="ville" class="input-label"
+                          <label for="bio" class="input-label"
                             >Biography :</label
                           >
                           <textarea
-                            formControlName="biography"
+                            formControlName="bio"
                             placeholder="Dite nous quelque chose à propose de vous"
-                            class="w-full textarea textarea-bordered textarea-lg"
-                          ></textarea>
+                            class="w-full textarea bg-gray-50 textarea-bordered textarea-lg"
+                            >{{ tutorForm.get('bio')?.value }}</textarea
+                          >
 
                           <div
                             *ngIf="
-                              tutorSupplementForm.get('biography')?.errors &&
-                              tutorSupplementForm.get('biography')?.invalid &&
-                              tutorSupplementForm.get('biography')?.touched
+                              tutorForm.get('bio')?.errors &&
+                              tutorForm.get('bio')?.invalid &&
+                              tutorForm.get('bio')?.touched
                             "
                             class="absolute text-invalid block-error -bottom-4"
                             id="city-errors"
                           >
                             <p
-                              *ngIf="tutorSupplementForm.get('biography')?.errors?.['required']"
+                              *ngIf="tutorForm.get('bio')?.errors?.['required']"
                             >
                               <span class="font-medium">Oops!</span> Biography
                               is required
@@ -209,16 +281,14 @@
                         nous aider à mieux comprendre votre expérience et vos
                         compétences.
                       </p>
-                    </div>
-
-                    <!-- Etape 4: Préférences de tutorat -->
-                    <div *ngIf="currentStep === 2" class="mb-3">
                       <div class="w-full form-control">
                         <label class="label">
                           <span class="label-text">
                             Préférences de tutorat</span
-                          > </label
-                        ><input
+                          >
+                        </label>
+                        <app-ship-input />
+                        <input
                           type="text"
                           placeholder="Entrer vos specialisation"
                           class="w-full input input-bordered"

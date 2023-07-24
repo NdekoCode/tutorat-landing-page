@@ -1,4 +1,5 @@
 import { FormGroup, Validators } from '@angular/forms'
+import { ErrorValidationType } from './types'
 
 export const passwordValidator = {
   password: [
@@ -60,3 +61,10 @@ export function ConfirmedValidator(
     }
   }
 }
+
+export const hourlyRateErrorsInput: ErrorValidationType[] = [
+  {
+    key: 'required',
+    message: 'hourlyRate is required'
+  }
+]

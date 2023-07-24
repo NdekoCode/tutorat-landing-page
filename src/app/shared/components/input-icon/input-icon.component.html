@@ -1,0 +1,35 @@
+<div class="field-container">
+  <label [for]="id" class="input-label">{{ label | titlecase }}</label>
+  <div
+    class="input-icon"
+    [ngClass]="{
+      invalid: formControlItem.touched && formControlItem.invalid
+    }"
+  >
+    <input
+      [type]="type"
+      [placeholder]="placeholder"
+      [formControl]="formControlItem"
+      class="input-field"
+      [class]="className"
+      [required]="required"
+      [id]="id"
+      [ngClass]="{
+        invalid: formControlItem.touched && formControlItem.invalid
+      }"
+    />
+    <ng-content select="[icon]" />
+  </div>
+
+  <div *ngIf="displayInputErrors()" class="text-invalid" [id]="idError">
+    <ng-template class="" *ngFor="let error of errorsInput">
+      <p
+        *ngIf="formControlItem?.errors?.[error.key]"
+        class="flex items-center gap-x-1"
+      >
+        <span class="font-medium">Oops!</span> {{ error.message }}
+      </p>
+    </ng-template>
+  </div>
+  <ng-content select="[other]" />
+</div>
