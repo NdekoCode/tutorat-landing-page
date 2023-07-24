@@ -1,6 +1,7 @@
 import { Tutor } from './types'
 
 export interface ITutor {
+  id: number | string
   firstName: string
   lastName: string
   age: number

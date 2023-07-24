@@ -6,14 +6,14 @@ import { ErrorComponent } from './shared/components/error/error.component'
 const routes: Routes = [
   {
     path: '',
-    // Dans la memoire ce module sera charger lorsqu'il est demander et uniquement lorsqu'il est demander, alors une fois que l'on va demander cette module il va se charger et seulement quand il sera charger que son routing va se mettre en place
+    // Dans la memoire ce module sera charger lorsqu'il est demander et uniquement lorsqu'il est demander, alors une fois que l'on va demander ce  module il va se charger et seulement quand il sera charger que son routing va se mettre en place
     loadChildren: () =>
       import('./modules/public/public.module').then((m) => m.PublicModule),
     data: { preload: true }
   },
   {
     path: 'auth',
-    // Dans la memoire ce module sera charger lorsqu'il est demander et uniquement lorsqu'il est demander, alors une fois que l'on va demander cette module il va se charger et seulement quand il sera charger que son routing va se mettre en place
+    // Dans la memoire ce module sera charger lorsqu'il est demander et uniquement lorsqu'il est demander, alors une fois que l'on va demander ce module il va se charger et seulement quand il sera charger que son routing va se mettre en place
     loadChildren: () =>
       import('./modules/auth/auth.module').then((m) => m.AuthModule)
   },
@@ -32,7 +32,13 @@ const routes: Routes = [
 ]
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes, {
+      initialNavigation: 'enabledBlocking',
+      scrollPositionRestoration: 'enabled',
+      anchorScrolling: 'enabled'
+    })
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule {}

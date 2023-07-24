@@ -9,7 +9,7 @@ describe('OverviewComponent', () => {
   beforeEach(async () => {
     const activatedRouteMock = {
       snapshot: {
-        params: { id: 123 } // Définissez ici la valeur que vous souhaitez pour le paramètre id
+        params: { id: 123 } // La valeur que nous souhaitons pour le paramètre id
       }
     }
     await TestBed.configureTestingModule({

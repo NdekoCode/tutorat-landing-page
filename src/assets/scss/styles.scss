@@ -66,6 +66,10 @@
   color           : var(--color-white);
 }
 
+.border-green {
+  border-color: var(--green-dark);
+}
+
 .bg-red-light {
   background-color: var(--red-light);
 
@@ -202,4 +206,12 @@ a.primary-gradient {
     display: none !important;
 
   }
+}
+
+.shadow-ui {
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, .05);
+}
+
+.bg-space {
+  background-color: #f8f9fa !important;
 }

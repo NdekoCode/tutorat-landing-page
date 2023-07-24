@@ -32,7 +32,7 @@ export enum MYSPACE_ROUTES {
   SETTINGS = '/myspace/settings',
   CALENDAR = '/myspace/calendar',
   CREATE_SESSION = '/myspace/tutor/create-session',
-  GET_TOTOR = '/myspace/tutor/:id'
+  GET_TUTOR = '/myspace/tutor/:id'
 }
 export enum MYSPACE_USER_ROUTES {
   GET_USER = '/myspace/user/:id'

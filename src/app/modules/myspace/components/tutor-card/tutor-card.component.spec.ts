@@ -22,6 +22,7 @@ describe('TutorCardComponent', () => {
   it('Init with tutor', () => {
     const toggleService = { onToggleShow: jest.fn(), isShown: false }
     const tutor: ITutor = {
+      id: 1,
       firstName: 'John',
       lastName: 'Doe',
       age: 25,

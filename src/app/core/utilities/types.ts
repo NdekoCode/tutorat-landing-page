@@ -72,6 +72,7 @@ export type Address = {
 }
 
 export type User = {
+  id: number | string
   firstName: string
   lastName: string
   age: number

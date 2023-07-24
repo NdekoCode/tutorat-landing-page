@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core'
+import { Component, EventEmitter, Input, Output } from '@angular/core'
 
 @Component({
   selector: 'app-navbar',
@@ -7,4 +7,11 @@ import { Component, Input } from '@angular/core'
 })
 export class NavbarComponent {
   @Input() isActive: boolean = false
+  @Output() isToggleActive = new EventEmitter<boolean>()
+  toggleActive() {
+    if (window.innerWidth <= 1024) {
+      this.isActive = !this.isActive
+      this.isToggleActive.emit(this.isActive)
+    }
+  }
 }
