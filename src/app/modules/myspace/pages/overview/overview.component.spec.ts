@@ -1,3 +1,4 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing'
 import { ComponentFixture, TestBed } from '@angular/core/testing'
 import { ActivatedRoute } from '@angular/router'
 import { RouterTestingModule } from '@angular/router/testing'
@@ -15,7 +16,7 @@ describe('OverviewComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [OverviewComponent],
       providers: [{ provide: ActivatedRoute, useValue: activatedRouteMock }],
-      imports: [RouterTestingModule]
+      imports: [RouterTestingModule, HttpClientTestingModule]
     }).compileComponents()
     fixture = TestBed.createComponent(OverviewComponent)
     component = fixture.componentInstance
@@ -29,6 +30,5 @@ describe('OverviewComponent', () => {
   it('should set userId property from activated route snapshot', () => {
     component.ngOnInit()
     expect(component.userId).toBeDefined()
-    // Faites des assertions supplémentaires sur la valeur de userId si nécessaire
   })
 })
