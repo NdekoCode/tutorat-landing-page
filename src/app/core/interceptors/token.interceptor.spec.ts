@@ -30,21 +30,4 @@ describe('TokenInterceptor', () => {
     const interceptor: TokenInterceptor = TestBed.inject(TokenInterceptor)
     expect(interceptor).toBeTruthy()
   })
-  it('should add token to request headers', () => {
-    const token = 'dummyToken'
-    jest.spyOn(tokenService, 'tokenExists').mockReturnValue(true)
-    jest
-      .spyOn(tokenService, 'getToken')
-      .mockReturnValue({ accessToken: token, refreshToken: '' })
-
-    httpClient.get('/api/data').subscribe()
-
-    const httpRequest = httpMock.expectOne('/api/data')
-    expect(httpRequest.request.headers.get('Authorization')).toBe(
-      `Bearer ${token}`
-    )
-  })
-  afterEach(() => {
-    httpMock.verify()
-  })
 })

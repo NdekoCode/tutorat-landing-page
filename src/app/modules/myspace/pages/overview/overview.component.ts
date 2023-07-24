@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
-import { filterTutor, objectHasValue } from 'src/app/core/utilities/helpers'
+import {
+  filterTutor,
+  generateArray,
+  objectHasValue
+} from 'src/app/core/utilities/helpers'
 import { ITutor } from 'src/app/core/utilities/interfaces'
 import { Tutor } from 'src/app/core/utilities/types'
 import { TutorService } from 'src/app/shared/services/tutor/tutor.service'
@@ -35,6 +39,10 @@ export class OverviewComponent implements OnInit {
     this.userId = this.activatedRoute.snapshot.params['id']
     this.filteredTutors = this.tutors
     this.coursesService.getAllCourses()
+    this.suggestionTutors = this.tutorService
+      .getTutors()
+      .filter((t) => t.address.city === 'Goma')
+    this.topTutors = this.tutorService.getLimitTutor(20)
   }
   filterTutors(
     filter: Partial<Tutor & { city: string; cours?: string | number }>
@@ -44,9 +52,22 @@ export class OverviewComponent implements OnInit {
     } else {
       this.filteredTutors = this.tutors
     }
-    this.suggestionTutors = this.tutorService
-      .getTutors()
-      .filter((t) => t.address.city === 'Goma')
-    this.topTutors = this.tutorService.getLimitTutor(20)
+  }
+  getTutorEventData(tutor: Tutor) {
+    const urlPart = tutor.video.url.split('/')
+    this.videoId = urlPart[urlPart.length - 1]
+    this.onToggleShow()
+  }
+
+  onShow(arg: Event | boolean) {
+    this.onToggleShow()
+  }
+  // eslint-disable-next-line class-methods-use-this
+  autoArray(n: number) {
+    return generateArray(n)
+  }
+
+  onToggleShow() {
+    this.isShown = !this.isShown
   }
 }
