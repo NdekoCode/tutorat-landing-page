@@ -1,13 +1,15 @@
+import { SocialUser } from '@abacritt/angularx-social-login'
 import { Component, OnDestroy, OnInit } from '@angular/core'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { Router } from '@angular/router'
-import { AUTH_ROUTES } from 'src/app/core/routes/routes'
+import { AUTH_ROUTES, MYSPACE_ROUTES } from 'src/app/core/routes/routes'
 import { ALERT_AUTH, GLOBAL_CONSTANTS } from 'src/app/core/utilities/constants'
 import {
   emailValidator,
   passwordValidator,
   phoneValidator
 } from 'src/app/core/utilities/forms'
+import { isExists } from 'src/app/core/utilities/helpers'
 import { Alert, Timer, Token } from 'src/app/core/utilities/types'
 import { AuthService } from 'src/app/shared/services/auth/auth.service'
 
@@ -30,7 +32,9 @@ export class SignupComponent implements OnInit, OnDestroy {
   timer: Timer
   submitForm: boolean = false
   isLoading: boolean = false
-  public registerForm!: FormGroup
+  user!: SocialUser
+  loggedIn!: boolean
+  registerForm!: FormGroup
   isChange: boolean = false
   viewPassword() {
     this.isChange = !this.isChange
@@ -44,6 +48,7 @@ export class SignupComponent implements OnInit, OnDestroy {
       ...passwordValidator,
       confirmPassword: ['', [Validators.required]]
     })
+    this.googleAuth()
   }
   saveRegisterForm() {
     this.submitForm = false
@@ -121,6 +126,49 @@ export class SignupComponent implements OnInit, OnDestroy {
           }
         })
     }
+  }
+
+  googleAuth() {
+    this.authService.socialAuth.authState.subscribe({
+      next: (user) => {
+        if (isExists(user)) {
+          this.submitForm = false
+          this.isLoading = true
+          this.user = user
+          this.authService
+            .authWithGoogle(this.user.idToken)
+            // .pipe(concatMap(() => this.authService.getAuthUserInfo()))
+            .subscribe({
+              next: (response) => {
+                this.submitForm = true
+                this.loggedIn = true
+                this.isLoading = false
+                this.authService.token.saveToken(response)
+                this.alert = {
+                  isShown: true,
+                  alertTitle: ALERT_AUTH.login.success.alertTitle,
+                  alertType: 'success',
+                  alertMessage: ALERT_AUTH.login.success.alertMessage
+                }
+                setTimeout(() => {
+                  this.router.navigate([MYSPACE_ROUTES.HOME])
+                  clearTimeout(this.timer)
+                }, GLOBAL_CONSTANTS.AUTH_TIMEOUT_LOGIN)
+              },
+              error: (err) => {
+                this.submitForm = true
+                this.isLoading = false
+                this.alert = {
+                  isShown: true,
+                  alertTitle: ALERT_AUTH.login.error.alertTitle,
+                  alertType: 'error',
+                  alertMessage: err.error.message
+                }
+              }
+            })
+        }
+      }
+    })
   }
   ngOnDestroy(): void {
     window.clearTimeout(this.timer)

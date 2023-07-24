@@ -1,6 +1,11 @@
+import {
+  GoogleLoginProvider,
+  SocialAuthServiceConfig
+} from '@abacritt/angularx-social-login'
 import { HttpClientModule } from '@angular/common/http'
 import { ComponentFixture, TestBed } from '@angular/core/testing'
 import { ReactiveFormsModule } from '@angular/forms'
+import { AuthService } from 'src/app/shared/services/auth/auth.service'
 import { LoginComponent } from './login.component'
 
 describe('LoginComponent', () => {
@@ -10,7 +15,23 @@ describe('LoginComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [LoginComponent],
-      imports: [ReactiveFormsModule, HttpClientModule] //Pour tester le module HTTP
+      imports: [ReactiveFormsModule, HttpClientModule], //Pour tester le module HTTP,
+
+      providers: [
+        AuthService,
+        {
+          provide: 'SocialAuthServiceConfig',
+          useValue: {
+            autoLogin: false,
+            providers: [
+              {
+                id: GoogleLoginProvider.PROVIDER_ID,
+                provider: new GoogleLoginProvider('')
+              }
+            ]
+          } as SocialAuthServiceConfig
+        }
+      ]
     }).compileComponents()
 
     fixture = TestBed.createComponent(LoginComponent)

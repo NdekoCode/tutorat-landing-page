@@ -8,6 +8,7 @@ import {
 } from '@angular/router'
 import { Observable } from 'rxjs'
 import { AuthService } from 'src/app/shared/services/auth/auth.service'
+import { AUTH_ROUTES } from '../routes/routes'
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +24,8 @@ export class AuthGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    return this.auth.isLogged() || this.router.createUrlTree(['/auth/login'])
+    return (
+      this.auth.isLogged() || this.router.createUrlTree([AUTH_ROUTES.LOGIN])
+    )
   }
 }
