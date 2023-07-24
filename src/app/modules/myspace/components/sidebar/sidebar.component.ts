@@ -24,4 +24,9 @@ export class SidebarComponent {
       this.isToggleActive.emit(this.isActive)
     }
   }
+  constructor(private authService: AuthService) {}
+
+  logout() {
+    this.authService.logout()
+  }
 }
