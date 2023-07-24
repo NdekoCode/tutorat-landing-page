@@ -8,6 +8,7 @@ import {
 import { ITutor } from 'src/app/core/utilities/interfaces'
 import { Tutor } from 'src/app/core/utilities/types'
 import { TutorService } from 'src/app/shared/services/tutor/tutor.service'
+import { CoursesService } from '../../../../shared/services/courses/courses.service'
 
 @Component({
   selector: 'app-overview',
@@ -25,7 +26,8 @@ export class OverviewComponent implements OnInit {
   videoId!: string
   constructor(
     private activatedRoute: ActivatedRoute,
-    private tutorService: TutorService
+    private tutorService: TutorService,
+    private coursesService: CoursesService
   ) {}
 
   get tutors() {
@@ -34,6 +36,7 @@ export class OverviewComponent implements OnInit {
   ngOnInit(): void {
     this.userId = this.activatedRoute.snapshot.params['id']
     this.filteredTutors = this.tutors
+    this.coursesService.getAllCourses()
   }
   filterTutors(
     filter: Partial<Tutor & { city: string; cours?: string | number }>

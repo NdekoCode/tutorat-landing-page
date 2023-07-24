@@ -64,6 +64,14 @@ export type Document = {
   description: string
   documentType: number
 }
+
+export type Course = {
+  id: number
+  name: string
+  description: string
+  createdAt: Date
+  updatedAt: Date
+}
 export type Address = {
   address: string
   city: string
