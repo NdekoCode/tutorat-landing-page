@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common'
 import { NgModule } from '@angular/core'
 
 import { ScrollTopComponent } from 'src/app/shared/components/scroll-top/scroll-top.component'
-import { SharedModule } from '../shared/shared.module'
+import { SharedModule } from '../../shared/shared.module'
 import { BlockVideoComponent } from './components/block-video/block-video.component'
 import { FooterComponent } from './components/footer/footer.component'
 import { HeaderComponent } from './components/header/header.component'

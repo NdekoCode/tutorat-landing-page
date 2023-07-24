@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common'
 import { NgModule } from '@angular/core'
 import { FormsModule } from '@angular/forms'
-import { SharedModule } from '../shared/shared.module'
+import { SharedModule } from '../../shared/shared.module'
 import { FooterComponent } from './components/footer/footer.component'
 import { HeadermenuComponent } from './components/headermenu/headermenu.component'
 import { NavbarComponent } from './components/navbar/navbar.component'
