@@ -5,7 +5,6 @@ import { formatURL } from 'src/app/core/utilities/helpers'
 import { ConfirmationComponent } from './pages/confirmation/confirmation.component'
 import { ForgetPasswordComponent } from './pages/forget-password/forget-password.component'
 import { LoginComponent } from './pages/login/login.component'
-import { LogoutComponent } from './pages/logout/logout.component'
 import { OTPVerificationComponent } from './pages/otp-verification/otp-verification.component'
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component'
 import { SignupComponent } from './pages/signup/signup.component'
@@ -58,7 +57,7 @@ const routes: Routes = [
   },
   {
     path: formatURL(AUTH_ROUTES.LOGOUT, { 'auth/': '' }),
-    component: LogoutComponent
+    redirectTo: formatURL(AUTH_ROUTES.LOGIN, { 'auth/': '' })
   }
 ]
 

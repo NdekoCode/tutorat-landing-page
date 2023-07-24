@@ -3,7 +3,7 @@ import { User } from './types'
 export enum GLOBAL_CONSTANTS {
   ALERT_TIMEOUT = 4500,
   AUTH_TIMEOUT = 5500,
-  AUTH_TIMEOUT_LOGIN = 3000
+  AUTH_TIMEOUT_LOGIN = 2000
 }
 
 export const ALERT_COLORS = Object.freeze({
