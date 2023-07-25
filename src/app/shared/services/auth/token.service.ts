@@ -54,12 +54,11 @@ export class TokenService {
         this.apiConfig.url + '/auth/refresh-tokens',
         {
           headers: {
-            Authorization: this.token.accessToken
+            Authorization: 'Bearer ' + this.token.refreshToken
           }
         }
       )
     }
-    this.clearTokenExpired()
     return null as unknown as Observable<Token | null>
   }
 }

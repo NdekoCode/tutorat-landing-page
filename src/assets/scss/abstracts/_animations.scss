@@ -94,6 +94,30 @@
   }
 }
 
+@keyframes fadeStep {
+  0% {
+    opacity  : 0;
+    transform: translateX(-15px);
+  }
+
+  100% {
+    opacity  : 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeStepNext {
+  0% {
+    opacity  : 0;
+    transform: translateX(15px);
+  }
+
+  100% {
+    opacity  : 1;
+    transform: translateY(0);
+  }
+}
+
 @keyframes fadeDown {
   0% {
     opacity  : 0;

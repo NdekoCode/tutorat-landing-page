@@ -17,6 +17,7 @@ import {
   SocialAuthServiceConfig,
   SocialLoginModule
 } from '@abacritt/angularx-social-login'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { environment } from 'src/environments/environment'
 import { TokenInterceptorProvider } from './core/interceptors/token.interceptor'
 @NgModule({
@@ -34,7 +35,8 @@ import { TokenInterceptorProvider } from './core/interceptors/token.interceptor'
     AuthModule,
     MySpaceModule,
     PublicModule,
-    SocialLoginModule
+    SocialLoginModule,
+    BrowserAnimationsModule
   ],
   providers: [
     {
