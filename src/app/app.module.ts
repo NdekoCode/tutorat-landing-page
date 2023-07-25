@@ -19,7 +19,7 @@ import {
 } from '@abacritt/angularx-social-login'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { environment } from 'src/environments/environment'
-import { TokenInterceptorProvider } from './core/interceptors/token.interceptor'
+import { AuthInterceptorProvider } from './core/interceptors/auth.interceptor'
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,7 +53,7 @@ import { TokenInterceptorProvider } from './core/interceptors/token.interceptor'
       } as SocialAuthServiceConfig
     },
     // A partir de ce moment là le tokenInterceptorProvider est tout le temps actif, il est tout le temps entrer de travailler
-    TokenInterceptorProvider
+    AuthInterceptorProvider
   ],
   bootstrap: [AppComponent]
 })

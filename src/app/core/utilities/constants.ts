@@ -2263,3 +2263,11 @@ export const USERS: User[] = [
     tutor: null
   }
 ]
+export enum TOKEN_PAIR_KEYS {
+  ACCESS_TOKEN = 'accessToken',
+  REFRESH_TOKEN = 'refreshToken'
+}
+
+export enum AUTH_TYPE {
+  BEARER = 'Bearer'
+}
