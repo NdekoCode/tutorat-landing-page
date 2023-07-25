@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { FormBuilder, FormGroup } from '@angular/forms'
 import { Router } from '@angular/router'
+import { throwError } from 'rxjs'
 import { AUTH_ROUTES, MYSPACE_ROUTES } from 'src/app/core/routes/routes'
 import { Alert, Timer } from 'src/app/core/utilities/types'
 import { UserService } from '../../../../shared/services/user/user.service'
@@ -34,6 +35,9 @@ export class UserChoiceComponent implements OnInit {
         this.userService.makeMeTutor().subscribe({
           next: (response) => {
             this.router.navigate([AUTH_ROUTES.TUTOR_FORM])
+          },
+          error: (error) => {
+            throwError(error)
           }
         })
       } else {

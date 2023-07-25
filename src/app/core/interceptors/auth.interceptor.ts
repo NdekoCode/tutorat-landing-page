@@ -10,7 +10,6 @@ import { Injectable } from '@angular/core'
 import { Observable, catchError, switchMap, throwError } from 'rxjs'
 import { ApiConfigService } from 'src/app/shared/services/api-config/api-config.service'
 import { TokenService } from 'src/app/shared/services/auth/token.service'
-import { AuthService } from '../../shared/services/auth/auth.service'
 import { AUTH_ROUTES } from '../routes/routes'
 import { AUTH_TYPE } from '../utilities/constants'
 
@@ -20,7 +19,6 @@ export class AuthInterceptor implements HttpInterceptor {
 
   constructor(
     private apiConfig: ApiConfigService,
-    private authService: AuthService,
     private tokenService: TokenService
   ) {}
 
