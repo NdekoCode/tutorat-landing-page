@@ -1,3 +1,5 @@
+import { HttpClient } from '@angular/common/http'
+import { HttpClientTestingModule } from '@angular/common/http/testing'
 import { ComponentFixture, TestBed } from '@angular/core/testing'
 import { ActivatedRoute } from '@angular/router'
 import { TutorService } from 'src/app/shared/services/tutor/tutor.service'
@@ -10,7 +12,9 @@ describe('TutorsComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [TutorsComponent],
+      imports: [HttpClientTestingModule],
       providers: [
+        HttpClient,
         {
           provide: ActivatedRoute,
           useValue: {
