@@ -8,9 +8,7 @@ import { AuthService } from 'src/app/shared/services/auth/auth.service'
 })
 export class SidebarComponent {
   constructor(private authService: AuthService) {}
-  logout() {
-    this.authService.logout()
-  }
+
   @Input() isActive: boolean = false
 
   @Output() isToggleActive = new EventEmitter<boolean>()
@@ -24,7 +22,6 @@ export class SidebarComponent {
       this.isToggleActive.emit(this.isActive)
     }
   }
-  constructor(private authService: AuthService) {}
 
   logout() {
     this.authService.logout()
