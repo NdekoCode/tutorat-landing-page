@@ -3,7 +3,8 @@ import { User } from './types'
 export enum GLOBAL_CONSTANTS {
   ALERT_TIMEOUT = 4500,
   AUTH_TIMEOUT = 5500,
-  AUTH_TIMEOUT_LOGIN = 2000
+  AUTH_TIMEOUT_LOGIN = 2000,
+  SLIDE_TIMEOUT = 2500
 }
 
 export const TUTOR_REQUIRED_FIELDS = Object.freeze([
