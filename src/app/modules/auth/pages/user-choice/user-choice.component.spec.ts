@@ -4,6 +4,7 @@ import { FormBuilder, ReactiveFormsModule } from '@angular/forms'
 import { ActivatedRoute, Router, RouterModule } from '@angular/router'
 import { MYSPACE_ROUTES } from 'src/app/core/routes/routes'
 import { UserService } from 'src/app/shared/services/user/user.service'
+
 import { UserChoiceComponent } from './user-choice.component'
 
 xdescribe('UserChoiceComponent', () => {
@@ -41,7 +42,6 @@ xdescribe('UserChoiceComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy()
   })
-
   it('test_valid_form_client', () => {
     component.ngOnInit()
     component.choiceForm.controls['userChoice'].setValue('client')

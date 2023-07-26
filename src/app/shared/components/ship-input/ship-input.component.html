@@ -1,0 +1,16 @@
+<div class="flex flex-col chip-container">
+  <div class="flex gap-x-1">
+    <div *ngFor="let chip of chips" class="w-max chip">
+      {{ chip }}
+      <button (click)="removeChip(chip)" class="remove-button">x</button>
+    </div>
+  </div>
+  <input
+    type="text"
+    formControlName="inputValue"
+    (keydown.enter)="addChip()"
+    (blur)="addChip()"
+    placeholder="Ajouter une puce..."
+    class="w-full border-gray-300 rounded-none input border-t-transparent border-b-1 input-bordered input-field"
+  />
+</div>

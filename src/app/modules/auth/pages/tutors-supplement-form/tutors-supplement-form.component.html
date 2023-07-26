@@ -48,14 +48,13 @@
                   >
                     <!-- Etape 1: Informations personnelles -->
                     <div *ngIf="currentStep === 1" [class]="stepClass">
-                      <h3 class="mb-3 text-2xl font-bold">
+                      <h6 class="mb-2 text-base font-semibold">
                         Informations personnelles
-                      </h3>
-                      <p class="mb-3 text-sm form-description">
+                      </h6>
+                      <p class="mb-3 text-sm text-gray-500">
                         Nous sommes ravis de vous accueillir en tant que tuteur!
-                        Veuillez remplir le formulaire ci-dessous avec vos
-                        informations personnelles. Nous sommes impatients d’en
-                        savoir plus sur vous !
+                        Specifier votre tarif horaire pour vos differentes
+                        session de tutorat
                       </p>
                       <div class="">
                         <div class="relative w-full mb-3">
@@ -202,7 +201,8 @@
                         </div>
                         <div class="relative w-full mb-3">
                           <label for="bio" class="input-label"
-                            >Biography :</label
+                            >Nous sommes impatients d’en savoir plus sur vous
+                            :</label
                           >
                           <textarea
                             formControlName="bio"
@@ -238,104 +238,43 @@
 
                     <!-- Etape 2: Informations professionnelles -->
                     <div *ngIf="currentStep === 2" [class]="stepClass">
-                      <h2 class="mb-3 text-2xl font-bold">
-                        Informations professionnelles
-                      </h2>
-                      <p class="mb-3 form-description">
-                        Nous sommes convaincus que vous avez beaucoup à offrir
-                        en tant que tuteur! Veuillez remplir le formulaire
-                        ci-dessous avec vos informations professionnelles pour
-                        nous aider à mieux comprendre votre expérience et vos
-                        compétences.
+                      <h6 class="mb-2 text-base font-semibold">Experiences</h6>
+                      <p class="mb-3 text-gray-500 tex-sm">
+                        Pour plus de confiance avec vos futurs clients sur la
+                        plateforme, nous vous recommandons de fournir au moins
+                        une experience professionnelle dans le domaine educatif
                       </p>
-                      <div class="flex items-center gap-x-1">
-                        <div
-                          *ngFor="
-                            let specialization of specializations | async;
-                            let i = index
-                          "
-                          class="flex items-center justify-center px-2 py-1 m-1 font-medium text-indigo-100 bg-white border border-gray-700 rounded-full w-max text-dark"
-                        >
-                          <div
-                            class="flex-initial max-w-full text-xs font-normal leading-none"
-                          >
-                            {{ specialization.name }}
-                          </div>
-                          <div class="flex flex-row-reverse flex-auto">
-                            <div>
-                              <svg
-                                viewBox="-2 -3 30 30"
-                                focusable="false"
-                                aria-hidden="true"
-                                class="w-5 h-5"
-                              >
-                                <path
-                                  fill="none"
-                                  stroke="currentColor"
-                                  d="M1.73,12.91 8.1,19.28 22.79,4.59"
-                                  class="w-3 h-3"
-                                ></path>
-                              </svg>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="w-full form-control">
-                        <div class="field-container">
-                          <label class="input-label">
-                            <span class="label-text">
-                              Préférences de tutorat</span
-                            >
-                          </label>
-                          <input
-                            type="text"
-                            placeholder="Entrer vos specialisation"
-                            class="w-full input input-bordered"
-                            (focus)="focusField()"
-                            (blur)="unFocusField()"
-                          />
-                          <ul
-                            *ngIf="specializationFocus"
-                            class="flex flex-col rounded-sm shadow"
-                          >
-                            <li
-                              class="p-2 border-b cursor-pointer border-b-gray-100"
-                              *ngFor="
-                                let specialization of specializations | async;
-                                let i = index
-                              "
-                              (click)="addSpecialisation(specialization.id)"
-                            >
-                              {{ specialization.name }}
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
+
                       <div class="w-full form-control">
                         <label
                           class="flex items-center justify-between label input-label"
                           for="experience"
                         >
                           <span class="label-text">Expérience :</span>
-
-                          <button
-                            type="button"
+                          <span
                             (click)="addExperience()"
-                            class="w-8 h-8 p-1 text-white bg-blue-600 rounded-full flex-middle"
+                            class="flex items-center px-3 py-1 text-white rounded-full cursor-pointer bg-green"
                           >
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              class="w-6 h-6"
-                              height="800"
-                              width="800"
-                              viewBox="0 0 512 512"
+                            Ajouter une experience
+
+                            <button
+                              type="button"
+                              class="w-8 h-8 p-1 rounded-full flex-middle"
                             >
-                              <path
-                                fill="currentColor"
-                                d="M256 11C120.9 11 11 120.9 11 256s109.9 245 245 245 245-109.9 245-245S391.1 11 256 11zm0 449.2c-112.6 0-204.2-91.6-204.2-204.2S143.4 51.8 256 51.8 460.2 143.4 460.2 256 368.6 460.2 256 460.2zm101.6-224.6h-81.2v-81.2a20.4 20.4 0 1 0-40.8 0v81.2h-81.2a20.4 20.4 0 1 0 0 40.8h81.2v81.2a20.4 20.4 0 1 0 40.8 0v-81.2h81.2a20.4 20.4 0 1 0 0-40.8z"
-                              />
-                            </svg>
-                          </button>
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="w-6 h-6"
+                                height="800"
+                                width="800"
+                                viewBox="0 0 512 512"
+                              >
+                                <path
+                                  fill="currentColor"
+                                  d="M256 11C120.9 11 11 120.9 11 256s109.9 245 245 245 245-109.9 245-245S391.1 11 256 11zm0 449.2c-112.6 0-204.2-91.6-204.2-204.2S143.4 51.8 256 51.8 460.2 143.4 460.2 256 368.6 460.2 256 460.2zm101.6-224.6h-81.2v-81.2a20.4 20.4 0 1 0-40.8 0v81.2h-81.2a20.4 20.4 0 1 0 0 40.8h81.2v81.2a20.4 20.4 0 1 0 40.8 0v-81.2h81.2a20.4 20.4 0 1 0 0-40.8z"
+                                />
+                              </svg>
+                            </button>
+                          </span>
                         </label>
                         <div formArrayName="experience">
                           <div
@@ -426,19 +365,103 @@
                           </div>
                         </div>
                       </div>
+                      <div class="">
+                        <h6 class="mb-2 text-base font-semibold">
+                          Spécialisations
+                        </h6>
+                        <p class="mb-3 text-gray-500 tex-sm">
+                          Veuillez specifier vos differentes specialisation ceci
+                          representent les differents sujets dans lesquels vos
+                          clients pourront demander des sessions de tutorat
+                        </p>
+                        <div
+                          class="flex flex-wrap items-center gap-2"
+                          formArrayName="specialization"
+                        >
+                          <label
+                            *ngFor="
+                              let spec of specializationsData;
+                              let i = index
+                            "
+                            [for]="spec.name + '-' + spec.id"
+                            class="flex items-center justify-center px-2 py-1 font-medium text-indigo-100 bg-white border border-gray-700 rounded-full w-max text-dark"
+                            [ngClass]="{ selected: isSelectedSpec(spec.id) }"
+                          >
+                            <div
+                              class="flex-initial max-w-full text-xs font-normal leading-none"
+                            >
+                              {{ spec.name }}
+                            </div>
+                            <input
+                              type="checkbox"
+                              class="hidden"
+                              [formControlName]="i"
+                              [id]="spec.name + '-' + spec.id"
+                              [value]="spec.id"
+                              (change)="updateSpecializations($event, spec.id)"
+                            />
+                            <div class="flex flex-row-reverse flex-auto">
+                              <div>
+                                <svg
+                                  viewBox="-2 -3 30 30"
+                                  focusable="false"
+                                  aria-hidden="true"
+                                  class="w-5 h-5"
+                                >
+                                  <path
+                                    fill="none"
+                                    stroke="currentColor"
+                                    d="M1.73,12.91 8.1,19.28 22.79,4.59"
+                                    class="w-3 h-3"
+                                  ></path>
+                                </svg>
+                              </div>
+                            </div>
+                          </label>
+                        </div>
+                      </div>
                     </div>
 
-                    <!-- Etape 6: Antécédents judiciaires -->
-                    <div *ngIf="currentStep === 3" [class]="stepClass">
-                      <h2
-                        class="flex items-center justify-between mb-3 text-2xl font-bold"
+                    <!-- Etape 6: Document judiciaires -->
+                    <div
+                      *ngIf="currentStep === 3"
+                      [class]="stepClass"
+                      class="flex flex-col h-full"
+                    >
+                      <h5 class="mb-3 text-lg font-semibold">
+                        Fournissez deux type de document
+                      </h5>
+                      <p class="mb-3 text-gray-500 tex-sm">
+                        Fournissez vos documents pour augmenter votre
+                        credibilité au pres de vos futurs clients et avoir plus
+                        d'audience
+                      </p>
+
+                      <h6 class="mb-2 text-sm font-semibold uppercase">
+                        IDENTITÉ *
+                      </h6>
+                      <p class="mb-3 text-gray-500 tex-xs">
+                        Fournissez une carte d'identité ou une copie de votre
+                        passport
+                      </p>
+
+                      <h6 class="mb-2 text-sm font-semibold uppercase">
+                        CERTIFICATION
+                      </h6>
+                      <p class="mb-3 text-gray-500 tex-xs">
+                        Fournissez des copies de vos diplomes ou de vos
+                        certification à fin d'etre beaucoup plus credible au
+                        près de vos clients.
+                      </p>
+                      <p
+                        (click)="addDocument()"
+                        class="flex items-center justify-center px-3 py-1 mb-3 text-white rounded-full cursor-pointer bg-green"
                       >
-                        <span>Documents judiciaires</span>
+                        Ajouter des documents
 
                         <button
                           type="button"
-                          (click)="addDocument()"
-                          class="w-8 h-8 p-1 text-white bg-blue-600 rounded-full flex-middle"
+                          class="w-8 h-8 p-1 rounded-full flex-middle"
                         >
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -453,8 +476,7 @@
                             />
                           </svg>
                         </button>
-                      </h2>
-
+                      </p>
                       <div formArrayName="document">
                         <div
                           class="fade-opacity"
@@ -464,10 +486,30 @@
                           "
                         >
                           <div class="pt-4 mb-6" [formGroupName]="i">
+                            <select
+                              formControlName="documentType"
+                              class="w-full max-w-full mb-3 select select-bordered"
+                              [ngClass]="{
+                                invalid:
+                                  document.get('documentType')?.touched &&
+                                  document.get('documentType')?.invalid
+                              }"
+                            >
+                              <option value="" disabled selected>
+                                Entrer le type de document
+                              </option>
+
+                              <option
+                                *ngFor="let document of documentTypes"
+                                [value]="document.id"
+                              >
+                                {{ document.name }}
+                              </option>
+                            </select>
                             <div class="field-container">
                               <label class="input-label">
                                 <span class="label-text">
-                                  Description de la video</span
+                                  Description du document</span
                                 >
                               </label>
                               <input
@@ -494,55 +536,45 @@
                                   [for]="'documentUrl' + i"
                                   class="relative flex min-h-[200px] items-center justify-center rounded-md border border-dashed border-[#e0e0e0] p-12 cursor-pointer text-center"
                                 >
-                                  <div>
-                                    <span
-                                      class="mb-2 block text-xl font-semibold text-[#07074D]"
-                                    >
-                                      Entrer vos document pour verifier vos
-                                      antécédents judiciaires
-                                    </span>
-                                    <span
-                                      class="inline-flex rounded border border-[#e0e0e0] py-2 px-7 text-base font-medium text-[#07074D]"
-                                    >
-                                      Browse
-                                    </span>
+                                  <div
+                                    class="w-full h-full"
+                                    *ngIf="
+                                      documentItem && documentItem[i];
+                                      else notImage
+                                    "
+                                  >
+                                    <img
+                                      [src]="documentItem[i]"
+                                      class="object-contain w-full"
+                                      [alt]="document.get('description')?.value"
+                                    />
                                   </div>
+                                  <ng-template #notImage>
+                                    <div>
+                                      <span
+                                        class="mb-2 block text-xl font-semibold text-[#07074D]"
+                                      >
+                                        Entrer vos document pour verifier vos
+                                        antécédents judiciaires
+                                      </span>
+                                      <span
+                                        class="inline-flex rounded border border-[#e0e0e0] py-2 px-7 text-base font-medium text-[#07074D]"
+                                      >
+                                        Browse
+                                      </span>
+                                    </div>
+                                  </ng-template>
                                   <input
                                     type="file"
                                     name="file"
                                     [id]="'documentUrl' + i"
                                     formControlName="documentUrl"
-                                    class="sr-only"
+                                    class="hidden sr-only"
+                                    (change)="onDocumentSelected($event, i)"
                                   />
                                 </label>
                               </div>
                             </div>
-                            <select
-                              formControlName="documentType"
-                              class="w-full max-w-full select select-bordered"
-                              [ngClass]="{
-                                invalid:
-                                  document.get('documentType')?.touched &&
-                                  document.get('documentType')?.invalid
-                              }"
-                            >
-                              <option value="" disabled selected>
-                                Entrer le type de document
-                              </option>
-                              <option value="passport">Passport</option>
-                              <option value="carte-electeur">
-                                Carte d'electeur
-                              </option>
-                              <option value="carte-etudian">
-                                Carte d'etudiant
-                              </option>
-                              <option value="carte-medecin">
-                                Carte de medecin
-                              </option>
-                              <option value="permis-conduire">
-                                Permis de conduire
-                              </option>
-                            </select>
                           </div>
                           <div class="flex justify-end w-full">
                             <button
@@ -582,7 +614,7 @@
                           <input
                             id="videoDescription"
                             formControlName="description"
-                            class="p-2 text-base border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500"
+                            class="p-2 text-base border border-gray-300 rounded-lg focus:outline-none focus:border-gray-400"
                             type="text"
                             placeholder="entrer la description de la video"
                           />
@@ -705,12 +737,12 @@
                   </div>
                   <div class="form-footer">
                     <div
-                      class="items-center justify-between mt-10 button-container"
+                      class="items-center justify-between mt-3 button-container"
                     >
                       <button
                         *ngIf="currentStep > 1"
                         type="button"
-                        class="px-5 mr-auto button btn hover:bg-yellow-600 button-primary"
+                        class="px-5 mr-auto button btn bg-green hover:bg-green-950 button-primary"
                         (click)="previousStep()"
                       >
                         Précédent
@@ -719,14 +751,14 @@
                       <button
                         *ngIf="currentStep === 5; else notLast"
                         type="submit"
-                        class="px-5 ml-auto btn hover:bg-yellow-600 button button-primary"
+                        class="px-5 ml-auto btn bg-green hover:bg-green-950 button button-primary"
                       >
                         Soumettre
                       </button>
                       <ng-template #notLast>
                         <button
                           type="button"
-                          class="px-5 ml-auto btn hover:bg-yellow-600 button button-primary"
+                          class="px-5 ml-auto bg-green btn hover:bg-green-950 button button-primary"
                           (click)="nextStep()"
                         >
                           Suivant

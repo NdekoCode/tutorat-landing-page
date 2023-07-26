@@ -62,7 +62,6 @@ import { TextareaComponent } from './components/textarea/textarea.component'
     DataTipDirective,
     FormsModule,
     RatingComponent,
-    RatingComponent,
     CardTutorSuggestionComponent
   ]
 })

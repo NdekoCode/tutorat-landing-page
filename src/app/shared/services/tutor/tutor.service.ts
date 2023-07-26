@@ -30,15 +30,16 @@ export class TutorService {
   tutorCompletedProfile(user: ITutor) {
     return hasProperties(user.tutor, TUTOR_REQUIRED_FIELDS as string[], true)
   }
-  // eslint-disable-next-line class-methods-use-this
-  isTutor(user: User | ITutor): boolean {
-    return isExists(user?.tutor) && !isEmptyObject(user?.tutor)
-  }
+
   getSingleTutor(id: number): ITutor | undefined {
     return this.getTutors().find((tutor) => tutor.id === id)
   }
   getSuggestionTutors(city: string) {
     this._tutors = this.getTutors().filter((t) => t.address.city === city)
     return this._tutors
+  }
+  // eslint-disable-next-line class-methods-use-this
+  isTutor(user: User | ITutor): boolean {
+    return isExists(user?.tutor) && !isEmptyObject(user?.tutor)
   }
 }
