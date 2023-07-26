@@ -26,6 +26,28 @@
   }
 }
 
+.selected {
+  @apply bg-green-200;
+}
+
+input[type="text"],
+input[type="date"],
+select,
+textarea,
+.input-icon {
+  background-color: #f2f3f8 !important;
+  border-color    : #e2e9ea !important;
+  border-radius   : 5px !important;
+}
+
+.icon {
+  @apply hidden;
+
+  @screen sm {
+    @apply inline-block
+  }
+}
+
 .form-tutor {
   background-color   : var(--red-light);
   // background      : url('/assets/images/icons/bar-decorator.png') no-repeat center center / contain;

@@ -53,7 +53,7 @@ export type Experience = {
   startTime: Date
   endTime: Date
 }
-
+export type DocumentDataType = 'IDENTITY' | 'CERTIFICATION'
 export type Video = {
   url: string
   thumbnail?: string
@@ -62,9 +62,12 @@ export type Video = {
 export type Document = {
   documentUrl: string
   description: string
-  documentType: number
+  documentType: number | string
 }
-
+export type DocumentType = {
+  id: string | number
+  name: string
+}
 export type Course = {
   id: number
   name: string
@@ -109,4 +112,10 @@ export type Tutor = {
 export type ErrorValidationType = {
   key: string
   message: string
+}
+export type UserExperience = {
+  enterprise: string
+  poste: string
+  startTime: Date
+  endTime: Date
 }

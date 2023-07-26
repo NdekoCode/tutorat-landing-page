@@ -62,8 +62,8 @@
 }
 
 .bg-green {
-  background-color: var(--green-dark);
-  color           : var(--color-white);
+  background-color: var(--green-dark) !important;
+  color           : var(--color-white) !important;
 }
 
 .border-green {
