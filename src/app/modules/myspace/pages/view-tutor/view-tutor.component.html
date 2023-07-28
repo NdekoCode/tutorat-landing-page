@@ -1,5 +1,6 @@
-<app-space-content
-  ><div class="w-full profile" *ngIf="tutor; else notUser">
+<app-space-content>
+  <app-profile-skeleton *ngIf="isLoading" />
+  <div class="w-full profile" *ngIf="tutor; else notUser">
     <div
       class="grid grid-flow-row-dense grid-cols-1 xl:justify-between xl:grid-cols-3"
     >
@@ -851,8 +852,9 @@
             </p>
           </div>
         </div>
-
+        <app-inline-card-skeleton *ngIf="suggestionLoading" />
         <app-tutor-carousel
+          *ngIf="suggestionTutors"
           [items]="suggestionTutors"
           [slidesPerPage]="4"
           [paginationPerSlide]="5"

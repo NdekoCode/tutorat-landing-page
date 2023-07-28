@@ -36,16 +36,21 @@ export class OverviewComponent implements OnInit {
 
   ngOnInit(): void {
     this.userId = this.activatedRoute.snapshot.params['id']
-
-    this.tutorService.getTutors().subscribe((tutors) => {
-      this.tutors = tutors
-      this.filteredTutors = this.tutors
-      this.suggestionTutors = this.tutors.filter(
-        (t) => t.address.city === 'Goma'
-      )
-      this.topTutors = this.tutorService.getLimitTutor(this.tutors, 20)
+    this.isLoading = true
+    this.tutorService.getTutors().subscribe({
+      next: (tutors) => {
+        this.tutors = tutors
+        this.filteredTutors = this.tutors
+        this.suggestionTutors = this.tutors.filter(
+          (t) => t.address.city === 'Goma'
+        )
+        this.topTutors = this.tutorService.getLimitTutor(this.tutors, 20)
+        this.isLoading = false
+      },
+      error: (err) => {
+        this.isLoading = false
+      }
     })
-    this.coursesService.getAllCourses()
   }
   filterTutors(
     filter: Partial<Tutor & { city: string; cours?: string | number }>

@@ -1,23 +1,23 @@
 <app-space-content>
   <div class="w-full">
     <div class="">
-      <app-tutor-carousel
-        [items]="topTutors"
-        [slidesPerPage]="4"
-        [paginationPerSlide]="5"
-      >
-        <h3 class="text-3xl font-bold text-blue" title>
-          Les tuteurs les mieux cotés
-        </h3>
-
-        <div class="slide" *ngFor="let item of topTutors">
-          <app-tutor-short-card [tutor]="item" />
-        </div>
-      </app-tutor-carousel>
-    </div>
-    <div class="">
       <app-cards-skeleton *ngIf="isLoading; else notLoading" />
       <ng-template #notLoading>
+        <div class="">
+          <app-tutor-carousel
+            [items]="topTutors"
+            [slidesPerPage]="4"
+            [paginationPerSlide]="5"
+          >
+            <h3 class="text-3xl font-bold text-blue" title>
+              Les tuteurs les mieux cotés
+            </h3>
+
+            <div class="slide" *ngFor="let item of topTutors">
+              <app-tutor-short-card [tutor]="item" />
+            </div>
+          </app-tutor-carousel>
+        </div>
         <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-5">
           <div class="">
             <div class="flex items-center justify-between">

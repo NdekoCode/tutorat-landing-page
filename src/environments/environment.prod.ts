@@ -2,7 +2,7 @@ export const environment = {
   production: true,
   GOOGLE_CLIENT_ID:
     '949916752416-6h0rfmpqgujcfu5to3hh4d7pik47cmlo.apps.googleusercontent.com',
-  BASE_URL: 'https://tutorat.onrender.com',
+  BASE_URL: 'https://tutor-api-production.up.railway.app',
   cloudinaryConfig: {
     CLOUDINARY_CLOUD_NAME: 'dig1rk2g8',
     CLOUDINARY_API_KEY: '758666836684387',

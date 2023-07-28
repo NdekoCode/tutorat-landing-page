@@ -17,13 +17,13 @@ import { DataTipDirective } from 'src/app/shared/directives/data-tip.directive'
 import { ScrollDirective } from 'src/app/shared/directives/scroll.directive'
 import { TutorCardComponent } from '../modules/myspace/components/tutor-card/tutor-card.component'
 import { CardsSkeletonComponent } from './components/cards-skeleton/cards-skeleton.component'
+import { InlineCardSkeletonComponent } from './components/inline-card-skeleton/inline-card-skeleton.component'
 import { InputGroupComponent } from './components/input-group/input-group.component'
 import { InputIconComponent } from './components/input-icon/input-icon.component'
 import { InputComponent } from './components/input/input.component'
 import { ProfileSkeletonComponent } from './components/profile-skeleton/profile-skeleton.component'
 import { TextareaComponent } from './components/textarea/textarea.component'
 import { VerificationModalAnimationComponent } from './components/verification-modal-animation/verification-modal-animation.component'
-import { InlineCardSkeletonComponent } from './components/inline-card-skeleton/inline-card-skeleton.component'
 @NgModule({
   declarations: [
     AlertComponent,
@@ -73,7 +73,8 @@ import { InlineCardSkeletonComponent } from './components/inline-card-skeleton/i
     CardTutorSuggestionComponent,
     VerificationModalAnimationComponent,
     CardsSkeletonComponent,
-    ProfileSkeletonComponent
+    ProfileSkeletonComponent,
+    InlineCardSkeletonComponent
   ]
 })
 export class SharedModule {}
