@@ -23,6 +23,7 @@ import { InputComponent } from './components/input/input.component'
 import { ProfileSkeletonComponent } from './components/profile-skeleton/profile-skeleton.component'
 import { TextareaComponent } from './components/textarea/textarea.component'
 import { VerificationModalAnimationComponent } from './components/verification-modal-animation/verification-modal-animation.component'
+import { InlineCardSkeletonComponent } from './components/inline-card-skeleton/inline-card-skeleton.component'
 @NgModule({
   declarations: [
     AlertComponent,
@@ -44,7 +45,8 @@ import { VerificationModalAnimationComponent } from './components/verification-m
     CardTutorSuggestionComponent,
     VerificationModalAnimationComponent,
     CardsSkeletonComponent,
-    ProfileSkeletonComponent
+    ProfileSkeletonComponent,
+    InlineCardSkeletonComponent
   ],
   imports: [CommonModule, RouterModule, ReactiveFormsModule, FormsModule],
   exports: [
