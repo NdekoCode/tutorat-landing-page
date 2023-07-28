@@ -11,6 +11,8 @@ import { TutorService } from 'src/app/shared/services/tutor/tutor.service'
 export class ViewTutorComponent implements OnInit {
   activeFragment!: string
   tutor!: ITutor
+  isLoading: boolean = false
+  suggestionLoading: boolean = false
   suggestionTutors!: ITutor[]
   userId!: number
   constructor(
@@ -18,6 +20,8 @@ export class ViewTutorComponent implements OnInit {
     private tutorService: TutorService
   ) {}
   ngOnInit() {
+    this.isLoading = true
+    this.suggestionLoading = false
     this.userId = this.route.snapshot.params['id']
     this.route.fragment.subscribe((fragment) => {
       if (fragment) {
@@ -26,12 +30,28 @@ export class ViewTutorComponent implements OnInit {
     })
 
     if (this.userId) {
-      this.tutor = this.tutorService.getSingleTutor(+this.userId) as ITutor
+      this.tutorService.getSingleTutor(+this.userId).subscribe({
+        next: (tutor) => {
+          this.tutor = tutor!
+          this.isLoading = false
+        },
+        error: (err) => {
+          this.isLoading = false
+        }
+      })
     }
 
-    this.suggestionTutors = this.tutorService.getSuggestionTutors(
-      this.tutor.tutor.address.city
-    )
+    this.tutorService
+      .getSuggestionTutors(this.tutor.tutor.address.city)
+      .subscribe({
+        next: (tutors) => {
+          this.suggestionTutors = tutors
+          this.suggestionLoading = false
+        },
+        error: (err) => {
+          this.suggestionLoading = false
+        }
+      })
   }
 
   isLinkActive(fragment: string): boolean {

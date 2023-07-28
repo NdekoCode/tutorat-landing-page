@@ -38,6 +38,22 @@ export type PasswordCredentials = {
   confirmPassword: string
   password: string
 }
+export type TutorCredentials = {
+  bio: string
+  hourlyRate: number
+  transport: number
+  specialization: (number | string)[]
+  video: Video
+  experience: [
+    {
+      enterprise: string
+      poste: string
+      startDate: Date
+      endDate: Date
+    }
+  ]
+  document: Document[]
+}
 
 export type Token = {
   accessToken: string
@@ -50,8 +66,8 @@ export type AlertSuccess = {
 export type Experience = {
   enterprise: string
   poste: string
-  startTime: Date
-  endTime: Date
+  startDate: Date
+  endDate: Date
 }
 export type DocumentDataType = 'IDENTITY' | 'CERTIFICATION'
 export type Video = {
@@ -59,6 +75,7 @@ export type Video = {
   thumbnail?: string
   description?: string
 }
+
 export type Document = {
   documentUrl: string
   description: string
@@ -116,6 +133,19 @@ export type ErrorValidationType = {
 export type UserExperience = {
   enterprise: string
   poste: string
-  startTime: Date
-  endTime: Date
+  startDate: Date
+  endDate: Date
 }
+export type CloudinaryConfigType = {
+  CLOUDINARY_CLOUD_NAME: string
+  CLOUDINARY_API_KEY: string
+  CLOUDINARY_API_SECRET: string
+  CLOUDINARY_PRESET: string
+  CLOUDINARY_URL: string
+}
+export type CloudinaryResponse = {
+  secure_url: string
+  public_id: string
+}
+export type FileObject = { [key: string | number]: string | File }
+export type FileType = string | File

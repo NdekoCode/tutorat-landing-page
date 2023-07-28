@@ -16,6 +16,8 @@ import { CoursesService } from '../../../../shared/services/courses/courses.serv
 })
 export class OverviewComponent implements OnInit {
   userId!: number
+  isLoading: boolean = false
+  tutors: ITutor[] = []
   suggestionTutors: ITutor[] = []
   filteredTutors: ITutor[] = []
   topTutors: ITutor[] = []
@@ -32,17 +34,18 @@ export class OverviewComponent implements OnInit {
     private coursesService: CoursesService
   ) {}
 
-  get tutors() {
-    return this.tutorService.getLimitTutor()
-  }
   ngOnInit(): void {
     this.userId = this.activatedRoute.snapshot.params['id']
-    this.filteredTutors = this.tutors
+
+    this.tutorService.getTutors().subscribe((tutors) => {
+      this.tutors = tutors
+      this.filteredTutors = this.tutors
+      this.suggestionTutors = this.tutors.filter(
+        (t) => t.address.city === 'Goma'
+      )
+      this.topTutors = this.tutorService.getLimitTutor(this.tutors, 20)
+    })
     this.coursesService.getAllCourses()
-    this.suggestionTutors = this.tutorService
-      .getTutors()
-      .filter((t) => t.address.city === 'Goma')
-    this.topTutors = this.tutorService.getLimitTutor(20)
   }
   filterTutors(
     filter: Partial<Tutor & { city: string; cours?: string | number }>

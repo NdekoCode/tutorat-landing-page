@@ -16,6 +16,8 @@ import { TutorService } from 'src/app/shared/services/tutor/tutor.service'
 })
 export class TutorsComponent implements OnInit {
   userId!: number
+  tutors: ITutor[] = []
+  isLoading: boolean = false
   filteredTutors: ITutor[] = []
   filters: Partial<Tutor & { city: string; cours?: string | number }> = {
     hourlyRate: 0,
@@ -29,12 +31,19 @@ export class TutorsComponent implements OnInit {
     private tutorService: TutorService
   ) {}
 
-  get tutors() {
-    return this.tutorService.getLimitTutor()
-  }
   ngOnInit(): void {
     this.userId = this.activatedRoute.snapshot.params['id']
-    this.filteredTutors = this.tutors
+    this.isLoading = true
+    this.tutorService.getTutors().subscribe({
+      next: (tutors) => {
+        this.tutors = this.tutorService.getLimitTutor(tutors)
+        this.filteredTutors = this.tutors
+        this.isLoading = false
+      },
+      error: (err) => {
+        this.isLoading = false
+      }
+    })
   }
   filterTutors(
     filter: Partial<Tutor & { city: string; cours?: string | number }>

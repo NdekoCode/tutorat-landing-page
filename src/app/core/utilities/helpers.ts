@@ -236,3 +236,25 @@ export function generateEvents(): Event[] {
 
   return [event]
 }
+export function getFileNameWithoutExtension(fileName: string): string {
+  const extensionIndex = fileName.lastIndexOf('.')
+  if (extensionIndex !== -1) {
+    return fileName.substring(0, extensionIndex)
+  }
+  return fileName
+}
+
+// Fonction pour supprimer les préfixes des données d'image
+export function removeDataPrefix(data: string): string {
+  const prefixes = [
+    'data:image/jpeg;base64,',
+    'data:image/png;base64,',
+    'data:image/gif;base64,'
+  ]
+  for (const prefix of prefixes) {
+    if (data.startsWith(prefix)) {
+      return data.substring(prefix.length)
+    }
+  }
+  return data
+}

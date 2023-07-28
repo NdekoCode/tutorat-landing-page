@@ -1,28 +1,33 @@
 import { Injectable } from '@angular/core'
+import { Observable } from 'rxjs'
 import { TUTOR_REQUIRED_FIELDS } from 'src/app/core/utilities/constants'
 import {
   getLimitData,
-  getUsers,
   hasProperties,
   isEmptyObject,
   isExists
 } from 'src/app/core/utilities/helpers'
 import { ITutor } from 'src/app/core/utilities/interfaces'
-import { User } from 'src/app/core/utilities/types'
+import { TutorCredentials, User } from 'src/app/core/utilities/types'
 import { ApiConfigService } from '../api-config/api-config.service'
+import { UserService } from '../user/user.service'
 
 @Injectable({
   providedIn: 'root'
 })
 export class TutorService {
   _tutors!: ITutor[]
-  constructor(private apiConfig: ApiConfigService) {}
-  getTutors() {
-    this._tutors = getUsers(true) as ITutor[]
-    return this._tutors
+  constructor(
+    private apiConfig: ApiConfigService,
+    public userService: UserService
+  ) {}
+  getTutors(): Observable<ITutor[]> {
+    return this.apiConfig.http.get<ITutor[]>(
+      `${this.apiConfig.url}/users/all-tutors`
+    )
   }
-  getLimitTutor(limit: number = 12) {
-    this._tutors = getLimitData(this.getTutors(), limit) as ITutor[]
+  getLimitTutor(tutor: ITutor[], limit: number = 12) {
+    this._tutors = getLimitData(tutor, limit) as ITutor[]
     return this._tutors
   }
 
@@ -31,15 +36,26 @@ export class TutorService {
     return hasProperties(user.tutor, TUTOR_REQUIRED_FIELDS as string[], true)
   }
 
-  getSingleTutor(id: number): ITutor | undefined {
-    return this.getTutors().find((tutor) => tutor.id === id)
+  getSingleTutor(id: number): Observable<ITutor | null> {
+    return this.apiConfig.http.get<ITutor>(
+      `${this.apiConfig.url}/users/all-tutors/${id}`
+    )
   }
-  getSuggestionTutors(city: string) {
-    this._tutors = this.getTutors().filter((t) => t.address.city === city)
-    return this._tutors
+  getSuggestionTutors(city: string): Observable<ITutor[]> {
+    return this.apiConfig.http.get<ITutor[]>(
+      `${this.apiConfig.url}/users/all-tutors?address=${city}`
+    )
   }
   // eslint-disable-next-line class-methods-use-this
   isTutor(user: User | ITutor): boolean {
     return isExists(user?.tutor) && !isEmptyObject(user?.tutor)
+  }
+  updateTutorData(
+    credentials: TutorCredentials
+  ): Observable<{ message: string }> {
+    return this.apiConfig.http.patch<{ message: string }>(
+      this.apiConfig.url + '/users/update-tutor-data',
+      credentials
+    )
   }
 }

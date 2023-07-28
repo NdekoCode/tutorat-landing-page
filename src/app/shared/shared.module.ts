@@ -16,10 +16,12 @@ import { TutorSuggestionCardComponent } from 'src/app/shared/components/tutor-su
 import { DataTipDirective } from 'src/app/shared/directives/data-tip.directive'
 import { ScrollDirective } from 'src/app/shared/directives/scroll.directive'
 import { TutorCardComponent } from '../modules/myspace/components/tutor-card/tutor-card.component'
+import { CardsSkeletonComponent } from './components/cards-skeleton/cards-skeleton.component'
 import { InputGroupComponent } from './components/input-group/input-group.component'
 import { InputIconComponent } from './components/input-icon/input-icon.component'
 import { InputComponent } from './components/input/input.component'
 import { TextareaComponent } from './components/textarea/textarea.component'
+import { VerificationModalAnimationComponent } from './components/verification-modal-animation/verification-modal-animation.component'
 @NgModule({
   declarations: [
     AlertComponent,
@@ -38,7 +40,9 @@ import { TextareaComponent } from './components/textarea/textarea.component'
     SocialCardComponent,
     DataTipDirective,
     RatingComponent,
-    CardTutorSuggestionComponent
+    CardTutorSuggestionComponent,
+    VerificationModalAnimationComponent,
+    CardsSkeletonComponent
   ],
   imports: [CommonModule, RouterModule, ReactiveFormsModule, FormsModule],
   exports: [
@@ -62,7 +66,9 @@ import { TextareaComponent } from './components/textarea/textarea.component'
     DataTipDirective,
     FormsModule,
     RatingComponent,
-    CardTutorSuggestionComponent
+    CardTutorSuggestionComponent,
+    VerificationModalAnimationComponent,
+    CardsSkeletonComponent
   ]
 })
 export class SharedModule {}

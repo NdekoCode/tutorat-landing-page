@@ -317,26 +317,26 @@
                                 <div class="w-full field-container join-item">
                                   <input
                                     type="date"
-                                    formControlName="startTime"
+                                    formControlName="startDate"
                                     placeholder="Entrer le post occuper dans l'etablissement"
                                     class="w-full input-field input input-bordered"
                                     [ngClass]="{
                                       invalid:
-                                        experience.get('startTime')?.touched &&
-                                        experience.get('startTime')?.invalid
+                                        experience.get('startDate')?.touched &&
+                                        experience.get('startDate')?.invalid
                                     }"
                                   />
                                 </div>
                                 <div class="w-full field-container join-item">
                                   <input
                                     type="date"
-                                    formControlName="endTime"
+                                    formControlName="endDate"
                                     placeholder="Entrer le post occuper dans l'etablissement"
                                     class="w-full input-field input input-bordered"
                                     [ngClass]="{
                                       invalid:
-                                        experience.get('endTime')?.touched &&
-                                        experience.get('endTime')?.invalid
+                                        experience.get('endDate')?.touched &&
+                                        experience.get('endDate')?.invalid
                                     }"
                                   />
                                 </div>
@@ -671,8 +671,7 @@
                               </div>
                               <input
                                 formControlName="url"
-                                (change)="onSelectFile($event)"
-                                (change)="add($event)"
+                                (change)="onVideoSelectFile($event)"
                                 type="file"
                                 class="hidden"
                                 id="video-file"
@@ -783,3 +782,4 @@
   [alertType]="alert.alertType"
   [alertMessage]="alert.alertMessage"
 />
+<app-verification-modal-animation *ngIf="inVerification && !submitForm" />

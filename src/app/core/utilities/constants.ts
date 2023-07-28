@@ -7,13 +7,13 @@ export enum GLOBAL_CONSTANTS {
   SLIDE_TIMEOUT = 2500
 }
 export enum DOCUMENT_IDENTITY_TYPE {
-  ID_CARD = 'ID CARD',
-  PASSPORT = 'PASSPORT'
+  ID_CARD = 2,
+  PASSPORT = 3
 }
 
 export enum DOCUMENT_CERTIFICATION_TYPE {
-  CERTIFICATION = 'CERTIFICATION',
-  DIPLOMA = 'DIPLOMA'
+  CERTIFICATION = 4,
+  DIPLOMA = 5
 }
 export const IDENTITY_TYPE_NAME = 'IDENTITY'
 export const CERTIFICATION_TYPE_NAME = 'CERTIFICATION'
@@ -56,6 +56,16 @@ export const ALERT_AUTH = Object.freeze({
     success: {
       alertTitle: 'Connexion reussis',
       alertMessage: 'Bravo, vous etes connecter avec succés !'
+    }
+  },
+  tutor: {
+    error: {
+      alertTitle: 'Votre inscription est revoquer',
+      alertMessage: ''
+    },
+    success: {
+      alertTitle: 'Bravo vous etes tuteurs',
+      alertMessage: ''
     }
   }
 })

@@ -115,6 +115,11 @@
   animation: fadeStepNext var(--transition-2) forwards;
 }
 
+.fade-top {
+
+  animation: fadeInTop var(--transition-2) forwards;
+}
+
 .fade-out {
   animation: fadeOut var(--transition-2) forwards;
 }

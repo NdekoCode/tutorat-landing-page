@@ -5,6 +5,7 @@ export const USER_BASE_NAME: string = 'user'
 export enum AUTH_ROUTES {
   LOGIN = '/auth/login',
   SIGNUP = '/auth/signup',
+  GOOGLE_AUTH = '/auth/google',
   LOGOUT = '/auth/logout',
   USER_CHOICE = '/auth/user-choice',
   VERIFY_USER = '/auth/verify-user',
@@ -14,7 +15,19 @@ export enum AUTH_ROUTES {
   CONFIRMATION = '/auth/confirmation',
   TUTOR_FORM = '/auth/tutor-form'
 }
-
+export const AUTH_ROUTES_ARRAY: string[] = [
+  AUTH_ROUTES.LOGIN,
+  AUTH_ROUTES.SIGNUP,
+  AUTH_ROUTES.LOGOUT,
+  AUTH_ROUTES.USER_CHOICE,
+  AUTH_ROUTES.VERIFY_USER,
+  AUTH_ROUTES.FORGET_PASSWORD,
+  AUTH_ROUTES.RESET_PASSWORD,
+  AUTH_ROUTES.VERIFY_PASSWORD,
+  AUTH_ROUTES.CONFIRMATION,
+  AUTH_ROUTES.TUTOR_FORM,
+  AUTH_ROUTES.GOOGLE_AUTH
+]
 export enum PUBLIC_ROUTES {
   HOME = '/',
   CONTACT = '/contact',

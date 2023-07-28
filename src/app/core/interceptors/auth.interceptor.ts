@@ -10,7 +10,8 @@ import { Injectable } from '@angular/core'
 import { Observable, catchError, switchMap, throwError } from 'rxjs'
 import { ApiConfigService } from 'src/app/shared/services/api-config/api-config.service'
 import { TokenService } from 'src/app/shared/services/auth/token.service'
-import { AUTH_ROUTES } from '../routes/routes'
+import { environment } from 'src/environments/environment'
+import { AUTH_ROUTES, AUTH_ROUTES_ARRAY } from '../routes/routes'
 import { AUTH_TYPE } from '../utilities/constants'
 
 @Injectable()
@@ -26,6 +27,15 @@ export class AuthInterceptor implements HttpInterceptor {
     request: HttpRequest<unknown>,
     next: HttpHandler
   ): Observable<HttpEvent<unknown>> {
+    const urlRequest = request.url.replace(environment.BASE_URL, '')
+    if (
+      !this.tokenService.tokenExists() &&
+      !AUTH_ROUTES_ARRAY.includes(urlRequest)
+    ) {
+      return throwError(() =>
+        this.apiConfig.router.navigate([AUTH_ROUTES.LOGIN])
+      )
+    }
     const token = this.tokenService.getToken()
     const req = request.clone({
       setHeaders: {
