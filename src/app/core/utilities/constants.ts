@@ -74,11 +74,10 @@ export const USERS: User[] = [
   {
     firstName: 'Terry',
     lastName: 'Medhurst',
-    age: 50,
     gender: 'male',
     email: 'atuny0@sohu.com',
-    phone: '+63 791 675 8914',
-    image: 'https://randomuser.me/api/portraits/men/45.jpg',
+    phoneNumber: '+63 791 675 8914',
+    avatar: 'https://randomuser.me/api/portraits/men/45.jpg',
     address: {
       address: '1745 T Street Southeast',
       city: 'Washington',
@@ -91,11 +90,11 @@ export const USERS: User[] = [
   {
     firstName: 'Sheldon',
     lastName: 'Quigley',
-    age: 28,
+
     gender: 'male',
     email: 'hbingley1@plala.or.jp',
-    phone: '+7 813 117 7139',
-    image: 'https://randomuser.me/api/portraits/women/69.jpg',
+    phoneNumber: '+7 813 117 7139',
+    avatar: 'https://randomuser.me/api/portraits/women/69.jpg',
     address: {
       address: '6007 Applegate Lane',
       city: 'Louisville',
@@ -108,11 +107,11 @@ export const USERS: User[] = [
   {
     firstName: 'Terrill',
     lastName: 'Hills',
-    age: 38,
+
     gender: 'male',
     email: 'rshawe2@51.la',
-    phone: '+63 739 292 7942',
-    image: 'https://randomuser.me/api/portraits/men/24.jpg',
+    phoneNumber: '+63 739 292 7942',
+    avatar: 'https://randomuser.me/api/portraits/men/24.jpg',
     address: {
       address: '560 Penstock Drive',
       city: 'Grass Valley',
@@ -142,11 +141,11 @@ export const USERS: User[] = [
   {
     firstName: 'Miles',
     lastName: 'Cummerata',
-    age: 49,
+
     gender: 'male',
     email: 'yraigatt3@nature.com',
-    phone: '+86 461 145 4186',
-    image: 'https://randomuser.me/api/portraits/men/61.jpg',
+    phoneNumber: '+86 461 145 4186',
+    avatar: 'https://randomuser.me/api/portraits/men/61.jpg',
     address: {
       address: '150 Carter Street',
       city: 'Manchester',
@@ -159,11 +158,11 @@ export const USERS: User[] = [
   {
     firstName: 'Mavis',
     lastName: 'Schultz',
-    age: 38,
+
     gender: 'male',
     email: 'kmeus4@upenn.edu',
-    phone: '+372 285 771 1911',
-    image: 'https://randomuser.me/api/portraits/men/3.jpg',
+    phoneNumber: '+372 285 771 1911',
+    avatar: 'https://randomuser.me/api/portraits/men/3.jpg',
     address: {
       address: '2721 Lindsay Avenue',
       city: 'Louisville',
@@ -193,11 +192,11 @@ export const USERS: User[] = [
   {
     firstName: 'Alison',
     lastName: 'Reichert',
-    age: 21,
+
     gender: 'female',
     email: 'jtreleven5@nhs.uk',
-    phone: '+351 527 735 3642',
-    image: 'https://randomuser.me/api/portraits/women/27.jpg',
+    phoneNumber: '+351 527 735 3642',
+    avatar: 'https://randomuser.me/api/portraits/women/27.jpg',
     address: {
       address: '18 Densmore Drive',
       city: 'Essex',
@@ -210,11 +209,11 @@ export const USERS: User[] = [
   {
     firstName: 'Oleta',
     lastName: 'Abbott',
-    age: 31,
+
     gender: 'female',
     email: 'dpettegre6@columbia.edu',
-    phone: '+62 640 802 7111',
-    image: 'https://randomuser.me/api/portraits/men/57.jpg',
+    phoneNumber: '+62 640 802 7111',
+    avatar: 'https://randomuser.me/api/portraits/men/57.jpg',
     address: {
       address: '637 Britannia Drive',
       city: 'Vallejo',
@@ -244,11 +243,11 @@ export const USERS: User[] = [
   {
     firstName: 'Ewell',
     lastName: 'Mueller',
-    age: 29,
+
     gender: 'male',
     email: 'ggude7@chron.com',
-    phone: '+86 946 297 2275',
-    image: 'https://randomuser.me/api/portraits/men/48.jpg',
+    phoneNumber: '+86 946 297 2275',
+    avatar: 'https://randomuser.me/api/portraits/men/48.jpg',
     address: {
       address: '5601 West Crocus Drive',
       city: 'Glendale',
@@ -278,11 +277,11 @@ export const USERS: User[] = [
   {
     firstName: 'Demetrius',
     lastName: 'Corkery',
-    age: 22,
+
     gender: 'male',
     email: 'nloiterton8@aol.com',
-    phone: '+86 356 590 9727',
-    image: 'https://randomuser.me/api/portraits/men/76.jpg',
+    phoneNumber: '+86 356 590 9727',
+    avatar: 'https://randomuser.me/api/portraits/men/76.jpg',
     address: {
       address: '5403 Illinois Avenue',
       city: 'Nashville',
@@ -295,11 +294,11 @@ export const USERS: User[] = [
   {
     firstName: 'Eleanora',
     lastName: 'Price',
-    age: 37,
+
     gender: 'female',
     email: 'umcgourty9@jalbum.net',
-    phone: '+60 184 408 0824',
-    image: 'https://randomuser.me/api/portraits/women/23.jpg',
+    phoneNumber: '+60 184 408 0824',
+    avatar: 'https://randomuser.me/api/portraits/women/23.jpg',
     address: {
       address: '8821 West Myrtle Avenue',
       city: 'Glendale',
@@ -312,11 +311,11 @@ export const USERS: User[] = [
   {
     firstName: 'Marcel',
     lastName: 'Jones',
-    age: 39,
+
     gender: 'male',
     email: 'acharlota@liveinternet.ru',
-    phone: '+967 253 210 0344',
-    image: 'https://randomuser.me/api/portraits/women/61.jpg',
+    phoneNumber: '+967 253 210 0344',
+    avatar: 'https://randomuser.me/api/portraits/women/61.jpg',
     address: {
       address: '2203 7th Street Road',
       city: 'Louisville',
@@ -346,11 +345,11 @@ export const USERS: User[] = [
   {
     firstName: 'Assunta',
     lastName: 'Rath',
-    age: 42,
+
     gender: 'female',
     email: 'rhallawellb@dropbox.com',
-    phone: '+380 962 542 6549',
-    image: 'https://randomuser.me/api/portraits/men/21.jpg',
+    phoneNumber: '+380 962 542 6549',
+    avatar: 'https://randomuser.me/api/portraits/men/21.jpg',
     address: {
       address: '6463 Vrain Street',
       city: 'Arvada',
@@ -363,11 +362,11 @@ export const USERS: User[] = [
   {
     firstName: 'Trace',
     lastName: 'Douglas',
-    age: 26,
+
     gender: 'male',
     email: 'lgribbinc@posterous.com',
-    phone: '+1 609 937 3468',
-    image: 'https://randomuser.me/api/portraits/men/42.jpg',
+    phoneNumber: '+1 609 937 3468',
+    avatar: 'https://randomuser.me/api/portraits/men/42.jpg',
     address: {
       address: '87 Horseshoe Drive',
       city: 'West Windsor',
@@ -397,11 +396,11 @@ export const USERS: User[] = [
   {
     firstName: 'Enoch',
     lastName: 'Lynch',
-    age: 21,
+
     gender: 'male',
     email: 'mturleyd@tumblr.com',
-    phone: '+94 912 100 5118',
-    image: 'https://randomuser.me/api/portraits/men/79.jpg',
+    phoneNumber: '+94 912 100 5118',
+    avatar: 'https://randomuser.me/api/portraits/men/79.jpg',
     address: {
       address: '60 Desousa Drive',
       city: 'Manchester',
@@ -431,11 +430,11 @@ export const USERS: User[] = [
   {
     firstName: 'Jeanne',
     lastName: 'Halvorson',
-    age: 26,
+
     gender: 'female',
     email: 'kminchelle@qq.com',
-    phone: '+86 581 108 7855',
-    image: 'https://randomuser.me/api/portraits/men/7.jpg',
+    phoneNumber: '+86 581 108 7855',
+    avatar: 'https://randomuser.me/api/portraits/men/7.jpg',
     address: {
       address: '4 Old Colony Way',
       city: 'Yarmouth',
@@ -465,11 +464,11 @@ export const USERS: User[] = [
   {
     firstName: 'Trycia',
     lastName: 'Fadel',
-    age: 41,
+
     gender: 'female',
     email: 'dpierrof@vimeo.com',
-    phone: '+420 833 708 0340',
-    image: 'https://randomuser.me/api/portraits/men/58.jpg',
+    phoneNumber: '+420 833 708 0340',
+    avatar: 'https://randomuser.me/api/portraits/men/58.jpg',
     address: {
       address: '314 South 17th Street',
       city: 'Nashville',
@@ -499,11 +498,11 @@ export const USERS: User[] = [
   {
     firstName: 'Bradford',
     lastName: 'Prohaska',
-    age: 43,
+
     gender: 'male',
     email: 'vcholdcroftg@ucoz.com',
-    phone: '+420 874 628 3710',
-    image: 'https://randomuser.me/api/portraits/women/70.jpg',
+    phoneNumber: '+420 874 628 3710',
+    avatar: 'https://randomuser.me/api/portraits/women/70.jpg',
     address: {
       address: '1649 Timberridge Court',
       city: 'Fayetteville',
@@ -516,11 +515,11 @@ export const USERS: User[] = [
   {
     firstName: 'Arely',
     lastName: 'Skiles',
-    age: 42,
+
     gender: 'male',
     email: 'sberminghamh@chron.com',
-    phone: '+55 886 766 8617',
-    image: 'https://randomuser.me/api/portraits/women/16.jpg',
+    phoneNumber: '+55 886 766 8617',
+    avatar: 'https://randomuser.me/api/portraits/women/16.jpg',
     address: {
       address: '5461 West Shades Valley Drive',
       city: 'Montgomery',
@@ -550,11 +549,11 @@ export const USERS: User[] = [
   {
     firstName: 'Gust',
     lastName: 'Purdy',
-    age: 46,
+
     gender: 'male',
     email: 'bleveragei@so-net.ne.jp',
-    phone: '+86 886 889 0258',
-    image: 'https://randomuser.me/api/portraits/women/48.jpg',
+    phoneNumber: '+86 886 889 0258',
+    avatar: 'https://randomuser.me/api/portraits/women/48.jpg',
     address: {
       address: '629 Debbie Drive',
       city: 'Nashville',
@@ -567,11 +566,11 @@ export const USERS: User[] = [
   {
     firstName: 'Lenna',
     lastName: 'Renner',
-    age: 41,
+
     gender: 'female',
     email: 'aeatockj@psu.edu',
-    phone: '+1 904 601 7177',
-    image: 'https://randomuser.me/api/portraits/men/73.jpg',
+    phoneNumber: '+1 904 601 7177',
+    avatar: 'https://randomuser.me/api/portraits/men/73.jpg',
     address: {
       address: '22572 Toreador Drive',
       city: 'Salinas',
@@ -601,11 +600,11 @@ export const USERS: User[] = [
   {
     firstName: 'Doyle',
     lastName: 'Ernser',
-    age: 23,
+
     gender: 'male',
     email: 'ckensleyk@pen.io',
-    phone: '+86 634 419 6839',
-    image: 'https://randomuser.me/api/portraits/women/78.jpg',
+    phoneNumber: '+86 634 419 6839',
+    avatar: 'https://randomuser.me/api/portraits/women/78.jpg',
     address: {
       address: '3034 Mica Street',
       city: 'Fayetteville',
@@ -635,11 +634,11 @@ export const USERS: User[] = [
   {
     firstName: 'Tressa',
     lastName: 'Weber',
-    age: 41,
+
     gender: 'female',
     email: 'froachel@howstuffworks.com',
-    phone: '+34 517 104 6248',
-    image: 'https://randomuser.me/api/portraits/women/23.jpg',
+    phoneNumber: '+34 517 104 6248',
+    avatar: 'https://randomuser.me/api/portraits/women/23.jpg',
     address: {
       address: '3729 East Mission Boulevard',
       city: 'Fayetteville',
@@ -652,11 +651,11 @@ export const USERS: User[] = [
   {
     firstName: 'Felicity',
     lastName: "O'Reilly",
-    age: 46,
+
     gender: 'female',
     email: 'beykelhofm@wikispaces.com',
-    phone: '+63 919 564 1690',
-    image: 'https://randomuser.me/api/portraits/women/14.jpg',
+    phoneNumber: '+63 919 564 1690',
+    avatar: 'https://randomuser.me/api/portraits/women/14.jpg',
     address: {
       address: '5114 Greentree Drive',
       city: 'Nashville',
@@ -669,11 +668,11 @@ export const USERS: User[] = [
   {
     firstName: 'Jocelyn',
     lastName: 'Schuster',
-    age: 19,
+
     gender: 'male',
     email: 'brickeardn@fema.gov',
-    phone: '+7 968 462 1292',
-    image: 'https://randomuser.me/api/portraits/women/87.jpg',
+    phoneNumber: '+7 968 462 1292',
+    avatar: 'https://randomuser.me/api/portraits/women/87.jpg',
     address: {
       address: '3466 Southview Avenue',
       city: 'Montgomery',
@@ -703,11 +702,11 @@ export const USERS: User[] = [
   {
     firstName: 'Edwina',
     lastName: 'Ernser',
-    age: 21,
+
     gender: 'female',
     email: 'dfundello@amazon.co.jp',
-    phone: '+86 376 986 8945',
-    image: 'https://randomuser.me/api/portraits/women/15.jpg',
+    phoneNumber: '+86 376 986 8945',
+    avatar: 'https://randomuser.me/api/portraits/women/15.jpg',
     address: {
       address: '1513 Cathy Street',
       city: 'Savannah',
@@ -720,11 +719,11 @@ export const USERS: User[] = [
   {
     firstName: 'Griffin',
     lastName: 'Braun',
-    age: 35,
+
     gender: 'male',
     email: 'lgronaverp@cornell.edu',
-    phone: '+62 511 790 0161',
-    image: 'https://randomuser.me/api/portraits/women/93.jpg',
+    phoneNumber: '+62 511 790 0161',
+    avatar: 'https://randomuser.me/api/portraits/women/93.jpg',
     address: {
       address: '600 West 19th Avenue',
       city: 'Anchorage',
@@ -737,11 +736,11 @@ export const USERS: User[] = [
   {
     firstName: 'Piper',
     lastName: 'Schowalter',
-    age: 47,
+
     gender: 'female',
     email: 'fokillq@amazon.co.jp',
-    phone: '+60 785 960 7918',
-    image: 'https://randomuser.me/api/portraits/men/73.jpg',
+    phoneNumber: '+60 785 960 7918',
+    avatar: 'https://randomuser.me/api/portraits/men/73.jpg',
     address: {
       address: '1208 Elkader Court North',
       city: 'Nashville',
@@ -754,11 +753,11 @@ export const USERS: User[] = [
   {
     firstName: 'Kody',
     lastName: 'Terry',
-    age: 28,
+
     gender: 'male',
     email: 'xisherwoodr@ask.com',
-    phone: '+81 859 545 8951',
-    image: 'https://randomuser.me/api/portraits/women/42.jpg',
+    phoneNumber: '+81 859 545 8951',
+    avatar: 'https://randomuser.me/api/portraits/women/42.jpg',
     address: {
       address: '210 Green Road',
       city: 'Manchester',
@@ -788,11 +787,11 @@ export const USERS: User[] = [
   {
     firstName: 'Macy',
     lastName: 'Greenfelder',
-    age: 45,
+
     gender: 'female',
     email: 'jissetts@hostgator.com',
-    phone: '+81 915 649 2384',
-    image: 'https://randomuser.me/api/portraits/women/42.jpg',
+    phoneNumber: '+81 915 649 2384',
+    avatar: 'https://randomuser.me/api/portraits/women/42.jpg',
     address: {
       address: '49548 Road 200',
       city: "O'Neals",
@@ -805,11 +804,11 @@ export const USERS: User[] = [
   {
     firstName: 'Maurine',
     lastName: 'Stracke',
-    age: 31,
+
     gender: 'female',
     email: 'kdulyt@umich.edu',
-    phone: '+48 143 590 6847',
-    image: 'https://randomuser.me/api/portraits/women/44.jpg',
+    phoneNumber: '+48 143 590 6847',
+    avatar: 'https://randomuser.me/api/portraits/women/44.jpg',
     address: {
       address: '81 Seaton Place Northwest',
       city: 'Washington',
@@ -822,11 +821,11 @@ export const USERS: User[] = [
   {
     firstName: 'Luciano',
     lastName: 'Sauer',
-    age: 27,
+
     gender: 'male',
     email: 'smargiottau@altervista.org',
-    phone: '+420 491 212 0935',
-    image: 'https://randomuser.me/api/portraits/men/98.jpg',
+    phoneNumber: '+420 491 212 0935',
+    avatar: 'https://randomuser.me/api/portraits/men/98.jpg',
     address: {
       address: '1267 Martin Street',
       city: 'Nashville',
@@ -839,11 +838,11 @@ export const USERS: User[] = [
   {
     firstName: 'Kaya',
     lastName: 'Emard',
-    age: 36,
+
     gender: 'female',
     email: 'lskeelv@webeden.co.uk',
-    phone: '+1 813 801 4535',
-    image: 'https://randomuser.me/api/portraits/women/58.jpg',
+    phoneNumber: '+1 813 801 4535',
+    avatar: 'https://randomuser.me/api/portraits/women/58.jpg',
     address: {
       address: '7431 Candace Way',
       city: 'Louisville',
@@ -873,11 +872,11 @@ export const USERS: User[] = [
   {
     firstName: 'Lee',
     lastName: 'Schmidt',
-    age: 45,
+
     gender: 'male',
     email: 'gsilcockw@infoseek.co.jp',
-    phone: '+66 835 467 6865',
-    image: 'https://randomuser.me/api/portraits/women/79.jpg',
+    phoneNumber: '+66 835 467 6865',
+    avatar: 'https://randomuser.me/api/portraits/women/79.jpg',
     address: {
       address: '1407 Walden Court',
       city: 'Crofton',
@@ -907,11 +906,11 @@ export const USERS: User[] = [
   {
     firstName: 'Darien',
     lastName: 'Witting',
-    age: 42,
+
     gender: 'male',
     email: 'aaughtonx@businessweek.com',
-    phone: '+33 888 700 6632',
-    image: 'https://randomuser.me/api/portraits/men/2.jpg',
+    phoneNumber: '+33 888 700 6632',
+    avatar: 'https://randomuser.me/api/portraits/men/2.jpg',
     address: {
       address: '5906 Milton Avenue',
       city: 'Deale',
@@ -924,11 +923,11 @@ export const USERS: User[] = [
   {
     firstName: 'Jacklyn',
     lastName: 'Schimmel',
-    age: 35,
+
     gender: 'female',
     email: 'mbrooksbanky@gnu.org',
-    phone: '+63 967 545 4702',
-    image: 'https://randomuser.me/api/portraits/men/59.jpg',
+    phoneNumber: '+63 967 545 4702',
+    avatar: 'https://randomuser.me/api/portraits/men/59.jpg',
     address: {
       address: '74 Springfield Street',
       city: 'Agawam',
@@ -941,11 +940,11 @@ export const USERS: User[] = [
   {
     firstName: 'Angelica',
     lastName: 'Baumbach',
-    age: 46,
+
     gender: 'female',
     email: 'dalmondz@joomla.org',
-    phone: '+62 805 799 5971',
-    image: 'https://randomuser.me/api/portraits/men/21.jpg',
+    phoneNumber: '+62 805 799 5971',
+    avatar: 'https://randomuser.me/api/portraits/men/21.jpg',
     address: {
       address: '2905 Stonebridge Court',
       city: 'Norman',
@@ -958,11 +957,11 @@ export const USERS: User[] = [
   {
     firstName: 'Delfina',
     lastName: 'Ziemann',
-    age: 18,
+
     gender: 'female',
     email: 'nwytchard10@blogspot.com',
-    phone: '+84 580 557 5307',
-    image: 'https://randomuser.me/api/portraits/women/49.jpg',
+    phoneNumber: '+84 580 557 5307',
+    avatar: 'https://randomuser.me/api/portraits/women/49.jpg',
     address: {
       address: '20930 Todd Valley Road',
       city: 'Goma',
@@ -975,11 +974,11 @@ export const USERS: User[] = [
   {
     firstName: 'Thaddeus',
     lastName: 'McCullough',
-    age: 30,
+
     gender: 'male',
     email: 'igannan11@microsoft.com',
-    phone: '+62 358 347 4052',
-    image: 'https://randomuser.me/api/portraits/women/76.jpg',
+    phoneNumber: '+62 358 347 4052',
+    avatar: 'https://randomuser.me/api/portraits/women/76.jpg',
     address: {
       address: '5928 West Mauna Loa Lane',
       city: 'Goma',
@@ -1009,11 +1008,11 @@ export const USERS: User[] = [
   {
     firstName: 'Salvatore',
     lastName: 'Fisher',
-    age: 35,
+
     gender: 'male',
     email: 'lgherardi12@washington.edu',
-    phone: '+46 365 156 0334',
-    image: 'https://randomuser.me/api/portraits/men/84.jpg',
+    phoneNumber: '+46 365 156 0334',
+    avatar: 'https://randomuser.me/api/portraits/men/84.jpg',
     address: {
       address: '802 Madison Street Northwest',
       city: 'Goma',
@@ -1043,11 +1042,11 @@ export const USERS: User[] = [
   {
     firstName: 'Jasmin',
     lastName: 'Hermiston',
-    age: 40,
+
     gender: 'male',
     email: 'lgutridge13@sun.com',
-    phone: '+81 649 401 1274',
-    image: 'https://randomuser.me/api/portraits/men/86.jpg',
+    phoneNumber: '+81 649 401 1274',
+    avatar: 'https://randomuser.me/api/portraits/men/86.jpg',
     address: {
       address: '2811 Battery Place Northwest',
       city: 'Washington',
@@ -1060,11 +1059,11 @@ export const USERS: User[] = [
   {
     firstName: 'Nicklaus',
     lastName: 'Cruickshank',
-    age: 23,
+
     gender: 'male',
     email: 'cslateford14@blogspot.com',
-    phone: '+62 873 274 2549',
-    image: 'https://randomuser.me/api/portraits/men/50.jpg',
+    phoneNumber: '+62 873 274 2549',
+    avatar: 'https://randomuser.me/api/portraits/men/50.jpg',
     address: {
       address: '210 Lacross Lane',
       city: 'Goma',
@@ -1094,11 +1093,11 @@ export const USERS: User[] = [
   {
     firstName: 'Tiara',
     lastName: 'Rolfson',
-    age: 36,
+
     gender: 'female',
     email: 'mhaslegrave15@springer.com',
-    phone: '+351 554 736 8690',
-    image: 'https://randomuser.me/api/portraits/women/6.jpg',
+    phoneNumber: '+351 554 736 8690',
+    avatar: 'https://randomuser.me/api/portraits/women/6.jpg',
     address: {
       address: '2010 Rising Hill Drive',
       city: 'Goma',
@@ -1128,11 +1127,11 @@ export const USERS: User[] = [
   {
     firstName: 'Garret',
     lastName: 'Klocko',
-    age: 44,
+
     gender: 'male',
     email: 'kbrecknock16@marriott.com',
-    phone: '+86 787 794 2189',
-    image: 'https://randomuser.me/api/portraits/women/57.jpg',
+    phoneNumber: '+86 787 794 2189',
+    avatar: 'https://randomuser.me/api/portraits/women/57.jpg',
     address: {
       address: '388 East Main Street',
       city: 'Goma',
@@ -1162,11 +1161,11 @@ export const USERS: User[] = [
   {
     firstName: 'Reginald',
     lastName: 'Wisoky',
-    age: 46,
+
     gender: 'male',
     email: 'rlaxe17@tamu.edu',
-    phone: '+420 762 758 3107',
-    image: 'https://randomuser.me/api/portraits/women/84.jpg',
+    phoneNumber: '+420 762 758 3107',
+    avatar: 'https://randomuser.me/api/portraits/women/84.jpg',
     address: {
       address: '450 Kinhawk Drive',
       city: 'Nashville',
@@ -1196,11 +1195,11 @@ export const USERS: User[] = [
   {
     firstName: 'Humberto',
     lastName: 'Botsford',
-    age: 37,
+
     gender: 'male',
     email: 'pidill18@china.com.cn',
-    phone: '+228 252 183 9834',
-    image: 'https://randomuser.me/api/portraits/women/80.jpg',
+    phoneNumber: '+228 252 183 9834',
+    avatar: 'https://randomuser.me/api/portraits/women/80.jpg',
     address: {
       address: '131 Westerly Street',
       city: 'Manchester',
@@ -1213,11 +1212,11 @@ export const USERS: User[] = [
   {
     firstName: 'Justus',
     lastName: 'Sipes',
-    age: 45,
+
     gender: 'male',
     email: 'rmcritchie19@topsy.com',
-    phone: '+504 281 452 1944',
-    image: 'https://randomuser.me/api/portraits/women/13.jpg',
+    phoneNumber: '+504 281 452 1944',
+    avatar: 'https://randomuser.me/api/portraits/women/13.jpg',
     address: {
       address: '308 Woodleaf Court',
       city: 'Glen Burnie',
@@ -1247,11 +1246,11 @@ export const USERS: User[] = [
   {
     firstName: 'Coralie',
     lastName: 'Boyle',
-    age: 18,
+
     gender: 'female',
     email: 'rlangston1a@51.la',
-    phone: '+352 643 270 7653',
-    image: 'https://randomuser.me/api/portraits/men/51.jpg',
+    phoneNumber: '+352 643 270 7653',
+    avatar: 'https://randomuser.me/api/portraits/men/51.jpg',
     address: {
       address: '8502 Madrone Avenue',
       city: 'Louisville',
@@ -1264,11 +1263,11 @@ export const USERS: User[] = [
   {
     firstName: 'Felicita',
     lastName: 'Gibson',
-    age: 32,
+
     gender: 'female',
     email: 'jevanson1b@admin.ch',
-    phone: '+86 484 331 2036',
-    image: 'https://randomuser.me/api/portraits/women/92.jpg',
+    phoneNumber: '+86 484 331 2036',
+    avatar: 'https://randomuser.me/api/portraits/women/92.jpg',
     address: {
       address: '23 Sable Run Lane',
       city: 'Methuen',
@@ -1298,11 +1297,11 @@ export const USERS: User[] = [
   {
     firstName: 'Pearl',
     lastName: 'Blick',
-    age: 26,
+
     gender: 'female',
     email: 'ssarjant1c@statcounter.com',
-    phone: '+261 856 633 1458',
-    image: 'https://randomuser.me/api/portraits/men/98.jpg',
+    phoneNumber: '+261 856 633 1458',
+    avatar: 'https://randomuser.me/api/portraits/men/98.jpg',
     address: {
       address: '716 Waller Road',
       city: 'Brentwood',
@@ -1315,11 +1314,11 @@ export const USERS: User[] = [
   {
     firstName: 'Johnathon',
     lastName: 'Predovic',
-    age: 18,
+
     gender: 'male',
     email: 'xlinster1d@bravesites.com',
-    phone: '+351 572 534 5789',
-    image: 'https://randomuser.me/api/portraits/women/25.jpg',
+    phoneNumber: '+351 572 534 5789',
+    avatar: 'https://randomuser.me/api/portraits/women/25.jpg',
     address: {
       address: '416 McIver Street',
       city: 'Nashville',
@@ -1349,11 +1348,11 @@ export const USERS: User[] = [
   {
     firstName: 'Jerry',
     lastName: 'Kertzmann',
-    age: 43,
+
     gender: 'male',
     email: 'tmullender1e@scientificamerican.com',
-    phone: '+1 281 300 2097',
-    image: 'https://randomuser.me/api/portraits/men/69.jpg',
+    phoneNumber: '+1 281 300 2097',
+    avatar: 'https://randomuser.me/api/portraits/men/69.jpg',
     address: {
       address: '1508 Massachusetts Avenue Southeast',
       city: 'Washington',
@@ -1366,11 +1365,11 @@ export const USERS: User[] = [
   {
     firstName: 'Elbert',
     lastName: 'Gottlieb',
-    age: 41,
+
     gender: 'male',
     email: 'gmein1f@nasa.gov',
-    phone: '+86 820 969 6388',
-    image: 'https://randomuser.me/api/portraits/women/28.jpg',
+    phoneNumber: '+86 820 969 6388',
+    avatar: 'https://randomuser.me/api/portraits/women/28.jpg',
     address: {
       address: '5615 West Villa Maria Drive',
       city: 'Glendale',
@@ -1400,11 +1399,11 @@ export const USERS: User[] = [
   {
     firstName: 'Sincere',
     lastName: 'Mueller',
-    age: 44,
+
     gender: 'female',
     email: 'gmaccumeskey1g@buzzfeed.com',
-    phone: '+62 206 931 3800',
-    image: 'https://randomuser.me/api/portraits/women/55.jpg',
+    phoneNumber: '+62 206 931 3800',
+    avatar: 'https://randomuser.me/api/portraits/women/55.jpg',
     address: {
       address: '3162 Martin Luther King Junior Boulevard',
       city: 'Fayetteville',
@@ -1434,11 +1433,11 @@ export const USERS: User[] = [
   {
     firstName: 'Telly',
     lastName: 'Spinka',
-    age: 22,
+
     gender: 'female',
     email: 'bpetts1h@smugmug.com',
-    phone: '+62 820 759 6656',
-    image: 'https://randomuser.me/api/portraits/men/50.jpg',
+    phoneNumber: '+62 820 759 6656',
+    avatar: 'https://randomuser.me/api/portraits/men/50.jpg',
     address: {
       address: '5306 Ritchie Highway',
       city: 'Baltimore',
@@ -1468,11 +1467,11 @@ export const USERS: User[] = [
   {
     firstName: 'Hal',
     lastName: 'Keebler',
-    age: 45,
+
     gender: 'male',
     email: 'ajozef1i@usatoday.com',
-    phone: '+48 553 262 8275',
-    image: 'https://randomuser.me/api/portraits/women/23.jpg',
+    phoneNumber: '+48 553 262 8275',
+    avatar: 'https://randomuser.me/api/portraits/women/23.jpg',
     address: {
       address: '109 Summit Street',
       city: 'Burlington',
@@ -1502,11 +1501,11 @@ export const USERS: User[] = [
   {
     firstName: 'Megane',
     lastName: 'Armstrong',
-    age: 46,
+
     gender: 'female',
     email: 'oyakushkev1j@oracle.com',
-    phone: '+1 941 123 2756',
-    image: 'https://randomuser.me/api/portraits/women/38.jpg',
+    phoneNumber: '+1 941 123 2756',
+    avatar: 'https://randomuser.me/api/portraits/women/38.jpg',
     address: {
       address: '816 West 19th Avenue',
       city: 'Anchorage',
@@ -1536,11 +1535,11 @@ export const USERS: User[] = [
   {
     firstName: 'Toy',
     lastName: 'Olson',
-    age: 27,
+
     gender: 'male',
     email: 'bpickering1k@clickbank.net',
-    phone: '+1 423 134 5423',
-    image: 'https://randomuser.me/api/portraits/women/23.jpg',
+    phoneNumber: '+1 423 134 5423',
+    avatar: 'https://randomuser.me/api/portraits/women/23.jpg',
     address: {
       address: '172 Alburg Springs Road',
       city: 'Alburgh',
@@ -1553,11 +1552,11 @@ export const USERS: User[] = [
   {
     firstName: 'Deanna',
     lastName: 'Glover',
-    age: 30,
+
     gender: 'female',
     email: 'nworley1l@thetimes.co.uk',
-    phone: '+994 653 357 2437',
-    image: 'https://randomuser.me/api/portraits/women/34.jpg',
+    phoneNumber: '+994 653 357 2437',
+    avatar: 'https://randomuser.me/api/portraits/women/34.jpg',
     address: {
       address: '159 Downey Drive',
       city: 'Manchester',
@@ -1570,11 +1569,11 @@ export const USERS: User[] = [
   {
     firstName: 'Marcella',
     lastName: 'Shanahan',
-    age: 26,
+
     gender: 'female',
     email: 'klife1m@i2i.jp',
-    phone: '+62 248 837 6818',
-    image: 'https://randomuser.me/api/portraits/men/53.jpg',
+    phoneNumber: '+62 248 837 6818',
+    avatar: 'https://randomuser.me/api/portraits/men/53.jpg',
     address: {
       address: '125 John Street',
       city: 'Santa Cruz',
@@ -1587,11 +1586,11 @@ export const USERS: User[] = [
   {
     firstName: 'Rachel',
     lastName: 'Jacobson',
-    age: 31,
+
     gender: 'female',
     email: 'dlambarth1n@blinklist.com',
-    phone: '+420 101 364 3391',
-    image: 'https://randomuser.me/api/portraits/men/89.jpg',
+    phoneNumber: '+420 101 364 3391',
+    avatar: 'https://randomuser.me/api/portraits/men/89.jpg',
     address: {
       address: '1101 Lotus Avenue',
       city: 'Glen Burnie',
@@ -1604,11 +1603,11 @@ export const USERS: User[] = [
   {
     firstName: 'Nora',
     lastName: 'Sawayn',
-    age: 46,
+
     gender: 'female',
     email: 'cepgrave1o@biblegateway.com',
-    phone: '+1 614 425 6745',
-    image: 'https://randomuser.me/api/portraits/women/94.jpg',
+    phoneNumber: '+1 614 425 6745',
+    avatar: 'https://randomuser.me/api/portraits/women/94.jpg',
     address: {
       address: '8376 Albacore Drive',
       city: 'Pasadena',
@@ -1621,11 +1620,11 @@ export const USERS: User[] = [
   {
     firstName: 'Mozell',
     lastName: "O'Connell",
-    age: 33,
+
     gender: 'female',
     email: 'mpoyner1p@google.co.uk',
-    phone: '+86 694 202 1947',
-    image: 'https://randomuser.me/api/portraits/men/35.jpg',
+    phoneNumber: '+86 694 202 1947',
+    avatar: 'https://randomuser.me/api/portraits/men/35.jpg',
     address: {
       address: '491 Arabian Way',
       city: 'Grand Junction',
@@ -1655,11 +1654,11 @@ export const USERS: User[] = [
   {
     firstName: 'Nasir',
     lastName: 'Leuschke',
-    age: 37,
+
     gender: 'male',
     email: 'eburras1q@go.com',
-    phone: '+62 770 940 9687',
-    image: 'https://randomuser.me/api/portraits/women/42.jpg',
+    phoneNumber: '+62 770 940 9687',
+    avatar: 'https://randomuser.me/api/portraits/women/42.jpg',
     address: {
       address: '12245 West 71st Place',
       city: 'Arvada',
@@ -1672,11 +1671,11 @@ export const USERS: User[] = [
   {
     firstName: 'Quinn',
     lastName: 'Witting',
-    age: 49,
+
     gender: 'male',
     email: 'gfernandes1r@virginia.edu',
-    phone: '+220 898 206 2696',
-    image: 'https://randomuser.me/api/portraits/men/57.jpg',
+    phoneNumber: '+220 898 206 2696',
+    avatar: 'https://randomuser.me/api/portraits/men/57.jpg',
     address: {
       address: '80 North East Street',
       city: 'Holyoke',
@@ -1689,11 +1688,11 @@ export const USERS: User[] = [
   {
     firstName: 'Jeanne',
     lastName: "O'Keefe",
-    age: 26,
+
     gender: 'female',
     email: 'hollet1s@trellian.com',
-    phone: '+62 717 913 4633',
-    image: 'https://randomuser.me/api/portraits/women/64.jpg',
+    phoneNumber: '+62 717 913 4633',
+    avatar: 'https://randomuser.me/api/portraits/women/64.jpg',
     address: {
       address: '4695 East Huntsville Road',
       city: 'Fayetteville',
@@ -1723,11 +1722,11 @@ export const USERS: User[] = [
   {
     firstName: 'Terrence',
     lastName: 'Koelpin',
-    age: 28,
+
     gender: 'male',
     email: 'hfasey1t@home.pl',
-    phone: '+63 460 531 0660',
-    image: 'https://randomuser.me/api/portraits/men/70.jpg',
+    phoneNumber: '+63 460 531 0660',
+    avatar: 'https://randomuser.me/api/portraits/men/70.jpg',
     address: {
       address: '310 Timrod Road',
       city: 'Manchester',
@@ -1757,11 +1756,11 @@ export const USERS: User[] = [
   {
     firstName: 'Davonte',
     lastName: 'Heaney',
-    age: 33,
+
     gender: 'male',
     email: 'gbarhams1u@cnet.com',
-    phone: '+52 250 381 1317',
-    image: 'https://randomuser.me/api/portraits/women/73.jpg',
+    phoneNumber: '+52 250 381 1317',
+    avatar: 'https://randomuser.me/api/portraits/women/73.jpg',
     address: {
       address: '1364 Capri Drive',
       city: 'Panama City',
@@ -1791,11 +1790,11 @@ export const USERS: User[] = [
   {
     firstName: 'Everette',
     lastName: 'Prohaska',
-    age: 50,
+
     gender: 'female',
     email: 'rstrettle1v@globo.com',
-    phone: '+55 539 822 6581',
-    image: 'https://randomuser.me/api/portraits/men/50.jpg',
+    phoneNumber: '+55 539 822 6581',
+    avatar: 'https://randomuser.me/api/portraits/men/50.jpg',
     address: {
       address: '132 Laurel Green Court',
       city: 'Savannah',
@@ -1825,11 +1824,11 @@ export const USERS: User[] = [
   {
     firstName: 'Oda',
     lastName: 'Schmidt',
-    age: 22,
+
     gender: 'male',
     email: 'btegler1w@elegantthemes.com',
-    phone: '+55 537 574 0273',
-    image: 'https://randomuser.me/api/portraits/men/78.jpg',
+    phoneNumber: '+55 537 574 0273',
+    avatar: 'https://randomuser.me/api/portraits/men/78.jpg',
     address: {
       address: '6657 West Rose Garden Lane',
       city: 'Glendale',
@@ -1842,11 +1841,11 @@ export const USERS: User[] = [
   {
     firstName: 'Twila',
     lastName: 'Padberg',
-    age: 42,
+
     gender: 'female',
     email: 'cmasurel1x@baidu.com',
-    phone: '+86 426 681 8895',
-    image: 'https://randomuser.me/api/portraits/women/50.jpg',
+    phoneNumber: '+86 426 681 8895',
+    avatar: 'https://randomuser.me/api/portraits/women/50.jpg',
     address: {
       address: '519 West 75th Avenue',
       city: 'Anchorage',
@@ -1876,11 +1875,11 @@ export const USERS: User[] = [
   {
     firstName: 'Amelia',
     lastName: 'Mann',
-    age: 30,
+
     gender: 'female',
     email: 'omarsland1y@washingtonpost.com',
-    phone: '+62 924 155 6791',
-    image: 'https://randomuser.me/api/portraits/women/73.jpg',
+    phoneNumber: '+62 924 155 6791',
+    avatar: 'https://randomuser.me/api/portraits/women/73.jpg',
     address: {
       address: '31353 Santa Elena Way',
       city: 'Union City',
@@ -1910,11 +1909,11 @@ export const USERS: User[] = [
   {
     firstName: 'Frederique',
     lastName: 'Boehm',
-    age: 39,
+
     gender: 'female',
     email: 'mcrumpe1z@techcrunch.com',
-    phone: '+63 528 723 2388',
-    image: 'https://randomuser.me/api/portraits/women/62.jpg',
+    phoneNumber: '+63 528 723 2388',
+    avatar: 'https://randomuser.me/api/portraits/women/62.jpg',
     address: {
       address: '8398 West Denton Lane',
       city: 'Glendale',
@@ -1927,11 +1926,11 @@ export const USERS: User[] = [
   {
     firstName: 'Clotilde',
     lastName: 'Larson',
-    age: 45,
+
     gender: 'female',
     email: 'wfeldon20@netlog.com',
-    phone: '+86 773 539 4246',
-    image: 'https://randomuser.me/api/portraits/women/51.jpg',
+    phoneNumber: '+86 773 539 4246',
+    avatar: 'https://randomuser.me/api/portraits/women/51.jpg',
     address: {
       address: '700 Winston Place',
       city: 'Anchorage',
@@ -1961,11 +1960,11 @@ export const USERS: User[] = [
   {
     firstName: 'Moriah',
     lastName: 'Mills',
-    age: 45,
+
     gender: 'male',
     email: 'ahinckes21@google.es',
-    phone: '+386 147 761 5345',
-    image: 'https://randomuser.me/api/portraits/men/73.jpg',
+    phoneNumber: '+386 147 761 5345',
+    avatar: 'https://randomuser.me/api/portraits/men/73.jpg',
     address: {
       address: '232 Maine Avenue',
       city: 'Panama City',
@@ -1995,11 +1994,11 @@ export const USERS: User[] = [
   {
     firstName: 'Claudia',
     lastName: 'Dooley',
-    age: 36,
+
     gender: 'female',
     email: 'ptilson22@360.cn',
-    phone: '+86 477 915 2470',
-    image: 'https://randomuser.me/api/portraits/men/34.jpg',
+    phoneNumber: '+86 477 915 2470',
+    avatar: 'https://randomuser.me/api/portraits/men/34.jpg',
     address: {
       address: '1 Kempf Drive',
       city: 'Easton',
@@ -2029,11 +2028,11 @@ export const USERS: User[] = [
   {
     firstName: 'Deon',
     lastName: 'Gutkowski',
-    age: 39,
+
     gender: 'male',
     email: 'cgaber23@prlog.org',
-    phone: '+30 927 372 5358',
-    image: 'https://randomuser.me/api/portraits/women/41.jpg',
+    phoneNumber: '+30 927 372 5358',
+    avatar: 'https://randomuser.me/api/portraits/women/41.jpg',
     address: {
       address: '5811 Crossings Boulevard',
       city: 'Nashville',
@@ -2063,11 +2062,11 @@ export const USERS: User[] = [
   {
     firstName: 'Amos',
     lastName: 'Weimann',
-    age: 22,
+
     gender: 'male',
     email: 'rkingswood24@usa.gov',
-    phone: '+230 749 323 8084',
-    image: 'https://randomuser.me/api/portraits/men/45.jpg',
+    phoneNumber: '+230 749 323 8084',
+    avatar: 'https://randomuser.me/api/portraits/men/45.jpg',
     address: {
       address: '5108 Franklin Street',
       city: 'Savannah',
@@ -2080,11 +2079,11 @@ export const USERS: User[] = [
   {
     firstName: 'Frankie',
     lastName: 'Hudson',
-    age: 32,
+
     gender: 'male',
     email: 'dbuist25@hao123.com',
-    phone: '+33 604 197 4892',
-    image: 'https://randomuser.me/api/portraits/women/36.jpg',
+    phoneNumber: '+33 604 197 4892',
+    avatar: 'https://randomuser.me/api/portraits/women/36.jpg',
     address: {
       address: '913 Fallview Trail',
       city: 'Nashville',
@@ -2097,11 +2096,11 @@ export const USERS: User[] = [
   {
     firstName: 'Harrison',
     lastName: 'Lemke',
-    age: 20,
+
     gender: 'male',
     email: 'pmoraleda26@symantec.com',
-    phone: '+62 458 347 7200',
-    image: 'https://randomuser.me/api/portraits/men/28.jpg',
+    phoneNumber: '+62 458 347 7200',
+    avatar: 'https://randomuser.me/api/portraits/men/28.jpg',
     address: {
       address: "270 Chrissy's Court",
       city: 'Goma',
@@ -2114,11 +2113,11 @@ export const USERS: User[] = [
   {
     firstName: 'Guy',
     lastName: 'Franecki',
-    age: 31,
+
     gender: 'male',
     email: 'vkohrt27@hostgator.com',
-    phone: '+86 758 872 4898',
-    image: 'https://randomuser.me/api/portraits/women/74.jpg',
+    phoneNumber: '+86 758 872 4898',
+    avatar: 'https://randomuser.me/api/portraits/women/74.jpg',
     address: {
       address: '130 Old Route 103',
       city: 'Chester',
@@ -2131,11 +2130,11 @@ export const USERS: User[] = [
   {
     firstName: 'Sidney',
     lastName: 'Rutherford',
-    age: 50,
+
     gender: 'male',
     email: 'capplewhite28@nationalgeographic.com',
-    phone: '+62 406 110 4091',
-    image: 'https://randomuser.me/api/portraits/men/85.jpg',
+    phoneNumber: '+62 406 110 4091',
+    avatar: 'https://randomuser.me/api/portraits/men/85.jpg',
     address: {
       address: '10826 Pointe Royal Drive',
       city: 'Bakersfield',
@@ -2165,11 +2164,11 @@ export const USERS: User[] = [
   {
     firstName: 'Maymie',
     lastName: 'Yundt',
-    age: 42,
+
     gender: 'female',
     email: 'kogilvy29@blogtalkradio.com',
-    phone: '+354 978 613 2483',
-    image: 'https://randomuser.me/api/portraits/men/90.jpg',
+    phoneNumber: '+354 978 613 2483',
+    avatar: 'https://randomuser.me/api/portraits/men/90.jpg',
     address: {
       address: '74 Ranch Drive',
       city: 'Montgomery',
@@ -2199,11 +2198,11 @@ export const USERS: User[] = [
   {
     firstName: 'Rita',
     lastName: 'Shields',
-    age: 47,
+
     gender: 'female',
     email: 'gconford2a@wordpress.com',
-    phone: '+86 148 509 2978',
-    image: 'https://randomuser.me/api/portraits/women/45.jpg',
+    phoneNumber: '+86 148 509 2978',
+    avatar: 'https://randomuser.me/api/portraits/women/45.jpg',
     address: {
       address: '6601 West Ocotillo Road',
       city: 'Glendale',
@@ -2216,11 +2215,11 @@ export const USERS: User[] = [
   {
     firstName: 'Aniya',
     lastName: 'Wisozk',
-    age: 49,
+
     gender: 'female',
     email: 'dmantle2b@reuters.com',
-    phone: '+63 811 971 2922',
-    image: 'https://randomuser.me/api/portraits/women/10.jpg',
+    phoneNumber: '+63 811 971 2922',
+    avatar: 'https://randomuser.me/api/portraits/women/10.jpg',
     address: {
       address: '19416 Barclay Road',
       city: 'Castro Valley',
@@ -2233,11 +2232,11 @@ export const USERS: User[] = [
   {
     firstName: 'Angelica',
     lastName: 'Metz',
-    age: 48,
+
     gender: 'female',
     email: 'kpondjones2c@nsw.gov.au',
-    phone: '+47 496 716 8666',
-    image: 'https://randomuser.me/api/portraits/men/97.jpg',
+    phoneNumber: '+47 496 716 8666',
+    avatar: 'https://randomuser.me/api/portraits/men/97.jpg',
     address: {
       address: '1347 Blackwalnut Court',
       city: 'Annapolis',
@@ -2267,11 +2266,11 @@ export const USERS: User[] = [
   {
     firstName: 'Rupert',
     lastName: 'Upton',
-    age: 22,
+
     gender: 'male',
     email: 'whuman2d@hp.com',
-    phone: '+1 907 460 1257',
-    image: 'https://randomuser.me/api/portraits/women/81.jpg',
+    phoneNumber: '+1 907 460 1257',
+    avatar: 'https://randomuser.me/api/portraits/women/81.jpg',
     address: {
       address: '1770 Colony Way',
       city: 'Fayetteville',
@@ -2301,11 +2300,11 @@ export const USERS: User[] = [
   {
     firstName: 'Eleazar',
     lastName: 'Torp',
-    age: 28,
+
     gender: 'male',
     email: 'fschlagman2e@deliciousdays.com',
-    phone: '+57 170 928 2357',
-    image: 'https://randomuser.me/api/portraits/women/86.jpg',
+    phoneNumber: '+57 170 928 2357',
+    avatar: 'https://randomuser.me/api/portraits/women/86.jpg',
     address: {
       address: '165 Saint John Street',
       city: 'Manchester',
@@ -2335,11 +2334,11 @@ export const USERS: User[] = [
   {
     firstName: 'Anais',
     lastName: 'Yundt',
-    age: 32,
+
     gender: 'female',
     email: 'agreenhouse2f@mashable.com',
-    phone: '+691 914 748 8902',
-    image: 'https://randomuser.me/api/portraits/men/84.jpg',
+    phoneNumber: '+691 914 748 8902',
+    avatar: 'https://randomuser.me/api/portraits/men/84.jpg',
     address: {
       address: '2409 Research Boulevard',
       city: 'Fort Collins',
@@ -2352,11 +2351,11 @@ export const USERS: User[] = [
   {
     firstName: 'Gayle',
     lastName: 'Krajcik',
-    age: 31,
+
     gender: 'male',
     email: 'cdwyr2g@shop-pro.jp',
-    phone: '+509 383 303 8524',
-    image: 'https://randomuser.me/api/portraits/women/15.jpg',
+    phoneNumber: '+509 383 303 8524',
+    avatar: 'https://randomuser.me/api/portraits/women/15.jpg',
     address: {
       address: '1903 Bashford Manor Lane',
       city: 'Louisville',
@@ -2386,11 +2385,11 @@ export const USERS: User[] = [
   {
     firstName: 'Wilma',
     lastName: 'Hickle',
-    age: 19,
+
     gender: 'female',
     email: 'omottley2h@hugedomains.com',
-    phone: '+7 330 984 6093',
-    image: 'https://randomuser.me/api/portraits/women/48.jpg',
+    phoneNumber: '+7 330 984 6093',
+    avatar: 'https://randomuser.me/api/portraits/women/48.jpg',
     address: {
       address: '8315 Surf Drive',
       city: 'Panama City Beach',
@@ -2403,11 +2402,11 @@ export const USERS: User[] = [
   {
     firstName: 'Arne',
     lastName: 'Jacobs',
-    age: 29,
+
     gender: 'male',
     email: 'hyaknov2i@hhs.gov',
-    phone: '+36 610 490 0839',
-    image: 'https://randomuser.me/api/portraits/men/0.jpg',
+    phoneNumber: '+36 610 490 0839',
+    avatar: 'https://randomuser.me/api/portraits/men/0.jpg',
     address: {
       address: '3301 Old Muldoon Road',
       city: 'Anchorage',
@@ -2420,11 +2419,11 @@ export const USERS: User[] = [
   {
     firstName: 'Emely',
     lastName: 'Schmitt',
-    age: 48,
+
     gender: 'female',
     email: 'clambol2j@bloglovin.com',
-    phone: '+86 478 217 4353',
-    image: 'https://randomuser.me/api/portraits/men/57.jpg',
+    phoneNumber: '+86 478 217 4353',
+    avatar: 'https://randomuser.me/api/portraits/men/57.jpg',
     address: {
       address: '8800 Cordell Circle',
       city: 'Anchorage',
@@ -2454,11 +2453,11 @@ export const USERS: User[] = [
   {
     firstName: 'Fabiola',
     lastName: 'Oberbrunner',
-    age: 43,
+
     gender: 'female',
     email: 'dduggan2k@simplemachines.org',
-    phone: '+86 614 316 0439',
-    image: 'https://randomuser.me/api/portraits/men/23.jpg',
+    phoneNumber: '+86 614 316 0439',
+    avatar: 'https://randomuser.me/api/portraits/men/23.jpg',
     address: {
       address: '117 East Cook Avenue',
       city: 'Anchorage',
@@ -2471,11 +2470,11 @@ export const USERS: User[] = [
   {
     firstName: 'Kari',
     lastName: 'Schinner',
-    age: 21,
+
     gender: 'female',
     email: 'jtossell2l@drupal.org',
-    phone: '+60 470 340 3453',
-    image: 'https://randomuser.me/api/portraits/men/46.jpg',
+    phoneNumber: '+60 470 340 3453',
+    avatar: 'https://randomuser.me/api/portraits/men/46.jpg',
     address: {
       address: '6231 North 67th Avenue',
       city: 'Glendale',
@@ -2505,11 +2504,11 @@ export const USERS: User[] = [
   {
     firstName: 'Rory',
     lastName: 'Conn',
-    age: 20,
+
     gender: 'male',
     email: 'cchomiszewski2m@cbsnews.com',
-    phone: '+62 215 871 4657',
-    image: 'https://randomuser.me/api/portraits/men/8.jpg',
+    phoneNumber: '+62 215 871 4657',
+    avatar: 'https://randomuser.me/api/portraits/men/8.jpg',
     address: {
       address: '8505 Waters Avenue',
       city: 'Savannah',
@@ -2539,11 +2538,11 @@ export const USERS: User[] = [
   {
     firstName: 'Cristobal',
     lastName: 'Watsica',
-    age: 33,
+
     gender: 'male',
     email: 'bgoby2n@washingtonpost.com',
-    phone: '+380 842 468 9675',
-    image: 'https://randomuser.me/api/portraits/men/4.jpg',
+    phoneNumber: '+380 842 468 9675',
+    avatar: 'https://randomuser.me/api/portraits/men/4.jpg',
     address: {
       address: '7 Underwood Place Northwest',
       city: 'Washington',
@@ -2573,11 +2572,11 @@ export const USERS: User[] = [
   {
     firstName: 'Allene',
     lastName: 'Harber',
-    age: 32,
+
     gender: 'female',
     email: 'cdavydochkin2o@globo.com',
-    phone: '+389 880 536 3911',
-    image: 'https://randomuser.me/api/portraits/women/14.jpg',
+    phoneNumber: '+389 880 536 3911',
+    avatar: 'https://randomuser.me/api/portraits/women/14.jpg',
     address: {
       address: '21950 Arnold Center Road',
       city: 'Carson',
@@ -2590,11 +2589,11 @@ export const USERS: User[] = [
   {
     firstName: 'Lempi',
     lastName: 'Runte',
-    age: 25,
+
     gender: 'female',
     email: 'zstenning2p@list-manage.com',
-    phone: '+81 529 266 5313',
-    image: 'https://randomuser.me/api/portraits/men/91.jpg',
+    phoneNumber: '+81 529 266 5313',
+    avatar: 'https://randomuser.me/api/portraits/men/91.jpg',
     address: {
       address: '1427 South Carolina Avenue Southeast',
       city: 'Washington',
@@ -2607,11 +2606,11 @@ export const USERS: User[] = [
   {
     firstName: 'Terrell',
     lastName: 'Schuppe',
-    age: 38,
+
     gender: 'male',
     email: 'flesslie2q@google.nl',
-    phone: '+371 241 489 8335',
-    image: 'https://randomuser.me/api/portraits/men/96.jpg',
+    phoneNumber: '+371 241 489 8335',
+    avatar: 'https://randomuser.me/api/portraits/men/96.jpg',
     address: {
       address: '1420 Turtleback Trail',
       city: 'Panama City',
@@ -2624,11 +2623,11 @@ export const USERS: User[] = [
   {
     firstName: 'Tevin',
     lastName: 'Prohaska',
-    age: 34,
+
     gender: 'male',
     email: 'pcumbes2r@networkadvertising.org',
-    phone: '+46 185 553 3726',
-    image: 'https://randomuser.me/api/portraits/men/12.jpg',
+    phoneNumber: '+46 185 553 3726',
+    avatar: 'https://randomuser.me/api/portraits/men/12.jpg',
     address: {
       address: '109 Summit Street',
       city: 'Burlington',

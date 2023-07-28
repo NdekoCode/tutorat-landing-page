@@ -42,7 +42,7 @@ export class ViewTutorComponent implements OnInit {
     }
 
     this.tutorService
-      .getSuggestionTutors(this.tutor.tutor.address.city)
+      .getSuggestionTutors(this.tutor.user.address.city)
       .subscribe({
         next: (tutors) => {
           this.suggestionTutors = tutors

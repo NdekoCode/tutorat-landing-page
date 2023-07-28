@@ -319,7 +319,7 @@ export class TutorsSupplementFormComponent implements OnInit {
           experience: this.tutorForm.value.experience,
           specialization: this.selectedSpecializations
         }
-        if (!this.tutorService.isTutor(this.user!)) {
+        if (!this.tutorService.isTutor(this.user as ITutor)) {
           this.tutorService.userService.makeMeTutor().subscribe((_response) => {
             this.tutorService.updateTutorData(this.tutorFormData).subscribe({
               next: (response) => {

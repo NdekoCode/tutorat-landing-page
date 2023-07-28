@@ -54,7 +54,7 @@ export class TutorsComponent implements OnInit {
       this.filteredTutors = this.tutors
     }
   }
-  getTutorEventData(tutor: Tutor) {
+  getTutorEventData(tutor: ITutor) {
     const urlPart = tutor.video.url.split('/')
     this.videoId = urlPart[urlPart.length - 1]
     this.onToggleShow()

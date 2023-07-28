@@ -1,4 +1,5 @@
 import { USERS } from './constants'
+import { ITutor } from './interfaces'
 import { Tutor, User, UtilityType } from './types'
 
 export function objectHasValue(obj: { [key: string]: UtilityType }): boolean {
@@ -109,11 +110,10 @@ export function getUsers(tutor: boolean = false): (User | Tutor)[] | [] {
 }
 
 export function filterTutor(
-  data: User[],
+  data: ITutor[],
   filters: Partial<Tutor & { city: string; cours?: string | number }>
-): User[] {
-  return data.filter((entry) => {
-    const tutor = entry.tutor!
+): ITutor[] {
+  return data.filter((tutor) => {
     let isValid = true
 
     if (
@@ -123,13 +123,16 @@ export function filterTutor(
       isValid = false
     }
 
-    if (filters.cours && !tutor.specialization.includes(filters.cours)) {
+    if (
+      filters.cours &&
+      !tutor.specialization.map((s) => s.name).includes(filters.cours as string)
+    ) {
       isValid = false
     }
 
     if (
       filters.city &&
-      tutor.address.city.toLowerCase() !== filters.city.toLowerCase()
+      tutor.user.address.city.toLowerCase() !== filters.city.toLowerCase()
     ) {
       isValid = false
     }

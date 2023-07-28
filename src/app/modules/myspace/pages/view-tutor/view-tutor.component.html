@@ -8,23 +8,23 @@
         <div class="flex flex-wrap items-center gap-x-3 md:flex-nowrap">
           <figure>
             <img
-              [src]="tutor.image"
-              [alt]="tutor.firstName + ' ' + tutor.lastName"
+              [src]="tutor.user.avatar"
+              [alt]="tutor.user.firstName + ' ' + tutor.user.lastName"
               class="rounded-xl"
             />
           </figure>
           <div class="">
             <div class="flex items-center mb-2 gap-x-1">
               <h3 class="text-lg font-bold">
-                {{ tutor.firstName + ' ' + tutor.lastName }}
+                {{ tutor.user.firstName + ' ' + tutor.user.lastName }}
               </h3>
               <img
                 [src]="
                   'https://www.countryflagicons.com/FLAT/24/' +
-                  tutor.tutor.address.state +
+                  tutor.user.address.country +
                   '.png'
                 "
-                [alt]="tutor.tutor.address.state"
+                [alt]="tutor.user.address.country"
               />
               <svg
                 class="w-4"
@@ -61,8 +61,8 @@
                 ></span>
                 <p class="text-sm text-blue">
                   Enseigne:
-                  <span *ngFor="let cour of tutor.tutor.specialization"
-                    >{{ cour }},</span
+                  <span *ngFor="let cour of tutor.specialization"
+                    >{{ cour.name }},</span
                   >
                 </p>
               </div>

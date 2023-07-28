@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router'
 import {
   filterTutor,
   generateArray,
+  isExists,
   objectHasValue
 } from 'src/app/core/utilities/helpers'
 import { ITutor } from 'src/app/core/utilities/interfaces'
@@ -42,7 +43,7 @@ export class OverviewComponent implements OnInit {
         this.tutors = tutors
         this.filteredTutors = this.tutors
         this.suggestionTutors = this.tutors.filter(
-          (t) => t.address.city === 'Goma'
+          (t) => isExists(t.user.address) && t.user.address.city === 'Goma'
         )
         this.topTutors = this.tutorService.getLimitTutor(this.tutors, 20)
         this.isLoading = false

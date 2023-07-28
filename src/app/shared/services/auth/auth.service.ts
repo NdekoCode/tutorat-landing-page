@@ -48,7 +48,7 @@ export class AuthService {
     )
   }
 
-  isLogged(): boolean {
+  isLoggedIn(): boolean {
     return this.token.tokenExists()
   }
   logout(): void {
@@ -60,6 +60,9 @@ export class AuthService {
       this.apiConfig.url + '/auth/send-reset-password-token',
       email
     )
+  }
+  redirectToLogin() {
+    return this.apiConfig.router.navigate([AUTH_ROUTES.LOGIN])
   }
   resetPassword(
     token: string,
@@ -88,6 +91,19 @@ export class AuthService {
   }
   getAuthUserInfo(): Observable<User> {
     return this.apiConfig.http.get<User>(`${this.apiConfig.url}/users/me`)
+  }
+  refreshToken(refreshToken: string): Observable<Token | null> {
+    if (this.token.tokenExists()) {
+      return this.apiConfig.http.get<Token>(
+        this.apiConfig.url + '/auth/refresh-tokens',
+        {
+          headers: {
+            Authorization: 'Bearer ' + refreshToken
+          }
+        }
+      )
+    }
+    return null as unknown as Observable<Token | null>
   }
   getAccessToken(): void {
     this.socialAuthService

@@ -22,7 +22,6 @@ export class TutorCarouselComponent implements OnInit, OnDestroy {
     const calculatedSlideWidth = 100 / this.slidesPerPage
     this.slideWidth = `${calculatedSlideWidth}%`
     this.updateCarouselStyle()
-
     this.widthCarousel = { width: `calc(100% / ${this.slidesPerPage})` }
     this.timer = window.setInterval(() => {
       this.nextSlide()

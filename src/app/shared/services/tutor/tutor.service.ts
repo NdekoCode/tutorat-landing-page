@@ -8,7 +8,7 @@ import {
   isExists
 } from 'src/app/core/utilities/helpers'
 import { ITutor } from 'src/app/core/utilities/interfaces'
-import { TutorCredentials, User } from 'src/app/core/utilities/types'
+import { TutorCredentials } from 'src/app/core/utilities/types'
 import { ApiConfigService } from '../api-config/api-config.service'
 import { UserService } from '../user/user.service'
 
@@ -33,7 +33,7 @@ export class TutorService {
 
   // eslint-disable-next-line class-methods-use-this
   tutorCompletedProfile(user: ITutor) {
-    return hasProperties(user.tutor, TUTOR_REQUIRED_FIELDS as string[], true)
+    return hasProperties({ ...user }, TUTOR_REQUIRED_FIELDS as string[], true)
   }
 
   getSingleTutor(id: number): Observable<ITutor | null> {
@@ -47,8 +47,8 @@ export class TutorService {
     )
   }
   // eslint-disable-next-line class-methods-use-this
-  isTutor(user: User | ITutor): boolean {
-    return isExists(user?.tutor) && !isEmptyObject(user?.tutor)
+  isTutor(tutor: ITutor): boolean {
+    return isExists(tutor) && isExists(tutor?.user) && !isEmptyObject(tutor)
   }
   updateTutorData(
     credentials: TutorCredentials

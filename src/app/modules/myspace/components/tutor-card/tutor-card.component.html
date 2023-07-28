@@ -12,7 +12,11 @@
           class="relative w-[200px] sm:w-auto max-w-[250px] flex !overflow-visible flex-col items-center avatar"
         >
           <div class="relative w-full !overflow-visible sm:w-36">
-            <img [src]="tutor.image" alt="Tutor name" class="rounded-lg" />
+            <img
+              [src]="tutor.user.avatar"
+              [alt]="tutor.user.firstName + ' ' + tutor.user.lastName"
+              class="rounded-lg"
+            />
             <figcaption
               class="bg-green w-max absolute -bottom-2 left-1/2 -translate-x-1/2 text-xs rounded-xl inline-block text-white p-0.5"
             >
@@ -25,7 +29,8 @@
             class="mb-3 border-b pr-1 lg:min-h-[130px] flex flex-col items-center md:block border-gray-100 user-details"
           >
             <h3 class="text-xl font-semibold">
-              {{ tutor.firstName | titlecase }} {{ tutor.lastName | titlecase }}
+              {{ tutor.user.firstName | titlecase }}
+              {{ tutor.user.lastName | titlecase }}
             </h3>
             <div class="flex items-center mb-3 gap-x-2">
               <div class="flex items-center">
@@ -107,19 +112,13 @@
               </div>
               <span class="font-medium">5.0</span>
             </div>
-            <div class="flex items-center mb-3 gap-x-3">
-              <img
-                class="object-cover w-8 h-8"
-                [src]="
-                  'https://www.countryflagicons.com/FLAT/32/' +
-                  tutor.address.state +
-                  '.png'
-                "
-                [alt]="tutor.address.state"
-              />
+            <div
+              class="flex items-center mb-3 gap-x-3"
+              *ngIf="tutor.user.address"
+            >
               <p class="flex flex-wrap gap-3 text-sm font-semibold">
                 <span class="inline-block">{{
-                  tutor.address.city | titlecase
+                  tutor.user.address.city | titlecase
                 }}</span>
               </p>
             </div>
@@ -139,7 +138,7 @@
                   >Taux horaire</span
                 >
                 <span class="block text-sm font-medium text-blue"
-                  >{{ tutor.tutor.hourlyRate * 2300 | number }} FC</span
+                  >{{ tutor.hourlyRate * 2300 | number }} FC</span
                 >
               </p>
             </div>
@@ -150,10 +149,10 @@
         <h5 class="mb-1 text-lg font-semibold">Intro</h5>
         <p>
           <span class="block text-sm text-[#8D8E8E] max-w-xl">{{
-            tutor.tutor.bio | slice : 0 : 80
+            tutor.bio | slice : 0 : 80
           }}</span>
           <a
-            [routerLink]="'/myspace/tutor/' + tutor.id"
+            [routerLink]="'/myspace/tutor/' + tutor.userId"
             class="block text-sm font-medium mt-1 w-max text-yellow text-[#C4951B]"
             >Voir plus</a
           >
@@ -170,8 +169,8 @@
         <p class="flex flex-wrap">
           <span
             class="text-base font-medium text-blue"
-            *ngFor="let cour of tutor.tutor.specialization"
-            >{{ cour }},</span
+            *ngFor="let cour of tutor.specialization"
+            >{{ cour.name }},</span
           >
         </p>
       </div>

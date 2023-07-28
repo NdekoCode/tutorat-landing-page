@@ -101,12 +101,11 @@ export type User = {
   id: number | string
   firstName: string
   lastName: string
-  age: number
   gender: string
   email: string
-  phone: string
+  phoneNumber: string
   password?: string | ''
-  image: string
+  avatar: string
   address: {
     address: string
     city: string

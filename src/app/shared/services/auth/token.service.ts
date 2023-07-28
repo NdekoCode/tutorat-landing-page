@@ -23,6 +23,12 @@ export class TokenService {
     }
     localStorageSetItem(this.tokenKey, this.token)
   }
+  getAccessToken() {
+    return this.token.accessToken
+  }
+  getRefreshToken() {
+    return this.token.refreshToken
+  }
   getToken(): Token {
     this.token = localStorageGetItem(this.tokenKey) as Token
     return this.token
@@ -45,9 +51,6 @@ export class TokenService {
     window.localStorage.removeItem(this.tokenKey)
   }
 
-  clearTokenExpired(key: string = 'userToken'): void {
-    this.clearToken()
-  }
   refreshToken(): Observable<Token | null> {
     if (this.tokenExists()) {
       return this.apiConfig.http.get<Token>(
@@ -60,5 +63,8 @@ export class TokenService {
       )
     }
     return null as unknown as Observable<Token | null>
+  }
+  clearTokenExpired(key: string = 'userToken'): void {
+    this.clearToken()
   }
 }

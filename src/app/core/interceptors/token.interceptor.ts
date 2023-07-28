@@ -1,95 +1,84 @@
 import {
   HTTP_INTERCEPTORS,
+  HttpErrorResponse,
   HttpEvent,
   HttpHandler,
   HttpInterceptor,
   HttpRequest
 } from '@angular/common/http'
 import { Injectable } from '@angular/core'
-import { BehaviorSubject, Observable, throwError } from 'rxjs'
-import { catchError, filter, switchMap, take } from 'rxjs/operators'
+import { EMPTY, Observable, throwError } from 'rxjs'
+import { catchError, switchMap } from 'rxjs/operators'
+import { AuthService } from 'src/app/shared/services/auth/auth.service'
 import { TokenService } from 'src/app/shared/services/auth/token.service'
-import { Token } from '../utilities/types'
+import { environment } from 'src/environments/environment'
+import { AUTH_ROUTES_ARRAY } from '../routes/routes'
 
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
-  private refreshingToken: boolean = false
-  private tokenSubject: BehaviorSubject<string | null> = new BehaviorSubject<
-    string | null
-  >(null)
-
-  constructor(private tokenService: TokenService) {}
+  constructor(
+    private authService: AuthService,
+    private tokenService: TokenService
+  ) {}
 
   intercept(
     request: HttpRequest<unknown>,
     next: HttpHandler
   ): Observable<HttpEvent<unknown>> {
-    // Vérifier s'il y a un token dans le localStorage
-    if (this.tokenService.tokenExists()) {
-      const token: Token = this.tokenService.getToken()
-      // Cloner la requête et ajouter le token au header
-      const cloneRequest = this.addTokenToRequest(request, token.accessToken)
-
-      return next.handle(cloneRequest).pipe(
-        catchError((error) => {
-          // Vérifier si la réponse a un statut 401 (non autorisé)
-          if (error.status === 401) {
-            // Vérifier si nous sommes déjà en train de rafraîchir le token
-            if (!this.refreshingToken) {
-              this.refreshingToken = true
-              this.tokenSubject.next(null)
-
-              // Appeler la méthode refreshToken du service TokenService pour obtenir un nouveau token
-              return this.tokenService.refreshToken().pipe(
-                switchMap((response) => {
-                  this.refreshingToken = false
-                  // Stocker le nouveau token dans le tokenSubject et le localStorage
-                  this.tokenSubject.next(response?.accessToken!)
-                  this.tokenService.saveToken(response!)
-
-                  // Passer à la requête suivante avec le nouveau token dans le header
-                  return next.handle(
-                    this.addTokenToRequest(request, response?.accessToken!)
-                  )
-                }),
-                catchError((err) => {
-                  this.refreshingToken = false
-                  this.tokenService.clearToken()
-                  return throwError('Error refresh token ', err)
-                })
-              )
-            }
-            // Attendre que le nouveau token soit disponible dans le tokenSubject
-            return this.tokenSubject.pipe(
-              filter((token) => token !== null),
-              take(1),
-              switchMap((accessToken) => {
-                // Passer à la requête suivante avec le nouveau token dans le header
-                return next.handle(
-                  this.addTokenToRequest(request, accessToken!)
-                )
-              })
-            )
-          }
-
-          return throwError(error)
-        })
-      )
+    // Vérifier si l'utilisateur est authentifié
+    const url = request.url.replace(environment.BASE_URL, '')
+    if (!this.authService.isLoggedIn() && !AUTH_ROUTES_ARRAY.includes(url)) {
+      // Rediriger vers la page de login
+      this.authService.redirectToLogin()
+      return EMPTY
     }
 
-    // Si aucun token n'est trouvé, passer à la requête suivante sans modification
-    return next.handle(request)
+    // Récupérer le token d'accès
+    const accessToken = this.tokenService.getAccessToken()
+
+    // Cloner la requête et ajouter le token
+    const authReq = request.clone({
+      setHeaders: {
+        Authorization: `Bearer ${accessToken}`
+      }
+    })
+
+    // Envoyer la requête authentifiée
+    return next.handle(authReq).pipe(
+      // Intercepter les erreurs
+      catchError((error) => {
+        // Vérifier si l'erreur est un 401 non autorisé
+        if (error instanceof HttpErrorResponse && error.status === 401) {
+          const refreshToken = this.tokenService.getAccessToken()
+          // Tenter de rafraîchir le token
+          return this.authService.refreshToken(refreshToken).pipe(
+            switchMap(() => {
+              // Réessayer la requête avec le nouveau token
+              return next.handle(this.addAuthenticationToken(request))
+            }),
+            catchError((refreshError) => {
+              // Rediriger vers la page de login si échec
+              this.authService.redirectToLogin()
+              return EMPTY
+            })
+          )
+        }
+
+        // Renvoyer l'erreur
+        return throwError(error)
+      })
+    )
   }
 
-  // eslint-disable-next-line class-methods-use-this
-  private addTokenToRequest(
-    request: HttpRequest<unknown>,
-    token: string
+  private addAuthenticationToken(
+    request: HttpRequest<unknown>
   ): HttpRequest<unknown> {
-    // Cloner la requête et ajouter le token au header
+    // Obtenir le token d'accès
+    const accessToken = this.tokenService.getAccessToken()
+    // Cloner la requête et ajouter le token d'accès dans le header
     return request.clone({
       setHeaders: {
-        Authorization: `Bearer ${token}`
+        Authorization: `Bearer ${accessToken}`
       }
     })
   }
