@@ -155,7 +155,6 @@ export class TutorsSupplementFormComponent implements OnInit {
   addSpecialisation(item: string | number) {
     this.specializationValue.push(item)
     this.specializationValue = [...new Set(this.specializationValue)]
-    this.tutorForm.get('specialization')?.patchValue(this.specializationValue)
   }
 
   nextStep() {
@@ -289,22 +288,9 @@ export class TutorsSupplementFormComponent implements OnInit {
     // eslint-disable-next-line no-console
     if (this.tutorForm.valid) {
       try {
-        this.inVerification = true
         this.submitForm = false
+        this.inVerification = true
         this.isLoading = true
-        const specializationValue = this.tutorForm
-          ?.get('specialization')
-          ?.value.map((v: boolean | number | string) =>
-            typeof v === 'boolean' ? 0 : v
-          )
-        this.tutorForm
-          ?.get('specialization')
-          ?.setValue([
-            ...new Set([
-              ...this.selectedSpecializations,
-              ...specializationValue
-            ])
-          ])
 
         // Envoyer les données au serveur ici
         await this.uploadDocument()
@@ -323,16 +309,17 @@ export class TutorsSupplementFormComponent implements OnInit {
           this.tutorService.userService.makeMeTutor().subscribe((_response) => {
             this.tutorService.updateTutorData(this.tutorFormData).subscribe({
               next: (response) => {
-                this.submitForm = true
                 this.alert = {
                   isShown: true,
                   alertTitle: ALERT_AUTH.tutor.success.alertTitle,
                   alertType: 'error',
                   alertMessage: response.message
                 }
+                this.submitForm = true
+                this.inVerification = false
+                this.isLoading = false
               },
               error: (httpErrorResponse) => {
-                this.submitForm = true
                 console.log(httpErrorResponse)
                 this.alert = {
                   isShown: true,
@@ -340,22 +327,26 @@ export class TutorsSupplementFormComponent implements OnInit {
                   alertType: 'error',
                   alertMessage: httpErrorResponse.error.message
                 }
+                this.submitForm = true
+                this.inVerification = false
+                this.isLoading = false
               }
             })
           })
         } else {
           this.tutorService.updateTutorData(this.tutorFormData).subscribe({
             next: (response) => {
-              this.submitForm = true
               this.alert = {
                 isShown: true,
                 alertTitle: ALERT_AUTH.tutor.success.alertTitle,
                 alertType: 'error',
                 alertMessage: response.message
               }
+              this.submitForm = true
+              this.inVerification = false
+              this.isLoading = false
             },
             error: (httpErrorResponse) => {
-              this.submitForm = true
               console.log(httpErrorResponse)
               this.alert = {
                 isShown: true,
@@ -363,14 +354,16 @@ export class TutorsSupplementFormComponent implements OnInit {
                 alertType: 'error',
                 alertMessage: httpErrorResponse.error.message
               }
+              this.submitForm = true
+              this.inVerification = false
+              this.isLoading = false
             }
           })
         }
       } catch (err) {
         this.inVerification = false
         this.isLoading = false
-        console.log(err)
-        this.submitForm = true
+        console.log(err, this.tutorForm.value)
         this.alert = {
           isShown: true,
           alertTitle: ALERT_AUTH.tutor.error.alertTitle,
