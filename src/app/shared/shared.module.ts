@@ -20,6 +20,7 @@ import { CardsSkeletonComponent } from './components/cards-skeleton/cards-skelet
 import { InputGroupComponent } from './components/input-group/input-group.component'
 import { InputIconComponent } from './components/input-icon/input-icon.component'
 import { InputComponent } from './components/input/input.component'
+import { ProfileSkeletonComponent } from './components/profile-skeleton/profile-skeleton.component'
 import { TextareaComponent } from './components/textarea/textarea.component'
 import { VerificationModalAnimationComponent } from './components/verification-modal-animation/verification-modal-animation.component'
 @NgModule({
@@ -42,7 +43,8 @@ import { VerificationModalAnimationComponent } from './components/verification-m
     RatingComponent,
     CardTutorSuggestionComponent,
     VerificationModalAnimationComponent,
-    CardsSkeletonComponent
+    CardsSkeletonComponent,
+    ProfileSkeletonComponent
   ],
   imports: [CommonModule, RouterModule, ReactiveFormsModule, FormsModule],
   exports: [
@@ -68,7 +70,8 @@ import { VerificationModalAnimationComponent } from './components/verification-m
     RatingComponent,
     CardTutorSuggestionComponent,
     VerificationModalAnimationComponent,
-    CardsSkeletonComponent
+    CardsSkeletonComponent,
+    ProfileSkeletonComponent
   ]
 })
 export class SharedModule {}
