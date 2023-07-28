@@ -38,7 +38,7 @@ export class TutorService {
 
   getSingleTutor(id: number): Observable<ITutor | null> {
     return this.apiConfig.http.get<ITutor>(
-      `${this.apiConfig.url}/users/all-tutors/${id}`
+      `${this.apiConfig.url}/users/tutor/${id}`
     )
   }
   getSuggestionTutors(city: string): Observable<ITutor[]> {

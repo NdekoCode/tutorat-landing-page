@@ -1,6 +1,6 @@
 <app-space-content>
   <app-profile-skeleton *ngIf="isLoading" />
-  <div class="w-full profile" *ngIf="tutor; else notUser">
+  <div class="w-full profile" *ngIf="tutor && !isLoading; else notUser">
     <div
       class="grid grid-flow-row-dense grid-cols-1 xl:justify-between xl:grid-cols-3"
     >
@@ -1426,7 +1426,7 @@
     </div>
   </div>
   <ng-template #notUser>
-    <div class="w-full">
+    <div class="w-full h-screen flex-col-middle" *ngIf="!isLoading && !tutor">
       <h5 class="text-xl font-semibold text-center">Not tutor found</h5>
     </div>
   </ng-template>

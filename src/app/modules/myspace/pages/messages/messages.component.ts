@@ -8,17 +8,28 @@ import { TutorService } from '../../../../shared/services/tutor/tutor.service'
   styleUrls: ['./messages.component.scss']
 })
 export class MessagesComponent implements OnInit {
-  tutorsMessage: ITutor[] = []
-  activatedTutor!: ITutor
+  usersMessage: ITutor[] = []
+  isLoading = false
+  activatedUser!: ITutor
   tutors: ITutor[] = []
   constructor(private tutorService: TutorService) {}
   ngOnInit(): void {
-    this.tutorService.getTutors().subscribe((tutors) => {
-      this.tutors = tutors
-      this.tutorsMessage = this.tutorService.getLimitTutor(this.tutors, 12)
+    this.isLoading = true
+    this.tutorService.getTutors().subscribe({
+      next: (tutors) => {
+        this.tutors = tutors
+        this.usersMessage = this.tutors
+        this.isLoading = false
+      },
+      error: (err) => {
+        this.isLoading = false
+      }
     })
   }
   getActivatedTutor(tutor: ITutor) {
-    this.activatedTutor = tutor
+    this.activatedUser = tutor
+  }
+  isTutor(user: ITutor) {
+    return this.tutorService.isTutor(user)
   }
 }
