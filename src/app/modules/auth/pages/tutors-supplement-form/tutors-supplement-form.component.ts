@@ -324,7 +324,34 @@ export class TutorsSupplementFormComponent implements OnInit, OnDestroy {
                   alertType: 'error',
                   alertMessage: response.message
                 }
+                if (isExists(this.imageFormData)) {
+                  this.tutorService.userService
+                    .updateUser({
+                      avatar: this.imageFormData
+                    })
+                    .subscribe({
+                      next: () => {
+                        this.isLoading = false
 
+                        this.timer = window.setTimeout(
+                          () =>
+                            this.apiConfig.router.navigate([
+                              MYSPACE_ROUTES.HOME
+                            ]),
+                          GLOBAL_CONSTANTS.AUTH_TIMEOUT_LOGIN
+                        )
+                      },
+                      error: () => {
+                        this.timer = window.setTimeout(
+                          () =>
+                            this.apiConfig.router.navigate([
+                              MYSPACE_ROUTES.HOME
+                            ]),
+                          GLOBAL_CONSTANTS.AUTH_TIMEOUT_LOGIN
+                        )
+                      }
+                    })
+                }
                 this.desabledModal()
               },
               error: (httpErrorResponse) => {
@@ -349,12 +376,32 @@ export class TutorsSupplementFormComponent implements OnInit, OnDestroy {
                 alertType: 'success',
                 alertMessage: response.message
               }
-
               this.desabledModal()
-              this.timer = window.setTimeout(
-                () => this.apiConfig.router.navigate([MYSPACE_ROUTES.HOME]),
-                GLOBAL_CONSTANTS.AUTH_TIMEOUT_LOGIN
-              )
+
+              if (isExists(this.imageFormData)) {
+                this.tutorService.userService
+                  .updateUser({
+                    avatar: this.imageFormData
+                  })
+                  .subscribe({
+                    next: () => {
+                      this.isLoading = false
+
+                      this.timer = window.setTimeout(
+                        () =>
+                          this.apiConfig.router.navigate([MYSPACE_ROUTES.HOME]),
+                        GLOBAL_CONSTANTS.AUTH_TIMEOUT_LOGIN
+                      )
+                    },
+                    error: () => {
+                      this.timer = window.setTimeout(
+                        () =>
+                          this.apiConfig.router.navigate([MYSPACE_ROUTES.HOME]),
+                        GLOBAL_CONSTANTS.AUTH_TIMEOUT_LOGIN
+                      )
+                    }
+                  })
+              }
             },
             error: (httpErrorResponse) => {
               console.log(httpErrorResponse)

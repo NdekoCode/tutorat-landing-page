@@ -114,6 +114,20 @@ export type User = {
   }
   tutor: Tutor | null
 }
+
+export type UpdateCredentialUser = {
+  firstName?: string
+  lastName?: string
+  gender?: string
+  phoneNumber?: string
+  avatar?: string
+  address?: {
+    address: string
+    city: string
+    postalCode: string
+    state: string
+  }
+}
 export type Tutor = {
   bio: string
   hourlyRate: number
