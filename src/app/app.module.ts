@@ -37,8 +37,8 @@ import { SafePipe } from './shared/pipes/safe.pipe'
     MySpaceModule,
     PublicModule,
     BrowserAnimationsModule,
-    GoogleSigninButtonModule,
     SocialLoginModule,
+    GoogleSigninButtonModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireStorageModule
   ],

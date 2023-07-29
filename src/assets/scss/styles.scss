@@ -215,3 +215,13 @@ a.primary-gradient {
 .bg-space {
   background-color: #f8f9fa !important;
 }
+
+.button-auth {
+  iframe {
+    width: 400px !important;
+
+    &~div {
+      width: 100%;
+    }
+  }
+}

@@ -217,15 +217,20 @@
                     </clipPath>
                   </defs>
                 </svg>
-                <span class="absolute inset-0 opacity-0 flex-middle">
+                <div
+                  class="absolute inset-0 opacity-0 button-auth contents flex-middle"
+                >
                   <asl-google-signin-button
                     size="large"
                     type="standard"
                     shape="rectangular"
-                    width="400"
                     logo_alignment="left"
-                  ></asl-google-signin-button
-                ></span>
+                    data-width="400"
+                  ></asl-google-signin-button>
+                  <!-- <asl-google-signin-button
+                    size="large"
+                  ></asl-google-signin-button> -->
+                </div>
                 <span>Continuez avec Google</span>
               </button>
             </div>
