@@ -8,7 +8,7 @@ import {
   isExists
 } from 'src/app/core/utilities/helpers'
 import { ITutor } from 'src/app/core/utilities/interfaces'
-import { TutorCredentials, User } from 'src/app/core/utilities/types'
+import { Tutor, TutorCredentials, User } from 'src/app/core/utilities/types'
 import { ApiConfigService } from '../api-config/api-config.service'
 import { UserService } from '../user/user.service'
 
@@ -32,7 +32,7 @@ export class TutorService {
   }
 
   // eslint-disable-next-line class-methods-use-this
-  tutorCompletedProfile(user: ITutor) {
+  tutorCompletedProfile(user: ITutor | User | Tutor) {
     return hasProperties({ ...user }, TUTOR_REQUIRED_FIELDS as string[], true)
   }
 
@@ -49,7 +49,14 @@ export class TutorService {
   // eslint-disable-next-line class-methods-use-this
   isTutor(tutor: ITutor | User): boolean {
     if ('user' in tutor) {
-      return isExists(tutor) && isExists(tutor?.user) && !isEmptyObject(tutor)
+      return isExists(tutor?.user) && !isEmptyObject(tutor?.user)
+    }
+    return false
+  }
+  // eslint-disable-next-line class-methods-use-this
+  meIsTutor(user: ITutor | User) {
+    if ('tutor' in user) {
+      return isExists(user?.tutor) && !isEmptyObject(user.tutor)
     }
     return false
   }

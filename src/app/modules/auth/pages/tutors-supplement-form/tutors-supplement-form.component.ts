@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core'
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { Observable } from 'rxjs'
 import slugify from 'slugify'
+import { MYSPACE_ROUTES } from 'src/app/core/routes/routes'
 import {
   ALERT_AUTH,
   DOCUMENT_IDENTITY_TYPE
@@ -112,7 +113,14 @@ export class TutorsSupplementFormComponent implements OnInit {
       document: this.formBuilder.array([], [Validators.required])
     })
     this.tutorService.userService.getUserAuth().subscribe((response) => {
-      this.user = response
+      this.user = response as User
+
+      if (
+        this.tutorService.meIsTutor(this.user) &&
+        this.tutorService.tutorCompletedProfile(this.user.tutor!)
+      ) {
+        this.apiConfig.router.navigate([MYSPACE_ROUTES.HOME])
+      }
     })
     // Récupérer les spécialisations depuis l'AP
     this.courseService.getAllCourses().subscribe((response) => {
@@ -305,7 +313,7 @@ export class TutorsSupplementFormComponent implements OnInit {
           experience: this.tutorForm.value.experience,
           specialization: this.selectedSpecializations
         }
-        if (!this.tutorService.isTutor(this.user as ITutor)) {
+        if (!this.tutorService.meIsTutor(this.user!)) {
           this.tutorService.userService.makeMeTutor().subscribe((_response) => {
             this.tutorService.updateTutorData(this.tutorFormData).subscribe({
               next: (response) => {
@@ -315,9 +323,8 @@ export class TutorsSupplementFormComponent implements OnInit {
                   alertType: 'error',
                   alertMessage: response.message
                 }
-                this.submitForm = true
-                this.inVerification = false
-                this.isLoading = false
+
+                this.desabledModal()
               },
               error: (httpErrorResponse) => {
                 console.log(httpErrorResponse)
@@ -327,9 +334,8 @@ export class TutorsSupplementFormComponent implements OnInit {
                   alertType: 'error',
                   alertMessage: httpErrorResponse.error.message
                 }
-                this.submitForm = true
-                this.inVerification = false
-                this.isLoading = false
+
+                this.desabledModal()
               }
             })
           })
@@ -339,12 +345,11 @@ export class TutorsSupplementFormComponent implements OnInit {
               this.alert = {
                 isShown: true,
                 alertTitle: ALERT_AUTH.tutor.success.alertTitle,
-                alertType: 'error',
+                alertType: 'success',
                 alertMessage: response.message
               }
-              this.submitForm = true
-              this.inVerification = false
-              this.isLoading = false
+
+              this.desabledModal()
             },
             error: (httpErrorResponse) => {
               console.log(httpErrorResponse)
@@ -354,15 +359,12 @@ export class TutorsSupplementFormComponent implements OnInit {
                 alertType: 'error',
                 alertMessage: httpErrorResponse.error.message
               }
-              this.submitForm = true
-              this.inVerification = false
-              this.isLoading = false
+
+              this.desabledModal()
             }
           })
         }
       } catch (err) {
-        this.inVerification = false
-        this.isLoading = false
         console.log(err, this.tutorForm.value)
         this.alert = {
           isShown: true,
@@ -370,11 +372,9 @@ export class TutorsSupplementFormComponent implements OnInit {
           alertType: 'error',
           alertMessage: "Erreur lors de l'upload"
         }
-        this.submitForm = true
+        this.desabledModal()
       }
     } else {
-      this.submitForm = true
-
       this.alert = {
         isShown: true,
         alertTitle: ALERT_AUTH.tutor.error.alertTitle,
@@ -389,9 +389,14 @@ export class TutorsSupplementFormComponent implements OnInit {
         this.videoFiles,
         this.photoFile
       )
+      this.desabledModal()
     }
   }
-
+  desabledModal() {
+    this.submitForm = true
+    this.inVerification = false
+    this.isLoading = false
+  }
   async uploadDocument() {
     const documentFormArray = this.tutorForm.get('document') as FormArray
     this.documentFormData = this.tutorForm.get('document')?.value
