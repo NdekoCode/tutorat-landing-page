@@ -4,9 +4,12 @@ import {
 } from '@abacritt/angularx-social-login'
 import { HttpClientModule } from '@angular/common/http'
 import { ComponentFixture, TestBed } from '@angular/core/testing'
+import { AngularFireModule } from '@angular/fire/compat'
+import { AngularFireStorageModule } from '@angular/fire/compat/storage'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { of, throwError } from 'rxjs'
 import { AuthService } from 'src/app/shared/services/auth/auth.service'
+import { environment } from 'src/environments/environment'
 import { SignupComponent } from './signup.component'
 /**
  *
@@ -28,7 +31,13 @@ describe('SignupComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [SignupComponent],
-      imports: [HttpClientModule, FormsModule, ReactiveFormsModule],
+      imports: [
+        HttpClientModule,
+        FormsModule,
+        ReactiveFormsModule,
+        AngularFireModule.initializeApp(environment.firebaseConfig),
+        AngularFireStorageModule
+      ],
 
       providers: [
         AuthService,

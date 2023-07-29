@@ -1,13 +1,14 @@
 /* eslint-disable no-await-in-loop */
 /* eslint-disable no-console */
-import { Component, OnInit } from '@angular/core'
+import { Component, OnDestroy, OnInit } from '@angular/core'
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { Observable } from 'rxjs'
 import slugify from 'slugify'
 import { MYSPACE_ROUTES } from 'src/app/core/routes/routes'
 import {
   ALERT_AUTH,
-  DOCUMENT_IDENTITY_TYPE
+  DOCUMENT_IDENTITY_TYPE,
+  GLOBAL_CONSTANTS
 } from 'src/app/core/utilities/constants'
 import { isEmptyObject, isExists } from 'src/app/core/utilities/helpers'
 import { ITutor } from 'src/app/core/utilities/interfaces'
@@ -34,7 +35,7 @@ import { TutorService } from '../../../../shared/services/tutor/tutor.service'
   templateUrl: './tutors-supplement-form.component.html',
   styleUrls: ['./tutors-supplement-form.component.scss']
 })
-export class TutorsSupplementFormComponent implements OnInit {
+export class TutorsSupplementFormComponent implements OnInit, OnDestroy {
   user!: ITutor | User | null
   tutorSupplementForm!: FormGroup
   imagePath: string | undefined = '/assets/images/avatar.png'
@@ -350,6 +351,10 @@ export class TutorsSupplementFormComponent implements OnInit {
               }
 
               this.desabledModal()
+              this.timer = window.setTimeout(
+                () => this.apiConfig.router.navigate([MYSPACE_ROUTES.HOME]),
+                GLOBAL_CONSTANTS.AUTH_TIMEOUT_LOGIN
+              )
             },
             error: (httpErrorResponse) => {
               console.log(httpErrorResponse)
@@ -482,5 +487,9 @@ export class TutorsSupplementFormComponent implements OnInit {
       this.imageFormData = photo
       console.log(this.imageFormData, this.tutorForm.value)
     }
+  }
+
+  ngOnDestroy(): void {
+    window.clearTimeout(this.timer)
   }
 }

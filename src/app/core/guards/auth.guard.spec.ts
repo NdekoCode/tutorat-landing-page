@@ -5,8 +5,11 @@ import {
   SocialAuthServiceConfig
 } from '@abacritt/angularx-social-login'
 import { HttpClientModule } from '@angular/common/http'
+import { AngularFireModule } from '@angular/fire/compat'
+import { AngularFireStorageModule } from '@angular/fire/compat/storage'
 import { RouterModule } from '@angular/router'
 import { AuthService } from 'src/app/shared/services/auth/auth.service'
+import { environment } from 'src/environments/environment'
 import { AuthGuard } from './auth.guard'
 
 describe('AuthGuard', () => {
@@ -14,7 +17,12 @@ describe('AuthGuard', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientModule, RouterModule],
+      imports: [
+        HttpClientModule,
+        RouterModule,
+        AngularFireModule.initializeApp(environment.firebaseConfig),
+        AngularFireStorageModule
+      ],
       providers: [
         AuthService,
         {

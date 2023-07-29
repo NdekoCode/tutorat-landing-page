@@ -7,13 +7,13 @@ import { SharedModule } from './shared/shared.module'
 
 import {
   GoogleLoginProvider,
+  GoogleSigninButtonModule,
   SocialAuthServiceConfig,
   SocialLoginModule
 } from '@abacritt/angularx-social-login'
 import { environment } from 'src/environments/environment'
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
-import { AuthInterceptorProvider } from './core/interceptors/auth.interceptor'
 import { AuthModule } from './modules/auth/auth.module'
 import { MySpaceModule } from './modules/myspace/myspace.module'
 import { PublicModule } from './modules/public/public.module'
@@ -37,6 +37,7 @@ import { SafePipe } from './shared/pipes/safe.pipe'
     MySpaceModule,
     PublicModule,
     BrowserAnimationsModule,
+    GoogleSigninButtonModule,
     SocialLoginModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireStorageModule
@@ -54,9 +55,9 @@ import { SafePipe } from './shared/pipes/safe.pipe'
         ],
         onError: (err) => {}
       } as SocialAuthServiceConfig
-    },
+    }
     // A partir de ce moment là le tokenInterceptorProvider est tout le temps actif, il est tout le temps entrer de travailler
-    AuthInterceptorProvider
+    // AuthInterceptorProvider
   ],
   bootstrap: [AppComponent]
 })

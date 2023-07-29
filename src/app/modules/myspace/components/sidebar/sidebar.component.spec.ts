@@ -5,8 +5,11 @@ import {
   SocialAuthServiceConfig
 } from '@abacritt/angularx-social-login'
 import { HttpClientModule } from '@angular/common/http'
+import { AngularFireModule } from '@angular/fire/compat'
+import { AngularFireStorageModule } from '@angular/fire/compat/storage'
 import { ActivatedRoute, RouterModule } from '@angular/router'
 import { AuthService } from 'src/app/shared/services/auth/auth.service'
+import { environment } from 'src/environments/environment'
 import { SidebarComponent } from './sidebar.component'
 
 describe('SidebarComponent', () => {
@@ -21,7 +24,12 @@ describe('SidebarComponent', () => {
     }
     await TestBed.configureTestingModule({
       declarations: [SidebarComponent],
-      imports: [HttpClientModule, RouterModule],
+      imports: [
+        HttpClientModule,
+        RouterModule,
+        AngularFireModule.initializeApp(environment.firebaseConfig),
+        AngularFireStorageModule
+      ],
 
       providers: [
         { provide: ActivatedRoute, useValue: activatedRouteMock },

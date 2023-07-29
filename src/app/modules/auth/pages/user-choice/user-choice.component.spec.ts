@@ -5,6 +5,9 @@ import { ActivatedRoute, Router, RouterModule } from '@angular/router'
 import { MYSPACE_ROUTES } from 'src/app/core/routes/routes'
 import { UserService } from 'src/app/shared/services/user/user.service'
 
+import { AngularFireModule } from '@angular/fire/compat'
+import { AngularFireStorageModule } from '@angular/fire/compat/storage'
+import { environment } from 'src/environments/environment'
 import { UserChoiceComponent } from './user-choice.component'
 
 xdescribe('UserChoiceComponent', () => {
@@ -25,7 +28,14 @@ xdescribe('UserChoiceComponent', () => {
 
     await TestBed.configureTestingModule({
       declarations: [UserChoiceComponent],
-      imports: [HttpClientTestingModule, ReactiveFormsModule, RouterModule],
+      imports: [
+        HttpClientTestingModule,
+        ReactiveFormsModule,
+        RouterModule,
+        AngularFireModule.initializeApp(environment.firebaseConfig),
+        AngularFireStorageModule
+      ],
+
       providers: [
         { provide: ActivatedRoute, useValue: activatedRouteMock },
         { provide: Router, useValue: mockRouter },

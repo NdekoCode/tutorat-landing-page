@@ -1,8 +1,11 @@
 import { HttpClient } from '@angular/common/http'
 import { HttpClientTestingModule } from '@angular/common/http/testing'
 import { ComponentFixture, TestBed } from '@angular/core/testing'
+import { AngularFireModule } from '@angular/fire/compat'
+import { AngularFireStorageModule } from '@angular/fire/compat/storage'
 import { ActivatedRoute } from '@angular/router'
 import { TutorService } from 'src/app/shared/services/tutor/tutor.service'
+import { environment } from 'src/environments/environment'
 import { TutorsComponent } from './tutors.component'
 
 describe('TutorsComponent', () => {
@@ -12,7 +15,11 @@ describe('TutorsComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [TutorsComponent],
-      imports: [HttpClientTestingModule],
+      imports: [
+        HttpClientTestingModule,
+        AngularFireModule.initializeApp(environment.firebaseConfig),
+        AngularFireStorageModule
+      ],
       providers: [
         HttpClient,
         {

@@ -1,7 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing'
 
 import { ITutor } from 'src/app/core/utilities/interfaces'
-import { Tutor } from 'src/app/core/utilities/types'
 import { ToggleVideoService } from 'src/app/shared/services/toggle/toggle-video.service'
 import { TutorCardComponent } from './tutor-card.component'
 
@@ -22,22 +21,35 @@ describe('TutorCardComponent', () => {
   it('Init with tutor', () => {
     const toggleService = { onToggleShow: jest.fn(), isShown: false }
     const tutor: ITutor = {
-      id: 1,
-      firstName: 'John',
-      lastName: 'Doe',
-      age: 25,
-      gender: 'Male',
-      email: 'johndoe@example.com',
-      phone: '1234567890',
-      password: 'password',
-      image: 'image.jpg',
-      address: {
-        address: '123 Main St',
-        city: 'Anytown',
-        postalCode: '12345',
-        state: 'CA'
+      userId: 1,
+      bio: 'Bio',
+      hourlyRate: 50,
+      transport: 1,
+      specialization: [
+        { id: 1, name: 'Math', description: '' },
+        { name: 'Science', id: 1, description: '' }
+      ],
+      document: [],
+      video: {
+        id: 1,
+        url: 'video-url',
+        thumbnail: '',
+        description: '',
+        tutorId: 1
       },
-      tutor: {} as Tutor // Mocking the Tutor class
+      user: {
+        id: 1,
+        gender: 'male',
+        firstName: 'Arick',
+        lastName: 'Bul',
+        avatar: 'image.jpg',
+        address: {
+          id: 1,
+          country: 'State',
+          city: 'City',
+          userId: 1
+        }
+      }
     }
     const toggleVideoService = new ToggleVideoService(toggleService)
     const component = new TutorCardComponent()

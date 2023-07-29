@@ -29,7 +29,4 @@ export class MessagesComponent implements OnInit {
   getActivatedTutor(tutor: ITutor) {
     this.activatedUser = tutor
   }
-  isTutor(user: ITutor) {
-    return this.tutorService.isTutor(user)
-  }
 }

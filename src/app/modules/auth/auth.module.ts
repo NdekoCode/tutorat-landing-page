@@ -1,3 +1,4 @@
+import { GoogleSigninButtonModule } from '@abacritt/angularx-social-login'
 import { CommonModule } from '@angular/common'
 import { NgModule } from '@angular/core'
 import { ReactiveFormsModule } from '@angular/forms'
@@ -13,7 +14,6 @@ import { TutorsSupplementFormComponent } from './pages/tutors-supplement-form/tu
 import { UserChoiceComponent } from './pages/user-choice/user-choice.component'
 import { VerifyUserComponent } from './pages/verify-user/verify-user.component'
 
-import { GoogleSigninButtonModule } from '@abacritt/angularx-social-login'
 @NgModule({
   declarations: [
     SignupComponent,
