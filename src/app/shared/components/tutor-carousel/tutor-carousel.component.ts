@@ -9,7 +9,7 @@ import { Timer } from 'src/app/core/utilities/types'
   styleUrls: ['./tutor-carousel.component.scss']
 })
 export class TutorCarouselComponent implements OnInit, OnDestroy {
-  @Input() items!: ITutor[]
+  @Input() items: ITutor[] = []
   @Input() slidesPerPage!: number
   @Input() paginationPerSlide!: number
   timer: Timer
@@ -19,11 +19,8 @@ export class TutorCarouselComponent implements OnInit, OnDestroy {
   widthCarousel!: { width: string }
   containerWidth!: number | string
   ngOnInit(): void {
-    // const calculatedSlideWidth = 100 / this.slidesPerPage
-    // this.slideWidth = `${calculatedSlideWidth}%`
     this.setStyle()
     this.updateCarouselStyle()
-    // this.widthCarousel = { width: `calc(100% / ${this.slidesPerPage})` }
     this.timer = window.setInterval(() => {
       this.nextSlide()
     }, GLOBAL_CONSTANTS.SLIDE_TIMEOUT)
@@ -45,6 +42,8 @@ export class TutorCarouselComponent implements OnInit, OnDestroy {
     if (this.currentIndex > 0) {
       this.currentIndex--
       this.updateCarouselStyle()
+    } else {
+      this.updateCarouselStyle()
     }
   }
 
@@ -54,6 +53,7 @@ export class TutorCarouselComponent implements OnInit, OnDestroy {
       this.updateCarouselStyle()
     } else {
       this.currentIndex = 0
+      this.updateCarouselStyle()
     }
   }
 
