@@ -1,5 +1,8 @@
 import { Component } from '@angular/core'
+import { Observable } from 'rxjs'
 import { MYSPACE_ROUTES } from 'src/app/core/routes/routes'
+import { User } from 'src/app/core/utilities/types'
+import { UserService } from 'src/app/shared/services/user/user.service'
 
 @Component({
   selector: 'app-myspace-layout',
@@ -12,6 +15,8 @@ export class MyspaceLayoutComponent {
     MYSPACE_ROUTES.MESSAGES,
     MYSPACE_ROUTES.CALENDAR
   ]
+  user: Observable<User> = this.userService.getUserAuth() as Observable<User>
+  constructor(private userService: UserService) {}
   toggleActive() {
     this.isActive = !this.isActive
   }
