@@ -13,6 +13,7 @@ import { SignupComponent } from './pages/signup/signup.component'
 import { TutorsSupplementFormComponent } from './pages/tutors-supplement-form/tutors-supplement-form.component'
 import { UserChoiceComponent } from './pages/user-choice/user-choice.component'
 import { VerifyUserComponent } from './pages/verify-user/verify-user.component'
+import { LogoutComponent } from './pages/logout/logout.component'
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { VerifyUserComponent } from './pages/verify-user/verify-user.component'
     ConfirmationComponent,
     VerifyUserComponent,
     TutorsSupplementFormComponent,
-    UserChoiceComponent
+    UserChoiceComponent,
+    LogoutComponent
   ],
   exports: [],
   imports: [

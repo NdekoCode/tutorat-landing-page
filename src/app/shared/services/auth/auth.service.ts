@@ -52,7 +52,7 @@ export class AuthService {
     return this.token.tokenExists()
   }
   logout(): void {
-    this.token.clearToken()
+    this.token.clearToken('userToken')
     this.apiConfig.router.navigate([AUTH_ROUTES.LOGIN])
   }
   sendResetPasswordToken(email: string): Observable<UtilityType> {
@@ -86,7 +86,7 @@ export class AuthService {
   loginWithGoogle(): void {
     this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID)
   }
-  logOut(): void {
+  sociallogOut(): void {
     this.socialAuthService.signOut()
   }
   getAuthUserInfo(): Observable<User> {
