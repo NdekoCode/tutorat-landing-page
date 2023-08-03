@@ -1608,12 +1608,7 @@ export const USERS: User[] = [
     email: 'cepgrave1o@biblegateway.com',
     phoneNumber: '+1 614 425 6745',
     avatar: 'https://randomuser.me/api/portraits/women/94.jpg',
-    address: {
-      address: '8376 Albacore Drive',
-      city: 'Pasadena',
-      postalCode: '21122',
-      state: 'MD'
-    },
+    address: {},
     tutor: null,
     id: 61
   },
@@ -1846,12 +1841,7 @@ export const USERS: User[] = [
     email: 'cmasurel1x@baidu.com',
     phoneNumber: '+86 426 681 8895',
     avatar: 'https://randomuser.me/api/portraits/women/50.jpg',
-    address: {
-      address: '519 West 75th Avenue',
-      city: 'Anchorage',
-      postalCode: '99518',
-      state: 'AK'
-    },
+    address: {},
     tutor: {
       bio: 'I am well-versed in a variety of computer science topics, including programming languages, algorithms, data structures, and software engineering. Additionally, I have experience...',
       hourlyRate: 61,
