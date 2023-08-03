@@ -2,8 +2,8 @@
   class="flex relative group min-h-[130px] mb-3 h-max bg-white items-center hover:shadow-md hover:shadow-gray-100 border border-gray-100 rounded-lg p-2.5 px-3 gap-x-3"
 >
   <img
-    [src]="tutor.image"
-    [alt]="tutor.firstName + ' ' + tutor.lastName"
+    [src]="tutor.user.avatar"
+    [alt]="tutor.user.firstName + ' ' + tutor.user.lastName"
     class="object-cover w-16 h-16 rounded-full"
   />
   <div class="flex flex-col justify-center w-full">
@@ -11,7 +11,7 @@
       <div class="flex flex-col">
         <div class="flex gap-x-2">
           <h2 class="mb-1 text-sm font-semibold">
-            {{ tutor.firstName + ' ' + tutor.lastName }}
+            {{ tutor.user.firstName + ' ' + tutor.user.lastName }}
           </h2>
 
           <div class="flex items-center mr-auto text-sm text-gray-400">
@@ -34,11 +34,11 @@
           <p class="flex items-center">
             <span class="text-sm font-normal text-gray-400">Enseigne: </span>
             <span class="text-sm font-semibold text-blue">
-              {{ tutor.tutor.specialization[0] }}</span
+              {{ tutor.specialization[0].name }}</span
             >
           </p>
           <p class="flex items-center">
-            {{ tutor.tutor.hourlyRate * 2300 | number }} FC
+            {{ tutor.hourlyRate | number }} FC
             <span class="text-sm font-normal text-gray-400"> /heure</span>
           </p>
         </div>
@@ -60,7 +60,7 @@
     </div>
   </div>
   <a
-    [routerLink]="'/myspace/tutor/' + tutor.id"
+    [routerLink]="'/myspace/tutor/' + tutor.userId"
     class="absolute inset-0 opacity-0"
   ></a>
 </div>

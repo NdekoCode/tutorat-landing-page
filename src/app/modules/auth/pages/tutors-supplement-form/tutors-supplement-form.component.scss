@@ -1,3 +1,12 @@
+.field-container,
+.input-icon {
+  @apply w-full max-w-full;
+
+  input {
+    @apply w-full;
+  }
+}
+
 .input-groupp {
   @apply w-full;
 
@@ -14,6 +23,28 @@
   p {
 
     @apply flex items-center;
+  }
+}
+
+.selected {
+  @apply bg-green-200;
+}
+
+input[type="text"],
+input[type="date"],
+select,
+textarea,
+.input-icon {
+  background-color: #f2f3f8 !important;
+  border-color    : #e2e9ea !important;
+  border-radius   : 5px !important;
+}
+
+.icon {
+  @apply hidden;
+
+  @screen sm {
+    @apply inline-block
   }
 }
 

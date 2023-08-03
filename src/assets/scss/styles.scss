@@ -62,8 +62,12 @@
 }
 
 .bg-green {
-  background-color: var(--green-dark);
-  color           : var(--color-white);
+  background-color: var(--green-dark) !important;
+  color           : var(--color-white) !important;
+}
+
+.border-green {
+  border-color: var(--green-dark);
 }
 
 .border-green {
@@ -214,4 +218,14 @@ a.primary-gradient {
 
 .bg-space {
   background-color: #f8f9fa !important;
+}
+
+.button-auth {
+  iframe {
+    width: 400px !important;
+
+    &~div {
+      width: 100%;
+    }
+  }
 }

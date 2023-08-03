@@ -1,7 +1,17 @@
 import { NgModule } from '@angular/core'
+import { AngularFireModule } from '@angular/fire/compat'
+import { AngularFireStorageModule } from '@angular/fire/compat/storage'
 import { BrowserModule } from '@angular/platform-browser'
-import { SharedModule } from './modules/shared/shared.module'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { SharedModule } from './shared/shared.module'
 
+import {
+  GoogleLoginProvider,
+  GoogleSigninButtonModule,
+  SocialAuthServiceConfig,
+  SocialLoginModule
+} from '@abacritt/angularx-social-login'
+import { environment } from 'src/environments/environment'
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
 import { AuthModule } from './modules/auth/auth.module'
@@ -9,20 +19,15 @@ import { MySpaceModule } from './modules/myspace/myspace.module'
 import { PublicModule } from './modules/public/public.module'
 import { ErrorComponent } from './shared/components/error/error.component'
 import { InputContainerComponent } from './shared/components/input-container/input-container.component'
-import { InputGroupComponent } from './shared/components/input-group/input-group.component'
-import { InputComponent } from './shared/components/input/input.component'
 import { ScrollHideDirective } from './shared/directives/scroll-hide.directive'
 import { SafePipe } from './shared/pipes/safe.pipe'
-
 @NgModule({
   declarations: [
     AppComponent,
     SafePipe,
     ScrollHideDirective,
-    InputComponent,
     InputContainerComponent,
-    ErrorComponent,
-    InputGroupComponent
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
@@ -30,9 +35,30 @@ import { SafePipe } from './shared/pipes/safe.pipe'
     SharedModule,
     AuthModule,
     MySpaceModule,
-    PublicModule
+    PublicModule,
+    BrowserAnimationsModule,
+    SocialLoginModule,
+    GoogleSigninButtonModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireStorageModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(environment.GOOGLE_CLIENT_ID)
+          }
+        ],
+        onError: (err) => {}
+      } as SocialAuthServiceConfig
+    }
+    // A partir de ce moment là le tokenInterceptorProvider est tout le temps actif, il est tout le temps entrer de travailler
+    // AuthInterceptorProvider
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

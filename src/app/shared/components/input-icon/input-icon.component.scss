@@ -1,0 +1,18 @@
+:host {
+  display: block;
+  width  : 100%;
+
+}
+
+.field-container,
+input {
+  @apply w-full max-w-full
+}
+
+input {
+  @apply h-full border-none
+}
+
+.input-icon {
+  padding: 0
+}

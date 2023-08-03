@@ -1,4 +1,5 @@
 import { USERS } from './constants'
+import { ITutor } from './interfaces'
 import { Tutor, User, UtilityType } from './types'
 
 export function objectHasValue(obj: { [key: string]: UtilityType }): boolean {
@@ -28,9 +29,13 @@ export function isEmptyObject(value: object | null | undefined) {
 export function isExists<T>(value: T): boolean {
   return typeof value !== 'undefined' && value !== null
 }
-export function hasProperties(objet: object, keys: string[] | string): boolean {
+export function hasProperties(
+  object: { [key: string]: unknown },
+  keys: string[] | string,
+  noEmpty = false
+): boolean {
   // Vérifier si l'objet est défini  ou si les clés sont définies
-  if (!isExists(objet) || !isExists(keys)) {
+  if (!isExists(object) || !isExists(keys)) {
     return false
   }
 
@@ -38,9 +43,15 @@ export function hasProperties(objet: object, keys: string[] | string): boolean {
   if (typeof keys === 'string') {
     keys = [keys]
   }
-
+  let allKeysPresent: boolean = false
   // Vérifier si toutes les clés sont présentes dans l'objet
-  const allKeysPresent = keys.every((key) => objet.hasOwnProperty(key))
+  if (noEmpty) {
+    allKeysPresent = keys.every(
+      (key) => object.hasOwnProperty(key) && isExists(object[key])
+    )
+  } else {
+    allKeysPresent = keys.every((key) => object.hasOwnProperty(key))
+  }
   if (!allKeysPresent) {
     return false
   }
@@ -99,11 +110,10 @@ export function getUsers(tutor: boolean = false): (User | Tutor)[] | [] {
 }
 
 export function filterTutor(
-  data: User[],
+  data: ITutor[],
   filters: Partial<Tutor & { city: string; cours?: string | number }>
-): User[] {
-  return data.filter((entry) => {
-    const tutor = entry.tutor!
+): ITutor[] {
+  return data.filter((tutor) => {
     let isValid = true
 
     if (
@@ -113,13 +123,16 @@ export function filterTutor(
       isValid = false
     }
 
-    if (filters.cours && !tutor.specialization.includes(filters.cours)) {
+    if (
+      filters.cours &&
+      !tutor.specialization.map((s) => s.name).includes(filters.cours as string)
+    ) {
       isValid = false
     }
 
     if (
       filters.city &&
-      tutor.address.city.toLowerCase() !== filters.city.toLowerCase()
+      tutor.user.address.city.toLowerCase() !== filters.city.toLowerCase()
     ) {
       isValid = false
     }
@@ -225,4 +238,26 @@ export function generateEvents(): Event[] {
   }
 
   return [event]
+}
+export function getFileNameWithoutExtension(fileName: string): string {
+  const extensionIndex = fileName.lastIndexOf('.')
+  if (extensionIndex !== -1) {
+    return fileName.substring(0, extensionIndex)
+  }
+  return fileName
+}
+
+// Fonction pour supprimer les préfixes des données d'image
+export function removeDataPrefix(data: string): string {
+  const prefixes = [
+    'data:image/jpeg;base64,',
+    'data:image/png;base64,',
+    'data:image/gif;base64,'
+  ]
+  for (const prefix of prefixes) {
+    if (data.startsWith(prefix)) {
+      return data.substring(prefix.length)
+    }
+  }
+  return data
 }

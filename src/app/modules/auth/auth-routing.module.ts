@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
+import { AuthGuard } from 'src/app/core/guards/auth.guard'
 import { AUTH_ROUTES } from 'src/app/core/routes/routes'
 import { formatURL } from 'src/app/core/utilities/helpers'
 import { ConfirmationComponent } from './pages/confirmation/confirmation.component'
@@ -49,7 +50,8 @@ const routes: Routes = [
   },
   {
     path: formatURL(AUTH_ROUTES.TUTOR_FORM, { 'auth/': '' }),
-    component: TutorsSupplementFormComponent
+    component: TutorsSupplementFormComponent,
+    canActivate: [AuthGuard]
   },
 
   {

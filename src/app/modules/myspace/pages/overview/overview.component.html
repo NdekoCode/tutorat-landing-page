@@ -1,55 +1,58 @@
 <app-space-content>
   <div class="w-full">
     <div class="">
-      <app-tutor-carousel
-        [items]="topTutors"
-        [slidesPerPage]="4"
-        [paginationPerSlide]="5"
-      >
-        <h3 class="text-3xl font-bold text-blue" title>
-          Les tuteurs les mieux cotés
-        </h3>
-
-        <div class="slide" *ngFor="let item of topTutors">
-          <app-tutor-short-card [tutor]="item" />
-        </div>
-      </app-tutor-carousel>
-    </div>
-    <div class="">
-      <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-5">
+      <app-cards-skeleton *ngIf="isLoading; else notLoading" />
+      <ng-template #notLoading>
         <div class="">
-          <div class="flex items-center justify-between">
-            <h3 class="my-5 text-3xl font-bold text-blue">Suggestion</h3>
-            <a
-              routerLink="/myspace/tutors"
-              class="font-medium text-gray hover:underline"
-              >Voir tout</a
-            >
-          </div>
-          <div
-            class="grid grid-cols-1 sm:grid-cols-2 sm:gap-x-3 md:gap-x-2 lg:grid-cols-1"
+          <app-tutor-carousel
+            [items]="topTutors"
+            [slidesPerPage]="4"
+            [paginationPerSlide]="2"
           >
-            <app-tutor-suggestion-card
-              *ngFor="let tutor of suggestionTutors"
-              [tutor]="tutor"
-            />
-          </div>
-        </div>
-        <div class="">
-          <div class="flex items-center justify-end">
-            <h3 class="my-5 text-3xl font-bold text-right text-blue">
-              Videos populaires
+            <h3 class="text-3xl font-bold text-blue" title>
+              Les tuteurs les mieux cotés
             </h3>
-          </div>
 
-          <div class="flex flex-col w-full rounded gap-y-1">
-            <app-social-card
-              *ngFor="let tutor of suggestionTutors.slice(0, 2)"
-              [tutor]="tutor"
-            />
+            <div class="slide" *ngFor="let item of topTutors">
+              <app-tutor-short-card [tutor]="item" />
+            </div>
+          </app-tutor-carousel>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-5">
+          <div class="">
+            <div class="flex items-center justify-between">
+              <h3 class="my-5 text-3xl font-bold text-blue">Suggestion</h3>
+              <a
+                routerLink="/myspace/tutors"
+                class="font-medium text-gray hover:underline"
+                >Voir tout</a
+              >
+            </div>
+            <div
+              class="grid grid-cols-1 sm:grid-cols-2 sm:gap-x-3 md:gap-x-2 lg:grid-cols-1"
+            >
+              <app-tutor-suggestion-card
+                *ngFor="let tutor of suggestionTutors"
+                [tutor]="tutor"
+              />
+            </div>
+          </div>
+          <div class="">
+            <div class="flex items-center justify-end">
+              <h3 class="my-5 text-3xl font-bold text-right text-blue">
+                Videos populaires
+              </h3>
+            </div>
+
+            <div class="flex flex-col w-full rounded gap-y-1">
+              <app-social-card
+                *ngFor="let tutor of suggestionTutors.slice(0, 2)"
+                [tutor]="tutor"
+              />
+            </div>
           </div>
         </div>
-      </div>
+      </ng-template>
     </div>
   </div>
 </app-space-content>

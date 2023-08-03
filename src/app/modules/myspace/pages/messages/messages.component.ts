@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core'
-import { MYSPACE_ROUTES } from 'src/app/core/routes/routes'
 import { ITutor } from 'src/app/core/utilities/interfaces'
 import { TutorService } from '../../../../shared/services/tutor/tutor.service'
 
@@ -9,14 +8,25 @@ import { TutorService } from '../../../../shared/services/tutor/tutor.service'
   styleUrls: ['./messages.component.scss']
 })
 export class MessagesComponent implements OnInit {
-  tutorsMessage: ITutor[] = []
-  activatedTutor!: ITutor
+  usersMessage: ITutor[] = []
+  isLoading = false
+  activatedUser!: ITutor
+  tutors: ITutor[] = []
   constructor(private tutorService: TutorService) {}
   ngOnInit(): void {
-    this.tutorsMessage = this.tutorService.getLimitTutor(12)
-    this.activatedTutor = this.tutorsMessage[0]
+    this.isLoading = true
+    this.tutorService.getTutors().subscribe({
+      next: (tutors) => {
+        this.tutors = tutors
+        this.usersMessage = this.tutors
+        this.isLoading = false
+      },
+      error: (err) => {
+        this.isLoading = false
+      }
+    })
   }
   getActivatedTutor(tutor: ITutor) {
-    this.activatedTutor = tutor
+    this.activatedUser = tutor
   }
 }

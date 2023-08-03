@@ -14,33 +14,33 @@ describe('CardTutorSuggestionComponent', () => {
     fixture = TestBed.createComponent(CardTutorSuggestionComponent)
     component = fixture.componentInstance
     component.tutor = {
-      id: 1,
-      firstName: 'Arick',
-      lastName: 'Bul',
-      age: 30,
-      gender: 'male',
-      email: 'arick.bul@zabibu.co',
-      phone: '1234567890',
-      image: 'image.jpg',
-      address: {
-        address: '123 Street',
-        city: 'City',
-        postalCode: '12345',
-        state: 'State'
+      userId: 1,
+      bio: 'Bio',
+      hourlyRate: 50,
+      transport: 1,
+      specialization: [
+        { id: 1, name: 'Math', description: '' },
+        { name: 'Science', id: 1, description: '' }
+      ],
+      document: [],
+      video: {
+        id: 1,
+        url: 'video-url',
+        thumbnail: '',
+        description: '',
+        tutorId: 1
       },
-      tutor: {
-        bio: 'Bio',
-        hourlyRate: 50,
-        transport: 1,
-        specialization: ['Math', 'Science'],
-        video: {
-          url: 'video-url'
-        },
+      user: {
+        id: 1,
+        gender: 'male',
+        firstName: 'Arick',
+        lastName: 'Bul',
+        avatar: 'image.jpg',
         address: {
-          address: '123 Street',
+          id: 1,
+          country: 'State',
           city: 'City',
-          postalCode: '12345',
-          state: 'State'
+          userId: 1
         }
       }
     }

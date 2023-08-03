@@ -1,5 +1,6 @@
-<app-space-content
-  ><div class="w-full profile" *ngIf="tutor; else notUser">
+<app-space-content>
+  <app-profile-skeleton *ngIf="isLoading" />
+  <div class="w-full profile" *ngIf="tutor && !isLoading; else notUser">
     <div
       class="grid grid-flow-row-dense grid-cols-1 xl:justify-between xl:grid-cols-3"
     >
@@ -7,23 +8,23 @@
         <div class="flex flex-wrap items-center gap-x-3 md:flex-nowrap">
           <figure>
             <img
-              [src]="tutor.image"
-              [alt]="tutor.firstName + ' ' + tutor.lastName"
+              [src]="tutor.user.avatar"
+              [alt]="tutor.user.firstName + ' ' + tutor.user.lastName"
               class="rounded-xl"
             />
           </figure>
           <div class="">
             <div class="flex items-center mb-2 gap-x-1">
               <h3 class="text-lg font-bold">
-                {{ tutor.firstName + ' ' + tutor.lastName }}
+                {{ tutor.user.firstName + ' ' + tutor.user.lastName }}
               </h3>
               <img
                 [src]="
                   'https://www.countryflagicons.com/FLAT/24/' +
-                  tutor.tutor.address.state +
+                  tutor.user.address.country +
                   '.png'
                 "
-                [alt]="tutor.tutor.address.state"
+                [alt]="tutor.user.address.country"
               />
               <svg
                 class="w-4"
@@ -60,8 +61,8 @@
                 ></span>
                 <p class="text-sm text-blue">
                   Enseigne:
-                  <span *ngFor="let cour of tutor.tutor.specialization"
-                    >{{ cour }},</span
+                  <span *ngFor="let cour of tutor.specialization"
+                    >{{ cour.name }},</span
                   >
                 </p>
               </div>
@@ -851,8 +852,9 @@
             </p>
           </div>
         </div>
-
+        <app-inline-card-skeleton *ngIf="suggestionLoading" />
         <app-tutor-carousel
+          *ngIf="suggestionTutors"
           [items]="suggestionTutors"
           [slidesPerPage]="4"
           [paginationPerSlide]="5"
@@ -1424,7 +1426,7 @@
     </div>
   </div>
   <ng-template #notUser>
-    <div class="w-full">
+    <div class="w-full h-screen flex-col-middle" *ngIf="!isLoading && !tutor">
       <h5 class="text-xl font-semibold text-center">Not tutor found</h5>
     </div>
   </ng-template>

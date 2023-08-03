@@ -1,5 +1,7 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing'
 import { TestBed } from '@angular/core/testing'
+import { AngularFireModule } from '@angular/fire/compat'
+import { AngularFireStorageModule } from '@angular/fire/compat/storage'
 import { environment } from 'src/environments/environment.development'
 import { ApiConfigService } from './api-config.service'
 
@@ -8,7 +10,11 @@ describe('ApiConfigService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
+      imports: [
+        HttpClientTestingModule,
+        AngularFireModule.initializeApp(environment.firebaseConfig),
+        AngularFireStorageModule
+      ],
       providers: [ApiConfigService]
     })
     service = TestBed.inject(ApiConfigService)

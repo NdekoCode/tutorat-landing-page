@@ -1,9 +1,8 @@
 <app-space-content
   ><div class="w-full">
-    <div class="">
-      <h3 class="mb-3 text-2xl font-semibold text-dark">
-        Trouvez votre tuteur
-      </h3>
+    <h3 class="mb-3 text-2xl font-semibold text-dark">Trouvez votre tuteur</h3>
+    <app-cards-skeleton *ngIf="isLoading; else notLoading" />
+    <ng-template #notLoading>
       <div
         class="flex py-4 bg-white divide-x divide-gray-300 rounded-md shadow-sm gap-x-3"
       >
@@ -144,14 +143,14 @@
           </div>
         </label>
       </div>
-    </div>
-    <div class="grid grid-cols-1 gap-3 xl:grid-cols-2 2xl:grid-cols-3">
-      <app-tutor-card
-        (playTutorVideo)="getTutorEventData($event)"
-        *ngFor="let tutor of filteredTutors"
-        [tutor]="tutor"
-      />
-    </div>
+      <div class="grid grid-cols-1 gap-3 xl:grid-cols-2 2xl:grid-cols-3">
+        <app-tutor-card
+          (playTutorVideo)="getTutorEventData($event)"
+          *ngFor="let tutor of filteredTutors"
+          [tutor]="tutor"
+        />
+      </div>
+    </ng-template>
   </div>
 
   <app-modal-video

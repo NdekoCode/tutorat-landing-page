@@ -177,7 +177,8 @@
             </div>
             <div class="mt-3 field-container">
               <button
-                class="button button-icon button-blue-light button-full"
+                type="button"
+                class="relative button button-icon button-blue-light button-full"
                 id="button-login"
               >
                 <svg
@@ -216,6 +217,17 @@
                     </clipPath>
                   </defs>
                 </svg>
+                <div
+                  class="absolute inset-0 opacity-0 button-auth contents flex-middle"
+                >
+                  <asl-google-signin-button
+                    size="large"
+                    type="standard"
+                    shape="rectangular"
+                    logo_alignment="left"
+                    data-width="400"
+                  ></asl-google-signin-button>
+                </div>
                 <span>Continuez avec Google</span>
               </button>
             </div>

@@ -1,104 +1,63 @@
 <section class="fade">
-  <div class="auth-section form-step section-content">
-    <div class="flex flex-wrap w-full min-h-screen md:flex-nowrap">
-      <div class="hidden w-full md:block">
-        <div class="flex-middle w-full h-full pr-0 rounde d-lg">
-          <div
-            class="flex flex-col w-full h-full rounded-curve-bottom tutor-bg-extend"
-          >
-            <div class="py-5 form-header block-blur-white">
-              <h2 class="mb-3 text-3xl font-bold text-gray-100">
-                Obtenir des informations supplémentaires
-              </h2>
-              <p class="text-sm text-gray-300 form-description">
-                Veuillez remplir le formulaire ci-dessous pour créer votre
-                profil de tuteur. N’hésitez pas à ajouter autant de détails que
-                nécessaire.
-              </p>
-            </div>
+  <div class="auth-section signup-section section-content">
+    <div class="relative block block-content">
+      <div class="block__left">
+        <div
+          class="lg:fixed lg:left-[0%] xl:left-[10%] lg:top-[12%] -lg:transform-x-1/4 -lg:transform-y-1/2"
+        >
+          <div class="block__img">
+            <img
+              src="/assets/images/become-tutor.png"
+              alt="Login"
+              class="fadeUp"
+            />
           </div>
         </div>
       </div>
-      <div
-        class="w-full p-5 min-w-[250px] md:max-w-3xl bg-red-light rounded-curve-top"
-      >
-        <div class="container">
+      <div class="!max-w-lg block__right">
+        <div class="container py-8 pb-0">
+          <a routerLink="/auth/login" class="back-link hover:shadow-md">
+            <svg
+              width="10"
+              height="17"
+              viewBox="0 0 10 17"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9.15732 1.36714C9.0654 1.27499 8.95619 1.20187 8.83597 1.15198C8.71575 1.1021 8.58686 1.07642 8.45669 1.07642C8.32653 1.07642 8.19764 1.1021 8.07742 1.15198C7.95719 1.20187 7.84799 1.27499 7.75607 1.36714L1.17732 7.94589C1.10393 8.01913 1.0457 8.10613 1.00598 8.2019C0.96625 8.29767 0.945801 8.40033 0.945801 8.50402C0.945801 8.6077 0.96625 8.71037 1.00598 8.80614C1.0457 8.90191 1.10393 8.9889 1.17732 9.06214L7.75607 15.6409C8.14399 16.0288 8.7694 16.0288 9.15732 15.6409C9.54524 15.253 9.54524 14.6276 9.15732 14.2396L3.42565 8.50006L9.16524 2.76048C9.54524 2.38048 9.54524 1.74714 9.15732 1.36714Z"
+                fill="#151D34"
+                stroke="#151D34"
+                stroke-width="0.2"
+              />
+            </svg>
+          </a>
+          <h2 class="text-2xl md:text-3xl max-w-[500px] font-bold mb-3">
+            Devenez enfin tuteur !
+          </h2>
+          <p class="text-sm my-3 font-medium text-gray-500 max-w-[410px]">
+            Veuillez remplir le formulaire ci-dessous pour créer votre profil de
+            tuteur. N’hésitez pas à ajouter autant de détails que nécessaire.
+          </p>
           <div class="w-full bg-red-light form-tutor">
             <div class="flex justify-center">
               <div class="w-full">
-                <form
-                  [formGroup]="tutorSupplementForm"
-                  (ngSubmit)="saveTutorForm()"
-                >
-                  <div class="form-header lg:hidden">
-                    <h2 class="mb-4 text-3xl font-bold">
-                      Obtenir des informations supplémentaires
-                    </h2>
-                    <p class="text-sm form-description">
-                      Veuillez remplir le formulaire ci-dessous pour créer votre
-                      profil de tuteur. N’hésitez pas à ajouter autant de
-                      détails que nécessaire.
-                    </p>
-                  </div>
-                  <div class="shadow-md form-container min-h-[550px] bg-glace">
+                <form [formGroup]="tutorForm" (ngSubmit)="saveTutorForm()">
+                  <div
+                    class="shadow-md form-container min-h-[450px] max-w-full bg-glace"
+                  >
                     <!-- Etape 1: Informations personnelles -->
-                    <div *ngIf="currentStep === 1">
-                      <h3 class="mb-4 text-2xl font-bold">
+                    <div *ngIf="currentStep === 1" [class]="stepClass">
+                      <h6 class="mb-2 text-base font-semibold">
                         Informations personnelles
-                      </h3>
-                      <p class="text-sm form-description">
+                      </h6>
+                      <p class="mb-3 text-sm text-gray-500">
                         Nous sommes ravis de vous accueillir en tant que tuteur!
-                        Veuillez remplir le formulaire ci-dessous avec vos
-                        informations personnelles. Nous sommes impatients d’en
-                        savoir plus sur vous !
+                        Specifier votre tarif horaire pour vos differentes
+                        session de tutorat
                       </p>
-                      <div class="flex justify-center my-3">
-                        <label for="photo" class="flex-col-middle w-max">
-                          <input
-                            type="file"
-                            class="hidden w-full max-w-xs tw-file-input form-control tw-file-input-bordered"
-                            id="photo"
-                            (change)="onFileSelected($event)"
-                            formControlName="photo"
-                          />
-                          <img
-                            [src]="imagePath"
-                            alt="Avatar"
-                            class="object-cover w-32 h-32 transition-opacity duration-150 rounded-full opacity-75 cursor-pointer hover:opacity-100"
-                          />
-                          <p
-                            class="flex items-center px-3 py-2 mt-3 border border-gray-300 rounded cursor-pointer text-gray gap-x-1"
-                          >
-                            <svg
-                              class="w-5 h-5"
-                              width="25"
-                              height="25"
-                              viewBox="0 0 25 25"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M5.01953 7.83984H6.01953C6.54996 7.83984 7.05867 7.62913 7.43374 7.25406C7.80882 6.87898 8.01953 6.37028 8.01953 5.83984C8.01953 5.57463 8.12489 5.32027 8.31242 5.13274C8.49996 4.9452 8.75431 4.83984 9.01953 4.83984H15.0195C15.2847 4.83984 15.5391 4.9452 15.7266 5.13274C15.9142 5.32027 16.0195 5.57463 16.0195 5.83984C16.0195 6.37028 16.2302 6.87898 16.6053 7.25406C16.9804 7.62913 17.4891 7.83984 18.0195 7.83984H19.0195C19.55 7.83984 20.0587 8.05056 20.4337 8.42563C20.8088 8.8007 21.0195 9.30941 21.0195 9.83984V18.8398C21.0195 19.3703 20.8088 19.879 20.4337 20.2541C20.0587 20.6291 19.55 20.8398 19.0195 20.8398H5.01953C4.4891 20.8398 3.98039 20.6291 3.60532 20.2541C3.23024 19.879 3.01953 19.3703 3.01953 18.8398V9.83984C3.01953 9.30941 3.23024 8.8007 3.60532 8.42563C3.98039 8.05056 4.4891 7.83984 5.01953 7.83984Z"
-                                stroke="currentColor"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                              />
-                              <path
-                                d="M12.0195 16.8398C13.6764 16.8398 15.0195 15.4967 15.0195 13.8398C15.0195 12.183 13.6764 10.8398 12.0195 10.8398C10.3627 10.8398 9.01953 12.183 9.01953 13.8398C9.01953 15.4967 10.3627 16.8398 12.0195 16.8398Z"
-                                stroke="currentColor"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                              />
-                            </svg>
-                            <span>Uploader une photo</span>
-                          </p>
-                        </label>
-                      </div>
-
                       <div class="">
-                        <div class="relative w-full join-item">
+                        <div class="relative w-full mb-3">
                           <label for="hourlyRate" class="input-label"
                             >Taux horaire :</label
                           >
@@ -106,18 +65,21 @@
                             class="input-icon"
                             [ngClass]="{
                               invalid:
-                                tutorSupplementForm.get('hourlyRate')
-                                  ?.touched &&
-                                tutorSupplementForm.get('hourlyRate')?.invalid
+                                tutorForm.get('hourlyRate')?.touched &&
+                                tutorForm.get('hourlyRate')?.invalid
                             }"
                           >
                             <input
-                              type="text"
-                              id="country"
                               type="number"
-                              id="hourlyRate"
+                              placeholder="Combien esperez-vous gagnez par heure"
                               formControlName="hourlyRate"
-                              placeholder="Entrez votre taux horaire"
+                              id="hourlyRate"
+                              class="w-full"
+                              [ngClass]="{
+                                invalid:
+                                  tutorForm.get('hourlyRate')?.touched &&
+                                  tutorForm.get('hourlyRate')?.invalid
+                              }"
                             />
 
                             <svg
@@ -152,42 +114,119 @@
                           </div>
                           <div
                             *ngIf="
-                              tutorSupplementForm.get('hourlyRate')?.errors &&
-                              tutorSupplementForm.get('hourlyRate')?.invalid &&
-                              tutorSupplementForm.get('hourlyRate')?.touched
+                              tutorForm.get('hourlyRate')?.errors &&
+                              tutorForm.get('hourlyRate')?.invalid &&
+                              tutorForm.get('hourlyRate')?.touched
                             "
                             class="absolute text-invalid block-error -bottom-4"
                             id="country-errors"
                           >
                             <p
-                              *ngIf="tutorSupplementForm.get('hourlyRate')?.errors?.['required']"
+                              *ngIf="tutorForm.get('hourlyRate')?.errors?.['required']"
                             >
                               <span class="font-medium">Oops!</span> hourlyRate
                               is required
                             </p>
                           </div>
                         </div>
-                        <div class="relative w-full join-item">
-                          <label for="ville" class="input-label"
-                            >Biography :</label
+                        <div class="relative w-full mb-3">
+                          <label for="transport" class="input-label"
+                            >Transport :</label
+                          >
+                          <div
+                            class="input-icon"
+                            [ngClass]="{
+                              invalid:
+                                tutorForm.get('transport')?.touched &&
+                                tutorForm.get('transport')?.invalid
+                            }"
+                          >
+                            <input
+                              type="number"
+                              placeholder="Combien estmiez-vous vos frais de transport"
+                              formControlName="transport"
+                              id="transport"
+                              [ngClass]="{
+                                invalid:
+                                  tutorForm.get('transport')?.touched &&
+                                  tutorForm.get('transport')?.invalid
+                              }"
+                            />
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              class="w-8 h-8 text-gray-500 icon right-icon"
+                              fill-rule="evenodd"
+                              image-rendering="optimizeQuality"
+                              shape-rendering="geometricPrecision"
+                              viewBox="0 0 512 512"
+                            >
+                              <path
+                                d="M511.5 206.5v128h-67c-.954-20.746-10.621-35.913-29-45.5-28.651-9.42-50.151-.92-64.5 25.5a59.725 59.725 0 0 0-4.5 20h-204c-2.853-29.853-19.186-46.52-49-50-29.808 3.474-46.141 20.141-49 50a463.09 463.09 0 0 1-43-1c-.589-3.14-1.256-6.14-2-9v-36c.997-13.481 5.997-25.314 15-35.5 22.771-12.814 47.105-21.481 73-26a606.617 606.617 0 0 1 63-68 133.34 133.34 0 0 1 41-25l288-1c3.287.616 6.121 2.116 8.5 4.5 6.915 10.055 11.915 21.055 15 33a697.92 697.92 0 0 1 8.5 36zm-321-50h61v54c-40.001.167-80.001 0-120-.5a280.903 280.903 0 0 1 44-45 84.225 84.225 0 0 1 15-8.5zm86 0h95v54h-95v-54zm122 0h73l12 53a1807.07 1807.07 0 0 1-85 1v-54zm92 57h7v90h-7v-90zm-473 48h22v13h-22v-13z"
+                                fill="currentColor"
+                                opacity=".979"
+                              />
+                              <path
+                                d="M83.5 289.5c27.486-2.322 44.986 9.678 52.5 36 1.725 31.275-12.942 48.942-44 53-26.801-2.801-41.635-17.635-44.5-44.5 1.954-23.107 13.954-37.941 36-44.5zm7 25c15.175 1.718 21.675 10.051 19.5 25-6.421 12.363-15.921 15.529-28.5 9.5-11.15-11.451-10.484-22.118 2-32a49.83 49.83 0 0 0 7-2.5z"
+                                opacity=".956"
+                                fill="currentColor"
+                              />
+                              <path
+                                d="M385.5 289.5c27.935-2.204 45.435 10.13 52.5 37 1.242 30.76-13.424 48.093-44 52-27.04-2.874-41.874-17.874-44.5-45 2.225-22.873 14.225-37.54 36-44zm7 25c14.965 1.793 21.465 10.126 19.5 25-6.421 12.363-15.921 15.529-28.5 9.5-11.15-11.451-10.484-22.118 2-32a49.83 49.83 0 0 0 7-2.5z"
+                                opacity=".954"
+                                fill="currentColor"
+                              />
+                              <path
+                                d="M145.5 337.5h204v15h-204v-15z"
+                                opacity=".955"
+                                fill="currentColor"
+                              />
+                            </svg>
+                          </div>
+                          <div
+                            *ngIf="
+                              tutorForm.get('transport')?.errors &&
+                              tutorForm.get('transport')?.invalid &&
+                              tutorForm.get('transport')?.touched
+                            "
+                            class="absolute text-invalid block-error -bottom-4"
+                            id="country-errors"
+                          >
+                            <p
+                              *ngIf="tutorForm.get('transport')?.errors?.['required']"
+                            >
+                              <span class="font-medium">Oops!</span> transport
+                              is required
+                            </p>
+                          </div>
+                        </div>
+                        <div class="relative w-full mb-3">
+                          <label for="bio" class="input-label"
+                            >Nous sommes impatients d’en savoir plus sur vous
+                            :</label
                           >
                           <textarea
-                            formControlName="biography"
+                            formControlName="bio"
                             placeholder="Dite nous quelque chose à propose de vous"
-                            class="w-full textarea textarea-bordered textarea-lg"
-                          ></textarea>
+                            class="w-full textarea bg-gray-50 textarea-bordered textarea-md"
+                            [ngClass]="{
+                              invalid:
+                                tutorForm.get('bio')?.touched &&
+                                tutorForm.get('bio')?.invalid
+                            }"
+                            >{{ tutorForm.get('bio')?.value }}</textarea
+                          >
 
                           <div
                             *ngIf="
-                              tutorSupplementForm.get('biography')?.errors &&
-                              tutorSupplementForm.get('biography')?.invalid &&
-                              tutorSupplementForm.get('biography')?.touched
+                              tutorForm.get('bio')?.errors &&
+                              tutorForm.get('bio')?.invalid &&
+                              tutorForm.get('bio')?.touched
                             "
                             class="absolute text-invalid block-error -bottom-4"
                             id="city-errors"
                           >
                             <p
-                              *ngIf="tutorSupplementForm.get('biography')?.errors?.['required']"
+                              *ngIf="tutorForm.get('bio')?.errors?.['required']"
                             >
                               <span class="font-medium">Oops!</span> Biography
                               is required
@@ -198,167 +237,528 @@
                     </div>
 
                     <!-- Etape 2: Informations professionnelles -->
-                    <div *ngIf="currentStep === 2">
-                      <h2 class="mb-3 text-2xl font-bold">
-                        Informations professionnelles
-                      </h2>
-                      <p class="mb-3 form-description">
-                        Nous sommes convaincus que vous avez beaucoup à offrir
-                        en tant que tuteur! Veuillez remplir le formulaire
-                        ci-dessous avec vos informations professionnelles pour
-                        nous aider à mieux comprendre votre expérience et vos
-                        compétences.
+                    <div *ngIf="currentStep === 2" [class]="stepClass">
+                      <h6 class="mb-2 text-base font-semibold">Experiences</h6>
+                      <p class="mb-3 text-gray-500 tex-sm">
+                        Pour plus de confiance avec vos futurs clients sur la
+                        plateforme, nous vous recommandons de fournir au moins
+                        une experience professionnelle dans le domaine educatif
                       </p>
-                    </div>
 
-                    <!-- Etape 4: Préférences de tutorat -->
-                    <div *ngIf="currentStep === 2" class="mb-3">
                       <div class="w-full form-control">
-                        <label class="label">
-                          <span class="label-text">
-                            Préférences de tutorat</span
-                          > </label
-                        ><input
-                          type="text"
-                          placeholder="Entrer vos specialisation"
-                          class="w-full input input-bordered"
-                        />
-                      </div>
-                      <div class="w-full form-control">
-                        <label for="niveauScolaire">
-                          <span class="label-text">Niveau scolaire </span
-                          >:</label
-                        >
-                        <input
-                          type="text"
-                          id="niveauScolaire"
-                          placeholder="Entrer votre niveau scolaire"
-                          formControlName="niveauScolaire"
-                          class="w-full input input-bordered"
-                        />
-                      </div>
-                    </div>
-
-                    <!-- Etape 6: Antécédents judiciaires -->
-                    <div *ngIf="currentStep === 3">
-                      <h2 class="mb-3 text-2xl font-bold">
-                        Documents judiciaires
-                      </h2>
-                      <div class="pt-4 mb-6">
                         <label
-                          class="mb-5 block text-xl font-semibold text-[#07074D]"
-                          for="verificationAntecedents"
+                          class="flex items-center justify-between label input-label"
+                          for="experience"
                         >
-                          Upload File
-                        </label>
-
-                        <div class="mb-8">
-                          <input
-                            type="file"
-                            name="file"
-                            id="verificationAntecedents"
-                            formControlName="verificationAntecedents"
-                            class="sr-only"
-                          />
-                          <label
-                            for="verificationAntecedents"
-                            class="relative flex min-h-[200px] items-center justify-center rounded-md border border-dashed border-[#e0e0e0] p-12 cursor-pointer text-center"
+                          <span class="label-text">Expérience :</span>
+                          <span
+                            (click)="addExperience()"
+                            class="flex items-center px-3 py-1 text-white rounded-full cursor-pointer bg-green"
                           >
-                            <div>
-                              <span
-                                class="mb-2 block text-xl font-semibold text-[#07074D]"
-                              >
-                                Entrer vos document pour verifier vos
-                                antécédents judiciaires
-                              </span>
-                              <span
-                                class="inline-flex rounded border border-[#e0e0e0] py-2 px-7 text-base font-medium text-[#07074D]"
-                              >
-                                Browse
-                              </span>
-                            </div>
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="mt-8 space-y-3" *ngIf="currentStep === 4">
-                      <div class="grid grid-cols-1 space-y-2">
-                        <label
-                          class="text-sm font-bold tracking-wide text-gray-500"
-                          >Titre de la video</label
-                        >
-                        <input
-                          formControlName="videoTitle"
-                          class="p-2 text-base border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500"
-                          type="text"
-                          placeholder="entrer le titre de la video"
-                        />
-                      </div>
-                      <div class="grid grid-cols-1 space-y-2">
-                        <label
-                          class="text-sm font-bold tracking-wide text-gray-500 cursor-pointer"
-                          >Attach Video</label
-                        >
-                        <div class="flex-middle w-full">
-                          <label
-                            class="flex flex-col w-full p-10 text-center border-4 border-dashed rounded-lg h-60 group"
-                            id="video-file"
-                          >
-                            <div
-                              class="flex-col-middle w-full h-full text-center"
+                            Ajouter une experience
+
+                            <button
+                              type="button"
+                              class="w-8 h-8 p-1 rounded-full flex-middle"
                             >
-                              <div
-                                class="flex flex-auto w-2/5 mx-auto -mt-10 max-h-48"
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="w-6 h-6"
+                                height="800"
+                                width="800"
+                                viewBox="0 0 512 512"
                               >
-                                <img
-                                  class="object-center has-mask h-36"
-                                  src="https://img.freepik.com/free-vector/image-upload-concept-landing-page_52683-27130.jpg?size=338&ext=jpg"
-                                  alt="video image"
+                                <path
+                                  fill="currentColor"
+                                  d="M256 11C120.9 11 11 120.9 11 256s109.9 245 245 245 245-109.9 245-245S391.1 11 256 11zm0 449.2c-112.6 0-204.2-91.6-204.2-204.2S143.4 51.8 256 51.8 460.2 143.4 460.2 256 368.6 460.2 256 460.2zm101.6-224.6h-81.2v-81.2a20.4 20.4 0 1 0-40.8 0v81.2h-81.2a20.4 20.4 0 1 0 0 40.8h81.2v81.2a20.4 20.4 0 1 0 40.8 0v-81.2h81.2a20.4 20.4 0 1 0 0-40.8z"
+                                />
+                              </svg>
+                            </button>
+                          </span>
+                        </label>
+                        <div formArrayName="experience">
+                          <div
+                            *ngFor="
+                              let experience of experienceFormArray.controls;
+                              let i = index
+                            "
+                            class="fade-opacity"
+                          >
+                            <div [formGroupName]="i">
+                              <div class="field-container">
+                                <input
+                                  formControlName="enterprise"
+                                  type="text"
+                                  placeholder="Entrer le nom de l'etablissement"
+                                  class="w-full input-field input input-bordered"
+                                  [ngClass]="{
+                                    invalid:
+                                      experience.get('enterprise')?.touched &&
+                                      experience.get('enterprise')?.invalid
+                                  }"
                                 />
                               </div>
-                              <p class="text-gray-500 pointer-none">
-                                <span class="text-sm">Upload video</span> files
-                                here
-                              </p>
+                              <div class="field-container">
+                                <input
+                                  formControlName="poste"
+                                  type="text"
+                                  placeholder="Entrer le post occuper dans l'etablissement"
+                                  class="w-full input-field input input-bordered"
+                                  [ngClass]="{
+                                    invalid:
+                                      experience.get('poste')?.touched &&
+                                      experience.get('poste')?.invalid
+                                  }"
+                                />
+                              </div>
+                              <div
+                                class="w-full max-w-full join gap-y-2 xl:gap-y-0 gap-x-2 join-vertical"
+                              >
+                                <div class="w-full field-container join-item">
+                                  <input
+                                    type="date"
+                                    formControlName="startDate"
+                                    placeholder="Entrer le post occuper dans l'etablissement"
+                                    class="w-full input-field input input-bordered"
+                                    [ngClass]="{
+                                      invalid:
+                                        experience.get('startDate')?.touched &&
+                                        experience.get('startDate')?.invalid
+                                    }"
+                                  />
+                                </div>
+                                <div class="w-full field-container join-item">
+                                  <input
+                                    type="date"
+                                    formControlName="endDate"
+                                    placeholder="Entrer le post occuper dans l'etablissement"
+                                    class="w-full input-field input input-bordered"
+                                    [ngClass]="{
+                                      invalid:
+                                        experience.get('endDate')?.touched &&
+                                        experience.get('endDate')?.invalid
+                                    }"
+                                  />
+                                </div>
+                              </div>
+                              <div class="flex justify-end w-full">
+                                <button
+                                  type="button"
+                                  class="w-6 h-6 p-1 text-white bg-red-500 rounded-full flex-middle"
+                                  (click)="deleteExperience(i)"
+                                >
+                                  <svg
+                                    class="w-5 h-5"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                  >
+                                    <path d="M18 6 6 18M6 6l12 12" />
+                                  </svg>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="">
+                        <h6 class="mb-2 text-base font-semibold">
+                          Spécialisations
+                        </h6>
+                        <p class="mb-3 text-gray-500 tex-sm">
+                          Veuillez specifier vos differentes specialisation ceci
+                          representent les differents sujets dans lesquels vos
+                          clients pourront demander des sessions de tutorat
+                        </p>
+                        <div
+                          class="flex flex-wrap items-center gap-2"
+                          formArrayName="specialization"
+                        >
+                          <label
+                            *ngFor="
+                              let spec of specializationsData;
+                              let i = index
+                            "
+                            [for]="spec.name + '-' + spec.id"
+                            class="flex items-center justify-center px-2 py-1 font-medium text-indigo-100 bg-white border border-gray-700 rounded-full w-max text-dark"
+                            [ngClass]="{ selected: isSelectedSpec(spec.id) }"
+                          >
+                            <div
+                              class="flex-initial max-w-full text-xs font-normal leading-none"
+                            >
+                              {{ spec.name }}
                             </div>
                             <input
-                              formControlName="videoBio"
-                              type="file"
+                              type="checkbox"
                               class="hidden"
-                              id="video-file"
+                              [formControlName]="i"
+                              [id]="spec.name + '-' + spec.id"
+                              [value]="spec.id"
+                              (change)="updateSpecializations($event, spec.id)"
                             />
+                            <div class="flex flex-row-reverse flex-auto">
+                              <div>
+                                <svg
+                                  viewBox="-2 -3 30 30"
+                                  focusable="false"
+                                  aria-hidden="true"
+                                  class="w-5 h-5"
+                                >
+                                  <path
+                                    fill="none"
+                                    stroke="currentColor"
+                                    d="M1.73,12.91 8.1,19.28 22.79,4.59"
+                                    class="w-3 h-3"
+                                  ></path>
+                                </svg>
+                              </div>
+                            </div>
                           </label>
                         </div>
                       </div>
-                      <p class="text-sm text-gray-300">
-                        <span>File type: mp4,webp,3gp of videos</span>
+                    </div>
+
+                    <!-- Etape 3: Document judiciaires -->
+                    <div
+                      *ngIf="currentStep === 3"
+                      [class]="stepClass"
+                      class="flex flex-col h-full"
+                    >
+                      <h5 class="mb-3 text-lg font-semibold">
+                        Fournissez deux type de document
+                      </h5>
+                      <p class="mb-3 text-gray-500 tex-sm">
+                        Fournissez vos documents pour augmenter votre
+                        credibilité au pres de vos futurs clients et avoir plus
+                        d'audience
                       </p>
+
+                      <h6 class="mb-2 text-sm font-semibold uppercase">
+                        IDENTITÉ *
+                      </h6>
+                      <p class="mb-3 text-gray-500 tex-xs">
+                        Fournissez une carte d'identité ou une copie de votre
+                        passport
+                      </p>
+
+                      <h6 class="mb-2 text-sm font-semibold uppercase">
+                        CERTIFICATION
+                      </h6>
+                      <p class="mb-3 text-gray-500 tex-xs">
+                        Fournissez des copies de vos diplomes ou de vos
+                        certification à fin d'etre beaucoup plus credible au
+                        près de vos clients.
+                      </p>
+                      <p
+                        (click)="addDocument()"
+                        class="flex items-center justify-center px-3 py-1 mb-3 text-white rounded-full cursor-pointer bg-green"
+                      >
+                        Ajouter des documents
+
+                        <button
+                          type="button"
+                          class="w-8 h-8 p-1 rounded-full flex-middle"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="w-6 h-6"
+                            height="800"
+                            width="800"
+                            viewBox="0 0 512 512"
+                          >
+                            <path
+                              fill="currentColor"
+                              d="M256 11C120.9 11 11 120.9 11 256s109.9 245 245 245 245-109.9 245-245S391.1 11 256 11zm0 449.2c-112.6 0-204.2-91.6-204.2-204.2S143.4 51.8 256 51.8 460.2 143.4 460.2 256 368.6 460.2 256 460.2zm101.6-224.6h-81.2v-81.2a20.4 20.4 0 1 0-40.8 0v81.2h-81.2a20.4 20.4 0 1 0 0 40.8h81.2v81.2a20.4 20.4 0 1 0 40.8 0v-81.2h81.2a20.4 20.4 0 1 0 0-40.8z"
+                            />
+                          </svg>
+                        </button>
+                      </p>
+                      <div formArrayName="document">
+                        <div
+                          class="fade-opacity"
+                          *ngFor="
+                            let document of documentFormArray.controls;
+                            let i = index
+                          "
+                        >
+                          <div class="pt-4 mb-6" [formGroupName]="i">
+                            <select
+                              formControlName="documentType"
+                              class="w-full max-w-full mb-3 select select-bordered"
+                              [ngClass]="{
+                                invalid:
+                                  document.get('documentType')?.touched &&
+                                  document.get('documentType')?.invalid
+                              }"
+                            >
+                              <option value="" disabled selected>
+                                Entrer le type de document
+                              </option>
+
+                              <option
+                                *ngFor="let document of documentTypes"
+                                [value]="document.id"
+                              >
+                                {{ document.name }}
+                              </option>
+                            </select>
+                            <div class="field-container">
+                              <label class="input-label">
+                                <span class="label-text">
+                                  Description du document</span
+                                >
+                              </label>
+                              <input
+                                formControlName="description"
+                                type="text"
+                                placeholder="Entrer la description du document"
+                                class="w-full input-field input input-bordered"
+                                [ngClass]="{
+                                  invalid:
+                                    document.get('description')?.touched &&
+                                    document.get('description')?.invalid
+                                }"
+                              />
+                            </div>
+                            <div class="field-container">
+                              <h6
+                                class="mb-5 text-xl flex items-center justify-between font-semibold text-[#07074D]"
+                              >
+                                <span> Upload File</span>
+                              </h6>
+
+                              <div class="mb-8">
+                                <label
+                                  [for]="'documentUrl' + i"
+                                  class="relative flex min-h-[200px] items-center justify-center rounded-md border border-dashed border-[#e0e0e0] p-12 cursor-pointer text-center"
+                                >
+                                  <div
+                                    class="w-full h-full"
+                                    *ngIf="
+                                      documentItem && documentItem[i];
+                                      else notImage
+                                    "
+                                  >
+                                    <img
+                                      [src]="documentItem[i]"
+                                      class="object-contain w-full"
+                                      [alt]="document.get('description')?.value"
+                                    />
+                                  </div>
+                                  <ng-template #notImage>
+                                    <div>
+                                      <span
+                                        class="mb-2 block text-xl font-semibold text-[#07074D]"
+                                      >
+                                        Entrer vos document pour verifier vos
+                                        antécédents judiciaires
+                                      </span>
+                                      <span
+                                        class="inline-flex rounded border border-[#e0e0e0] py-2 px-7 text-base font-medium text-[#07074D]"
+                                      >
+                                        Browse
+                                      </span>
+                                    </div>
+                                  </ng-template>
+                                  <input
+                                    type="file"
+                                    name="file"
+                                    [id]="'documentUrl' + i"
+                                    formControlName="documentUrl"
+                                    class="hidden sr-only"
+                                    (change)="onDocumentSelected($event, i)"
+                                  />
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="flex justify-end w-full">
+                            <button
+                              type="button"
+                              class="w-6 h-6 p-1 text-white bg-red-500 rounded-full flex-middle"
+                              (click)="deleteDocument(i)"
+                            >
+                              <svg
+                                class="w-5 h-5"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              >
+                                <path d="M18 6 6 18M6 6l12 12" />
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="mt-8 space-y-3"
+                      *ngIf="currentStep === 4"
+                      [class]="stepClass"
+                    >
+                      <div formGroupName="video">
+                        <div class="grid grid-cols-1 space-y-2">
+                          <label
+                            for="videoDescription"
+                            class="text-sm font-bold tracking-wide text-gray-500"
+                            >Description de la video</label
+                          >
+                          <input
+                            id="videoDescription"
+                            formControlName="description"
+                            class="p-2 text-base border border-gray-300 rounded-lg focus:outline-none focus:border-gray-400"
+                            type="text"
+                            placeholder="entrer la description de la video"
+                          />
+                        </div>
+                        <div class="grid grid-cols-1 space-y-2">
+                          <h6
+                            class="text-sm font-bold tracking-wide text-gray-500 cursor-pointer"
+                          >
+                            Uploader Video
+                          </h6>
+                          <div class="w-full flex-middle">
+                            <label
+                              class="flex flex-col w-full p-10 text-center border-4 border-dashed rounded-lg h-60 group"
+                              id="video-file"
+                            >
+                              <div
+                                class="w-full h-full text-center flex-col-middle"
+                              >
+                                <div
+                                  class="flex flex-auto mx-auto -mt-10 max-h-48"
+                                  [class]="
+                                    !urlVideo
+                                      ? 'mt-10 w-2/5 '
+                                      : 'w-full flex-middle'
+                                  "
+                                >
+                                  <img
+                                    class="object-center has-mask h-36"
+                                    *ngIf="!urlVideo; else hasVideo"
+                                    src="https://img.freepik.com/free-vector/image-upload-concept-landing-page_52683-27130.jpg?size=338&ext=jpg"
+                                    alt="video image"
+                                  />
+                                  <ng-template #hasVideo>
+                                    <div class="object-center w-full h-36">
+                                      <video
+                                        controls
+                                        preload="metadata"
+                                        aria-describedby="Video de tutorat de presentation"
+                                        *ngIf="format === 'video' && urlVideo"
+                                        height="200"
+                                      >
+                                        <source
+                                          [src]="urlVideo"
+                                          type="video/mp4"
+                                        />
+                                      </video>
+                                    </div>
+                                  </ng-template>
+                                </div>
+                                <p class="text-gray-500 pointer-none">
+                                  <span class="text-sm">Upload video</span>
+                                  files here
+                                </p>
+                              </div>
+                              <input
+                                formControlName="url"
+                                (change)="onVideoSelectFile($event)"
+                                type="file"
+                                class="hidden"
+                                id="video-file"
+                              />
+                            </label>
+                          </div>
+                        </div>
+                        <p class="text-sm text-gray-300">
+                          <span>File type: mp4,webp,3gp of videos</span>
+                        </p>
+                      </div>
+                    </div>
+                    <div class="" *ngIf="currentStep === 5" [class]="stepClass">
+                      <h3 class="mb-4 text-2xl font-bold text-center">
+                        Votre photo de profile est très importante pour vos
+                        future etudiants
+                      </h3>
+                      <div class="flex justify-center my-3">
+                        <label for="photo" class="flex-col-middle w-max">
+                          <input
+                            type="file"
+                            class="hidden w-full max-w-xs tw-file-input form-control tw-file-input-bordered"
+                            id="photo"
+                            (change)="onFileSelected($event)"
+                            formControlName="photo"
+                          />
+                          <img
+                            [src]="imagePath"
+                            alt="Avatar"
+                            class="object-cover transition-opacity duration-150 rounded-full opacity-75 cursor-pointer w-36 h-36 hover:opacity-100"
+                          />
+                          <p
+                            class="flex items-center px-3 py-2 mt-3 border border-gray-300 rounded cursor-pointer text-gray gap-x-1"
+                          >
+                            <svg
+                              class="w-5 h-5"
+                              width="25"
+                              height="25"
+                              viewBox="0 0 25 25"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M5.01953 7.83984H6.01953C6.54996 7.83984 7.05867 7.62913 7.43374 7.25406C7.80882 6.87898 8.01953 6.37028 8.01953 5.83984C8.01953 5.57463 8.12489 5.32027 8.31242 5.13274C8.49996 4.9452 8.75431 4.83984 9.01953 4.83984H15.0195C15.2847 4.83984 15.5391 4.9452 15.7266 5.13274C15.9142 5.32027 16.0195 5.57463 16.0195 5.83984C16.0195 6.37028 16.2302 6.87898 16.6053 7.25406C16.9804 7.62913 17.4891 7.83984 18.0195 7.83984H19.0195C19.55 7.83984 20.0587 8.05056 20.4337 8.42563C20.8088 8.8007 21.0195 9.30941 21.0195 9.83984V18.8398C21.0195 19.3703 20.8088 19.879 20.4337 20.2541C20.0587 20.6291 19.55 20.8398 19.0195 20.8398H5.01953C4.4891 20.8398 3.98039 20.6291 3.60532 20.2541C3.23024 19.879 3.01953 19.3703 3.01953 18.8398V9.83984C3.01953 9.30941 3.23024 8.8007 3.60532 8.42563C3.98039 8.05056 4.4891 7.83984 5.01953 7.83984Z"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                              <path
+                                d="M12.0195 16.8398C13.6764 16.8398 15.0195 15.4967 15.0195 13.8398C15.0195 12.183 13.6764 10.8398 12.0195 10.8398C10.3627 10.8398 9.01953 12.183 9.01953 13.8398C9.01953 15.4967 10.3627 16.8398 12.0195 16.8398Z"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                            </svg>
+                            <span>Uploader une photo</span>
+                          </p>
+                        </label>
+                      </div>
                     </div>
                   </div>
                   <div class="form-footer">
                     <div
-                      class="items-center justify-between mt-10 button-container"
+                      class="items-center justify-between mt-3 button-container"
                     >
                       <button
                         *ngIf="currentStep > 1"
                         type="button"
-                        class="px-5 mr-auto button btn hover:bg-yellow-600 button-primary"
+                        class="px-5 mr-auto button btn bg-green hover:bg-green-950 button-primary"
                         (click)="previousStep()"
                       >
                         Précédent
                       </button>
 
                       <button
-                        *ngIf="currentStep === 4; else notLast"
+                        *ngIf="currentStep === 5; else notLast"
                         type="submit"
-                        class="px-5 ml-auto btn hover:bg-yellow-600 button button-primary"
+                        class="px-5 ml-auto btn bg-green hover:bg-green-950 button button-primary"
                       >
                         Soumettre
                       </button>
                       <ng-template #notLast>
                         <button
                           type="button"
-                          class="px-5 ml-auto btn hover:bg-yellow-600 button button-primary"
+                          class="px-5 ml-auto bg-green btn hover:bg-green-950 button button-primary"
                           (click)="nextStep()"
                         >
                           Suivant
@@ -375,7 +775,6 @@
     </div>
   </div>
 </section>
-
 <app-alert
   *ngIf="submitForm"
   [alertTitle]="alert.alertTitle"
@@ -383,3 +782,4 @@
   [alertType]="alert.alertType"
   [alertMessage]="alert.alertMessage"
 />
+<app-verification-modal-animation *ngIf="inVerification && !submitForm" />

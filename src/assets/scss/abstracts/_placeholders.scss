@@ -100,6 +100,26 @@
   animation: fadeIn var(--transition-2) forwards;
 }
 
+.fade-opacity {
+
+  animation: fadeOpacity var(--transition-1) forwards;
+}
+
+.fade-step-prev {
+
+  animation: fadeStep var(--transition-2) forwards;
+}
+
+.fade-step-next {
+
+  animation: fadeStepNext var(--transition-2) forwards;
+}
+
+.fade-top {
+
+  animation: fadeInTop var(--transition-2) forwards;
+}
+
 .fade-out {
   animation: fadeOut var(--transition-2) forwards;
 }
