@@ -35,7 +35,7 @@
         "prefer-const": "error",
         "object-shorthand": "error",
         "no-useless-return": "error",
-        "no-useless-constructor": "error",
+        // "no-useless-constructor": "error",
         "no-unneeded-ternary": "error",
         "no-undefined": "error",
         "no-else-return": "error",
@@ -64,7 +64,7 @@
         "no-constructor-return": "error",
         "no-await-in-loop": "error",
         "getter-return": "error",
-        "no-console": ["error",{"allow": ["warn","error"]}]
+        "no-console": ["error", { "allow": ["warn", "error"] }]
       }
     },
     {

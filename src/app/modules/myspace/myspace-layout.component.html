@@ -1,0 +1,22 @@
+<!-- This is an example component -->
+<div>
+  <div class="fixed inset-0 flex overflow-hidden bg-space">
+    <app-sidebar [isActive]="isActive" (isToggleActive)="onToggle($event)" />
+    <div
+      class="fixed inset-0 z-10 bg-gray-900 opacity-50"
+      id="sidebarBackdrop"
+      [class]="isActive ? '' : 'hidden'"
+      (click)="toggleActive()"
+    ></div>
+    <div
+      id="main-content"
+      class="relative flex flex-col w-full h-full min-h-screen overflow-y-auto lg:ml-64"
+    >
+      <app-navbar [isActive]="isActive" (isToggleActive)="onToggle($event)" />
+      <main class="flex flex-col h-full overflow-y-scroll">
+        <router-outlet></router-outlet>
+        <app-footer *ngIf="!hideLayoutPart" />
+      </main>
+    </div>
+  </div>
+</div>

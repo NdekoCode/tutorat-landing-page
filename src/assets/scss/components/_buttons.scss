@@ -1,0 +1,96 @@
+.button {
+  gap      : rem(10);
+  min-width: rem(50);
+  display  : block;
+  @apply border text-center px-2 py-3 transition-all duration-300 w-max rounded opacity-95 border-transparent;
+
+  &:disabled,
+  &:disabled:hover {
+    @apply opacity-70 cursor-not-allowed;
+  }
+
+  &:hover {
+    @apply opacity-100;
+    background-color: none;
+  }
+
+  &.button-primary {
+    background: var(--yellow-dark);
+    color     : var(--color-white);
+  }
+
+  &.button-action {
+    background-color: var(--background-color);
+    color           : var(--color-white);
+    font-weight     : 600;
+    padding         : rem(15) rem(45);
+    text-transform  : capitalize;
+
+    &:hover {
+      border-color    : var(--background-color);
+      background-color: transparent;
+      color           : var(--background-color);
+
+    }
+
+  }
+
+  &.button-icon {
+    @apply flex items-center justify-center;
+    row-gap: rem(5);
+
+    .icon {
+
+      @apply mr-1 inline-block w-8 p-1 h-8 text-white rounded-full transition-colors;
+
+    }
+
+  }
+
+
+  &.button-small {
+    @apply py-3;
+  }
+
+  &.button-dark {
+    @apply bg-[#151D34] text-white rounded;
+  }
+
+  &.button-full {
+    @apply w-full;
+  }
+
+  &.button-blue-light {
+    @apply bg-[#E0EFFE];
+  }
+}
+
+.button-container {
+  @apply flex items-center gap-3;
+}
+
+.button-circle {
+  display      : none;
+  position     : fixed;
+  right        : 1%;
+  bottom       : 0;
+  min-width    : max-content;
+  min-height   : max-content;
+  aspect-ratio : 1/1;
+  border-radius: 100%;
+  padding      : 1em;
+  cursor       : pointer;
+  z-index      : 100;
+
+  svg {
+    width       : rem(16);
+    aspect-ratio: 1/1;
+  }
+
+}
+
+.no-button {
+  border          : none !important;
+  background-color: transparent !important;
+  padding         : 0 !important;
+}

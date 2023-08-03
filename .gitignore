@@ -39,4 +39,6 @@ testem.log
 
 # System files
 .DS_Store
+.jserver.js
 Thumbs.db
+/.vscode

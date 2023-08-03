@@ -1,0 +1,179 @@
+<div class="grid h-screen min-w-full grid-cols-3 border rounded">
+  <div class="bg-white border-r border-gray-300">
+    <div class="mx-3 my-3">
+      <div class="relative text-gray-600 focus-within:text-gray-400">
+        <span class="absolute inset-y-0 left-0 flex items-center pl-2">
+          <svg
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            class="w-6 h-6 text-gray-500"
+          >
+            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+          </svg>
+        </span>
+        <input
+          aria-placeholder="Rechercher un utilisateur"
+          placeholder="Rechercher un utilisateur"
+          class="block w-full py-2 pl-10 bg-gray-100 rounded outline-none focus:text-gray-700"
+          type="search"
+          name="search"
+          required=""
+          autocomplete="search"
+        />
+      </div>
+    </div>
+
+    <aside class="flex w-full h-screen mt-8 overflow-y-auto bg-white">
+      <ul class="w-full space-y-4">
+        <li *ngFor="let item of tutorsMessage">
+          <button
+            (click)="getActivatedTutor(item)"
+            class="flex justify-between w-full px-5 py-2 transition-colors duration-200 gap-x-2 hover:bg-gray-100 focus:outline-none"
+          >
+            <div class="flex items-center gap-x-2 lg:gap-x-3">
+              <img
+                class="object-cover w-10 h-10 rounded-full"
+                [src]="item.image"
+                alt=""
+              />
+
+              <div class="text-left rtl:text-right">
+                <h1 class="text-sm font-medium text-gray-700 capitalize">
+                  {{ item.firstName + ' ' + item.lastName }}
+                </h1>
+
+                <p class="text-xs text-gray-500 400">Last Message</p>
+              </div>
+            </div>
+            <span class="ml-2 text-xs text-gray-600 xl:hidden">5 min</span>
+            <span class="hidden ml-2 text-xs text-gray-600 xl:inline-block"
+              >5 minutes</span
+            >
+          </button>
+        </li>
+      </ul>
+    </aside>
+  </div>
+  <div class="col-span-2 overflow-y-auto bg-white">
+    <div class="relative flex flex-col w-full">
+      <div class="flex items-center py-3 pl-3 border-b border-gray-300">
+        <img
+          class="object-cover w-10 h-10 rounded-full"
+          [src]="activatedTutor.image"
+          alt="username"
+        />
+        <span class="block ml-2 text-base font-bold text-gray-600">{{
+          activatedTutor.firstName + ' ' + activatedTutor.lastName
+        }}</span>
+        <span class="ml-2 text-green-500 connected">
+          <svg width="6" height="6">
+            <circle cx="3" cy="3" r="3" fill="currentColor"></circle>
+          </svg>
+        </span>
+      </div>
+      <div
+        id="chat"
+        class="relative flex h-[450px] flex-col w-full max-h-screen p-10 overflow-y-auto"
+        ref="toolbarChat"
+      >
+        <ul>
+          <li class="chat-content">
+            <div class="chat chat-start">
+              <div class="chat-image avatar">
+                <div class="w-6 rounded-full">
+                  <img src="/assets/images/user-1.png" alt="user" />
+                </div>
+              </div>
+              <div class="chat-header">
+                <time class="text-xs opacity-50">12:45</time>
+              </div>
+              <div class="bg-gray-100 shadow chat-bubble text-dark">
+                You were the Chosen One!
+              </div>
+            </div>
+            <div class="chat chat-end">
+              <div class="chat-image avatar">
+                <div class="w-6 rounded-full">
+                  <img
+                    [src]="activatedTutor.image"
+                    [alt]="
+                      activatedTutor.firstName + ' ' + activatedTutor.lastName
+                    "
+                  />
+                </div>
+              </div>
+              <div class="chat-bubble bg-green">I hate you!</div>
+              <div class="text-xs opacity-50 chat-footer">à 12:46</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <form
+        method="POST"
+        class="sticky bottom-0 left-0 right-0 flex items-center justify-between w-full px-3 py-3 mt-auto bg-white border-t border-gray-300"
+      >
+        <label for="image" class="outline-none focus:outline-none">
+          <svg
+            class="w-6 h-6 text-gray-400"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+            ></path>
+          </svg>
+          <input type="file" class="hidden" name="image" id="image" />
+        </label>
+        <label for="file" class="ml-1 outline-none focus:outline-none">
+          <svg
+            class="w-6 h-6 text-gray-400"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13"
+            ></path>
+          </svg>
+
+          <input type="file" class="hidden" name="file" id="file" />
+        </label>
+
+        <input
+          aria-placeholder="Entrer votre message ici"
+          placeholder="Entrer votre message"
+          class="block w-full py-2 pl-5 mx-3 bg-gray-100 rounded-full outline-none focus:text-gray-700"
+          type="text"
+          name="message"
+          required=""
+        />
+
+        <button class="outline-none focus:outline-none" type="submit">
+          <svg
+            class="text-gray-400 origin-center transform rotate-90 h-7 w-7"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"
+            ></path>
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

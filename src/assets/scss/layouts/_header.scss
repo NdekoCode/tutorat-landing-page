@@ -1,0 +1,41 @@
+.app-header {
+  transition: position 0.35s;
+  /* required */
+
+}
+
+.scroll-nav {
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter : blur(rem(20));
+  position        : fixed;
+  top             : 0;
+  left            : 0;
+  right           : 0;
+  z-index         : 10;
+  box-shadow      : 0 2px 5px rgba(0, 0, 0, 0.05);
+  animation       : fadeInTop 0.35s forwards;
+
+  .topbar {
+    padding-top: 1rem;
+
+    @media #{$lg-screen} {
+
+      padding-top: 0;
+    }
+  }
+
+}
+
+.scroll-hide {
+  display        : flex !important;
+  justify-content: center;
+  align-items    : center;
+  margin         : 1em;
+  transition     : all 0.25s ease-in-out;
+  @extend .fadeInRight;
+
+  &:hover {
+    opacity  : 1;
+    transform: scale(0.5);
+  }
+}

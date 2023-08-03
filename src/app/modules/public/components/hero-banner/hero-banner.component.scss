@@ -1,0 +1,6 @@
+.hero-content {
+
+  @media only screen and (min-width: 1280px) {
+    @apply max-w-[75rem];
+  }
+}

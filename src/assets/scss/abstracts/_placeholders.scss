@@ -1,0 +1,234 @@
+@use "sass:math";
+@import "./variables";
+@import "./mixins";
+
+%container {
+  width         : 100%;
+  margin-inline : auto;
+  padding-inline: rem(20);
+
+  @media #{$sm-screen} {
+    max-width: 576px;
+  }
+
+  @media #{$md-screen} {
+    max-width: 768px;
+  }
+
+  @media #{$lg-screen} {
+    max-width     : 1024px;
+    padding-inline: rem(15);
+  }
+
+  @media #{$xl-screen} {
+    max-width     : 1281px;
+    padding-inline: 0;
+  }
+
+  @media #{$xxl-screen} {
+    max-width: 1400px;
+  }
+
+}
+
+%blockSpace,
+%section {
+  padding-block: $basic-space;
+
+
+  @media #{$sm-screen} {
+    padding-block: $section-basic-space;
+
+    &:not(:last-child),
+    &:not(:last-of-type) {
+      padding-bottom: 0;
+    }
+  }
+
+}
+
+%updatingContent {
+  @extend %container;
+}
+
+%titleSpace {
+  margin-block: rem(15);
+}
+
+%title-1 {
+  @include makeSize($title-2, $title-1);
+}
+
+%title-2 {
+  @include makeSize($title-3, $title-2);
+}
+
+%title-3 {
+  @include makeSize($title-4, $title-3);
+}
+
+%title-4 {
+  @include makeSize($title-5, $title-6);
+}
+
+%bold {
+  font-weight: bold;
+}
+
+%title-5 {
+
+  @include makeSize($title-6, $title-5);
+}
+
+%title-6 {
+  @include makeSize($title-6, $title-6);
+}
+
+%shadow {
+  box-shadow: $smart-shadow;
+}
+
+%fadeUp {
+  animation: fadeUp var(--transition-1) forwards;
+}
+
+%fade {
+  animation: fadeIn var(--transition-2) forwards;
+}
+
+.fade {
+  animation: fadeIn var(--transition-2) forwards;
+}
+
+.fade-out {
+  animation: fadeOut var(--transition-2) forwards;
+}
+
+%fadeRight {
+  animation: fadeRight var(--transition-1) forwards;
+}
+
+%fadeLeft {
+  animation: fadeRight var(--transition-1) forwards;
+}
+
+.fade-trans {
+  animation: fadeTranslate var(--transition-3) forwards;
+}
+
+.fade-trans-reverse {
+  animation: fadeTranslateReverse var(--transition-3) forwards;
+
+}
+
+%gradientText {
+
+  color                  : transparent;
+  background-clip        : text;
+  -webkit-background-clip: text;
+  background-image       : var(--primary-color-gradient);
+  font-weight            : bold;
+}
+
+%title-blue {
+  font-size  : rem(48);
+  color      : var(--blue-dark);
+  font-weight: 900;
+  line-height: rem(55);
+}
+
+.big-title {
+  font-size: 2rem;
+
+  @media #{$md-screen} {
+    font-size: 2.5rem;
+  }
+
+  @media #{$lg-screen} {
+    font-size: 3rem;
+  }
+}
+
+.title-blue {
+  @extend %title-blue;
+  @extend .big-title;
+}
+
+
+
+.blue-dark {
+
+  color: var(--blue-dark);
+}
+
+.in-back {
+  z-index: -1;
+}
+
+%responsiveDesktopNavbar {
+  .navbar__link-btn.primary-gradient {
+    display: none;
+  }
+
+  .navbar__buttons-list {
+    gap: rem(10) !important;
+  }
+
+  @media #{$lg-screen} {
+    min-height      : auto !important;
+    background-color: initial !important;
+    position        : initial !important;
+    display         : flex !important;
+    flex-direction  : row;
+    align-items     : center;
+    padding         : 0;
+
+    .navbar__link-btn.primary-gradient {
+      display: inline-block;
+    }
+
+    .navbar__list {
+      display       : flex;
+      flex-direction: row;
+      align-items   : center;
+      gap           : rem(25);
+
+      &:first-of-type {
+        padding-top : 0;
+        margin-right: auto;
+      }
+
+
+      &:last-of-type {
+        margin-left: auto;
+      }
+
+      .btn.primary-gradient {
+        flex: none;
+      }
+    }
+
+    .navbar__link {
+      font-size  : 1rem;
+      font-weight: initial;
+      color      : var(--color-dark-2);
+    }
+  }
+}
+
+%bgRedGradient {
+  background-image: var(--primary-color-gradient);
+  color           : var(--color-white);
+}
+
+%roundedXFull {
+  border-radius: 99px;
+}
+
+%hoverLink {
+  @include linkEffect()
+}
+
+%hoverLinkVisible {
+  @include linkEffect(true);
+}

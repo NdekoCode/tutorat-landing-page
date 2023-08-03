@@ -1,0 +1,16 @@
+.footer {
+
+  .footer-title {
+    color  : var(--dark-blue);
+    opacity: 1;
+  }
+
+  .social-links {
+    .join-item {
+      @apply flex p-0 items-center justify-center aspect-square rounded-full text-white;
+      background-color: var(--dark-blue);
+
+    }
+
+  }
+}

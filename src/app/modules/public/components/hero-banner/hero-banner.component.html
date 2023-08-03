@@ -1,0 +1,68 @@
+<section class="container pt-10 mb-10 lg:mb-20 hero">
+  <div
+    class="container flex-col bgblob bgblob-top-left hero-content lg:justify-between lg:flex-row"
+  >
+    <div
+      class="w-full px-5 pt-20 mb-10 md:max-w-3xl lg:px-0 lg:max-w-2xl lg:mb-0 lg:pt-0"
+    >
+      <p class="mb-5 font-medium uppercase text-yellow-dark">
+        100% SATISFACTION GARANTIE
+      </p>
+      <h2 class="text-5xl font-bold lg:text-6xl lg:max-w-lg">
+        Chaque Elève a besoin d'un <br />
+        <span class="italic font-crimson">Tuteur</span>
+      </h2>
+      <p class="py-6">
+        Des tuteurs compétents, sélectionnés selon la matière et le niveau de
+        l’étudiant. Confiez-nous les plus gros défis scolaires auxquels fait
+        face votre enfant et nous le mènerons vers la réussite.
+      </p>
+      <div class="flex-wrap button-container lg:flex-nowrap">
+        <a
+          href="#"
+          class="px-3 text-sm font-medium text-dark button text- btn-warning"
+          >Trouver un tuteur</a
+        >
+        <button
+          type="button"
+          (click)="onToggleShow()"
+          class="px-3 text-sm font-medium button button-icon"
+        >
+          <svg
+            class="w-9 h-9"
+            viewBox="0 0 46 45"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              x="0.669922"
+              width="45"
+              height="45"
+              rx="22.5"
+              fill="#151D34"
+            />
+            <path
+              d="M31.6607 20.2503C32.0652 20.4674 32.4035 20.7915 32.6394 21.1878C32.8754 21.5842 33 22.0379 33 22.5002C33 22.9626 32.8754 23.4163 32.6394 23.8126C32.4035 24.209 32.0652 24.5331 31.6607 24.7502L20.8713 30.6721C19.134 31.6258 17 30.3848 17 28.423V16.5783C17 14.6148 19.134 13.3747 20.8713 14.3275L31.6607 20.2503Z"
+              fill="#F9F9F9"
+            />
+          </svg>
+
+          <span class="underline">comment Ça fonctionne ?</span>
+        </button>
+      </div>
+    </div>
+    <div class="lg:min-w-[250px] w-full lg:max-w-2xl rounded-lg">
+      <img
+        src="/assets/images/tutor-group.png"
+        alt="hero image"
+        class="object-cover w-full h-full"
+      />
+    </div>
+  </div>
+</section>
+
+<app-modal-video
+  *ngIf="isShown"
+  (showModal)="onShow($event)"
+  [videoId]="videoId"
+></app-modal-video>

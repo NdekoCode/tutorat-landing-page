@@ -1,0 +1,82 @@
+<div
+  *ngIf="isShown"
+  class="fixed inset-0 top-0 left-0 z-50 flex-middle h-screen bg-center bg-no-repeat bg-cover outline-none min-w-screen animated fadeIn faster bg-red-light focus:outline-none"
+  id="modal-id"
+>
+  <div class="absolute inset-0 z-0 bg-black bg-red-light opacity-80"></div>
+  <div
+    class="relative w-full max-w-lg p-5 mx-auto my-auto bg-white shadow-lg rounded-xl"
+  >
+    <!--content-->
+    <div class="">
+      <!--body-->
+      <div class="justify-center flex-auto p-5 text-center">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="flex items-center w-4 h-4 mx-auto -m-1"
+          [class]="alertColor"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+          ></path>
+        </svg>
+
+        <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+        <svg
+          fill="currentColor"
+          *ngIf="validVerification; else notValidVerification"
+          fill="currentColor"
+          height="800px"
+          class="flex items-center w-16 h-16 mx-auto mt-3 text-green-500"
+          width="800px"
+          version="1.1"
+          id="Capa_1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="0 0 490.05 490.05"
+          xml:space="preserve"
+        >
+          <g>
+            <g>
+              <path
+                d="M418.275,418.275c95.7-95.7,95.7-250.8,0-346.5s-250.8-95.7-346.5,0s-95.7,250.8,0,346.5S322.675,513.975,418.275,418.275
+    z M157.175,207.575l55.1,55.1l120.7-120.6l42.7,42.7l-120.6,120.6l-42.8,42.7l-42.7-42.7l-55.1-55.1L157.175,207.575z"
+              />
+            </g>
+          </g>
+        </svg>
+        <ng-template #notValidVerification>
+          <svg
+            fill="currentColor"
+            class="flex items-center w-16 h-16 mx-auto mt-3"
+            [class]="alertColor"
+            clip-rule="evenodd"
+            viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <title>ionicons-v5-m</title>
+            <path
+              d="M256,48C141.31,48,48,141.31,48,256s93.31,208,208,208,208-93.31,208-208S370.69,48,256,48Zm75.31,260.69a16,16,0,1,1-22.62,22.62L256,278.63l-52.69,52.68a16,16,0,0,1-22.62-22.62L233.37,256l-52.68-52.69a16,16,0,0,1,22.62-22.62L256,233.37l52.69-52.68a16,16,0,0,1,22.62,22.62L278.63,256Z"
+            />
+          </svg>
+        </ng-template>
+        <h2 class="py-4 text-xl font-bold">
+          {{ alertTitle }}
+        </h2>
+        <p class="px-8 text-sm text-gray-500">
+          {{ alertMessage }}
+        </p>
+      </div>
+      <!--footer-->
+      <div class="p-3 mt-2 space-x-4 text-center md:block">
+        <ng-content></ng-content>
+      </div>
+    </div>
+  </div>
+</div>

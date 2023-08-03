@@ -1,0 +1,105 @@
+:root {
+  --background-color    : #181856;
+  --color-black         : #0B0B0B;
+  --color-gray          : #718096;
+  --white-glace         : rgba(255, 255, 255, .55);
+  --blue-gray           : #6F6C90;
+  --blue-light-1        : #A4C3C2;
+  --red-light           : #FFFDF4;
+  --red-light-1         : #FBF6E9;
+  --blue-air            : #A2D3FF;
+  --dark-blue           : #151D34;
+  --blue-light-2        : #EAEFF3;
+  --color-white         : #fff;
+  --primary-color       : #151D34;
+  --green-dark          : #195E44;
+  --gree-light          : #1FBE72;
+  --yellow-light        : #FFD05A;
+  --yellow-dark         : #C4951B;
+  --text-blue           : #8391A1;
+  --text-blue-gray-light: #AEB5BC;
+  --pink                : #FDA2C4;
+  --gray-dark           : #666666;
+  --color-gray-dark     : rgb(88, 86, 86);
+  --color-little-white  : #F9F9F9;
+  --color-dark-2        : #242331;
+  --color-little-gray   : #C4C4C4;
+  --dark-color          : #0C0E27;
+  --color-bg-blue       : #1A202E;
+  --color-white         : #fff;
+  --primary-gradient    : linear-gradient(255.28deg, var(--primary-color) 38.31%, rgb(2, 2, 20) 58.68%, #181856 98.41%);
+
+  --primary-color-gradient: linear-gradient(270deg, var(--primary-color) 38.31%, rgb(2, 2, 20) 58.68%, #181856 98.41%);
+  // TITLES
+  --text-bigger           : rem(75);
+  --title-1               : rem(50);
+  --title-2               : rem(40);
+  --title-3               : rem(30);
+  --title-4               : rem(22);
+  --title-5               : rem(20);
+  --title-6               : rem(18);
+
+  // TRANSITION & ANIMATION
+  --transition-1       : 0.35s;
+  --transition-2       : 0.5s;
+  --transition-3       : 1s;
+  --transition-4       : 1.5s;
+  // SPACES
+  --min-space          : rem(25);
+  --basic-space        : rem(45);
+  --section-basic-space: rem(65);
+  --section-space      : rem(100);
+  --bg-gray-smooth     : #f8f8f8;
+}
+
+// paragraphe
+$large-parag  : rem(18);
+$medium-parag : rem(16);
+$default-size : 14px;
+// UTILITIES
+$border-input : 0.5px solid rgba(0, 0, 0, 0.05);
+$smart-shadow :0px 5px 14px rgba(8, 15, 52, 0.04);
+// TITLES
+$text-bigger  : rem(75);
+$title-1      : rem(50);
+$title-2      : rem(40);
+$title-3      : rem(30);
+$title-4      : rem(22);
+$title-5      : rem(20);
+$title-6      : rem(18);
+
+// MEDIA QUERIES
+$xxs  : 280px;
+$xs   : 320px;
+$x-sm : 480px;
+$sm   : 576px;
+$md   : 768px;
+$lg   : 1024px;
+$xl   : 1281px;
+$xxl  : 1400px;
+
+// SCREEN MEDIA
+$xxs-screen  : "only screen and (min-width:#{$xxs})";
+$xs-screen   : "only screen and (min-width:#{$xs})";
+$x-sm-screen : "only screen and (min-width:#{$x-sm})";
+$sm-screen   : "only screen and (min-width:#{$sm})";
+$md-screen   : "only screen and (min-width:#{$md})";
+$lg-screen   : "only screen and (min-width:#{$lg})";
+$xl-screen   : "only screen and (min-width:#{$xl})";
+$xxl-screen  : "only screen and (min-width:#{$xxl})";
+
+@media #{$md-screen} {
+
+  :root {
+
+    --min-space          : rem(20);
+    --basic-space        : rem(30);
+    --section-basic-space: rem(55);
+  }
+}
+
+// SPACES
+$min-space           : rem(25);
+$basic-space         : rem(45);
+$section-basic-space : rem(65);
+$section-space       : rem(100);

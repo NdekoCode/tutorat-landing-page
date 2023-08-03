@@ -1,4 +1,5 @@
 package.json
+jserver.js
 package-lock.json
 dist
 e2e/**

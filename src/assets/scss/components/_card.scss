@@ -1,0 +1,14 @@
+.card {
+  border-radius: rem(5);
+  @apply border border-[#EDEFF5] p-5;
+  width: max-content;
+  color: var(--text-blue);
+
+  .title {
+    color: var(--dark-blue);
+  }
+
+  .icon {
+    color: var(--icon-blue);
+  }
+}

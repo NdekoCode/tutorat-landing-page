@@ -15,19 +15,9 @@ describe('AppComponent', () => {
     const app = fixture.componentInstance
     expect(app).toBeTruthy()
   })
-
-  it(`should have as title 'tutor-webfront'`, () => {
+  it('should have router-outlet', () => {
     const fixture = TestBed.createComponent(AppComponent)
-    const app = fixture.componentInstance
-    expect(app.title).toEqual('tutor-webfront')
-  })
 
-  it('should render Title', () => {
-    const fixture = TestBed.createComponent(AppComponent)
-    fixture.detectChanges()
-    const compiled = fixture.nativeElement as HTMLElement
-    expect(compiled.querySelector('.content span')?.textContent).toContain(
-      'tutor-webfront app is running!'
-    )
+    expect(fixture.nativeElement.querySelector('router-outlet')).not.toBeNull()
   })
 })

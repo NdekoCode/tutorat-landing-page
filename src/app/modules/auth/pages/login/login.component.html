@@ -1,0 +1,245 @@
+<section class="fade">
+  <div class="auth-section section-content">
+    <div class="block block-content">
+      <div class="block__left">
+        <div class="block__img">
+          <img src="/assets/images/login-img.png" class="fadeUp" alt="Login" />
+        </div>
+      </div>
+      <div class="block__right">
+        <div class="container py-5">
+          <a routerLink="/" class="back-link hover:shadow-md">
+            <svg
+              width="10"
+              height="17"
+              viewBox="0 0 10 17"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9.15732 1.36714C9.0654 1.27499 8.95619 1.20187 8.83597 1.15198C8.71575 1.1021 8.58686 1.07642 8.45669 1.07642C8.32653 1.07642 8.19764 1.1021 8.07742 1.15198C7.95719 1.20187 7.84799 1.27499 7.75607 1.36714L1.17732 7.94589C1.10393 8.01913 1.0457 8.10613 1.00598 8.2019C0.96625 8.29767 0.945801 8.40033 0.945801 8.50402C0.945801 8.6077 0.96625 8.71037 1.00598 8.80614C1.0457 8.90191 1.10393 8.9889 1.17732 9.06214L7.75607 15.6409C8.14399 16.0288 8.7694 16.0288 9.15732 15.6409C9.54524 15.253 9.54524 14.6276 9.15732 14.2396L3.42565 8.50006L9.16524 2.76048C9.54524 2.38048 9.54524 1.74714 9.15732 1.36714Z"
+                fill="#151D34"
+                stroke="#151D34"
+                stroke-width="0.2"
+              />
+            </svg>
+          </a>
+          <h2 class="text-3xl md:text-4xl max-w-[500px] font-bold mb-10">
+            Bienvenue à nouveau, Heureux de vous revoir !
+          </h2>
+          <form
+            action=""
+            (ngSubmit)="saveLoginForm()"
+            [formGroup]="loginForm"
+            class="form-login"
+            method="POST"
+          >
+            <div class="field-container">
+              <label for="email" class="input-label">Email</label>
+              <input
+                type="email"
+                id="email"
+                formControlName="email"
+                placeholder="Entrer votre email"
+                class="input-field"
+                [ngClass]="{
+                  invalid:
+                    loginForm.get('email')?.touched &&
+                    loginForm.get('email')?.invalid
+                }"
+              />
+              <div
+                *ngIf="
+                  loginForm.get('email')?.errors &&
+                  loginForm.get('email')?.invalid &&
+                  loginForm.get('email')?.touched
+                "
+                class="text-invalid"
+                id="email-errors"
+              >
+                <p *ngIf="loginForm.get('email')?.errors?.['required']">
+                  <span class="font-medium">Oops!</span> Email is required
+                </p>
+                <p
+                  *ngIf="loginForm.get('email')?.errors?.['email'] || loginForm.get('email')?.errors?.['pattern']"
+                >
+                  <span class="font-medium">Oops!</span> Email is invalid
+                </p>
+              </div>
+            </div>
+
+            <div class="field-container">
+              <label for="password" class="input-label">Mot de passe</label>
+              <div
+                class="input-icon"
+                [ngClass]="{
+                  invalid:
+                    loginForm.get('password')?.touched &&
+                    loginForm.get('password')?.invalid
+                }"
+              >
+                <input
+                  [type]="isChange ? 'text' : 'password'"
+                  id="password"
+                  autocomplete="true"
+                  formControlName="password"
+                  placeholder="Entrez votre mot de passe"
+                /><svg
+                  class="icon right-icon"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  (click)="viewPassword()"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 5.25C4.5 5.25 1.5 12 1.5 12C1.5 12 4.5 18.75 12 18.75C19.5 18.75 22.5 12 22.5 12C22.5 12 19.5 5.25 12 5.25Z"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M12 15.75C14.0711 15.75 15.75 14.0711 15.75 12C15.75 9.92893 14.0711 8.25 12 8.25C9.92893 8.25 8.25 9.92893 8.25 12C8.25 14.0711 9.92893 15.75 12 15.75Z"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div
+                *ngIf="
+                  loginForm.get('password')?.errors &&
+                  loginForm.get('password')?.invalid &&
+                  loginForm.get('password')?.touched
+                "
+                class="text-invalid"
+                id="password-errors"
+              >
+                <p *ngIf="loginForm.get('password')?.errors?.['required']">
+                  <span class="font-medium">Oops!</span> Password is required
+                </p>
+                <p
+                  *ngIf="loginForm.get('password')?.errors?.['minlength'] || loginForm.get('password')?.errors?.['pattern']"
+                >
+                  <span class="text-xs font-medium">Oops!</span> Minimum huit
+                  caractères, au moins une lettre majuscule, une lettre
+                  minuscule, un chiffre et un caractère spécial
+                </p>
+              </div>
+              <div class="text-right">
+                <a
+                  routerLink="/auth/forget-password"
+                  class="underline text-[#6A707C] text-sm font-semibold"
+                  >Mot de passe oublier</a
+                >
+              </div>
+            </div>
+            <div class="mt-3 field-container">
+              <button
+                class="flex-middle button gap-x-1 button-form button-dark button-full"
+                [disabled]="loginForm.invalid"
+              >
+                <svg
+                  *ngIf="isLoading"
+                  class="w-5 h-5 mr-3 -ml-1 text-indigo-500 animate-spin"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    class="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    stroke-width="4"
+                  ></circle>
+                  <path
+                    class="opacity-75"
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                  ></path>
+                </svg>
+                {{ isLoading ? 'Loading...' : 'Se connecter' }}
+              </button>
+            </div>
+            <div class="flex items-center justify-between mt-3 field-container">
+              <span
+                class="h-[0.5px] bg-gray-200 inline-block w-1/4 divide-y divide-gray-300"
+              ></span
+              ><span class="mx-3">Ou se connectez avec</span>
+              <span
+                class="h-[0.5px] inline-block bg-gray-200 w-1/4 divide-y divide-gray-300"
+              ></span>
+            </div>
+            <div class="mt-3 field-container">
+              <button
+                class="button button-icon button-blue-light button-full"
+                id="button-login"
+              >
+                <svg
+                  width="20"
+                  height="21"
+                  viewBox="0 0 20 21"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clip-path="url(#clip0_132_1805)">
+                    <path
+                      d="M19.8052 10.7305C19.8052 10.0507 19.7501 9.36724 19.6325 8.69849H10.2002V12.5493H15.6016C15.3775 13.7913 14.6573 14.8899 13.6027 15.5881V18.0867H16.8252C18.7176 16.345 19.8052 13.7729 19.8052 10.7305Z"
+                      fill="#4285F4"
+                    />
+                    <path
+                      d="M10.1999 20.5008C12.897 20.5008 15.1714 19.6152 16.8286 18.0867L13.6061 15.588C12.7096 16.198 11.5521 16.5434 10.2036 16.5434C7.59474 16.5434 5.38272 14.7833 4.58904 12.417H1.26367V14.9928C2.96127 18.3696 6.41892 20.5008 10.1999 20.5008V20.5008Z"
+                      fill="#34A853"
+                    />
+                    <path
+                      d="M4.58564 12.417C4.16676 11.175 4.16676 9.8302 4.58564 8.58824V6.01245H1.26395C-0.154389 8.8381 -0.154389 12.1671 1.26395 14.9928L4.58564 12.417V12.417Z"
+                      fill="#FBBC04"
+                    />
+                    <path
+                      d="M10.1999 4.45805C11.6256 4.436 13.0035 4.97247 14.036 5.95722L16.8911 3.10218C15.0833 1.40459 12.6838 0.471278 10.1999 0.500674C6.41892 0.500674 2.96127 2.63185 1.26367 6.01234L4.58537 8.58813C5.37538 6.21811 7.59107 4.45805 10.1999 4.45805V4.45805Z"
+                      fill="#EA4335"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_132_1805">
+                      <rect
+                        width="20"
+                        height="20"
+                        fill="white"
+                        transform="translate(0 0.5)"
+                      />
+                    </clipPath>
+                  </defs>
+                </svg>
+                <span>Continuez avec Google</span>
+              </button>
+            </div>
+            <div class="mt-3 text-center field-container">
+              <p class="font-medium text-dark">
+                <span>Vous n'avez pas de compte ?</span>
+                <a
+                  routerLink="/auth/signup"
+                  class="font-bold underline text-green"
+                  >S'inscrire</a
+                >
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-alert
+  *ngIf="submitForm"
+  [alertTitle]="alert.alertTitle"
+  [isShown]="alert.isShown"
+  [alertType]="alert.alertType"
+  [alertMessage]="alert.alertMessage"
+/>

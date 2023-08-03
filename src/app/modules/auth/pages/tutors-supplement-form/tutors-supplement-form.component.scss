@@ -1,0 +1,36 @@
+.input-groupp {
+  @apply w-full;
+
+  .field-container {
+    @apply w-1/2 mb-3;
+  }
+}
+
+.block-error {
+  * {
+    background-color: transparent;
+  }
+
+  p {
+
+    @apply flex items-center;
+  }
+}
+
+.form-tutor {
+  background-color   : var(--red-light);
+  // background      : url('/assets/images/icons/bar-decorator.png') no-repeat center center / contain;
+
+  .input-field {
+    @apply flex flex-nowrap w-full max-w-full;
+
+    .field-container {
+      @apply w-auto max-w-full;
+    }
+
+    .field-container {
+      @apply w-1/2;
+    }
+  }
+
+}

@@ -1,0 +1,117 @@
+.header__banner {
+  background-image: var(--primary-gradient);
+  border-radius   : 0px 0px 120px 120px;
+  color           : var(--color-white);
+  padding-block   : rem(50);
+
+
+  .title-1 {
+    @apply text-4xl font-bold leading-tight;
+
+    @screen md {
+      @apply text-5xl leading-snug;
+    }
+
+    @screen lg {
+      @apply text-[55px] max-w-[700px];
+    }
+  }
+
+  .block-badge {
+    position: absolute;
+
+    right    : 50%;
+    bottom   : 5%;
+    transform: translateX(50%);
+
+
+    @media #{$md-screen} {
+
+      transform: translateY(-50%);
+      right    : 0%;
+      top      : 20%;
+
+    }
+  }
+
+  .text {
+    @apply text-lg font-normal my-6;
+
+    @screen md {
+      @apply text-xl;
+    }
+
+    @screen lg {
+      @apply max-w-[740px];
+    }
+  }
+
+  .block__left {
+    background   : url('/assets/images/dot-circle.png') no-repeat left center / contain;
+    margin-bottom: rem(50);
+  }
+
+  .block__right {
+    @apply flex items-center justify-center;
+
+  }
+
+  .block__img {
+    min-width : 250px;
+    max-width : 526px;
+    min-height: 350px;
+    height    : max-content;
+    @apply flex items-center justify-center;
+
+    img {
+      border-top-right-radius  : rem(25);
+      border-bottom-left-radius: rem(25);
+      border-radius            : 214px 0px 219px 216px;
+
+      @media #{$md-screen} {
+        border-top-right-radius  : rem(50);
+        border-bottom-left-radius: rem(50);
+        height                   : 450px;
+        object-fit               : cover;
+      }
+
+      @media #{$lg-screen} {
+
+        border-top-right-radius: rem(120);
+      }
+    }
+  }
+
+  .button {
+    &.button-action {
+      background-color: var(--color-white);
+      border-color    : var(--primary-color);
+      color           : var(--primary-color);
+      @apply block max-w-max py-3 transition-colors border-2 my-5;
+
+
+      &:hover {
+        background-color: var(--primary-color);
+        color           : var(--color-white);
+        border-color    : transparent;
+
+        .icon {
+
+          background-color: var(--color-white);
+          color           : vaR(--primary-color);
+
+        }
+      }
+
+    }
+
+  }
+
+  @media #{$lg-screen} {
+
+    background-image   : url('/assets/images/grad.svg'), var(--primary-gradient);
+    background-position: right center, left;
+    background-repeat  : no-repeat;
+    background-size    : 1200px 835px, cover;
+  }
+}

@@ -2,7 +2,32 @@
 module.exports = {
   content: ['./src/**/*.{html,js}'],
   theme: {
-    extend: {}
+    extend: {
+      fontFamily: {
+        sans: [
+          '"Inter"',
+          "'Open Sans'",
+          'ui-sans-serif',
+          'system-ui',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          '"Segoe UI"',
+          'Roboto',
+          '"Helvetica Neue"',
+          'Arial',
+          '"Noto Sans"',
+          'sans-serif',
+          '"Apple Color Emoji"',
+          '"Segoe UI Emoji"',
+          '"Segoe UI Symbol"',
+          '"Noto Color Emoji"'
+        ]
+      }
+    }
   },
-  plugins: []
+  plugins: [require('daisyui')],
+  daisyui: {
+    themes: false, // true: all themes | false: only light + dark | array: specific themes like this ["light", "dark", "cupcake"]
+    darkTheme: 'light'
+  }
 }

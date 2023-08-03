@@ -1,0 +1,217 @@
+<div
+  class="w-full max-w-full xl:max-w-2xl min-h-[380px] p-3 mt-5 bg-white rounded-lg shadow shadow-gray-100 border border-gray-100 2xl:max-w-3xl sm:p-4 2xl:col-span-2"
+>
+  <div class="flex flex-wrap gap-y-3 md:gap-x-3 md:flex-nowrap md:gap-y-0">
+    <div
+      class="pb-3 border-b border-gray-100 md:pb-0 md:border-r md:border-b-0"
+    >
+      <div
+        class="flex flex-wrap justify-center gap-3 md:justify-start lg:flex-nowrap"
+      >
+        <figure
+          class="relative w-[200px] sm:w-auto max-w-[250px] flex !overflow-visible flex-col items-center avatar"
+        >
+          <div class="relative w-full !overflow-visible sm:w-36">
+            <img [src]="tutor.image" alt="Tutor name" class="rounded-lg" />
+            <figcaption
+              class="bg-green w-max absolute -bottom-2 left-1/2 -translate-x-1/2 text-xs rounded-xl inline-block text-white p-0.5"
+            >
+              +210 Reviews
+            </figcaption>
+          </div>
+        </figure>
+        <div class="w-full lg:w-auto">
+          <div
+            class="mb-3 border-b pr-1 lg:min-h-[130px] flex flex-col items-center md:block border-gray-100 user-details"
+          >
+            <h3 class="text-xl font-semibold">
+              {{ tutor.firstName | titlecase }} {{ tutor.lastName | titlecase }}
+            </h3>
+            <div class="flex items-center mb-3 gap-x-2">
+              <div class="flex items-center">
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 12 12"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M5.94697 1.1507C5.98139 1.06004 6.06894 1 6.16672 1C6.2645 1 6.35205 1.06004 6.38647 1.1507L7.57489 4.48843H10.9312C11.0295 4.48842 11.1174 4.54907 11.1515 4.64042C11.1855 4.73176 11.1585 4.83445 11.0838 4.89773L8.27921 7.20103L9.45308 10.6941C9.4853 10.7901 9.45111 10.8958 9.36853 10.9554C9.28595 11.015 9.17395 11.0149 9.09153 10.955L6.16625 8.82896L3.23956 10.955C3.15712 11.0137 3.04597 11.0132 2.96406 10.9538C2.88214 10.8945 2.848 10.7897 2.87942 10.6941L4.05329 7.20103L1.24822 4.89773C1.17351 4.83445 1.14651 4.73176 1.18057 4.64042C1.21462 4.54907 1.30252 4.48842 1.40082 4.48843H4.75761L5.94697 1.1507Z"
+                    fill="#FEC84B"
+                    stroke="#FEC84B"
+                  />
+                </svg>
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 12 12"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M5.94697 1.1507C5.98139 1.06004 6.06894 1 6.16672 1C6.2645 1 6.35205 1.06004 6.38647 1.1507L7.57489 4.48843H10.9312C11.0295 4.48842 11.1174 4.54907 11.1515 4.64042C11.1855 4.73176 11.1585 4.83445 11.0838 4.89773L8.27921 7.20103L9.45308 10.6941C9.4853 10.7901 9.45111 10.8958 9.36853 10.9554C9.28595 11.015 9.17395 11.0149 9.09153 10.955L6.16625 8.82896L3.23956 10.955C3.15712 11.0137 3.04597 11.0132 2.96406 10.9538C2.88214 10.8945 2.848 10.7897 2.87942 10.6941L4.05329 7.20103L1.24822 4.89773C1.17351 4.83445 1.14651 4.73176 1.18057 4.64042C1.21462 4.54907 1.30252 4.48842 1.40082 4.48843H4.75761L5.94697 1.1507Z"
+                    fill="#FEC84B"
+                    stroke="#FEC84B"
+                  />
+                </svg>
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 12 12"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M5.94697 1.1507C5.98139 1.06004 6.06894 1 6.16672 1C6.2645 1 6.35205 1.06004 6.38647 1.1507L7.57489 4.48843H10.9312C11.0295 4.48842 11.1174 4.54907 11.1515 4.64042C11.1855 4.73176 11.1585 4.83445 11.0838 4.89773L8.27921 7.20103L9.45308 10.6941C9.4853 10.7901 9.45111 10.8958 9.36853 10.9554C9.28595 11.015 9.17395 11.0149 9.09153 10.955L6.16625 8.82896L3.23956 10.955C3.15712 11.0137 3.04597 11.0132 2.96406 10.9538C2.88214 10.8945 2.848 10.7897 2.87942 10.6941L4.05329 7.20103L1.24822 4.89773C1.17351 4.83445 1.14651 4.73176 1.18057 4.64042C1.21462 4.54907 1.30252 4.48842 1.40082 4.48843H4.75761L5.94697 1.1507Z"
+                    fill="#FEC84B"
+                    stroke="#FEC84B"
+                  />
+                </svg>
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 12 12"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M5.94697 1.1507C5.98139 1.06004 6.06894 1 6.16672 1C6.2645 1 6.35205 1.06004 6.38647 1.1507L7.57489 4.48843H10.9312C11.0295 4.48842 11.1174 4.54907 11.1515 4.64042C11.1855 4.73176 11.1585 4.83445 11.0838 4.89773L8.27921 7.20103L9.45308 10.6941C9.4853 10.7901 9.45111 10.8958 9.36853 10.9554C9.28595 11.015 9.17395 11.0149 9.09153 10.955L6.16625 8.82896L3.23956 10.955C3.15712 11.0137 3.04597 11.0132 2.96406 10.9538C2.88214 10.8945 2.848 10.7897 2.87942 10.6941L4.05329 7.20103L1.24822 4.89773C1.17351 4.83445 1.14651 4.73176 1.18057 4.64042C1.21462 4.54907 1.30252 4.48842 1.40082 4.48843H4.75761L5.94697 1.1507Z"
+                    fill="#FEC84B"
+                    stroke="#FEC84B"
+                  />
+                </svg>
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 12 12"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M5.94697 1.1507C5.98139 1.06004 6.06894 1 6.16672 1C6.2645 1 6.35205 1.06004 6.38647 1.1507L7.57489 4.48843H10.9312C11.0295 4.48842 11.1174 4.54907 11.1515 4.64042C11.1855 4.73176 11.1585 4.83445 11.0838 4.89773L8.27921 7.20103L9.45308 10.6941C9.4853 10.7901 9.45111 10.8958 9.36853 10.9554C9.28595 11.015 9.17395 11.0149 9.09153 10.955L6.16625 8.82896L3.23956 10.955C3.15712 11.0137 3.04597 11.0132 2.96406 10.9538C2.88214 10.8945 2.848 10.7897 2.87942 10.6941L4.05329 7.20103L1.24822 4.89773C1.17351 4.83445 1.14651 4.73176 1.18057 4.64042C1.21462 4.54907 1.30252 4.48842 1.40082 4.48843H4.75761L5.94697 1.1507Z"
+                    fill="#FEC84B"
+                    stroke="#FEC84B"
+                  />
+                </svg>
+              </div>
+              <span class="font-medium">5.0</span>
+            </div>
+            <div class="flex items-center mb-3 gap-x-3">
+              <img
+                class="object-cover w-8 h-8"
+                [src]="
+                  'https://www.countryflagicons.com/FLAT/32/' +
+                  tutor.address.state +
+                  '.png'
+                "
+                [alt]="tutor.address.state"
+              />
+              <p class="flex flex-wrap gap-3 text-sm font-semibold">
+                <span class="inline-block">{{
+                  tutor.address.city | titlecase
+                }}</span>
+              </p>
+            </div>
+          </div>
+          <div class="pr-3 user-fees">
+            <div class="flex items-center justify-between gap-x-3">
+              <p clas="flex flex-col w-16">
+                <span class="block mb-1 text-xs font-medium text-gray-500"
+                  >Essaie</span
+                >
+                <span class="block text-sm font-medium text-blue"
+                  >{{ 20 * 2300 | number }} FC</span
+                >
+              </p>
+              <p clas="flex flex-col w-16">
+                <span class="block mb-1 text-xs font-medium text-gray-500"
+                  >Taux horaire</span
+                >
+                <span class="block text-sm font-medium text-blue"
+                  >{{ tutor.tutor.hourlyRate * 2300 | number }} FC</span
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-5">
+        <h5 class="mb-1 text-lg font-semibold">Intro</h5>
+        <p>
+          <span class="block text-sm text-[#8D8E8E] max-w-xl">{{
+            tutor.tutor.bio | slice : 0 : 80
+          }}</span>
+          <a
+            [routerLink]="'/myspace/tutor/' + tutor.id"
+            class="block text-sm font-medium mt-1 w-max text-yellow text-[#C4951B]"
+            >Voir plus</a
+          >
+        </p>
+      </div>
+    </div>
+    <div class="flex flex-col w-full min-h-full md:w-auto">
+      <div
+        class="min-h-[125px] lg:min-h-[130px] pb-3 flex flex-col border-b border-gray-100"
+      >
+        <h6 class="self-start block mb-3 text-sm font-medium text-gray-500">
+          Cours
+        </h6>
+        <p class="flex flex-wrap">
+          <span
+            class="text-base font-medium text-blue"
+            *ngFor="let cour of tutor.tutor.specialization"
+            >{{ cour }},</span
+          >
+        </p>
+      </div>
+      <div class="hidden mt-auto md:flex md:flex-col md:space-y-3">
+        <button
+          (click)="playVideo()"
+          class="flex px-0 normal-case bg-transparent border-none flex-nowrap gap-x-3 btn hover:bg-transparent"
+        >
+          <span
+            class="flex-none w-8 h-8 p-1 border-2 rounded-full border-gray flex-middle text-blue"
+          >
+            <svg
+              class="w-4 h-4"
+              viewBox="0 0 14 10"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M2.1 0C1.54305 0 1.0089 0.225765 0.615076 0.627628C0.221249 1.02949 0 1.57454 0 2.14286V7.85714C0 8.42546 0.221249 8.97051 0.615076 9.37237C1.0089 9.77424 1.54305 10 2.1 10H9.1C9.65695 10 10.1911 9.77424 10.5849 9.37237C10.9788 8.97051 11.2 8.42546 11.2 7.85714V6.72429L12.8051 8.36214C12.903 8.46201 13.0277 8.53001 13.1635 8.55756C13.2992 8.58511 13.44 8.57096 13.5679 8.51691C13.6957 8.46286 13.8051 8.37133 13.882 8.2539C13.9589 8.13646 14 7.99839 14 7.85714V2.14286C14 2.00161 13.9589 1.86354 13.882 1.7461C13.8051 1.62867 13.6957 1.53714 13.5679 1.48309C13.44 1.42904 13.2992 1.41489 13.1635 1.44244C13.0277 1.46999 12.903 1.53799 12.8051 1.63786L11.2 3.27571V2.14286C11.2 1.57454 10.9788 1.02949 10.5849 0.627628C10.1911 0.225765 9.65695 0 9.1 0H2.1Z"
+                fill="currentColor"
+              />
+            </svg>
+          </span>
+          <span class="underline whitespace-nowrap">Regarder l'intro</span>
+        </button>
+        <a
+          href="/myspace/new-sessions"
+          class="normal-case btn btn-success hover:bg-green-900 bg-green"
+        >
+          tutorat d'essai
+        </a>
+        <a
+          href="/myspace/messages"
+          class="normal-case btn btn-success hover:bg-green-900 bg-green"
+        >
+          Message
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
