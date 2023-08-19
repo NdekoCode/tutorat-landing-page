@@ -105,13 +105,8 @@ export type User = {
   email: string
   phoneNumber: string
   password?: string | ''
-  avatar: string
-  address: {
-    address: string
-    city: string
-    postalCode: string
-    state: string
-  }
+  image: string
+  address?: Address
   tutor: Tutor | null
 }
 
@@ -121,12 +116,7 @@ export type UpdateCredentialUser = {
   gender?: string
   phoneNumber?: string
   avatar?: string
-  address?: {
-    address: string
-    city: string
-    postalCode: string
-    state: string
-  }
+  address?: Address
 }
 export type Tutor = {
   bio: string
