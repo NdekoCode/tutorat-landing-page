@@ -3,12 +3,12 @@ import { Observable } from 'rxjs'
 import { TUTOR_REQUIRED_FIELDS } from 'src/app/core/utilities/constants'
 import {
   getLimitData,
+  getUsers,
   hasProperties,
   isEmptyObject,
   isExists
 } from 'src/app/core/utilities/helpers'
-import { ITutor } from 'src/app/core/utilities/interfaces'
-import { Tutor, TutorCredentials, User } from 'src/app/core/utilities/types'
+import { TutorCredentials, User } from 'src/app/core/utilities/types'
 import { ApiConfigService } from '../api-config/api-config.service'
 import { UserService } from '../user/user.service'
 
@@ -16,45 +16,32 @@ import { UserService } from '../user/user.service'
   providedIn: 'root'
 })
 export class TutorService {
-  _tutors!: ITutor[]
+  _tutors!: User[]
   constructor(
     private apiConfig: ApiConfigService,
     public userService: UserService
   ) {}
-  getTutors(): Observable<ITutor[]> {
-    return this.apiConfig.http.get<ITutor[]>(
-      `${this.apiConfig.url}/users/all-tutors`
-    )
+  getTutors(): User[] | [] {
+    return getUsers(true)
   }
-  getLimitTutor(tutor: ITutor[], limit: number = 12) {
-    this._tutors = getLimitData(tutor, limit) as ITutor[]
+  getLimitTutor(tutor: User[], limit: number = 12) {
+    this._tutors = getLimitData(tutor, limit) as User[]
     return this._tutors
   }
 
   // eslint-disable-next-line class-methods-use-this
-  tutorCompletedProfile(user: ITutor | User | Tutor) {
+  tutorCompletedProfile(user: User | null) {
     return hasProperties({ ...user }, TUTOR_REQUIRED_FIELDS as string[], true)
   }
-
-  getSingleTutor(id: number): Observable<ITutor | null> {
-    return this.apiConfig.http.get<ITutor>(
-      `${this.apiConfig.url}/users/tutor/${id}`
-    )
-  }
-  getSuggestionTutors(city: string): Observable<ITutor[]> {
-    return this.apiConfig.http.get<ITutor[]>(
-      `${this.apiConfig.url}/users/all-tutors?address=${city}`
-    )
-  }
   // eslint-disable-next-line class-methods-use-this
-  isTutor(tutor: ITutor | User): boolean {
-    if ('user' in tutor) {
-      return isExists(tutor?.user) && !isEmptyObject(tutor?.user)
+  isTutor(user: User): boolean {
+    if ('tutor' in user) {
+      return isExists(user?.tutor) && !isEmptyObject(user?.tutor)
     }
     return false
   }
   // eslint-disable-next-line class-methods-use-this
-  meIsTutor(user: ITutor | User) {
+  meIsTutor(user: User) {
     if ('tutor' in user) {
       return isExists(user?.tutor) && !isEmptyObject(user.tutor)
     }
@@ -68,11 +55,11 @@ export class TutorService {
       credentials
     )
   }
-  getSingleTutor(id: number): ITutor | undefined {
+  getSingleTutor(id: number): User | undefined {
     return this.getTutors().find((tutor) => tutor.id === id)
   }
   getSuggestionTutors(city: string) {
-    this._tutors = this.getTutors().filter((t) => t.address.city === city)
+    this._tutors = this.getTutors().filter((t) => t?.address?.city === city)
     return this._tutors
   }
 }

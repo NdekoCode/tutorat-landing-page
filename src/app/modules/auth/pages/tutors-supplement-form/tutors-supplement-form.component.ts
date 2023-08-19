@@ -11,7 +11,6 @@ import {
   GLOBAL_CONSTANTS
 } from 'src/app/core/utilities/constants'
 import { isEmptyObject, isExists } from 'src/app/core/utilities/helpers'
-import { ITutor } from 'src/app/core/utilities/interfaces'
 import {
   Alert,
   Course,
@@ -36,7 +35,7 @@ import { TutorService } from '../../../../shared/services/tutor/tutor.service'
   styleUrls: ['./tutors-supplement-form.component.scss']
 })
 export class TutorsSupplementFormComponent implements OnInit, OnDestroy {
-  user!: ITutor | User | null
+  user!: User | null
   tutorSupplementForm!: FormGroup
   imagePath: string | undefined = '/assets/images/avatar.png'
   currentStep: number = 1
@@ -118,7 +117,7 @@ export class TutorsSupplementFormComponent implements OnInit, OnDestroy {
 
       if (
         this.tutorService.meIsTutor(this.user) &&
-        this.tutorService.tutorCompletedProfile(this.user.tutor!)
+        this.tutorService.tutorCompletedProfile(this.user)
       ) {
         this.apiConfig.router.navigate([MYSPACE_ROUTES.HOME])
       }

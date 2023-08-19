@@ -46,7 +46,6 @@
         "default-param-last": ["error"],
         "default-case-last": "error",
         "default-case": "error",
-        "class-methods-use-this": "error",
         "camelcase": [
           "error",
           {

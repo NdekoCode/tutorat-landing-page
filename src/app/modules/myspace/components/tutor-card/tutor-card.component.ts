@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core'
-import { ITutor } from 'src/app/core/utilities/interfaces'
+import { User } from 'src/app/core/utilities/types'
 
 @Component({
   selector: 'app-tutor-card',
@@ -7,8 +7,8 @@ import { ITutor } from 'src/app/core/utilities/interfaces'
   styleUrls: ['./tutor-card.component.scss']
 })
 export class TutorCardComponent {
-  @Input() tutor!: ITutor
-  @Output() playTutorVideo = new EventEmitter<ITutor>()
+  @Input() tutor!: User
+  @Output() playTutorVideo = new EventEmitter<User>()
 
   playVideo() {
     this.playTutorVideo.emit(this.tutor)

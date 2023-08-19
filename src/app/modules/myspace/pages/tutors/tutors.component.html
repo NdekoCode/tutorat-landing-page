@@ -23,7 +23,7 @@
               type="text"
               placeholder="Entrer le cours"
               [(ngModel)]="filters.cours"
-              (change)="filterTutors(filters)"
+              (change)="onHandleChange()"
               class="w-full max-w-xs border-transparent rounded-md outline-none ring-transparent ring-0"
             />
             <svg
@@ -57,7 +57,7 @@
               type="number"
               placeholder="Prix par heure"
               id="price"
-              [(ngModel)]="filters.hourlyRate"
+              [(ngModel)]="filters['hourlyRate']"
               (change)="filterTutors(filters)"
               class="w-full max-w-xs border-transparent rounded-md outline-none ring-transparent ring-0"
             />

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core'
-import { ITutor } from 'src/app/core/utilities/interfaces'
+import { User } from 'src/app/core/utilities/types'
 
 @Component({
   selector: 'app-tutor-short-card',
@@ -7,5 +7,5 @@ import { ITutor } from 'src/app/core/utilities/interfaces'
   styleUrls: ['./tutor-short-card.component.scss']
 })
 export class TutorShortCardComponent {
-  @Input() tutor!: ITutor
+  @Input() tutor!: User
 }

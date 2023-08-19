@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
-import { ITutor } from 'src/app/core/utilities/interfaces'
+import { User } from 'src/app/core/utilities/types'
 import { TutorService } from 'src/app/shared/services/tutor/tutor.service'
 
 @Component({
@@ -10,10 +10,10 @@ import { TutorService } from 'src/app/shared/services/tutor/tutor.service'
 })
 export class ViewTutorComponent implements OnInit {
   activeFragment!: string
-  tutor!: ITutor
+  tutor!: User
   isLoading: boolean = false
   suggestionLoading: boolean = false
-  suggestionTutors!: ITutor[]
+  suggestionTutors!: User[]
   userId!: number
   constructor(
     private route: ActivatedRoute,
@@ -30,28 +30,14 @@ export class ViewTutorComponent implements OnInit {
     })
 
     if (this.userId) {
-      this.tutorService.getSingleTutor(+this.userId).subscribe({
-        next: (tutor) => {
-          this.tutor = tutor!
-          this.isLoading = false
-        },
-        error: (err) => {
-          this.isLoading = false
-        }
-      })
+      this.tutor = this.tutorService.getSingleTutor(+this.userId)!
+      this.isLoading = false
     }
 
-    this.tutorService
-      .getSuggestionTutors(this.tutor.user.address.city)
-      .subscribe({
-        next: (tutors) => {
-          this.suggestionTutors = tutors
-          this.suggestionLoading = false
-        },
-        error: (err) => {
-          this.suggestionLoading = false
-        }
-      })
+    this.suggestionTutors = this.tutorService.getSuggestionTutors(
+      this.tutor?.address!.city
+    )
+    this.suggestionLoading = false
   }
 
   isLinkActive(fragment: string): boolean {

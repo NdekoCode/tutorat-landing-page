@@ -1,5 +1,4 @@
 import { USERS } from './constants'
-import { ITutor } from './interfaces'
 import { Tutor, User, UtilityType } from './types'
 
 export function objectHasValue(obj: { [key: string]: UtilityType }): boolean {
@@ -102,37 +101,38 @@ export function formatURL(
 export function generateArray(n: number): number[] {
   return Array.from({ length: n }, (_, i) => i)
 }
-export function getUsers(tutor: boolean = false): (User | Tutor)[] | [] {
+export function getUsers(tutor: boolean = false): User[] | [] {
   if (tutor) {
     return USERS.filter((user) => isExists(user.tutor))
   }
   return USERS.filter((user) => isEmptyObject(user.tutor))
 }
-
 export function filterTutor(
-  data: ITutor[],
+  data: User[],
   filters: Partial<Tutor & { city: string; cours?: string | number }>
-): ITutor[] {
-  return data.filter((tutor) => {
+): User[] {
+  return data.filter((user) => {
     let isValid = true
 
     if (
       filters.hourlyRate &&
-      tutor?.hourlyRate * 2300 > filters.hourlyRate * 2300
+      user.tutor?.hourlyRate! * 2300 > filters.hourlyRate * 2300
     ) {
       isValid = false
     }
 
     if (
       filters.cours &&
-      !tutor.specialization.map((s) => s.name).includes(filters.cours as string)
+      user
+        ?.tutor!.specialization.map((s) => s)
+        .includes(filters.cours as string)
     ) {
       isValid = false
     }
 
     if (
       filters.city &&
-      tutor.user.address.city.toLowerCase() !== filters.city.toLowerCase()
+      user.address?.city.toLowerCase() !== filters.city.toLowerCase()
     ) {
       isValid = false
     }

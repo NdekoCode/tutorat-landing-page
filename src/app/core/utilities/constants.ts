@@ -1,4 +1,4 @@
-import { User } from './types'
+import { Course, User } from './types'
 
 export enum GLOBAL_CONSTANTS {
   ALERT_TIMEOUT = 4500,
@@ -70,6 +70,48 @@ export const ALERT_AUTH = Object.freeze({
   }
 })
 
+export const COURSES: Course[] = [
+  {
+    id: 1,
+    name: 'Geometry',
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
+  },
+  {
+    id: 2,
+    name: 'Geographie',
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
+  },
+  {
+    id: 3,
+    name: 'Physique',
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
+  },
+  {
+    id: 4,
+    name: 'Trigonometrie',
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
+  },
+  {
+    id: 5,
+    name: 'Chimie',
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
+  },
+  {
+    id: 6,
+    name: 'Math',
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
+  },
+  {
+    id: 7,
+    name: 'Anglais',
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
+  },
+  {
+    id: 8,
+    name: 'Santé',
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
+  }
+]
 export const USERS: User[] = [
   {
     firstName: 'Terry',
@@ -1608,7 +1650,7 @@ export const USERS: User[] = [
     email: 'cepgrave1o@biblegateway.com',
     phoneNumber: '+1 614 425 6745',
     avatar: 'https://randomuser.me/api/portraits/women/94.jpg',
-    address: {},
+    address: null,
     tutor: null,
     id: 61
   },
@@ -1841,7 +1883,7 @@ export const USERS: User[] = [
     email: 'cmasurel1x@baidu.com',
     phoneNumber: '+86 426 681 8895',
     avatar: 'https://randomuser.me/api/portraits/women/50.jpg',
-    address: {},
+    address: null,
     tutor: {
       bio: 'I am well-versed in a variety of computer science topics, including programming languages, algorithms, data structures, and software engineering. Additionally, I have experience...',
       hourlyRate: 61,

@@ -2,14 +2,14 @@
   <div class="relative w-full mb-5 h-36">
     <img
       class="object-cover w-full h-36 rounded-2xl"
-      [src]="tutor.user.avatar"
-      [alt]="tutor.user.firstName + ' ' + tutor.user.lastName"
+      [src]="tutor.avatar"
+      [alt]="tutor.firstName + ' ' + tutor.lastName"
     />
 
     <h6
       class="z-[3] px-2 absolute text-lg font-semibold text-gray-200 bottom-2"
     >
-      {{ tutor.user.firstName + ' ' + tutor.user.lastName }}
+      {{ tutor.firstName + ' ' + tutor.lastName }}
     </h6>
     <div
       class="w-full inset-0 rounded-2xl h-12 left-0 top-[104px] absolute dark-light-gradient"
@@ -41,7 +41,7 @@
         Certifié avec 5 ans d'expérience" en utilisant...
       </p>
       <p class="text-base leading-snug text-slate-900">
-        {{ tutor.hourlyRate }} FC / leçon
+        {{ tutor.tutor!.hourlyRate }} FC / leçon
       </p>
     </div>
   </div>

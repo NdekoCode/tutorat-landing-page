@@ -5,21 +5,21 @@
     <div class="w-auto h-auto rounded-full">
       <img
         class="object-cover w-12 h-12 rounded-full shadow cursor-pointer"
-        [alt]="tutor.user.firstName + ' ' + tutor.user.lastName"
-        [src]="tutor.user.avatar"
+        [alt]="tutor.firstName + ' ' + tutor.lastName"
+        [src]="tutor.avatar"
       />
     </div>
     <div class="flex flex-col mt-1 mb-2 ml-4">
       <div class="text-sm font-semibold text-gray-600">
-        {{ tutor.user.firstName + ' ' + tutor.user.lastName }}
+        {{ tutor.firstName + ' ' + tutor.lastName }}
       </div>
       <div class="flex w-full mt-1">
         <div class="mr-1 text-xs text-blue-700 cursor-pointer font-base">
           Enseignant de :
         </div>
         <div class="text-xs font-thin text-gray-500">
-          <span *ngFor="let cour of tutor.specialization"
-            >{{ cour.name }},</span
+          <span *ngFor="let cour of tutor.tutor!.specialization"
+            >{{ cour }},</span
           >
         </div>
       </div>
@@ -29,8 +29,8 @@
   <div class="relative px-2 mx-3 my-3 text-sm font-medium text-gray-400">
     <img
       class="rounded-md w-full h-[200px] object-cover"
-      [src]="tutor.video.thumbnail"
-      [alt]="tutor.video.description"
+      [src]="tutor.tutor!.video.thumbnail"
+      [alt]="tutor.tutor!.video.description"
     />
 
     <button
@@ -79,10 +79,10 @@
     </button>
   </div>
   <div class="px-2 mx-3 mb-2 font-semibold text-gray-600">
-    {{ tutor.video.description }}
+    {{ tutor.tutor!.video.description }}
   </div>
   <div class="px-2 mx-3 mb-3 text-sm text-gray-500">
-    {{ tutor.bio | slice : 0 : 70 }}
+    {{ tutor.tutor!.bio | slice : 0 : 70 }}
   </div>
   <div class="flex justify-start mb-3 border-t border-gray-100">
     <div class="flex justify-end w-full pt-2 pr-5 mt-1">

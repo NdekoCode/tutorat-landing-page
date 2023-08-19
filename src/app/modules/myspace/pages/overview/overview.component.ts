@@ -6,8 +6,7 @@ import {
   isExists,
   objectHasValue
 } from 'src/app/core/utilities/helpers'
-import { ITutor } from 'src/app/core/utilities/interfaces'
-import { Tutor } from 'src/app/core/utilities/types'
+import { Tutor, User, UtilityType } from 'src/app/core/utilities/types'
 import { TutorService } from 'src/app/shared/services/tutor/tutor.service'
 import { CoursesService } from '../../../../shared/services/courses/courses.service'
 
@@ -18,10 +17,10 @@ import { CoursesService } from '../../../../shared/services/courses/courses.serv
 export class OverviewComponent implements OnInit {
   userId!: number
   isLoading: boolean = false
-  tutors: ITutor[] = []
-  suggestionTutors: ITutor[] = []
-  filteredTutors: ITutor[] = []
-  topTutors: ITutor[] = []
+  tutors: User[] = []
+  suggestionTutors: User[] = []
+  filteredTutors: User[] = []
+  topTutors: User[] = []
   filters: Partial<Tutor & { city: string; cours?: string | number }> = {
     hourlyRate: 0,
     cours: '',
@@ -38,26 +37,24 @@ export class OverviewComponent implements OnInit {
   ngOnInit(): void {
     this.userId = this.activatedRoute.snapshot.params['id']
     this.isLoading = true
-    this.tutorService.getTutors().subscribe({
-      next: (tutors) => {
-        this.tutors = tutors
-        this.filteredTutors = this.tutors
-        this.suggestionTutors = this.tutors.filter(
-          (t) => isExists(t.user.address) && t.user.address.city === 'Goma'
-        )
-        this.topTutors = this.tutorService.getLimitTutor(this.tutors, 20)
-        this.isLoading = false
-      },
-      error: (err) => {
-        this.isLoading = false
-      }
-    })
+
+    this.tutors = this.tutorService.getTutors()
+    this.filteredTutors = this.tutors
+    this.suggestionTutors = this.tutors.filter(
+      (user) => isExists(user?.address) && user?.address?.city === 'Goma'
+    )
+    this.topTutors = this.tutorService.getLimitTutor(this.tutors, 20)
+    this.isLoading = false
   }
   filterTutors(
-    filter: Partial<Tutor & { city: string; cours?: string | number }>
+    filter: Tutor & {
+      city: string
+      cours: string | number
+      [key: string]: UtilityType
+    }
   ) {
     if (objectHasValue(filter)) {
-      this.filteredTutors = filterTutor(this.tutors, filter) as ITutor[]
+      this.filteredTutors = filterTutor(this.tutors, filter)
     } else {
       this.filteredTutors = this.tutors
     }

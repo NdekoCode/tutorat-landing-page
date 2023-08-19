@@ -1,7 +1,6 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core'
 import { GLOBAL_CONSTANTS } from 'src/app/core/utilities/constants'
-import { ITutor } from 'src/app/core/utilities/interfaces'
-import { Timer } from 'src/app/core/utilities/types'
+import { Timer, User } from 'src/app/core/utilities/types'
 
 @Component({
   selector: 'app-tutor-carousel',
@@ -9,7 +8,7 @@ import { Timer } from 'src/app/core/utilities/types'
   styleUrls: ['./tutor-carousel.component.scss']
 })
 export class TutorCarouselComponent implements OnInit, OnDestroy {
-  @Input() items: ITutor[] = []
+  @Input() items: User[] = []
   @Input() slidesPerPage!: number
   @Input() paginationPerSlide!: number
   timer: Timer

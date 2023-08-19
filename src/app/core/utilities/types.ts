@@ -90,14 +90,12 @@ export type Course = {
   name: string
   description: string
 }
-export type Address =
-  | {
-      address: string
-      city: string
-      postalCode: string
-      state: string
-    }
-  | {}
+export type Address = {
+  address: string
+  city: string
+  postalCode: string
+  state: string
+} | null
 
 export type User = {
   id: number | string

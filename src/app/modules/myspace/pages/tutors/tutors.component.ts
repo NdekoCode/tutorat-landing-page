@@ -5,9 +5,9 @@ import {
   generateArray,
   objectHasValue
 } from 'src/app/core/utilities/helpers'
-import { ITutor } from 'src/app/core/utilities/interfaces'
-import { Tutor } from 'src/app/core/utilities/types'
+import { Tutor, User } from 'src/app/core/utilities/types'
 import { TutorService } from 'src/app/shared/services/tutor/tutor.service'
+import { UtilityType } from './../../../../core/utilities/types'
 
 @Component({
   selector: 'app-tutors-page',
@@ -16,10 +16,14 @@ import { TutorService } from 'src/app/shared/services/tutor/tutor.service'
 })
 export class TutorsComponent implements OnInit {
   userId!: number
-  tutors: ITutor[] = []
+  tutors: User[] = []
   isLoading: boolean = false
-  filteredTutors: ITutor[] = []
-  filters: Partial<Tutor & { city: string; cours?: string | number }> = {
+  filteredTutors: User[] = []
+  filters: {
+    city: string
+    cours: string | number
+    [key: string | keyof Tutor]: UtilityType
+  } = {
     hourlyRate: 0,
     cours: '',
     city: ''
@@ -34,30 +38,37 @@ export class TutorsComponent implements OnInit {
   ngOnInit(): void {
     this.userId = this.activatedRoute.snapshot.params['id']
     this.isLoading = true
-    this.tutorService.getTutors().subscribe({
-      next: (tutors) => {
-        this.tutors = this.tutorService.getLimitTutor(tutors)
-        this.filteredTutors = this.tutors
-        this.isLoading = false
-      },
-      error: (err) => {
-        this.isLoading = false
-      }
-    })
+
+    this.tutors = this.tutorService.getLimitTutor(this.tutorService.getTutors())
+    this.filteredTutors = this.tutors
+    this.isLoading = false
   }
-  filterTutors(
-    filter: Partial<Tutor & { city: string; cours?: string | number }>
-  ) {
+  onHandleChange() {
+    this.filterTutors(
+      this.filters as {
+        [key: string]: UtilityType
+        city: string
+        cours: string | number
+      }
+    )
+  }
+  filterTutors(filter: {
+    city: string
+    cours: string | number
+    [key: string]: UtilityType
+  }) {
     if (objectHasValue(filter)) {
-      this.filteredTutors = filterTutor(this.tutors, filter) as ITutor[]
+      this.filteredTutors = filterTutor(this.tutors, filter)
     } else {
       this.filteredTutors = this.tutors
     }
   }
-  getTutorEventData(tutor: ITutor) {
-    const urlPart = tutor.video.url.split('/')
-    this.videoId = urlPart[urlPart.length - 1]
-    this.onToggleShow()
+  getTutorEventData(user: User) {
+    const urlPart = user?.tutor?.video.url.split('/') as string[]
+    this.videoId = urlPart[urlPart?.length - 1]
+    if (this.videoId) {
+      this.onToggleShow()
+    }
   }
 
   onShow(arg: Event | boolean) {

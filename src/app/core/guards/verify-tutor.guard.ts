@@ -12,7 +12,7 @@ import { catchError, map } from 'rxjs/operators'
 import { TutorService } from 'src/app/shared/services/tutor/tutor.service'
 import { UserService } from 'src/app/shared/services/user/user.service'
 import { AUTH_ROUTES } from '../routes/routes'
-import { ITutor } from '../utilities/interfaces'
+import { User } from '../utilities/types'
 
 @Injectable({
   providedIn: 'root'
@@ -32,9 +32,9 @@ export class VerifyTutorGuard implements CanActivate {
       catchError(() => of(null)),
       map((user) => {
         console.log(user)
-        if (user && this.tutorService.isTutor(user as ITutor)) {
+        if (user && this.tutorService.isTutor(user as User)) {
           console.log('Is a tutor')
-          if (!this.tutorService.tutorCompletedProfile(user as ITutor)) {
+          if (!this.tutorService.tutorCompletedProfile(user as User)) {
             console.log('Tutor profile not completed')
             this.router.navigate([AUTH_ROUTES.TUTOR_FORM])
             return false
