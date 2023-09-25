@@ -24,6 +24,7 @@ import { InputComponent } from './components/input/input.component'
 import { ProfileSkeletonComponent } from './components/profile-skeleton/profile-skeleton.component'
 import { TextareaComponent } from './components/textarea/textarea.component'
 import { VerificationModalAnimationComponent } from './components/verification-modal-animation/verification-modal-animation.component'
+import { RoundedThousandPipe } from './pipes/rounded-thousand.pipe'
 @NgModule({
   declarations: [
     AlertComponent,
@@ -46,7 +47,8 @@ import { VerificationModalAnimationComponent } from './components/verification-m
     VerificationModalAnimationComponent,
     CardsSkeletonComponent,
     ProfileSkeletonComponent,
-    InlineCardSkeletonComponent
+    InlineCardSkeletonComponent,
+    RoundedThousandPipe
   ],
   imports: [CommonModule, RouterModule, ReactiveFormsModule, FormsModule],
   exports: [
@@ -74,7 +76,8 @@ import { VerificationModalAnimationComponent } from './components/verification-m
     VerificationModalAnimationComponent,
     CardsSkeletonComponent,
     ProfileSkeletonComponent,
-    InlineCardSkeletonComponent
+    InlineCardSkeletonComponent,
+    RoundedThousandPipe
   ]
 })
 export class SharedModule {}
